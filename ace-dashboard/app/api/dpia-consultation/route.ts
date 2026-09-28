@@ -1,89 +1,81 @@
-import { NextResponse } from 'next/server';
-// import { PrismaClient } from '@prisma/client';
-// const prisma = new PrismaClient();
+import { NextRequest, NextResponse } from 'next/server';
+import { createSubmissionFromForm } from '@/lib/submissions';
 
-export async function POST(request: Request) {
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-forwarded-for, x-real-ip',
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders });
+}
+
+export async function POST(req: NextRequest) {
   try {
-    const formData = await request.formData();
+    const formData = await req.formData();
+    const payload: Record<string, any> = {};
+    const support_needs: string[] = [];
     
-    // Extract fields
-    const fullName = formData.get('full_name') as string;
-    const organisationName = formData.get('organisation') as string;
-    const jobTitle = formData.get('job_title') as string;
-    const email = formData.get('business_email') as string;
-    const telephone = formData.get('telephone') as string || '';
-    const country = formData.get('country') as string;
-    const processingDescription = formData.get('processing_description') as string;
-    const projectStage = formData.get('project_stage') as string;
-    const dpiaStatus = formData.get('dpia_status') as string;
-    
-    // Checkboxes (multi-select)
-    const supportNeeds = formData.getAll('support_needs[]');
-    const riskIndicators = formData.getAll('risk_indicators[]');
-    
-    // Additional fields
-    const consultationFormat = formData.get('consultation_format') as string || '';
-    const preferredDate = formData.get('preferred_date') as string || '';
-    const preferredTime = formData.get('preferred_time') as string || '';
-    const alternativeDatetime = formData.get('alternative_datetime') as string || '';
-    const additionalInformation = formData.get('additional_information') as string || '';
-    
-    // File
-    const file = formData.get('existing_dpia_file') as File | null;
-    let fileKey = null;
-    if (file && file.size > 0) {
-      // In a real app, upload this file to S3/Cloudflare R2 here
-      // fileKey = await uploadFileToStorage(file);
-    }
-    
-    // To wire this up to the Prisma DB in the future:
-    /*
-    let org = await prisma.organisation.findFirst({ where: { name: organisationName } });
-    if (!org) {
-      org = await prisma.organisation.create({ data: { name: organisationName, country } });
-    }
-    
-    let contact = await prisma.contact.findUnique({ where: { email } });
-    if (!contact) {
-      contact = await prisma.contact.create({
-        data: { organisation_id: org.id, full_name: fullName, job_title: jobTitle, email, telephone, country }
-      });
-    }
-    
-    const reference = `ACE-CON-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
-    
-    const submission = await prisma.submission.create({
-      data: {
-        reference,
-        type: 'CONSULTATION',
-        status: 'NEW',
-        contact_id: contact.id,
-        organisation_id: org.id,
-        source_path: '/ebook/consultation/consultation.html',
-        source_ip_hash: 'placeholder',
-        received_at: new Date(),
-        payload: {
-          supportNeeds,
-          processingDescription,
-          riskIndicators,
-          projectStage,
-          dpiaStatus,
-          consultationFormat,
-          preferredDate,
-          preferredTime,
-          alternativeDatetime,
-          additionalInformation
+    let email = '';
+    let name = '';
+    let organization = '';
+
+    for (const [key, value] of formData.entries()) {
+      if (key === 'support_needs[]') {
+        support_needs.push(value.toString());
+      } else if (key === 'business_email' || key === 'email') {
+        email = value.toString();
+        payload[key] = value.toString();
+      } else if (key === 'full_name' || key === 'name') {
+        name = value.toString();
+        payload[key] = value.toString();
+      } else if (key === 'organisation') {
+        organization = value.toString();
+        payload[key] = value.toString();
+      } else if (key === 'existing_dpia_file') {
+        // Handle file if present, we just store its metadata or pass the file object
+        if (value instanceof File && value.size > 0) {
+          if (value.size > 10 * 1024 * 1024) {
+            return NextResponse.json({ ok: false, error: 'File size exceeds 10MB limit' }, { status: 400, headers: corsHeaders });
+          }
+          payload.fileName = value.name;
+          payload.fileSize = value.size;
+          payload.fileType = value.type;
         }
+      } else {
+        payload[key] = value.toString();
       }
+    }
+    if (support_needs.length > 0) payload.support_needs = support_needs;
+
+    // Validation
+    const requiredFields = ['full_name', 'organisation', 'job_title', 'business_email', 'telephone', 'country', 'processing_description', 'project_stage', 'dpia_status', 'privacy_consent'];
+    for (const field of requiredFields) {
+      if (!payload[field]) {
+        return NextResponse.json({ ok: false, error: `Missing required field: ${field}` }, { status: 400, headers: corsHeaders });
+      }
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ ok: false, error: 'Invalid email format' }, { status: 400, headers: corsHeaders });
+    }
+
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
+
+    const result = await createSubmissionFromForm({
+      type: 'DPIA_CONSULTATION',
+      email,
+      name,
+      organization,
+      payload,
+      source_ip_hash: ip,
     });
-    */
 
-    const reference = `ACE-CON-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
-
-    // Return success
-    return NextResponse.json({ ok: true, reference });
+    return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
-    console.error('Error processing consultation:', error);
-    return NextResponse.json({ ok: false, error: 'Failed to process submission' }, { status: 500 });
+    console.error('DPIA Consultation submission error:', error);
+    return NextResponse.json({ ok: false, error: 'Internal server error' }, { status: 500, headers: corsHeaders });
   }
 }

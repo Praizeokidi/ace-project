@@ -1,18 +1,52 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { createSubmissionFromForm } from '@/lib/submissions';
 
-export async function POST(request: Request) {
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-forwarded-for, x-real-ip',
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: corsHeaders });
+}
+
+export async function POST(req: NextRequest) {
   try {
-    const formData = await request.formData();
-    const email = formData.get('email') as string;
+    const formData = await req.formData();
+    const payload: Record<string, any> = {};
+    
+    let email = '';
 
-    const reference = `ACE-NL-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+    for (const [key, value] of formData.entries()) {
+      if (key === 'email') {
+        email = value.toString();
+      }
+      payload[key] = value.toString();
+    }
+    
+    // Validation
+    if (!email) {
+      return NextResponse.json({ ok: false, error: 'Missing required field: email' }, { status: 400, headers: corsHeaders });
+    }
 
-    // Here you would connect to Prisma to record the newsletter sign up
-    // await prisma.submission.create({ ... })
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json({ ok: false, error: 'Invalid email format' }, { status: 400, headers: corsHeaders });
+    }
 
-    return NextResponse.json({ ok: true, reference });
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
+
+    const result = await createSubmissionFromForm({
+      type: 'NEWSLETTER',
+      email,
+      payload,
+      source_ip_hash: ip,
+    });
+
+    return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
-    console.error('Error processing newsletter:', error);
-    return NextResponse.json({ ok: false, error: 'Failed to process submission' }, { status: 500 });
+    console.error('Newsletter submission error:', error);
+    return NextResponse.json({ ok: false, error: 'Internal server error' }, { status: 500, headers: corsHeaders });
   }
 }

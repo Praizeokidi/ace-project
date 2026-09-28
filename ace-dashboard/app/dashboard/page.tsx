@@ -1,79 +1,77 @@
-// import { PrismaClient } from '@prisma/client';
-// const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
+import MetricCard from '@/components/MetricCard';
+import StatusBadge from '@/components/StatusBadge';
+import TypeBadge from '@/components/TypeBadge';
+import { Inbox, FileText, Briefcase, Star } from 'lucide-react';
 
-export default async function DashboardPage() {
-  // In a real app, fetch from Prisma:
-  // const submissions = await prisma.submission.findMany({ include: { contact: true, organisation: true }, orderBy: { received_at: 'desc' } });
-  
-  const mockSubmissions = [
-    {
-      id: "1",
-      reference: "ACE-CON-123456",
-      type: "CONSULTATION",
-      status: "NEW",
-      received_at: new Date().toISOString(),
-      contact: { full_name: "Jane Doe", email: "jane@example.com" },
-      organisation: { name: "TechCorp Ltd" }
+export const dynamic = 'force-dynamic';
+
+export default async function DashboardOverview() {
+  const totalSubmissions = await prisma.submission.count();
+  const consultations = await prisma.submission.count({ where: { type: 'CONSULTATION' } });
+  const trainings = await prisma.submission.count({ where: { type: 'TRAINING' } });
+  const priorityList = await prisma.submission.count({ where: { type: 'PRIORITY_LIST' } });
+
+  const recentSubmissions = await prisma.submission.findMany({
+    take: 10,
+    orderBy: { received_at: 'desc' },
+    include: {
+      contact: true,
+      organisation: true,
     },
-    {
-      id: "2",
-      reference: "ACE-TRN-987654",
-      type: "TRAINING",
-      status: "CONTACTED",
-      received_at: new Date(Date.now() - 86400000).toISOString(),
-      contact: { full_name: "John Smith", email: "john@smith.com" },
-      organisation: { name: "Smith & Co" }
-    }
-  ];
+  });
 
   return (
-    <div className="bg-white rounded-lg shadow border border-gray-200">
-      <div className="p-6 border-b border-gray-200 flex justify-between items-center">
-        <h2 className="text-lg font-semibold text-gray-800">Recent Submissions</h2>
-        <button className="px-4 py-2 bg-[#4259a9] text-white rounded hover:bg-blue-800 text-sm font-medium">
-          Export CSV
-        </button>
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold text-gray-900">Dashboard Overview</h1>
+      
+      {/* KPI Cards */}
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <MetricCard title="Total Submissions" value={totalSubmissions} icon={Inbox} color="text-blue-600" />
+        <MetricCard title="Consultation Leads" value={consultations} icon={Briefcase} color="text-purple-600" />
+        <MetricCard title="Training Requests" value={trainings} icon={FileText} color="text-cyan-600" />
+        <MetricCard title="Priority List" value={priorityList} icon={Star} color="text-amber-600" />
       </div>
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="bg-gray-50 border-b border-gray-200">
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Reference</th>
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Type</th>
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Contact</th>
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Organisation</th>
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Status</th>
-              <th className="p-4 text-xs font-semibold text-gray-500 uppercase">Date</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            {mockSubmissions.map((sub) => (
-              <tr key={sub.id} className="hover:bg-gray-50">
-                <td className="p-4 text-sm font-medium text-gray-900">{sub.reference}</td>
-                <td className="p-4 text-sm text-gray-500">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
-                    {sub.type}
-                  </span>
-                </td>
-                <td className="p-4 text-sm text-gray-500">
-                  <div className="font-medium text-gray-900">{sub.contact.full_name}</div>
-                  <div className="text-gray-500">{sub.contact.email}</div>
-                </td>
-                <td className="p-4 text-sm text-gray-500">{sub.organisation.name}</td>
-                <td className="p-4 text-sm text-gray-500">
-                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                    sub.status === 'NEW' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                  }`}>
-                    {sub.status}
-                  </span>
-                </td>
-                <td className="p-4 text-sm text-gray-500">
-                  {new Date(sub.received_at).toLocaleDateString()}
-                </td>
+
+      {/* Recent Submissions */}
+      <div className="bg-white shadow rounded-lg mt-8">
+        <div className="px-4 py-5 border-b border-gray-200 sm:px-6 flex justify-between items-center">
+          <h3 className="text-lg leading-6 font-medium text-gray-900">Recent Submissions</h3>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reference</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Organisation</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {recentSubmissions.map((submission) => (
+                <tr key={submission.id}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">{submission.reference}</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><TypeBadge type={submission.type as any} /></td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">{submission.contact?.full_name || 'N/A'}</div>
+                    <div className="text-sm text-gray-500">{submission.contact?.email}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{submission.organisation?.name || 'N/A'}</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><StatusBadge status={submission.status as any} /></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(submission.received_at).toLocaleDateString()}</td>
+                </tr>
+              ))}
+              {recentSubmissions.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="px-6 py-4 text-center text-sm text-gray-500">No recent submissions found.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
