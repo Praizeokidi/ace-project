@@ -287,3 +287,46 @@ document.addEventListener("DOMContentLoaded", () => {
     content.classList.add("is-ready");
   }, 700);
 });
+
+
+/* Floating navbar scroll-spy and anchor offset support. */
+(() => {
+  const header = document.querySelector("[data-header]");
+  const menu = document.querySelector("[data-menu]");
+  if (!header) return;
+
+  const links = [...(menu?.querySelectorAll('a[href*="#"]') || [])];
+  const sections = links
+    .map((link) => document.getElementById(link.hash.slice(1)))
+    .filter(Boolean);
+
+  const setCurrent = (id) => {
+    links.forEach((link) => {
+      const current = link.hash === `#${id}`;
+      link.classList.toggle("is-current", current);
+      if (current) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  if (sections.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setCurrent(visible.target.id);
+      },
+      { rootMargin: "-28% 0px -58% 0px", threshold: [0.05, 0.2, 0.5] },
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.hash.slice(1));
+      if (target) window.setTimeout(() => setCurrent(target.id), 0);
+    });
+  });
+})();
+

@@ -1764,3 +1764,133 @@
   margin-top: 20px;
   padding-top: 15px;
 }
+
+
+/* =========================================================
+   Training hero photo blend — match the ebook hero treatment
+   ========================================================= */
+#training-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 570px;
+  padding: 0;
+  overflow: hidden;
+  background: #4259a9 !important;
+}
+
+#training-hero .training-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('../../../images/hero-training.png') right center / cover no-repeat;
+}
+
+#training-hero .training-hero-photo::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #4259a9 0%,
+    rgba(66, 89, 169, 0.98) 12%,
+    rgba(66, 89, 169, 0.85) 20%,
+    rgba(66, 89, 169, 0.52) 38%,
+    rgba(66, 89, 169, 0.14) 50%,
+    rgba(66, 89, 169, 0) 58%,
+    transparent 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+#training-hero .training-hero-photo::after {
+  position: absolute;
+  inset: -18px auto -18px -18px;
+  width: 58%;
+  background: url('../../../images/hero-training.png') right center / cover no-repeat;
+  content: "";
+  filter: blur(13px) saturate(0.78);
+  mask-image: linear-gradient(90deg, #000 0%, #000 55%, transparent 100%);
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+#training-hero .training-hero-grid,
+#training-hero .ace-aceternity-spotlight,
+#training-hero .ebook-hero-orbs {
+  display: none;
+}
+
+#training-hero .training-hero-inner {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
+  min-height: 570px;
+  gap: 0;
+}
+
+#training-hero .training-hero-copy {
+  max-width: 620px;
+  padding: 44px 0 38px;
+}
+
+#training-hero .training-hero h1,
+#training-hero h1 {
+  font-size: clamp(2.55rem, 4.4vw, 4.35rem);
+}
+
+#training-hero .training-hero-description {
+  color: #dbe3ff;
+}
+
+#training-hero .learning-journey {
+  align-self: center;
+  background: rgba(8, 29, 52, 0.48);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1020px) {
+  #training-hero { min-height: 540px; }
+  #training-hero .training-hero-inner { min-height: 540px; grid-template-columns: minmax(0, 48%) minmax(0, 52%); }
+  #training-hero .training-hero-copy { padding-block: 38px 32px; }
+}
+
+@media (max-width: 800px) {
+  #training-hero { min-height: 0; padding-bottom: 58px; }
+  #training-hero .training-hero-photo {
+    inset: 0 0 auto;
+    height: 320px;
+    background-position: 86% 38%;
+    background-size: auto 320px;
+  }
+  #training-hero .training-hero-photo::before {
+    background: linear-gradient(180deg, rgba(66, 89, 169, 0) 0%, rgba(66, 89, 169, 0.08) 32%, rgba(66, 89, 169, 0.74) 68%, #4259a9 100%);
+  }
+  #training-hero .training-hero-photo::after {
+    inset: -14px -14px auto;
+    width: 100%;
+    height: 250px;
+    background-position: 86% 38%;
+    background-size: auto 320px;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+    opacity: 0.16;
+  }
+  #training-hero .training-hero-inner {
+    display: block;
+    min-height: 0;
+    padding-top: 260px;
+  }
+  #training-hero .training-hero-copy { max-width: none; padding: 16px 0 0; }
+  #training-hero .learning-journey { margin-top: 34px; }
+  #training-hero h1 { font-size: clamp(2.35rem, 10vw, 3.15rem); }
+}
+
+@media (max-width: 480px) {
+  #training-hero .training-hero-photo {
+    height: 290px;
+    background-position: 88% 38%;
+    background-size: auto 290px;
+  }
+  #training-hero .training-hero-inner { padding-top: 228px; }
+}
+
