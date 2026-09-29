@@ -2835,3 +2835,37 @@
     animation: none !important;
   }
 }
+
+/* Consultation hero photo blend */
+.consultation-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #4259a9;
+}
+
+.consultation-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.95) 18%,
+      rgba(66, 89, 169, 0.72) 34%,
+      rgba(66, 89, 169, 0.22) 54%,
+      rgba(66, 89, 169, 0) 72%
+    ),
+    url("../../../images/hero-consultation.png") center right / cover no-repeat;
+
+  filter: saturate(0.88) contrast(0.96);
+  transform: scale(1.02);
+  transform-origin: center right;
+}
+
+.consultation-hero-content {
+  position: relative;
+  z-index: 1;
+}
