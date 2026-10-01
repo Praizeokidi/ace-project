@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSubmissionFromForm } from '@/lib/submissions';
+import { sendSubmissionEmail, buildWhatsAppUrl } from '@/lib/notifications';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
     let name = '';
     let organization = '';
 
-    for (const [key, value] of formData.entries()) {
+    formData.forEach((value, key) => {
       if (key === 'support_needs[]') {
         support_needs.push(value.toString());
       } else if (key === 'business_email' || key === 'email') {
@@ -46,7 +47,7 @@ export async function POST(req: NextRequest) {
       } else {
         payload[key] = value.toString();
       }
-    }
+    });
     if (support_needs.length > 0) payload.support_needs = support_needs;
 
     // Validation
@@ -65,15 +66,20 @@ export async function POST(req: NextRequest) {
     const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
 
     const result = await createSubmissionFromForm({
-      type: 'DPIA_CONSULTATION',
+      type: 'CONSULTATION',
       email,
       name,
       organization,
+      job_title: payload.job_title,
+      telephone: payload.telephone,
+      country: payload.country,
       payload,
       source_ip_hash: ip,
     });
 
-    return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
+    const reference = result.reference || 'SUBMITTED';
+    await sendSubmissionEmail({ reference, type: 'DPIA consultation', replyTo: email, text: `DPIA consultation submission\n\nReference: ${reference}\n\n${JSON.stringify(payload, null, 2)}` });
+    return NextResponse.json({ ok: true, reference, whatsappUrl: buildWhatsAppUrl(reference, 'DPIA consultation') }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
     console.error('DPIA Consultation submission error:', error);
     return NextResponse.json({ ok: false, error: 'Internal server error' }, { status: 500, headers: corsHeaders });

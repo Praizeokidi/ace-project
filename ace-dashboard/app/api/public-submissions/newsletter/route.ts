@@ -18,12 +18,12 @@ export async function POST(req: NextRequest) {
     
     let email = '';
 
-    for (const [key, value] of formData.entries()) {
+    formData.forEach((value, key) => {
       if (key === 'email') {
         email = value.toString();
       }
       payload[key] = value.toString();
-    }
+    });
     
     // Validation
     if (!email) {
@@ -38,8 +38,10 @@ export async function POST(req: NextRequest) {
     const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
 
     const result = await createSubmissionFromForm({
-      type: 'NEWSLETTER',
+      type: 'PRIORITY_LIST',
       email,
+      name: 'Newsletter subscriber',
+      organization: 'ACE website updates',
       payload,
       source_ip_hash: ip,
     });

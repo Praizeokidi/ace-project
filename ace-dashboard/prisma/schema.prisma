@@ -181,7 +181,6 @@ model Role {
   key  String @unique
   name String
 
-  staff_users RolePermission[] @relation("RoleToStaff")
   permissions RolePermission[]
   user_roles  StaffUserRole[]
 }

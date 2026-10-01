@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSubmissionFromForm } from '@/lib/submissions';
+import { sendSubmissionEmail, buildWhatsAppUrl } from '@/lib/notifications';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -21,14 +22,14 @@ export async function POST(req: NextRequest) {
     } else if (contentType.includes('application/x-www-form-urlencoded')) {
       const text = await req.text();
       const params = new URLSearchParams(text);
-      for (const [key, value] of params.entries()) {
+      params.forEach((value, key) => {
         payload[key] = value;
-      }
+      });
     } else if (contentType.includes('multipart/form-data')) {
       const formData = await req.formData();
-      for (const [key, value] of formData.entries()) {
+      formData.forEach((value, key) => {
         payload[key] = value.toString();
-      }
+      });
     } else {
       return NextResponse.json({ ok: false, error: 'Unsupported content type' }, { status: 415, headers: corsHeaders });
     }
@@ -57,11 +58,16 @@ export async function POST(req: NextRequest) {
       email,
       name: first_name,
       organization: organisation,
+      job_title: 'Not provided',
+      telephone: 'Not provided',
+      country: 'Not provided',
       payload: { ...payload },
       source_ip_hash: ip,
     });
 
-    return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
+    const reference = result.reference || 'SUBMITTED';
+    await sendSubmissionEmail({ reference, type: 'priority list', replyTo: email, text: `priority list submission\n\nReference: ${reference}\n\n${JSON.stringify(payload, null, 2)}` });
+    return NextResponse.json({ ok: true, reference, whatsappUrl: buildWhatsAppUrl(reference, 'priority list') }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
     console.error('Priority List submission error:', error);
     return NextResponse.json({ ok: false, error: 'Internal server error' }, { status: 500, headers: corsHeaders });

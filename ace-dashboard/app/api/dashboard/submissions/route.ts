@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma'; // Assuming standard prisma setup
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -18,10 +20,10 @@ export async function GET(req: NextRequest) {
     
     if (search) {
       where.OR = [
-        { name: { contains: search, mode: 'insensitive' } },
-        { email: { contains: search, mode: 'insensitive' } },
-        { organization: { contains: search, mode: 'insensitive' } },
         { reference: { contains: search, mode: 'insensitive' } },
+        { contact: { full_name: { contains: search, mode: 'insensitive' } } },
+        { contact: { email: { contains: search, mode: 'insensitive' } } },
+        { organisation: { name: { contains: search, mode: 'insensitive' } } },
       ];
     }
 
@@ -30,7 +32,8 @@ export async function GET(req: NextRequest) {
         where,
         skip,
         take: limit,
-        orderBy: { createdAt: 'desc' },
+        orderBy: { received_at: 'desc' },
+        include: { contact: true, organisation: true },
       }),
       prisma.submission.count({ where }),
     ]);
