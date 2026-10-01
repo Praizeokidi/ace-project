@@ -379,14 +379,16 @@
   min-width: 0;
   flex: 0 1 260px;
   max-width: 260px;
-  min-height: 38px;
-  padding: 8px 12px;
+  height: 34px;
+  min-height: 34px;
+  padding: 6px 10px;
   border: 1px solid rgba(220, 228, 255, 0.24);
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.96);
   color: #182738;
   font: inherit;
   font-size: 12px;
+  box-sizing: border-box;
 }
 
 .ace-footer__newsletter-form input:focus {
