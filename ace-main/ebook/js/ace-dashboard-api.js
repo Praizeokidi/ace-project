@@ -1,6 +1,6 @@
 (() => {
   const meta = document.querySelector('meta[name="ace-dashboard-api-base"]');
-  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || '';
+  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || 'https://ace-dashboard-praizeokidis-projects.vercel.app';
 
   window.aceDashboardEndpoint = (path, form) => {
     const base = form?.dataset.dashboardApiBase || configuredBase;
