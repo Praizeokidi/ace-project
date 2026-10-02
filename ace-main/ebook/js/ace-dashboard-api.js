@@ -1,6 +1,8 @@
 (() => {
   const meta = document.querySelector('meta[name="ace-dashboard-api-base"]');
-  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || 'https://ace-dashboard-praizeokidis-projects.vercel.app';
+  // Public forms live on ace-main, so use same-origin API routes by default.
+  // A configured base remains available for local/staging overrides.
+  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || '';
 
   window.aceDashboardEndpoint = (path, form) => {
     const base = form?.dataset.dashboardApiBase || configuredBase;
