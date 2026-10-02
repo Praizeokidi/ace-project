@@ -153,7 +153,7 @@
     submitLabel.textContent = "Sending request…";
 
     try {
-      const response = await fetch("/api/dpia-training", {
+      const response = await fetch(window.aceDashboardEndpoint("/api/dpia-training", form), {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
@@ -167,6 +167,7 @@
       success.hidden = false;
       success.querySelector("[data-training-reference]").textContent =
         result.reference || `ACE-TRAINING-${Date.now().toString().slice(-6)}`;
+      window.addWhatsAppLink(success, result.whatsappUrl);
       success.focus();
     } catch (error) {
       console.error(error);
@@ -339,4 +340,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 })();
-

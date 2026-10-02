@@ -69,7 +69,6 @@
 
   const newsletterForm = footer.querySelector("[data-footer-newsletter]");
   const newsletterStatus = footer.querySelector("[data-footer-newsletter-status]");
-  const newsletterEndpoint = footer.dataset.newsletterEndpoint || "/api/public-submissions/newsletter";
 
   newsletterForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -92,7 +91,7 @@
     newsletterStatus.className = "ace-footer__newsletter-status";
 
     try {
-      const response = await fetch(newsletterEndpoint, {
+      const response = await fetch(window.aceDashboardEndpoint("/api/public-submissions/newsletter", newsletterForm), {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email, source: `ace-footer-${context}` }),

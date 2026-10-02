@@ -158,26 +158,31 @@
 							</div>
 							<div class="col-lg-6">
 								<div class="contact-form">
-									<form method="post" action="https://smartforms.dev/submit/67e5db0b5b45507342a110bb">
+									<form id="ace-contact-form" method="post" data-dashboard-api-base="" novalidate>
 										<div class="form-group mb-4 pb-2">
 											<label for="exampleFormControlInput1" class="form-label">Full Name</label>
-											<input name="Name" type="text" class="form-control shadow-none"
+											<input name="full_name" type="text" class="form-control shadow-none" required
 												id="contact_name">
 										</div>
 										<div class="form-group mb-4 pb-2">
 											<label for="exampleFormControlInput1" class="form-label">Email
 												address</label>
-											<input name="Email" type="email" class="form-control shadow-none"
+											<input name="email" type="email" class="form-control shadow-none" required
 												id="contact_email">
 										</div>
 										<div class="form-group mb-4 pb-2">
 											<label for="exampleFormControlTextarea1" class="form-label">Write
 												Message</label>
-											<textarea name="Message" class="form-control shadow-none"
+											<textarea name="message" class="form-control shadow-none" required
 												id="exampleFormControlTextarea1" rows="3"></textarea>
 										</div>
 										<button class="btn btn-primary w-100" type="submit">Send Message</button>
+										<p class="form-status" data-contact-status role="status" aria-live="polite"></p>
 									</form>
+									<div class="contact-success" data-contact-success hidden tabindex="-1">
+										<h4>Thank you for contacting ACE.</h4>
+										<p>Your message has been received. Reference: <strong data-contact-reference>ACE-CONTACT</strong></p>
+									</div>
 								</div>
 							</div>
 							<div class="col-lg-6 mt-5 mt-lg-0">
@@ -277,7 +282,9 @@
 
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
+	<script src="ebook/js/ace-dashboard-api.js"></script>
+	<script src="js/contact.js"></script>
 
-</body>
+	</body>
 
 </html>

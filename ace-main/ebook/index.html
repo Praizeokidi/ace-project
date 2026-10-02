@@ -3529,6 +3529,7 @@
   </div>
 
 
+  <script src="js/ace-dashboard-api.js"></script>
   <script src="js/ace-footer.js"></script>
 
 
@@ -3551,7 +3552,7 @@
       button.innerHTML = 'Submitting…';
 
       try {
-        const response = await fetch('/api/priority-list', {
+        const response = await fetch(window.aceDashboardEndpoint('/api/priority-list', form), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -3569,6 +3570,15 @@
         form.reset();
         status.textContent = 'Thank you. You have joined the priority list.';
         status.className = 'form-status is-success';
+        if (result.whatsappUrl) {
+          const whatsappLink = document.createElement('a');
+          whatsappLink.href = result.whatsappUrl;
+          whatsappLink.target = '_blank';
+          whatsappLink.rel = 'noopener noreferrer';
+          whatsappLink.className = 'button button-whatsapp priority-whatsapp-link';
+          whatsappLink.textContent = 'Continue on WhatsApp ↗';
+          status.insertAdjacentElement('afterend', whatsappLink);
+        }
       } catch (error) {
         console.error(error);
         status.textContent = 'We could not submit your details. Please try again.';

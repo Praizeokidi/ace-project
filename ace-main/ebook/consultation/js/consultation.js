@@ -185,7 +185,7 @@
     submitArrow.textContent = "…";
 
     try {
-      const response = await fetch("/api/dpia-consultation", {
+      const response = await fetch(window.aceDashboardEndpoint("/api/dpia-consultation", form), {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
@@ -210,6 +210,7 @@
       form.hidden = true;
       successState.hidden = false;
       successState.querySelector("[data-reference]").textContent = reference;
+      window.addWhatsAppLink(successState, result.whatsappUrl);
       successState.focus();
     } catch (error) {
       console.error(error);
@@ -329,4 +330,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 })();
-

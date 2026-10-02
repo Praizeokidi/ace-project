@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSubmissionFromForm } from '@/lib/submissions';
+import { sendSubmissionEmail } from '@/lib/notifications';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -44,6 +45,13 @@ export async function POST(req: NextRequest) {
       organization: 'ACE website updates',
       payload,
       source_ip_hash: ip,
+    });
+
+    await sendSubmissionEmail({
+      reference: result.reference,
+      type: 'newsletter subscription',
+      replyTo: email,
+      text: `New ACE newsletter subscription\n\nReference: ${result.reference}\nEmail: ${email}`,
     });
 
     return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
