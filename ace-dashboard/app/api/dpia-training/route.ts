@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createSubmissionFromForm } from '@/lib/submissions';
 import { sendSubmissionEmail, buildWhatsAppUrl } from '@/lib/notifications';
+import { generateReference } from '@/lib/utils';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -62,21 +62,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Invalid email format' }, { status: 400, headers: corsHeaders });
     }
 
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
-
-    const result = await createSubmissionFromForm({
-      type: 'TRAINING',
-      email,
-      name,
-      organization,
-      job_title: payload.job_title,
-      telephone: payload.telephone,
-      country: payload.country,
-      payload,
-      source_ip_hash: ip,
-    });
-
-    const reference = result.reference || 'SUBMITTED';
+    // Launch mode is intentionally email-only: no database is required for public submissions.
+    const reference = generateReference('TRN');
     await sendSubmissionEmail({ reference, type: 'DPIA training', replyTo: email, text: `DPIA training submission\n\nReference: ${reference}\n\n${JSON.stringify(payload, null, 2)}` });
     return NextResponse.json({ ok: true, reference, whatsappUrl: buildWhatsAppUrl(reference, 'DPIA training') }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
