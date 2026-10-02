@@ -1,15 +1,20 @@
 (() => {
   const meta = document.querySelector('meta[name="ace-dashboard-api-base"]');
-  // Public forms live on ace-main, so use same-origin API routes by default.
-  // A configured base remains available for local/staging overrides.
-  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || '';
+  const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || 'https://ace-dashboard-praizeokidis-projects.vercel.app';
+  const sameOriginPaths = new Set([
+    '/api/priority-list',
+    '/api/dpia-training',
+    '/api/dpia-consultation',
+  ]);
 
   window.aceDashboardEndpoint = (path, form) => {
-    const base = form?.dataset.dashboardApiBase || configuredBase;
+    const normalizedPath = `/${String(path).replace(/^\//, '')}`;
+    const base = form?.dataset.dashboardApiBase ||
+      (sameOriginPaths.has(normalizedPath) ? '' : configuredBase);
     if (!base) {
-      throw new Error('ACE dashboard is not connected yet. Please try again shortly.');
+      return normalizedPath;
     }
-    return `${base.replace(/\/$/, '')}/${String(path).replace(/^\//, '')}`;
+    return `${base.replace(/\/$/, '')}${normalizedPath}`;
   };
 
   window.addWhatsAppLink = (container, whatsappUrl) => {
