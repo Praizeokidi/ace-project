@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import EmailOnlyMode from '@/components/EmailOnlyMode';
 
 export default function Home() {
-  redirect('/dashboard');
+  return <EmailOnlyMode />;
 }
