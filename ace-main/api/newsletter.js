@@ -1,0 +1,153 @@
+const MAX_EMAIL_LENGTH = 254;
+
+export default async function handler(request, response) {
+  if (request.method !== "POST") {
+    response.setHeader("Allow", "POST");
+    return response.status(405).json({
+      ok: false,
+      error: "Method not allowed.",
+    });
+  }
+
+  try {
+    const body = await readRequestBody(request);
+    const email = cleanText(body.email, MAX_EMAIL_LENGTH).toLowerCase();
+    const source = cleanText(body.source || "ACE website footer", 120);
+
+    if (!isValidEmail(email)) {
+      return response.status(400).json({
+        ok: false,
+        error: "Please provide a valid email address.",
+      });
+    }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    const sender = process.env.SENDING_EMAIL;
+    const receiver = process.env.RECEIVING_EMAIL;
+
+    if (!apiKey || !sender || !receiver) {
+      console.error("Missing RESEND_API_KEY, SENDING_EMAIL, or RECEIVING_EMAIL environment variable.");
+      return response.status(500).json({
+        ok: false,
+        error: "The email service is not configured.",
+      });
+    }
+
+    const receivedAt = new Date().toISOString();
+    const notificationText = [
+      "A new ACE updates and resources subscriber joined.",
+      "",
+      `Email: ${email}`,
+      `Source: ${source}`,
+      `Received: ${receivedAt}`,
+    ].join("\n");
+
+    const welcomeText = [
+      "Thank you for subscribing to ACE updates and resources.",
+      "",
+      "You will receive publication updates, training announcements, toolkit releases, and practical privacy resources from ACE.",
+      "",
+      "We respect your inbox. You can unsubscribe at any time by replying to this email.",
+      "",
+      "ACE — Privacy, data protection, and cybersecurity consultancy",
+    ].join("\n");
+
+    const resendRequests = [
+      {
+        from: `ACE Website <${sender}>`,
+        to: [receiver],
+        reply_to: email,
+        subject: "New ACE updates and resources subscriber",
+        text: notificationText,
+      },
+      {
+        from: `ACE <${sender}>`,
+        to: [email],
+        reply_to: sender,
+        subject: "Welcome to ACE updates and resources",
+        text: welcomeText,
+      },
+    ];
+
+    const resendResponses = await Promise.all(
+      resendRequests.map((emailPayload) =>
+        fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+            "User-Agent": "ace-newsletter/1.0",
+          },
+          body: JSON.stringify(emailPayload),
+        }),
+      ),
+    );
+
+    if (resendResponses.some((resendResponse) => !resendResponse.ok)) {
+      const errors = await Promise.all(resendResponses.map((resendResponse) => safeJson(resendResponse)));
+      console.error("Resend newsletter request failed:", errors);
+      return response.status(502).json({
+        ok: false,
+        error: "The subscription could not be delivered. Please try again.",
+      });
+    }
+
+    return response.status(200).json({
+      ok: true,
+      message: "You are now subscribed to ACE updates and resources.",
+    });
+  } catch (error) {
+    console.error("Newsletter handler error:", error);
+    return response.status(500).json({
+      ok: false,
+      error: "The subscription could not be processed. Please try again.",
+    });
+  }
+}
+
+async function readRequestBody(request) {
+  if (request.body && typeof request.body === "object") {
+    return request.body;
+  }
+
+  const contentType = request.headers["content-type"] || "";
+  const raw = typeof request.body === "string" ? request.body : await readRawBody(request);
+
+  if (contentType.includes("application/json")) {
+    return raw ? JSON.parse(raw) : {};
+  }
+
+  return Object.fromEntries(new URLSearchParams(raw));
+}
+
+function readRawBody(request) {
+  return new Promise((resolve, reject) => {
+    let data = "";
+    request.setEncoding("utf8");
+    request.on("data", (chunk) => {
+      data += chunk;
+      if (data.length > 20_000) {
+        reject(new Error("Request body is too large."));
+        request.destroy();
+      }
+    });
+    request.on("end", () => resolve(data));
+    request.on("error", reject);
+  });
+}
+
+function cleanText(value, maxLength) {
+  return String(value || "").replace(/[<>]/g, "").trim().slice(0, maxLength);
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+async function safeJson(response) {
+  try {
+    return await response.json();
+  } catch {
+    return { message: "Non-JSON response from Resend." };
+  }
+}

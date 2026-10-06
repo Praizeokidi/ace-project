@@ -91,7 +91,7 @@
     newsletterStatus.className = "ace-footer__newsletter-status";
 
     try {
-      const response = await fetch(window.aceDashboardEndpoint("/api/public-submissions/newsletter", newsletterForm), {
+      const response = await fetch(window.aceDashboardEndpoint("/api/newsletter", newsletterForm), {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email, source: `ace-footer-${context}` }),

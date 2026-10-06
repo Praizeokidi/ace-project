@@ -5,6 +5,7 @@
     '/api/priority-list',
     '/api/dpia-training',
     '/api/dpia-consultation',
+    '/api/newsletter',
   ]);
 
   window.aceDashboardEndpoint = (path, form) => {
