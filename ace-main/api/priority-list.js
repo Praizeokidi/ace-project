@@ -48,7 +48,10 @@ export default async function handler(request, response) {
       });
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    const sender = process.env.SENDING_EMAIL;
+    const receiver = process.env.RECEIVING_EMAIL;
+    if (!apiKey || !sender || !receiver) {
       console.error("Missing RESEND_API_KEY environment variable.");
       return response.status(500).json({
         ok: false,
@@ -56,17 +59,8 @@ export default async function handler(request, response) {
       });
     }
 
-    if (!process.env.RECEIVING_EMAIL || !process.env.SENDING_EMAIL) {
-      console.error(
-        "Missing RECEIVING_EMAIL or SENDING_EMAIL environment variable.",
-      );
-      return response.status(500).json({
-        ok: false,
-        error: "The email service is not configured.",
-      });
-    }
-
-    const messageText = [
+    const receivedAt = new Date().toISOString();
+    const notificationText = [
       "A new person joined the ACE DPIA priority list.",
       "",
       `First name: ${firstName}`,
@@ -74,31 +68,60 @@ export default async function handler(request, response) {
       `Email: ${email}`,
       `Consent: yes`,
       `Source: ${source}`,
-      `Received: ${new Date().toISOString()}`,
+      `Received: ${receivedAt}`,
     ].join("\n");
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-        "User-Agent": "ace-priority-list/1.0",
-      },
-      body: JSON.stringify({
-        from: `ACE Priority List <${process.env.SENDING_EMAIL}>`,
-        to: [process.env.RECEIVING_EMAIL],
+    const welcomeText = [
+      `Hi ${firstName},`,
+      "",
+      "Thank you for joining the ACE DPIA Professional Series priority list.",
+      "",
+      "We will send launch updates, availability notifications, training announcements, toolkit updates, and corporate package information.",
+      "",
+      "We respect your inbox. You can unsubscribe at any time by replying to this email.",
+      "",
+      "ACE Data Protection Consulting",
+    ].join("\n");
+    const welcomeHtml = buildWelcomeEmailHtml(firstName);
+    const resendRequests = [
+      {
+        from: sender,
+        to: [receiver],
         reply_to: email,
         subject: "New ACE DPIA priority-list signup",
-        text: messageText,
-      }),
-    });
+        text: notificationText,
+      },
+      {
+        from: sender,
+        to: [email],
+        reply_to: sender,
+        subject: "You are on the ACE DPIA priority list",
+        text: welcomeText,
+        html: welcomeHtml,
+      },
+    ];
+    const resendResponses = await Promise.all(
+      resendRequests.map((emailPayload) =>
+        fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+            "User-Agent": "ace-priority-list/1.0",
+          },
+          body: JSON.stringify(emailPayload),
+        }),
+      ),
+    );
 
-    if (!resendResponse.ok) {
-      const resendError = await safeJson(resendResponse);
+    if (resendResponses.some((resendResponse) => !resendResponse.ok)) {
+      const errors = await Promise.all(
+        resendResponses.map((resendResponse) => safeJson(resendResponse)),
+      );
       console.error(
-        "Resend request failed:",
-        resendResponse.status,
-        resendError,
+        "Priority-list Resend request failed:",
+        resendResponses.map((resendResponse) => resendResponse.status),
+        errors,
       );
 
       return response.status(502).json({
@@ -122,27 +145,18 @@ export default async function handler(request, response) {
 }
 
 async function readRequestBody(request) {
-  // Vercel may already parse JSON requests into request.body.
   if (request.body && typeof request.body === "object") {
     return request.body;
   }
 
   const contentType = request.headers["content-type"] || "";
+  const raw =
+    typeof request.body === "string" ? request.body : await readRawBody(request);
 
   if (contentType.includes("application/json")) {
-    return request.body || {};
+    return raw ? JSON.parse(raw) : {};
   }
 
-  if (contentType.includes("application/x-www-form-urlencoded")) {
-    const raw =
-      typeof request.body === "string"
-        ? request.body
-        : await readRawBody(request);
-    return Object.fromEntries(new URLSearchParams(raw));
-  }
-
-  // This supports a raw request body when Vercel has not parsed it.
-  const raw = await readRawBody(request);
   return Object.fromEntries(new URLSearchParams(raw));
 }
 
@@ -183,4 +197,32 @@ async function safeJson(response) {
   } catch {
     return { message: "Non-JSON response from Resend." };
   }
+}
+
+function buildWelcomeEmailHtml(firstName) {
+  return `<!doctype html>
+<html lang="en">
+  <body style="margin:0;background:#f3f7f8;color:#17323a;font-family:Arial,Helvetica,sans-serif;">
+    <div style="max-width:620px;margin:32px auto;background:#ffffff;border:1px solid #dce8e8;border-radius:16px;overflow:hidden;">
+      <div style="background:#0c5661;padding:28px 36px;color:#ffffff;">
+        <p style="margin:0 0 10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.8;">ACE DPIA Professional Series</p>
+        <h1 style="margin:0;font-size:28px;line-height:1.2;">You are on the priority list</h1>
+      </div>
+      <div style="padding:36px;">
+        <p style="margin:0 0 18px;font-size:18px;line-height:1.5;">Hi ${escapeHtml(firstName)},</p>
+        <p style="margin:0 0 22px;font-size:15px;line-height:1.7;color:#4d646a;">Thank you for joining the ACE DPIA Professional Series priority list. We will keep you informed about launch updates, training announcements, toolkit updates, and availability.</p>
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#4d646a;">We respect your inbox. You can unsubscribe at any time by replying to this email.</p>
+      </div>
+    </div>
+  </body>
+</html>`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }

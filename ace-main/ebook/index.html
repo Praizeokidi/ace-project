@@ -3545,6 +3545,7 @@
       const originalButtonText = button.innerHTML;
       const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
+      form.querySelector('.priority-whatsapp-link')?.remove();
 
       status.textContent = 'Submitting…';
       status.className = 'form-status';
@@ -3561,7 +3562,7 @@
           body: JSON.stringify(payload)
         });
 
-        const result = await response.json();
+        const result = await response.json().catch(() => ({}));
 
         if (!response.ok || !result.ok) {
           throw new Error(result.error || 'Submission failed.');
@@ -3581,7 +3582,9 @@
         }
       } catch (error) {
         console.error(error);
-        status.textContent = 'We could not submit your details. Please try again.';
+        status.textContent = error instanceof Error
+          ? error.message
+          : 'We could not submit your details. Please try again.';
         status.className = 'form-status is-error';
       } finally {
         button.disabled = false;
