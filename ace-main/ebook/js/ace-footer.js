@@ -96,13 +96,16 @@
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email, source: `ace-footer-${context}` }),
       });
-      if (!response.ok) throw new Error("Newsletter endpoint unavailable");
+      if (!response.ok) {
+        const details = await response.json().catch(() => ({}));
+        throw new Error(details.error || "Newsletter endpoint unavailable");
+      }
       newsletterForm.reset();
       newsletterStatus.textContent = "Thank you. You are on the ACE updates list.";
       newsletterStatus.className = "ace-footer__newsletter-status is-success";
     } catch (error) {
-      console.warn("Newsletter subscription is not connected yet.", error);
-      newsletterStatus.textContent = "Subscription is not connected yet. Please contact ACE directly.";
+      console.warn("Newsletter subscription failed.", error);
+      newsletterStatus.textContent = error instanceof Error ? error.message : "We could not complete your subscription. Please try again.";
       newsletterStatus.className = "ace-footer__newsletter-status is-error";
     } finally {
       if (submitButton) {
