@@ -38,11 +38,7 @@ export default async function handler(request, response) {
 
     const receivedAt = new Date().toISOString();
     const logoPath = path.join(__dirname, "..", "images", "logo.png");
-    const logoAttachment = {
-      filename: "ace-logo.png",
-      content: fs.readFileSync(logoPath).toString("base64"),
-      content_id: "ace-logo",
-    };
+    const logoDataUri = `data:image/png;base64,${fs.readFileSync(logoPath).toString("base64")}`;
     const notificationText = [
       "A new ACE updates and resources subscriber joined.",
       "",
@@ -77,8 +73,7 @@ export default async function handler(request, response) {
         reply_to: sender,
         subject: "Welcome to ACE updates and resources",
         text: welcomeText,
-        html: welcomeHtml,
-        attachments: [logoAttachment],
+        html: welcomeHtml.replace("cid:ace-logo", logoDataUri),
       },
     ];
 
