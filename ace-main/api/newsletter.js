@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 const MAX_EMAIL_LENGTH = 254;
 
 export default async function handler(request, response) {
@@ -34,6 +37,12 @@ export default async function handler(request, response) {
     }
 
     const receivedAt = new Date().toISOString();
+    const logoPath = path.join(__dirname, "..", "images", "logo.png");
+    const logoAttachment = {
+      filename: "ace-logo.png",
+      content: fs.readFileSync(logoPath).toString("base64"),
+      content_id: "ace-logo",
+    };
     const notificationText = [
       "A new ACE updates and resources subscriber joined.",
       "",
@@ -69,6 +78,7 @@ export default async function handler(request, response) {
         subject: "Welcome to ACE updates and resources",
         text: welcomeText,
         html: welcomeHtml,
+        attachments: [logoAttachment],
       },
     ];
 
@@ -165,7 +175,7 @@ function buildWelcomeEmailHtml() {
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:620px;background:#ffffff;border:1px solid #dce8e8;border-radius:16px;overflow:hidden;">
             <tr>
               <td style="background:#0c5661;padding:28px 36px;">
-                <p style="margin:0;color:#a9e4d5;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;">ACE</p>
+                <img src="cid:ace-logo" alt="ACE Data Protection Consulting" width="190" style="display:block;width:190px;max-width:100%;height:auto;background:#ffffff;padding:10px;border-radius:6px;">
                 <h1 style="margin:12px 0 0;color:#ffffff;font-size:28px;line-height:1.2;font-weight:700;">Welcome to the ACE updates list</h1>
               </td>
             </tr>
