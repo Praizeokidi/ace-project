@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createSubmissionFromForm } from '@/lib/submissions';
-import { sendNewsletterWelcomeEmail, sendSubmissionEmail } from '@/lib/notifications';
+import { sendSubmissionEmail } from '@/lib/notifications';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -14,19 +14,17 @@ export async function OPTIONS() {
 
 export async function POST(req: NextRequest) {
   try {
-    const contentType = req.headers.get('content-type') || '';
-    const payload: Record<string, string> = {};
+    const formData = await req.formData();
+    const payload: Record<string, any> = {};
+    
+    let email = '';
 
-    if (contentType.includes('application/json')) {
-      Object.assign(payload, await req.json());
-    } else {
-      const formData = await req.formData();
-      formData.forEach((value, key) => {
-        payload[key] = value.toString();
-      });
-    }
-
-    const email = String(payload.email || '').trim().toLowerCase();
+    formData.forEach((value, key) => {
+      if (key === 'email') {
+        email = value.toString();
+      }
+      payload[key] = value.toString();
+    });
     
     // Validation
     if (!email) {
@@ -49,15 +47,12 @@ export async function POST(req: NextRequest) {
       source_ip_hash: ip,
     });
 
-    await Promise.all([
-      sendSubmissionEmail({
-        reference: result.reference,
-        type: 'newsletter subscription',
-        replyTo: email,
-        text: `New ACE newsletter subscription\n\nReference: ${result.reference}\nEmail: ${email}`,
-      }),
-      sendNewsletterWelcomeEmail({ email }),
-    ]);
+    await sendSubmissionEmail({
+      reference: result.reference,
+      type: 'newsletter subscription',
+      replyTo: email,
+      text: `New ACE newsletter subscription\n\nReference: ${result.reference}\nEmail: ${email}`,
+    });
 
     return NextResponse.json({ ok: true, reference: result.reference || 'SUBMITTED' }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
