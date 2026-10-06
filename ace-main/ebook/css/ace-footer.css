@@ -656,8 +656,11 @@
   }
 
   .ace-footer__newsletter-form input {
+    flex: 0 0 44px;
     width: 100%;
     max-width: none;
+    height: 44px;
+    min-height: 44px;
   }
 
   .ace-footer__newsletter-form button {
