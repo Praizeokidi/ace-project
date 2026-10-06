@@ -56,14 +56,14 @@ export default async function handler(request, response) {
 
     const resendRequests = [
       {
-        from: `ACE Website <${sender}>`,
+        from: sender,
         to: [receiver],
         reply_to: email,
         subject: "New ACE updates and resources subscriber",
         text: notificationText,
       },
       {
-        from: `ACE <${sender}>`,
+        from: sender,
         to: [email],
         reply_to: sender,
         subject: "Welcome to ACE updates and resources",
