@@ -25,6 +25,8 @@
 }
 html {
   scroll-behavior: smooth;
+  background: var(--cream);
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -34,6 +36,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 body,
 button,
