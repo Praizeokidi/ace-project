@@ -52,6 +52,8 @@ export default async function handler(request, response) {
       "ACE — Privacy, data protection, and cybersecurity consultancy",
     ].join("\n");
 
+    const welcomeHtml = buildWelcomeEmailHtml();
+
     const resendRequests = [
       {
         from: `ACE Website <${sender}>`,
@@ -66,6 +68,7 @@ export default async function handler(request, response) {
         reply_to: sender,
         subject: "Welcome to ACE updates and resources",
         text: welcomeText,
+        html: welcomeHtml,
       },
     ];
 
@@ -142,6 +145,52 @@ function cleanText(value, maxLength) {
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function buildWelcomeEmailHtml() {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ACE updates and resources</title>
+  </head>
+  <body style="margin:0;background:#f3f7f8;color:#17323a;font-family:Arial,Helvetica,sans-serif;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
+      Practical privacy resources, training announcements and toolkit releases from ACE.
+    </div>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f3f7f8;padding:32px 12px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:620px;background:#ffffff;border:1px solid #dce8e8;border-radius:16px;overflow:hidden;">
+            <tr>
+              <td style="background:#0c5661;padding:28px 36px;">
+                <p style="margin:0;color:#a9e4d5;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;">ACE</p>
+                <h1 style="margin:12px 0 0;color:#ffffff;font-size:28px;line-height:1.2;font-weight:700;">Welcome to the ACE updates list</h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:36px;">
+                <p style="margin:0 0 18px;font-size:18px;line-height:1.5;color:#17323a;">Thank you for subscribing.</p>
+                <p style="margin:0 0 22px;font-size:15px;line-height:1.7;color:#4d646a;">You will receive publication updates, training announcements, toolkit releases, and practical privacy resources from ACE.</p>
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 24px;background:#edf8f5;border-left:4px solid #35a889;">
+                  <tr><td style="padding:16px 18px;color:#24504b;font-size:14px;line-height:1.6;">Our updates are designed to help organisations build practical, responsible data protection and cybersecurity programmes.</td></tr>
+                </table>
+                <p style="margin:0;font-size:14px;line-height:1.7;color:#4d646a;">We respect your inbox. You can unsubscribe at any time by replying to this email.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-top:1px solid #e5eeee;padding:22px 36px;background:#fbfdfd;">
+                <p style="margin:0;color:#587178;font-size:12px;line-height:1.6;">ACE — Privacy, data protection, and cybersecurity consultancy</p>
+              </td>
+            </tr>
+          </table>
+          <p style="margin:16px 0 0;color:#769096;font-size:11px;line-height:1.5;">You received this email because you subscribed to ACE updates and resources.</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
 }
 
 async function safeJson(response) {
