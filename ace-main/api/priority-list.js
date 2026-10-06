@@ -48,14 +48,28 @@ export default async function handler(request, response) {
       });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const sender = process.env.SENDING_EMAIL;
-    const receiver = process.env.RECEIVING_EMAIL;
-    if (!apiKey || !sender || !receiver) {
-      console.error("Missing RESEND_API_KEY environment variable.");
+    const apiKey = readConfigValue(process.env.RESEND_API_KEY);
+    const sender = readConfigValue(process.env.SENDING_EMAIL);
+    const receiver = readConfigValue(process.env.RECEIVING_EMAIL);
+    const missingVariables = [
+      !apiKey && "RESEND_API_KEY",
+      !sender && "SENDING_EMAIL",
+      !receiver && "RECEIVING_EMAIL",
+    ].filter(Boolean);
+    if (missingVariables.length) {
+      console.error(
+        `Missing environment variable(s): ${missingVariables.join(", ")}`,
+      );
       return response.status(500).json({
         ok: false,
         error: "The email service is not configured.",
+      });
+    }
+    if (!isValidEmail(sender) || !isValidEmail(receiver)) {
+      console.error("SENDING_EMAIL and RECEIVING_EMAIL must be plain email addresses.");
+      return response.status(500).json({
+        ok: false,
+        error: "The email service is not configured correctly.",
       });
     }
 
@@ -185,6 +199,15 @@ function cleanText(value, maxLength) {
     .replace(/[<>]/g, "")
     .trim()
     .slice(0, maxLength);
+}
+
+function readConfigValue(value) {
+  return String(value || "")
+    .trim()
+    .replace(/^(?:"([\s\S]*)"|'([\s\S]*)')$/, (_, doubleQuoted, singleQuoted) =>
+      doubleQuoted ?? singleQuoted,
+    )
+    .trim();
 }
 
 function isValidEmail(email) {
