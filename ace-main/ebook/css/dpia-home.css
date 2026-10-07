@@ -1245,6 +1245,94 @@ blockquote {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+.toolkit-package-copy h2 {
+  max-width: 720px;
+}
+.toolkit-package-offer {
+  margin: 24px 0 20px;
+}
+.toolkit-package-label {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.toolkit-package-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toolkit-package-list li {
+  position: relative;
+  padding-left: 19px;
+  color: #000;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.toolkit-package-list li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4259a9;
+  content: "";
+}
+.toolkit-package-ideal {
+  max-width: 650px;
+  margin-bottom: 24px;
+  color: #000 !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.toolkit-package-ideal strong {
+  color: var(--navy);
+}
+.toolkit-package-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+  max-width: 650px;
+}
+.toolkit-package-controls label {
+  flex-basis: 100%;
+  margin-bottom: -7px;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.toolkit-package-controls select {
+  min-height: 48px;
+  min-width: 285px;
+  padding: 10px 34px 10px 13px;
+  border: 1px solid rgba(16, 45, 77, 0.28);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--navy);
+  font: inherit;
+  font-size: 12px;
+}
+.toolkit-package-controls select:focus-visible {
+  border-color: #4259a9;
+  outline: 3px solid rgba(66, 89, 169, 0.2);
+  outline-offset: 2px;
+}
+.toolkit-package-controls .button {
+  min-height: 48px;
+}
+.toolkit-package-status {
+  margin: 12px 0 0;
+  color: #a33a3a !important;
+  font-size: 12px;
+}
 
 .training-grid {
   display: grid;

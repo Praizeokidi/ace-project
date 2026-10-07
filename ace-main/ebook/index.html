@@ -2590,29 +2590,32 @@
             <div class="folder folder-front"><span>ACE</span><strong>TOOLKIT<br>Implementation</strong><small>Templates · Worksheets · Checklists</small></div>
             <div class="toolkit-stamp">PRACTICAL<br>RESOURCES</div>
           </div>
-          <div class="toolkit-copy">
-            <h2 id="toolkit-title">ACE DPIA MADE EASY IMPLEMENTATION TOOLKIT</h2>
-            <p class="large-lead" style="color: #000;">Turn knowledge into action.</p>
-            <p style="color: #000;">The ACE Made EASY Implementation Toolkit is the implementation component to DPIA
-              Made
-              Easy – Professional
-              Edition. While the handbook explains the DPIA process; the Toolkit gives the practioner the pracical tools
-              to actually carry it out.
-              <br>
-              It includes structured DPIA implementation tools/templates such as:
-
-            </p>
-            <p style=" color: #000;"></p>
-            <div class=" resource-list">
-              <span>DPIA Screening</span><span>Privacy Risk Assessment</span><span> Stakeholder Consultation
-              </span><span>Data Flow Mapping
-              </span><span>DPIA Implementation records</span><span>Supporting templates and worksheets</span>
+          <div class="toolkit-copy toolkit-package-copy">
+            <h2 id="toolkit-title">DPIA Made Easy — Professional Edition + ACE DPIA Implementation Toolkit</h2>
+            <p class="large-lead" style="color: #000;">Handbook + Toolkit</p>
+            <div class="toolkit-package-offer" aria-labelledby="toolkit-package-includes">
+              <p class="toolkit-package-label" id="toolkit-package-includes">Includes:</p>
+              <ul class="toolkit-package-list">
+                <li>DPIA Made Easy – Professional Edition</li>
+                <li>ACE DPIA Implementation Toolkit</li>
+                <li>Practical DPIA templates and supporting tools</li>
+                <li>Resources designed to support practical implementation alongside the handbook</li>
+              </ul>
             </div>
-            <a class="button dpia-button" href="./toolkit/">
-              Get the ACE DPIA Implementation Toolkit
-              <span aria-hidden="true">↗</span>
-            </a>
-
+            <p class="toolkit-package-ideal"><strong>Ideal for:</strong> Practitioners and organisations that want both the knowledge and practical tools to conduct and document DPIAs.</p>
+            <div class="toolkit-package-controls">
+              <label for="toolkit-package-format">Select Format</label>
+              <select id="toolkit-package-format" name="toolkit_package_format" required>
+                <option value="" selected disabled>Select Format</option>
+                <option value="digital-pdf-handbook-digital-toolkit">Digital/PDF Handbook + Digital Toolkit</option>
+                <option value="print-handbook-digital-toolkit">Print Handbook + Digital Toolkit</option>
+              </select>
+              <a class="button dpia-button" href="./toolkit/" data-toolkit-package-cta>
+                Get the Complete DPIA Package
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <p class="toolkit-package-status" data-toolkit-package-status role="status" hidden>Please select a format to continue.</p>
             <p class="coming-note">Coming Soon</p>
           </div>
         </div>
@@ -3623,5 +3626,25 @@
     });
   })();
 </script>
+<script>
+  (() => {
+    const formatSelect = document.querySelector('#toolkit-package-format');
+    const packageCta = document.querySelector('[data-toolkit-package-cta]');
+    const packageStatus = document.querySelector('[data-toolkit-package-status]');
 
+    if (!formatSelect || !packageCta || !packageStatus) return;
+
+    formatSelect.addEventListener('change', () => {
+      packageStatus.hidden = true;
+      packageCta.href = `./toolkit/?format=${encodeURIComponent(formatSelect.value)}#purchase`;
+    });
+
+    packageCta.addEventListener('click', (event) => {
+      if (formatSelect.value) return;
+      event.preventDefault();
+      packageStatus.hidden = false;
+      formatSelect.focus();
+    });
+  })();
+</script>
 </html>
