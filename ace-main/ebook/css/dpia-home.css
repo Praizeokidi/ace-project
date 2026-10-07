@@ -4461,7 +4461,7 @@ html {
     inset: 0;
     height: auto;
     background-position: 100% center;
-    background-size: 250% auto;
+    background-size: 166.667% auto;
   }
 
   #hero-actual .hero-photo::before {
@@ -4480,7 +4480,7 @@ html {
     width: 100%;
     height: 100%;
     background-position: 100% center;
-    background-size: 250% auto;
+    background-size: 166.667% auto;
     mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 100%);
     opacity: 0.24;
   }
