@@ -4710,3 +4710,155 @@ html {
     padding-top: 158px;
   }
 }
+
+.mobile-priority-cta {
+  display: none;
+}
+
+/* Final mobile reference alignment: visible priority CTA, blue eyebrow, and stacked controls. */
+@media (max-width: 800px) {
+  .site-header .nav-wrap {
+    gap: 9px;
+  }
+
+  .site-header .menu-toggle {
+    margin-right: 0;
+  }
+
+  .site-header .brand {
+    min-width: 0;
+    margin-right: auto;
+  }
+
+  .mobile-priority-cta {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 5px;
+    min-height: 42px;
+    padding: 9px 12px;
+    border: 1px solid #58b7ff;
+    border-radius: 4px;
+    background: #086bd7;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  #hero-actual .hero-copy {
+    padding-top: 204px;
+  }
+
+  #hero-actual .hero-eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    color: #62b9ff !important;
+    font-size: 13px !important;
+    letter-spacing: 0.18em;
+  }
+
+  #hero-actual .hero-eyebrow .journey-step {
+    color: #62b9ff;
+  }
+
+  #hero-actual .hero-eyebrow .eyebrow-rule {
+    display: none;
+  }
+
+  #hero-actual .hero-eyebrow::after {
+    display: block;
+    width: 108px;
+    height: 1px;
+    margin-top: 8px;
+    background: #62b9ff;
+    box-shadow: 0 0 0 1px rgba(98, 185, 255, 0.08);
+    content: "";
+  }
+
+  #hero-actual h1,
+  #hero-actual .hero-title-highlight {
+    color: #ffffff !important;
+  }
+
+  #hero-actual .hero-title-highlight::after {
+    display: none;
+  }
+
+  #hero-actual h1 {
+    max-width: 430px;
+    margin-bottom: 20px;
+    font-size: clamp(2.45rem, 10.2vw, 3.55rem);
+    line-height: 1.03;
+  }
+
+  #hero-actual .hero-actions {
+    width: 100%;
+    max-width: 330px;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  #hero-actual .hero-format-control {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #hero-actual .hero-format-control label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  #hero-actual .hero-format-control select,
+  #hero-actual .hero-actions .button {
+    width: 100%;
+    min-height: 54px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  #hero-actual .hero-format-control select {
+    border-color: #58b7ff;
+    background: rgba(8, 29, 52, 0.26);
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #hero-actual .hero-format-control select option {
+    background: #081d34;
+    color: #ffffff;
+  }
+
+  #hero-actual .hero-actions .button-white {
+    border-color: #58b7ff;
+    background: #086bd7;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .nav-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-header .brand img {
+    width: 104px;
+  }
+
+  .mobile-priority-cta {
+    padding-inline: 9px;
+    font-size: 9px;
+  }
+
+  #hero-actual .hero-copy {
+    padding-top: 198px;
+  }
+}
