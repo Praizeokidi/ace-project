@@ -686,6 +686,77 @@ em {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
 }
+.hero-description strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.hero-offer {
+  margin: -5px 0 22px;
+}
+.hero-offer-title {
+  margin: 0 0 7px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hero-offer-list {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.45;
+  list-style: none;
+}
+.hero-offer-list li {
+  position: relative;
+  padding-left: 17px;
+}
+.hero-offer-list li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  content: "";
+}
+.hero-format-control {
+  display: grid;
+  gap: 6px;
+  min-width: 210px;
+}
+.hero-format-control label {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-format-control select {
+  min-height: 46px;
+  padding: 10px 34px 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 4px;
+  background: rgba(8, 29, 52, 0.78);
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+}
+.hero-format-control select:focus-visible {
+  border-color: var(--gold);
+  outline: 3px solid rgba(223, 180, 79, 0.24);
+  outline-offset: 2px;
+}
+.hero-format-status {
+  margin: -20px 0 0;
+  color: #ffd2d2;
+  font-size: 12px;
+}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

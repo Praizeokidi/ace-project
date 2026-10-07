@@ -1746,22 +1746,29 @@
               DPIA Made Easy
               <em>– <span class="hero-title-highlight">Professional Edition</span></em>
             </h1>
-            <p class="hero-subtitle">A Practical Handbook, Workbook &amp; Training Guide</p>
-            <p class="hero-description">Practical guidance for organisations and privacy professionals implementing Data
-              Privacy Impact Assessments under the Nigeria Data Protection Act.</p>
-            <div class="hero-actions">
-              <a class="button button-white" href="#">Buy the DPIA Made Easy Professional Edition <span
-                  aria-hidden="true">↗</span></a>
-              <!-- <a class="button button-gold" href="#priority-actual">Join the Priority List <span
-                  aria-hidden="true">↗</span></a> -->
-              <a class="button button-outline-light" href="./training/training.html">Request a DPIA Training <span
-                  aria-hidden="true">↗</span></a>
-              <!-- <a class="button button-outline-light" href="#">Buy the DPIA Made Easy Professional Edition <span
-                  aria-hidden="true">→</span></a> -->
+            <p class="hero-subtitle">Handbook &amp; workbook only</p>
+            <div class="hero-offer" aria-labelledby="hero-offer-title">
+              <p class="hero-offer-title" id="hero-offer-title">Includes:</p>
+              <ul class="hero-offer-list">
+                <li>DPIA Made Easy – Professional Edition</li>
+                <li>Practical Handbook, Workbook</li>
+                <li>Available in Digital/PDF edition and Print Edition</li>
+              </ul>
             </div>
-            <p class="foreword"><span class="foreword-mark">✦</span> Includes a Foreword by Dr Vincent Olatunji,
-              National
-              Commissioner/CEO of the Nigeria Data Protection Commission.</p>
+            <p class="hero-description"><strong>Ideal for:</strong> DPOs, privacy professionals, compliance teams, legal professionals, risk teams, project managers and organisations looking to understand and implement DPIAs.</p>
+            <div class="hero-actions">
+              <div class="hero-format-control">
+                <label for="handbook-format">Select Format</label>
+                <select id="handbook-format" name="handbook_format" required>
+                  <option value="" selected disabled>Select Format</option>
+                  <option value="digital-pdf">Digital/PDF Edition</option>
+                  <option value="print">Print Edition</option>
+                </select>
+              </div>
+              <a class="button button-white" href="./toolkit/#purchase" data-handbook-cta>Buy Handbook <span
+                  aria-hidden="true">↗</span></a>
+            </div>
+            <p class="hero-format-status" data-handbook-format-status role="status" hidden>Please select a format to continue.</p>
           </div>
           <div class="hero-art" aria-label="DPIA Made Easy Professional Edition book cover">
             <div class="book-glow" aria-hidden="true"></div>
@@ -3592,6 +3599,28 @@
       }
     });
   });
+</script>
+
+<script>
+  (() => {
+    const formatSelect = document.querySelector('#handbook-format');
+    const handbookCta = document.querySelector('[data-handbook-cta]');
+    const formatStatus = document.querySelector('[data-handbook-format-status]');
+
+    if (!formatSelect || !handbookCta || !formatStatus) return;
+
+    formatSelect.addEventListener('change', () => {
+      formatStatus.hidden = true;
+      handbookCta.href = `./toolkit/?format=${encodeURIComponent(formatSelect.value)}#purchase`;
+    });
+
+    handbookCta.addEventListener('click', (event) => {
+      if (formatSelect.value) return;
+      event.preventDefault();
+      formatStatus.hidden = false;
+      formatSelect.focus();
+    });
+  })();
 </script>
 
 </html>
