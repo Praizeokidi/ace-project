@@ -4579,3 +4579,134 @@ html {
     padding-top: 82px;
   }
 }
+
+/* Mobile visual direction: match the full ACE hero mockup. */
+@media (max-width: 800px) {
+  .topbar {
+    background: #081d34;
+  }
+
+  .site-header {
+    position: absolute;
+    inset: 31px 0 auto;
+    z-index: 20;
+    background: transparent !important;
+    border-bottom: 0;
+  }
+
+  .site-header .nav-wrap {
+    width: min(100% - 34px, 610px);
+    min-height: 68px;
+    margin: 10px auto 0;
+    padding: 8px 15px 8px 18px;
+    border: 1px solid rgba(16, 45, 77, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 16px 38px rgba(4, 16, 32, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  }
+
+  .site-header .menu-toggle {
+    order: -1;
+    flex: 0 0 auto;
+    margin-right: 14px;
+  }
+
+  .site-header .brand {
+    margin-right: auto;
+  }
+
+  .site-header .brand img {
+    width: 118px;
+  }
+
+  #hero-actual {
+    min-height: 760px;
+    padding: 0 0 26px;
+    background: #081d34 !important;
+  }
+
+  #hero-actual .hero-photo {
+    inset: 0 0 0 40%;
+    height: auto;
+    background-position: 100% center;
+    background-size: cover;
+  }
+
+  #hero-actual .hero-photo::before {
+    background: linear-gradient(
+      90deg,
+      #081d34 0%,
+      rgba(8, 29, 52, 0.96) 22%,
+      rgba(8, 29, 52, 0.78) 50%,
+      rgba(8, 29, 52, 0.2) 82%,
+      rgba(8, 29, 52, 0) 100%
+    );
+  }
+
+  #hero-actual .hero-photo::after {
+    opacity: 0.18;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 100%);
+  }
+
+  #hero-actual .hero-inner {
+    min-height: 760px;
+    padding-top: 0;
+  }
+
+  #hero-actual .hero-copy {
+    width: min(84%, 520px);
+    max-width: none;
+    margin-left: -8px;
+    padding: 166px 20px 46px 26px;
+    border-radius: 0 30px 30px 0;
+    background: linear-gradient(90deg, rgba(5, 19, 36, 0.9) 0%, rgba(5, 19, 36, 0.68) 62%, rgba(5, 19, 36, 0) 100%);
+  }
+
+  #hero-actual .hero-eyebrow {
+    margin-bottom: 15px;
+    color: #f1d38a !important;
+    letter-spacing: 0.18em;
+  }
+
+  #hero-actual h1 {
+    max-width: 440px;
+    font-size: clamp(2.2rem, 9.6vw, 3.45rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  #hero-actual .hero-subtitle {
+    max-width: 390px;
+    margin-bottom: 17px;
+    font-size: clamp(1.2rem, 5.5vw, 1.7rem);
+  }
+
+  #hero-actual .hero-description,
+  #hero-actual .hero-offer-list {
+    color: rgba(255, 255, 255, 0.86) !important;
+  }
+
+  #hero-actual .hero-actions {
+    max-width: 360px;
+    margin-bottom: 0;
+  }
+
+  #hero-actual .hero-format-control select {
+    background: rgba(5, 19, 36, 0.9);
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-actual {
+    min-height: 790px;
+  }
+
+  #hero-actual .hero-inner {
+    min-height: 790px;
+  }
+
+  #hero-actual .hero-copy {
+    width: 88%;
+    padding-top: 158px;
+  }
+}
