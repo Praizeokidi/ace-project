@@ -1,0 +1,4 @@
+In-app Browser JS state was preserved. Completed actions were not rolled back; refresh stale UI handles and continue only the remaining work.
+{"code":"BROWSER_ERROR","method":"browser_scroll","callIndex":3,"nextAction":"inspect_before_retry"}
+Invalid arguments for browser_scroll: validating root: required: missing properties: ["direction"]
+Invalid arguments for browser_scroll: validating root: required: missing properties: ["direction"]

@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentTime = player.querySelector("[data-audio-current]");
   const duration = player.querySelector("[data-audio-duration]");
   const progress = player.querySelector("[data-audio-progress]");
+  let speechPreview = null;
 
   if (!audio || !toggle) return;
 
@@ -113,6 +114,31 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   toggle.addEventListener("click", async () => {
+    if (audio.error && "speechSynthesis" in window) {
+      if (speechPreview && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        speechPreview = null;
+        setPlayingState(false);
+        return;
+      }
+
+      speechPreview = new SpeechSynthesisUtterance(
+        "DPIA Made Easy Professional Edition is a practical handbook, workbook and training guide for conducting, documenting and governing Data Privacy Impact Assessments. It helps privacy and compliance professionals move from regulatory knowledge to confident implementation."
+      );
+      speechPreview.rate = 0.96;
+      speechPreview.onend = () => {
+        speechPreview = null;
+        setPlayingState(false);
+      };
+      speechPreview.onerror = () => {
+        speechPreview = null;
+        setPlayingState(false);
+      };
+      window.speechSynthesis.speak(speechPreview);
+      setPlayingState(true);
+      return;
+    }
+
     if (audio.paused) {
       try {
         await audio.play();
@@ -140,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   audio.addEventListener("error", () => {
-    toggle.disabled = true;
-    toggle.setAttribute("aria-label", "Audio preview unavailable");
+    toggle.disabled = false;
+    toggle.setAttribute("aria-label", "Play spoken preview");
     player.classList.add("is-unavailable");
   });
 
@@ -194,5 +220,23 @@ document.addEventListener("DOMContentLoaded", () => {
       if (target) window.setTimeout(() => setCurrent(target.id), 0);
     });
   });
+})();
+
+/* Progressive section motion that never controls visibility. */
+(() => {
+  const sections = document.querySelectorAll("main section[id$='-actual']");
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  sections.forEach((section) => section.classList.add("production-reveal"));
+  const observer = new IntersectionObserver((entries, instance) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        instance.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.01 });
+
+  sections.forEach((section) => observer.observe(section));
 })();
 

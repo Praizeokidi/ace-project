@@ -1,0 +1,5 @@
+In-app Browser JS state was preserved. Completed actions were not rolled back; refresh stale UI handles and continue only the remaining work.
+{"code":"BROWSER_ERROR","method":"browser_screenshot","callIndex":2,"nextAction":"inspect_before_retry"}
+Invalid arguments for browser_screenshot: validating root: validating /properties/saveToFile: type: C:\Users\maseglo.com\Downloads\ace-project\outputs\dpia-landing-top.png has type "string", want "boolean"
+{"ref":"ref_6580","parentRef":"ref_6549","role":"main","actions":[],"bounds":{"x":0,"y":132,"width":668,"height":18387.219},"snapshotId":"snap_af82ce33-635e-4dfc-a40d-7cac3a28ca44","tabId":"tab_50d5c4b6-9f0f-4e52-bd79-9e5f730b4cd4"}
+Invalid arguments for browser_screenshot: validating root: validating /properties/saveToFile: type: C:\Users\maseglo.com\Downloads\ace-project\outputs\dpia-landing-top.png has type "string", want "boolean"
