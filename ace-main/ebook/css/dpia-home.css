@@ -4458,7 +4458,7 @@ html {
   }
 
   #hero-actual .hero-photo {
-    inset: 0;
+    inset: 0 0 0 40%;
     height: auto;
     background-position: 100% center;
     background-size: cover;
