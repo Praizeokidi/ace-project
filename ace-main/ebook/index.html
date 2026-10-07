@@ -32,6 +32,7 @@
     #audience-actual,
     #benefits-actual,
     #toolkit-actual,
+    #review-actual,
     #training-actual,
     #consultation-actual,
     #ecosystem-actual,
@@ -2699,6 +2700,58 @@
       </section>
     </div>
 
+    <!-- MASTER DPIA REVIEW WRAPPER -->
+    <div id="review-master-wrapper" style="position: relative;">
+      <div id="review-skeleton" class="skel-training-wrapper">
+        <div class="shell" style="display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:60px;">
+          <div>
+            <div class="skel-shimmer skel-intro-eyebrow"></div>
+            <div class="skel-shimmer skel-intro-h2"></div>
+            <div class="skel-shimmer skel-text-line" style="width:88%;"></div>
+          </div>
+          <div>
+            <div class="skel-shimmer skel-lead-text" style="width:34%;"></div>
+            <div class="skel-training-types">
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+            </div>
+            <div class="skel-shimmer skel-btn" style="width:210px; height:50px; background:#4259A9; opacity:.2;"></div>
+          </div>
+        </div>
+      </div>
+
+      <section id="review-actual" class="review-offer section-light" style="display:none; opacity:0;"
+        aria-labelledby="review-title">
+        <div class="shell review-grid">
+          <div class="review-copy">
+            <div class="section-label"><span>04</span><span class="label-line"></span><span>DPIA Review</span></div>
+            <p class="eyebrow">Independent professional review</p>
+            <h2 id="review-title">Existing DPIA Review</h2>
+            <p class="review-intro">For organisations that have already completed a DPIA but want ACE to review it.</p>
+          </div>
+          <div class="review-panel">
+            <p class="review-topics-heading">What the review includes</p>
+            <ul class="review-topics">
+              <li>Review of existing DPIA documentation</li>
+              <li>Review of risk identification and assessment</li>
+              <li>Review of mitigation measures</li>
+              <li>Review of necessity and proportionality</li>
+              <li>Review of accountability and documentation</li>
+              <li>Identification of gaps</li>
+              <li>Practical recommendations</li>
+              <li>Review summary</li>
+            </ul>
+            <a class="button dpia-button" href="./consultation/consultation.html#consultation-form">Request a DPIA Review <span
+                aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <!-- MASTER TRAINING WRAPPER -->
     <div id="training-master-wrapper" style="position: relative;">
 
@@ -2740,7 +2793,7 @@
         style="display: none; opacity: 0;" aria-labelledby="training-title">
         <div class="shell training-grid">
           <div>
-            <div class="section-label"><span>04</span><span class="label-line"></span><span>DPIA Training</span></div>
+            <div class="section-label"><span>05</span><span class="label-line"></span><span>DPIA Training</span></div>
             <p class="eyebrow">Practical Professional Training</p>
             <h2 id="training-title">Learn how to apply the <em class="highlight-header">methodology</em> in practice.
             </h2>
@@ -3396,12 +3449,16 @@
           actual: 'toolkit-actual'
         },
         {
-          skeleton: 'training-skeleton',
-          actual: 'training-actual'
-        },
-        {
           skeleton: 'consultation-skeleton',
           actual: 'consultation-actual'
+        },
+        {
+          skeleton: 'review-skeleton',
+          actual: 'review-actual'
+        },
+        {
+          skeleton: 'training-skeleton',
+          actual: 'training-actual'
         },
         {
           skeleton: 'ecosystem-skeleton',

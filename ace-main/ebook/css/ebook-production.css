@@ -348,6 +348,90 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   }
 }
 
+/* Independent DPIA review offer */
+.review-offer {
+  padding: clamp(72px, 8vw, 112px) 0;
+  border-top: 1px solid var(--ace-line);
+  background: linear-gradient(180deg, #f7f9ff 0%, #ffffff 100%);
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: clamp(42px, 7vw, 100px);
+}
+.review-copy .section-label { margin-bottom: 25px; }
+.review-copy > .eyebrow {
+  margin-bottom: 13px;
+  color: var(--ace-blue);
+}
+.review-copy h2 {
+  max-width: 540px;
+  color: var(--ace-navy);
+}
+.review-intro {
+  max-width: 470px;
+  margin: 18px 0 0;
+  color: var(--ace-muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.75;
+}
+.review-panel {
+  padding: clamp(24px, 3.5vw, 42px);
+  border: 1px solid rgba(66,89,169,.14);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(16,45,77,.08);
+}
+.review-topics-heading {
+  margin: 0 0 23px;
+  color: var(--ace-navy);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.review-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+.review-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 0;
+  color: var(--ace-ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.review-topics li::before {
+  content: "✓";
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef1fb;
+  color: var(--ace-blue);
+  font-size: 10px;
+  font-weight: 800;
+}
+.review-panel .button { margin-top: 0; }
+@media (max-width: 800px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+@media (max-width: 520px) {
+  .review-topics { grid-template-columns: 1fr; gap: 14px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .production-reveal { transform: none !important; }
