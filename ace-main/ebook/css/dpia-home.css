@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --navy: #102d4d;
   --navy-deep: #081d34;
   --ink: #182738;
@@ -4448,4 +4448,63 @@ html {
 }
 @media (max-width: 480px) {
 #hero-actual .hero-photo { background-position: 88% 38%; }
+}
+
+/* Mobile hero composition: keep the photo as a right-side text backdrop. */
+@media (max-width: 800px) {
+  #hero-actual {
+    min-height: 570px;
+    padding-bottom: 0;
+  }
+
+  #hero-actual .hero-photo {
+    inset: 0;
+    height: auto;
+    background-position: right center;
+    background-size: auto 100%;
+  }
+
+  #hero-actual .hero-photo::before {
+    background: linear-gradient(
+      90deg,
+      #4259a9 0%,
+      rgba(66, 89, 169, 0.96) 28%,
+      rgba(66, 89, 169, 0.72) 50%,
+      rgba(66, 89, 169, 0.18) 78%,
+      rgba(66, 89, 169, 0) 100%
+    );
+  }
+
+  #hero-actual .hero-photo::after {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-position: right center;
+    background-size: auto 100%;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 100%);
+    opacity: 0.24;
+  }
+
+  #hero-actual .hero-inner {
+    min-height: 570px;
+    padding-top: 0;
+  }
+
+  #hero-actual .hero-copy {
+    width: min(78%, 520px);
+    max-width: none;
+    padding: 78px 0 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-actual,
+  #hero-actual .hero-inner {
+    min-height: 620px;
+  }
+
+  #hero-actual .hero-copy {
+    width: 82%;
+    padding-top: 82px;
+  }
 }
