@@ -34,6 +34,7 @@ body.dpia-site #audio-actual,
 body.dpia-site #audience-actual,
 body.dpia-site #benefits-actual,
 body.dpia-site #toolkit-actual,
+body.dpia-site #completion-actual,
 body.dpia-site #training-actual,
 body.dpia-site #consultation-actual,
 body.dpia-site #ecosystem-actual,
@@ -430,6 +431,112 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 }
 @media (max-width: 520px) {
   .review-topics { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* Hands-on DPIA consultation and completion offer */
+.completion-offer {
+  padding: clamp(72px, 8vw, 112px) 0;
+  border-top: 1px solid var(--ace-line);
+  background: linear-gradient(180deg, #f7f9ff 0%, #ffffff 100%);
+}
+.completion-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: clamp(42px, 7vw, 100px);
+}
+.completion-copy .section-label { margin-bottom: 25px; }
+.completion-copy > .eyebrow {
+  margin-bottom: 13px;
+  color: var(--ace-blue);
+}
+.completion-copy h2 {
+  max-width: 540px;
+  color: var(--ace-navy);
+  font-size: clamp(2rem, 3.3vw, 2.85rem);
+  line-height: 1.08;
+}
+.completion-intro {
+  max-width: 480px;
+  margin: 18px 0 0;
+  color: var(--ace-muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.75;
+}
+.completion-collaboration {
+  max-width: 480px;
+  margin: 20px 0 0;
+  color: var(--ace-ink);
+  line-height: 1.7;
+}
+.completion-responsibility {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--ace-blue);
+  border-radius: 0 12px 12px 0;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(16,45,77,.08);
+}
+.completion-responsibility p {
+  margin: 0;
+  color: var(--ace-navy);
+  font-size: .92rem;
+  line-height: 1.7;
+}
+.completion-panel {
+  padding: clamp(24px, 3.5vw, 42px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #0c1d35, #102d4d 56%, #172f67);
+  box-shadow: 0 18px 48px rgba(16,45,77,.18);
+}
+.completion-topics-heading {
+  margin: 0 0 24px;
+  color: #e8cf98;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.completion-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 22px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+.completion-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  color: rgba(255,255,255,.92);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.completion-topics li::before {
+  content: "✓";
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.13);
+  color: #e8cf98;
+  font-size: 10px;
+  font-weight: 800;
+}
+.completion-panel .button { margin-top: 0; }
+@media (max-width: 800px) {
+  .completion-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+@media (max-width: 520px) {
+  .completion-topics { grid-template-columns: 1fr; gap: 14px; }
 }
 
 /* Shared hero surface for the five full-color blue ebook sections. */
