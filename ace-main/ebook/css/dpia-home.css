@@ -4862,3 +4862,76 @@ html {
     padding-top: 198px;
   }
 }
+
+/* Mobile navbar details matched to the uploaded hero reference. */
+@media (max-width: 800px) {
+  .topbar::before,
+  .topbar::after {
+    display: none;
+  }
+
+  .topbar-inner {
+    justify-content: center;
+  }
+
+  .topbar-note {
+    gap: 13px;
+    letter-spacing: 0.16em;
+  }
+
+  .topbar-note::before,
+  .topbar-note::after {
+    width: 44px;
+    height: 1px;
+    background: rgba(98, 185, 255, 0.72);
+    content: "";
+  }
+
+  .site-header .nav-wrap {
+    position: relative;
+  }
+
+  .site-header .brand {
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .site-header .menu-toggle {
+    position: relative;
+    z-index: 3;
+    margin-right: auto;
+  }
+
+  .mobile-priority-cta {
+    position: relative;
+    z-index: 3;
+    min-height: 44px;
+    border-radius: 999px;
+    padding-inline: 14px;
+  }
+
+  .mobile-priority-cta span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-note {
+    gap: 8px;
+    font-size: 9px;
+  }
+
+  .topbar-note::before,
+  .topbar-note::after {
+    width: 28px;
+  }
+
+  .mobile-priority-cta {
+    padding-inline: 11px;
+  }
+}
