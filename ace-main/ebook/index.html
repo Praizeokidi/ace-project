@@ -35,6 +35,7 @@
     #review-actual,
     #completion-actual,
     #training-actual,
+    #combined-actual,
     #consultation-actual,
     #ecosystem-actual,
     #priority-actual,
@@ -2891,6 +2892,60 @@
       </section>
     </div>
 
+    <!-- MASTER CONSULTATION + TRAINING PACKAGE WRAPPER -->
+    <div id="combined-master-wrapper" style="position: relative;">
+      <div id="combined-skeleton" class="skel-training-wrapper">
+        <div class="shell combined-grid">
+          <div>
+            <div class="skel-shimmer skel-intro-eyebrow"></div>
+            <div class="skel-shimmer skel-intro-h2"></div>
+            <div class="skel-shimmer skel-text-line" style="width:88%;"></div>
+          </div>
+          <div>
+            <div class="skel-shimmer skel-lead-text" style="width:40%;"></div>
+            <div class="skel-training-types">
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+              <div class="skel-shimmer skel-training-tag"></div>
+            </div>
+            <div class="skel-shimmer skel-btn" style="width:230px; height:50px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <section id="combined-actual" class="combined-offer section-light reveal-section reveal-from-left"
+        style="display:none; opacity:0;" aria-labelledby="combined-title">
+        <div class="shell combined-grid">
+          <div class="combined-copy">
+            <div class="section-label"><span>07</span><span class="label-line"></span><span>Combined service</span></div>
+            <p class="eyebrow">Consultation &amp; Training Package</p>
+            <h2 id="combined-title">DPIA Consultation + Training</h2>
+            <p class="combined-intro">This combines practical professional advice with targeted training for the organisation or team.</p>
+          </div>
+          <div class="combined-panel">
+            <p class="combined-includes-heading">Package includes</p>
+            <ul class="combined-includes">
+              <li>Consultation with ACE</li>
+              <li>Review of the organisation’s DPIA requirements</li>
+              <li>Tailored training session</li>
+              <li>Practical explanation of the DPIA process</li>
+              <li>Guidance on screening, risk assessment and documentation</li>
+              <li>Q&amp;A session</li>
+            </ul>
+            <div class="combined-ideal">
+              <p class="combined-ideal-label">Ideal for</p>
+              <p class="combined-ideal-text">Organisations that want to build internal DPIA capability while receiving professional guidance on their own environment.</p>
+            </div>
+            <a class="button dpia-button" href="./consultation/consultation.html#consultation-form">Request Consultation &amp; Training <span
+                aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <!-- MASTER ECOSYSTEM WRAPPER -->
     <div id="ecosystem-master-wrapper" style="position: relative;">
 
@@ -3533,6 +3588,10 @@
         {
           skeleton: 'training-skeleton',
           actual: 'training-actual'
+        },
+        {
+          skeleton: 'combined-skeleton',
+          actual: 'combined-actual'
         },
         {
           skeleton: 'ecosystem-skeleton',
