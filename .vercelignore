@@ -1,0 +1,8 @@
+/.work/
+/outputs/
+/ace-dashboard/
+/.manus/
+/dashboard-mockup.html
+/ace-main/**/*.backup
+/ace-main/**/*.before-*
+/ace-main/**/.env*
