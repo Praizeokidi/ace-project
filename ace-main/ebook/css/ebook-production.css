@@ -432,6 +432,80 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   .review-topics { grid-template-columns: 1fr; gap: 14px; }
 }
 
+/* Shared hero surface for the five full-color blue ebook sections. */
+:root {
+  --ebook-hero-surface:
+    radial-gradient(circle at 74% 25%, rgba(66,89,169,.35), transparent 34rem),
+    linear-gradient(135deg, #0c1d35, #102d4d 56%, #172f67);
+}
+#audio-actual.audio-teaser,
+#benefits-actual.benefits,
+  #consultation-actual.consultation,
+  #priority-actual.priority,
+  #final-actual.final-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ebook-hero-surface) !important;
+}
+#final-actual.final-banner { border-bottom-color: transparent; }
+
+/* Hero-matched grid-line texture. */
+#audio-actual.audio-teaser::before,
+#benefits-actual.benefits::before,
+#consultation-actual.consultation::before,
+#priority-actual.priority::before,
+#final-actual.final-banner::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background-image:
+    linear-gradient(90deg, transparent 49.8%, rgba(255,255,255,.06) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgba(255,255,255,.04) 50%, transparent 50.2%);
+  background-size: 168px 168px;
+  box-shadow: none;
+  content: "";
+  mask-image: linear-gradient(90deg, rgba(0,0,0,.75), transparent 86%);
+  opacity: .22 !important;
+  pointer-events: none;
+  transform: none;
+  animation: none !important;
+}
+
+/* Hero-matched dark veil; keep each section's content above the surface layers. */
+#audio-actual.audio-teaser::after,
+#benefits-actual.benefits::after,
+#consultation-actual.consultation::after,
+#priority-actual.priority::after,
+#final-actual.final-banner::after {
+  position: absolute;
+  inset: 0 50% 0 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, rgba(8,29,52,.8), rgba(8,29,52,.22), transparent);
+  box-shadow: none;
+  content: "";
+  opacity: 1 !important;
+  pointer-events: none;
+  transform: none;
+  animation: none !important;
+}
+#audio-actual.audio-teaser > .shell,
+#benefits-actual.benefits > .shell,
+#consultation-actual.consultation > .shell,
+#priority-actual.priority > .shell,
+#final-actual.final-banner > .shell {
+  position: relative;
+  z-index: 2;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .production-reveal { transform: none !important; }
