@@ -13,13 +13,14 @@
   --ace-shadow: 0 20px 50px rgba(16, 45, 77, .12);
   --ace-radius: 18px;
   --ace-ease: cubic-bezier(.22, 1, .36, 1);
+  --ace-hero-surface: radial-gradient(circle at 74% 25%, rgba(66,89,169,.35), transparent 34rem), linear-gradient(135deg, #0c1d35, #102d4d 56%, #172f67);
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 body.dpia-site {
   background: var(--ace-cream);
   color: var(--ace-ink);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 body.dpia-site p { color: var(--ace-muted); }
 body.dpia-site .shell { width: min(1180px, calc(100% - 48px)); }
@@ -53,11 +54,28 @@ body.dpia-site .reveal-item {
 }
 
 /* Announcement bar and floating navigation */
-.topbar { min-height: 36px; background: var(--ace-navy-deep) !important; }
-.topbar-inner { min-height: 36px; justify-content: center; }
-.topbar-note { color: #fff !important; font-size: 10px; letter-spacing: .17em; }
+.topbar {
+  display: block;
+  width: 100%;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  animation: none !important;
+}
+.topbar-inner { height: 36px; min-height: 36px; justify-content: center; align-items: center; padding: 0; }
+.topbar-note { display: flex; height: 36px; min-height: 36px; align-items: center; color: #fff !important; font-size: 10px; letter-spacing: .17em; line-height: 1; }
 .topbar-dot { background: var(--ace-gold) !important; box-shadow: 0 0 0 4px rgba(210,169,93,.2); }
-.site-header { z-index: 100; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  isolation: isolate;
+  background: var(--ace-hero-surface) !important;
+}
 .site-header .nav-wrap {
   border: 1px solid rgba(16,45,77,.14);
   border-radius: 16px;
@@ -94,7 +112,7 @@ h3 { font-size: 1rem; line-height: 1.35; }
 .hero {
   min-height: 700px;
   padding: 92px 0 116px;
-  background: radial-gradient(circle at 74% 25%, rgba(66,89,169,.35), transparent 34rem), linear-gradient(135deg, #0c1d35, #102d4d 56%, #172f67);
+  background: var(--ace-hero-surface);
 }
 .hero::before {
   position: absolute;
