@@ -274,12 +274,27 @@
   text-align: center;
 }
 
+.completion-reference-action .button.dpia-button {
+  background: linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%);
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(16, 45, 77, 0.24);
+}
+
+.completion-reference-action .button.dpia-button:hover,
+.completion-reference-action .button.dpia-button:focus-visible {
+  background: linear-gradient(135deg, #102d4d 0%, #162c68 60%, #4259a9 100%);
+}
+
 .completion-reference-status {
   margin: 8px 0 0;
   color: var(--ace-blue-deep);
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.5;
+}
+
+#completion-reference-title {
+  scroll-margin-top: 7rem;
 }
 
 @media (max-width: 760px) {
