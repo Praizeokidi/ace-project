@@ -5046,6 +5046,10 @@ html {
     background: var(--ace-hero-surface) !important;
   }
 
+  .site-header .mobile-priority-cta {
+    display: none !important;
+  }
+
   .site-header {
     position: sticky;
     inset: auto 0 auto;
