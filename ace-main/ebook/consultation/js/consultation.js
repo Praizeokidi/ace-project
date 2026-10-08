@@ -7,13 +7,24 @@
     menuToggle.addEventListener("click", () => {
       const isOpen = menu.classList.toggle("is-open");
       menuToggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("mobile-menu-open", isOpen);
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menu.classList.remove("is-open");
         menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("mobile-menu-open");
       });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.classList.contains("is-open")) {
+        menu.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("mobile-menu-open");
+        menuToggle.focus();
+      }
     });
   }
 
