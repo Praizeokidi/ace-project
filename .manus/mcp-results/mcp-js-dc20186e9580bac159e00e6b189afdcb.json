@@ -1,0 +1,9 @@
+In-app Browser JS state was preserved. Completed actions were not rolled back; refresh stale UI handles and continue only the remaining work.
+{"code":"BROWSER_NOT_READY","method":"browser_screenshot","callIndex":8,"nextAction":"inspect_before_retry"}
+ERROR BROWSER_NOT_READY
+{"control":{"documentRevision":"rev_d01cafa8-3568-4721-aaa1-074d36adf1b1","error":{"code":"BROWSER_NOT_READY","retryable":true},"requiresSnapshot":false,"status":"error","tabId":"tab_2ece61c2-bf88-4187-b23a-49d0d1262e13"},"kind":"error","schema":"manus.browser/v1"}
+{"section":"priority","snapshotId":"snap_46b34143-aec7-400e-8b64-544d3d53ad85"}
+{"capture":{"captureId":"capture_cc4d5e26-8b5f-4699-9e6f-62cd133bd75c","coordinateSpace":"css-pixel","height":582,"mimeType":"image/png","mode":"viewport","width":548}}
+{"section":"final-cta","snapshotId":"snap_0e4cdc1a-20eb-49e5-a87e-e7ae70e9f3bd"}
+ERROR BROWSER_NOT_READY
+{"control":{"documentRevision":"rev_d01cafa8-3568-4721-aaa1-074d36adf1b1","error":{"code":"BROWSER_NOT_READY","retryable":true},"requiresSnapshot":false,"status":"error","tabId":"tab_2ece61c2-bf88-4187-b23a-49d0d1262e13"},"kind":"error","schema":"manus.browser/v1"}

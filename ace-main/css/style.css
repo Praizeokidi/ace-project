@@ -9192,7 +9192,7 @@ h6,
 
 body {
   background-color: #fff;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::-moz-selection {
@@ -9803,6 +9803,16 @@ blockquote::before {
 }
 .navigation .navbar-expand-xl .navbar-nav .nav-link {
   padding: 15px;
+}
+
+html {
+  scroll-padding-top: 96px;
+}
+.navigation {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
 }
 
 .banner {

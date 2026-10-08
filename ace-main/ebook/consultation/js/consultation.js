@@ -163,6 +163,17 @@
     });
   });
 
+  const requestType = new URLSearchParams(window.location.search).get("service");
+  if (requestType === "existing-dpia") {
+    const reviewOption = form.querySelector(
+      'input[name="support_needs[]"][value="Review of existing DPIA"]',
+    );
+    if (reviewOption) reviewOption.checked = true;
+    const formTitle = document.querySelector("#form-title");
+    if (formTitle) formTitle.textContent = "Request a DPIA Review";
+    if (submitLabel) submitLabel.textContent = "Send Review Request";
+  }
+
   updateSubmitState();
 
   form.addEventListener("submit", async (event) => {
@@ -220,7 +231,10 @@
           ? error.message
           : "We could not send your request. Please try again.";
       submitButton.disabled = false;
-      submitLabel.textContent = "Book a DPIA Consultation";
+      submitLabel.textContent =
+        requestType === "existing-dpia"
+          ? "Send Review Request"
+          : "Book a DPIA Consultation";
       submitArrow.textContent = "↗";
     }
   });
