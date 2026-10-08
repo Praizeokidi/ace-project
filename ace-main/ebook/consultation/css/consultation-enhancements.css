@@ -301,19 +301,24 @@
   scroll-margin-top: 7rem;
 }
 
-.consultation-success .success-training-link {
+.consultation-training-link {
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+.consultation-training-link a {
   color: var(--ace-blue);
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-.consultation-success .success-training-link:hover,
-.consultation-success .success-training-link:focus-visible {
+.consultation-training-link a:hover,
+.consultation-training-link a:focus-visible {
   color: var(--ace-blue-deep);
 }
 
-.consultation-success .success-training-link:focus-visible {
+.consultation-training-link a:focus-visible {
   outline: 2px solid var(--ace-blue);
   outline-offset: 4px;
 }
