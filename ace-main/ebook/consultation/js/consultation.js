@@ -50,6 +50,7 @@
   const fileName = form.querySelector("[data-file-name]");
   const fileError = form.querySelector("[data-file-error]");
   const successState = document.querySelector("[data-success-state]");
+  const trainingLink = document.querySelector("[data-training-link]");
   const maxFileSize = 10 * 1024 * 1024;
   const allowedExtensions = ["pdf", "docx", "xlsx"];
 
@@ -241,6 +242,13 @@
         throw new Error(
           result.error || "The consultation request could not be sent.",
         );
+      }
+
+      if (trainingLink) {
+        trainingLink.setAttribute("href", "../training/training.html#training-form");
+        trainingLink.removeAttribute("aria-disabled");
+        trainingLink.removeAttribute("tabindex");
+        trainingLink.removeAttribute("role");
       }
 
       const reference =

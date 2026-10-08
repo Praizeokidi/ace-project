@@ -302,23 +302,33 @@
 }
 
 .consultation-training-link {
-  margin: 20px 0 0;
-  text-align: center;
+  margin: 12px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: left;
 }
 
 .consultation-training-link a {
   color: var(--ace-blue);
-  font-weight: 800;
+  font-size: inherit;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-.consultation-training-link a:hover,
-.consultation-training-link a:focus-visible {
+.consultation-training-link a[aria-disabled="true"] {
+  color: #718096;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.consultation-training-link a:not([aria-disabled="true"]):hover,
+.consultation-training-link a:not([aria-disabled="true"]):focus-visible {
   color: var(--ace-blue-deep);
 }
 
-.consultation-training-link a:focus-visible {
+.consultation-training-link a:not([aria-disabled="true"]):focus-visible {
   outline: 2px solid var(--ace-blue);
   outline-offset: 4px;
 }
