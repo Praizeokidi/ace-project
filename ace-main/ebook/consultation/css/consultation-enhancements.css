@@ -232,3 +232,70 @@
 .consultation-page .consultation-submit:focus-visible {
   background: var(--ace-blue-deep);
 }
+
+.consultation-page .completion-reference {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 0 28px;
+  padding: 22px 24px;
+  border: 1px solid rgba(66, 89, 169, 0.2);
+  border-left: 4px solid var(--ace-blue);
+  border-radius: var(--ace-radius-md);
+  background: linear-gradient(110deg, #fff 0%, var(--ace-blue-mist) 100%);
+  box-shadow: 0 10px 26px rgba(16, 45, 77, 0.06);
+}
+
+.completion-reference-copy {
+  max-width: 620px;
+}
+
+.completion-reference-copy h3 {
+  margin: 0 0 5px;
+  color: var(--ace-navy);
+  font-size: 1rem;
+}
+
+.completion-reference-copy p {
+  margin: 0;
+  color: var(--ace-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.completion-reference-action {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.completion-reference-action .button {
+  white-space: normal;
+  text-align: center;
+}
+
+.completion-reference-status {
+  margin: 8px 0 0;
+  color: var(--ace-blue-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .consultation-page .completion-reference {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .completion-reference-action {
+    width: 100%;
+    text-align: left;
+  }
+
+  .completion-reference-action .button {
+    width: 100%;
+  }
+}

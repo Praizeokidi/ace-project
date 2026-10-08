@@ -164,6 +164,23 @@
   });
 
   const requestType = new URLSearchParams(window.location.search).get("service");
+  const addCompletionButton = document.querySelector("[data-add-completion]");
+  const completionStatus = document.querySelector("[data-completion-status]");
+  addCompletionButton?.addEventListener("click", () => {
+    const completionOption = form.querySelector(
+      'input[name="support_needs[]"][value="Full DPIA facilitation"]',
+    );
+    if (!completionOption) return;
+
+    completionOption.checked = true;
+    completionOption.dispatchEvent(new Event("change", { bubbles: true }));
+    if (completionStatus) {
+      completionStatus.textContent =
+        "Added to your support needs. You can review the selection in the form below.";
+      completionStatus.hidden = false;
+    }
+  });
+
   if (requestType === "existing-dpia") {
     const reviewOption = form.querySelector(
       'input[name="support_needs[]"][value="Review of existing DPIA"]',

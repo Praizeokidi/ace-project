@@ -1,0 +1,6 @@
+In-app Browser JS state was preserved. Completed actions were not rolled back; refresh stale UI handles and continue only the remaining work.
+{"code":"WAIT_TIMEOUT","method":"browser_wait","callIndex":3,"nextAction":"observe_again"}
+ERROR WAIT_TIMEOUT
+{"control":{"documentRevision":"rev_a653c6b4-07bc-400e-bec3-82536d54eb51","error":{"code":"WAIT_TIMEOUT","retryable":true},"requiresSnapshot":true,"status":"error","tabId":"tab_f6e3ccd7-8155-4df8-96e8-c690888d20eb"},"kind":"error","schema":"manus.browser/v1"}
+ERROR WAIT_TIMEOUT
+{"control":{"documentRevision":"rev_a653c6b4-07bc-400e-bec3-82536d54eb51","error":{"code":"WAIT_TIMEOUT","retryable":true},"requiresSnapshot":true,"status":"error","tabId":"tab_f6e3ccd7-8155-4df8-96e8-c690888d20eb"},"kind":"error","schema":"manus.browser/v1"}
