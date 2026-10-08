@@ -28,6 +28,12 @@
       secondaryLabel: "Explore Training",
       secondaryHref: "../training/training.html",
     },
+    review: {
+      label: "Request a DPIA Review",
+      href: "../consultation/consultation.html?service=existing-dpia#consultation-form",
+      secondaryLabel: "Explore DPIA Made Easy",
+      secondaryHref: "../index.html",
+    },
     toolkit: {
       label: "Purchase Toolkit",
       href: "#purchase",
