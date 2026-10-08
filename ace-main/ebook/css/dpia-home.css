@@ -1362,13 +1362,6 @@ blockquote {
   color: #4259a9;
   font-size: 13px;
 }
-.training-types span::before {
-  content: "Γåù";
-  display: inline-block;
-  margin-right: 8px;
-  color: #4259a9;
-  font-weight: 800;
-}
 
 .consultation {
   padding: 87px 0;
@@ -1490,12 +1483,6 @@ blockquote {
 .priority-benefits span {
   color: #ffffff;
   font-size: 12px;
-}
-.priority-benefits span::before {
-  content: "Γ£ô";
-  margin-right: 7px;
-  color: #ffffff;
-  font-weight: 800;
 }
 .priority-form {
   padding: 31px;
