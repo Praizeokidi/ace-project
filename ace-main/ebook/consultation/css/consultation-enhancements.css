@@ -264,6 +264,10 @@
   line-height: 1.65;
 }
 
+.completion-reference-emphasis {
+  font-weight: 800;
+}
+
 .completion-reference-action {
   flex: 0 0 auto;
   text-align: right;
