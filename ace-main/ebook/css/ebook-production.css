@@ -845,3 +845,19 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .production-reveal { transform: none !important; }
 }
+
+
+/* Reduce the toolkit folder heading and stage marker on desktop-sized screens. */
+@media (min-width: 801px) {
+  #toolkit-actual .toolkit-stage-label {
+    font-size: 12px !important;
+  }
+
+  #toolkit-actual .toolkit-stage-label .journey-step {
+    font-size: 16px;
+  }
+
+  #toolkit-actual .folder-front strong {
+    font-size: clamp(1.875rem, 3.1vw, 2.4rem);
+  }
+}
