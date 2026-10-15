@@ -888,6 +888,19 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 
 #audio-actual.audio-teaser .audio-grid {
   display: block;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#audio-actual.audio-teaser::before,
+#audio-actual.audio-teaser::after {
+  display: none !important;
+  content: none !important;
 }
 
 #audio-actual.audio-teaser .audio-copy,
