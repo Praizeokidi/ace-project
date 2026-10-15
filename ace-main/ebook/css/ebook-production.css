@@ -862,14 +862,15 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   }
 }
 
-/* Audio section reference match.
- * The supplied artwork is the finished composition; the real audio control
- * remains interactive and is positioned over the play icon. */
+/* Recreated audio composition: native HTML/CSS only, no reference-image background. */
 #audio-actual.audio-teaser {
   height: clamp(360px, 26.523vw, 679px);
   min-height: 0;
   aspect-ratio: 2560 / 679;
-  background: #071f35 url("../../ace material/audio section.png") center center / cover no-repeat !important;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 82% 24%, rgba(39, 81, 126, .36), transparent 28%),
+    linear-gradient(135deg, #071d32 0%, #0b2944 52%, #071b2d 100%) !important;
 }
 
 #audio-actual.audio-teaser::before,
@@ -895,6 +896,155 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+}
+
+#audio-actual.audio-teaser .audio-grid::after {
+  position: absolute;
+  right: -8%;
+  bottom: -28%;
+  width: 120%;
+  height: 52%;
+  content: "";
+  opacity: .45;
+  background:
+    repeating-radial-gradient(ellipse at 50% 100%, transparent 0 14px, rgba(42, 108, 159, .32) 15px 16px, transparent 17px 29px);
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+#audio-actual.audio-teaser .audio-visual {
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  width: 43%;
+  height: 52%;
+  color: #d6aa55;
+  pointer-events: none;
+}
+
+#audio-actual.audio-teaser .audio-visual-waveform {
+  position: absolute;
+  top: 12%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(3px, .34vw, 8px);
+  width: 76%;
+  height: 42%;
+}
+
+#audio-actual.audio-teaser .audio-visual-waveform i {
+  display: block;
+  width: clamp(2px, .2vw, 5px);
+  height: var(--h);
+  min-height: 8px;
+  border-radius: 99px;
+  background: linear-gradient(#efd48f, #bd8733);
+  box-shadow: 0 0 9px rgba(210, 169, 93, .18);
+}
+
+#audio-actual.audio-teaser .audio-visual-progress {
+  position: absolute;
+  right: 0;
+  bottom: 27%;
+  width: 73%;
+  height: 3px;
+  border-radius: 99px;
+  background: rgba(151, 188, 216, .42);
+}
+
+#audio-actual.audio-teaser .audio-visual-progress span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: #e1b85d;
+  box-shadow: 0 0 0 4px rgba(225, 184, 93, .12);
+}
+
+#audio-actual.audio-teaser .audio-visual-features {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: clamp(18px, 2vw, 42px);
+  color: rgba(244, 239, 224, .82);
+  font: 700 clamp(8px, .68vw, 13px)/1.2 "Plus Jakarta Sans", sans-serif;
+  letter-spacing: .16em;
+  white-space: nowrap;
+}
+
+#audio-actual.audio-teaser .audio-visual-features span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#audio-actual.audio-teaser .audio-visual-features b {
+  color: #d6aa55;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#audio-actual.audio-teaser .audio-copy {
+  position: absolute;
+  top: 20%;
+  left: 6%;
+  z-index: 2;
+  width: 43%;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+
+#audio-actual.audio-teaser .audio-copy .audio-description,
+#audio-actual.audio-teaser .audio-copy .audio-meta {
+  color: rgba(239, 244, 249, .76);
+}
+
+#audio-actual.audio-teaser .audio-copy .audio-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+#audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+  top: 36%;
+  left: 67%;
+}
+
+@media (max-width: 600px) {
+  #audio-actual.audio-teaser {
+    height: 520px;
+    aspect-ratio: auto;
+  }
+
+  #audio-actual.audio-teaser .audio-copy {
+    top: 14%;
+    left: 7%;
+    width: 86%;
+  }
+
+  #audio-actual.audio-teaser .audio-copy h2 {
+    max-width: 85%;
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  #audio-actual.audio-teaser .audio-visual {
+    top: 56%;
+    right: 7%;
+    width: 86%;
+    height: 32%;
+  }
+
+  #audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+    top: 70%;
+    left: 25%;
+  }
 }
 
 #audio-actual.audio-teaser::before,
@@ -978,7 +1128,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   min-height: 0;
   padding: 0;
   aspect-ratio: 2560 / 679;
-  background: #071f35 url("../../ace material/audio section.png") center center / cover no-repeat;
+  background: #071f35;
 }
 
 #audio-skeleton.skel-audio-wrapper > * {
@@ -1031,6 +1181,48 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 
 #audio-actual.audio-teaser .audio-control-layer .icon-pause {
   display: none !important;
+}
+
+/* Final native recreation overrides the legacy image-match visibility rules. */
+#audio-actual.audio-teaser .audio-copy {
+  position: absolute !important;
+  top: 20% !important;
+  left: 6% !important;
+  width: 43% !important;
+  height: auto !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
+  white-space: normal !important;
+}
+
+#audio-actual.audio-teaser .audio-visual {
+  display: block !important;
+}
+
+#audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+  top: 36% !important;
+  left: 67% !important;
+}
+
+@media (max-width: 600px) {
+  #audio-actual.audio-teaser .audio-copy {
+    top: 14% !important;
+    left: 7% !important;
+    width: 86% !important;
+  }
+
+  #audio-actual.audio-teaser .audio-visual {
+    top: 56% !important;
+    right: 7% !important;
+    width: 86% !important;
+    height: 32% !important;
+  }
+
+  #audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+    top: 70% !important;
+    left: 25% !important;
+  }
 }
 
 #audio-actual.audio-teaser .audio-control-layer .icon-play {
@@ -1188,4 +1380,39 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   #benefits-actual .benefits-intro { font-size: 13px; }
   #benefits-actual .benefits-intro-break { display: none; }
   #benefits-actual .elite-grid { grid-template-columns: 1fr; }
+}
+
+/* Pixel-faithful artwork layer: this PNG is the finished 2560×599 composition. */
+#benefits-actual.benefits {
+  width: 100%;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 2560 / 599;
+  padding: 0;
+  overflow: hidden;
+  background-color: #071f35 !important;
+  background-image: url("../../ace material/why%20dpia.png") !important;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#benefits-actual.benefits::before,
+#benefits-actual.benefits::after { display: none !important; }
+#benefits-actual.benefits > .benefits-reference-content {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 600px) {
+  #benefits-actual.benefits {
+    aspect-ratio: 2560 / 599;
+    background-size: 100% 100%;
+  }
 }
