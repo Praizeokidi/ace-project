@@ -991,3 +991,22 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser .audio-play-btn {
   z-index: 2;
 }
+
+#audio-actual.audio-teaser .audio-control-layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+#audio-actual.audio-teaser .audio-control-layer::before,
+#audio-actual.audio-teaser .audio-control-layer::after {
+  display: none !important;
+  content: none !important;
+}
