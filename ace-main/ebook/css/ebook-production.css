@@ -861,3 +861,100 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     font-size: clamp(1.875rem, 3.1vw, 2.4rem);
   }
 }
+
+/* Audio section reference match.
+ * The supplied artwork is the finished composition; the real audio control
+ * remains interactive and is positioned over the play icon. */
+#audio-actual.audio-teaser {
+  height: clamp(360px, 26.523vw, 679px);
+  min-height: 0;
+  aspect-ratio: 2560 / 679;
+  background: #071f35 url("../../ace material/audio section.png") center center / cover no-repeat !important;
+}
+
+#audio-actual.audio-teaser::before,
+#audio-actual.audio-teaser::after {
+  display: none;
+}
+
+#audio-actual.audio-teaser > .shell,
+#audio-actual.audio-teaser .audio-grid {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+}
+
+#audio-actual.audio-teaser .audio-grid {
+  display: block;
+}
+
+#audio-actual.audio-teaser .audio-copy,
+#audio-actual.audio-teaser .audio-body,
+#audio-actual.audio-teaser audio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#audio-actual.audio-teaser .audio-player {
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+#audio-actual.audio-teaser .audio-play-btn {
+  position: absolute;
+  top: 19.65%;
+  left: 41.25%;
+  width: clamp(58px, 4.45vw, 114px);
+  height: clamp(58px, 4.45vw, 114px);
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: #fff;
+  color: #08243d;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .12);
+}
+
+#audio-actual.audio-teaser .audio-play-btn:hover,
+#audio-actual.audio-teaser .audio-play-btn:focus-visible {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: #fff;
+}
+
+#audio-actual.audio-teaser .audio-play-btn:disabled {
+  opacity: 1;
+}
+
+#audio-actual.audio-teaser .audio-play-btn svg {
+  width: 32%;
+  height: 32%;
+}
+
+#audio-actual.audio-teaser .audio-ring {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #audio-actual.audio-teaser {
+    height: 520px;
+    aspect-ratio: auto;
+    background-size: auto 520px;
+    background-position: center center;
+  }
+
+  #audio-actual.audio-teaser .audio-play-btn {
+    top: 19.65%;
+    left: 41.25%;
+  }
+}
