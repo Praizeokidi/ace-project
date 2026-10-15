@@ -1229,6 +1229,119 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   display: block !important;
 }
 
+/* Final reference-aligned composition with generated photographic right side. */
+#audio-actual.audio-teaser {
+  height: clamp(360px, 26.523vw, 679px) !important;
+  background:
+    linear-gradient(90deg, rgba(5, 25, 44, .98) 0%, rgba(6, 28, 48, .94) 42%, rgba(6, 27, 45, .48) 68%, rgba(6, 27, 45, .12) 100%),
+    url("../../ace material/audio-right-side-generated.png") right center / auto 100% no-repeat,
+    #071d32 !important;
+}
+
+#audio-actual.audio-teaser .audio-copy {
+  top: 10.5% !important;
+  left: 3.7% !important;
+  width: 31.5% !important;
+}
+
+#audio-actual.audio-teaser .audio-copy h2 {
+  margin: 20px 0 22px;
+  font-size: clamp(2.15rem, 3.05vw, 4.65rem);
+  line-height: .98;
+}
+
+#audio-actual.audio-teaser .audio-copy .audio-description {
+  max-width: 550px;
+  margin-bottom: 22px;
+  font-size: clamp(.84rem, .92vw, 1.08rem);
+  line-height: 1.42;
+}
+
+#audio-actual.audio-teaser .audio-copy .audio-meta {
+  font-size: clamp(.7rem, .72vw, .9rem);
+}
+
+#audio-actual.audio-teaser .audio-visual {
+  top: 23% !important;
+  left: 38.8% !important;
+  right: auto !important;
+  width: 36.5% !important;
+  height: 44% !important;
+}
+
+#audio-actual.audio-teaser .audio-visual-waveform {
+  top: 0;
+  right: 0;
+  width: 77%;
+  height: 48%;
+}
+
+#audio-actual.audio-teaser .audio-visual-progress {
+  right: 0;
+  bottom: 47%;
+  width: 78%;
+}
+
+#audio-actual.audio-teaser .audio-visual-features {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: clamp(7px, .53vw, 11px);
+  letter-spacing: .14em;
+}
+
+#audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+  top: 31% !important;
+  left: 41.2% !important;
+  width: clamp(54px, 4.4vw, 112px);
+  height: clamp(54px, 4.4vw, 112px);
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  #audio-actual.audio-teaser .audio-copy { width: 35% !important; }
+  #audio-actual.audio-teaser .audio-visual { left: 39% !important; width: 43% !important; }
+}
+
+@media (max-width: 600px) {
+  #audio-actual.audio-teaser {
+    height: 520px !important;
+    background-size: auto 100%, auto 100%, auto !important;
+    background-position: center, right center, center !important;
+  }
+
+  #audio-actual.audio-teaser .audio-copy {
+    top: 9% !important;
+    left: 7% !important;
+    width: 55% !important;
+  }
+
+  #audio-actual.audio-teaser .audio-copy h2 {
+    margin: 14px 0 15px;
+    font-size: clamp(1.75rem, 8vw, 2.7rem);
+  }
+
+  #audio-actual.audio-teaser .audio-copy .audio-description {
+    font-size: .78rem;
+    line-height: 1.35;
+  }
+
+  #audio-actual.audio-teaser .audio-visual {
+    top: 54% !important;
+    left: 7% !important;
+    width: 86% !important;
+    height: 34% !important;
+  }
+
+  #audio-actual.audio-teaser .audio-visual-waveform { width: 72%; }
+  #audio-actual.audio-teaser .audio-visual-features { font-size: 6px; }
+  #audio-actual.audio-teaser .audio-control-layer .audio-play-btn {
+    top: 68% !important;
+    left: 23% !important;
+  }
+}
+
 /* Why DPIA reference composition: ace-main/ace material/why dpia.png */
 #benefits-actual.benefits {
   min-height: 599px;
@@ -1585,25 +1698,15 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 
 /* Compact composition with the reference's flowing top-edge stream lines. */
 #benefits-actual.benefits {
-  height: 540px;
-  min-height: 540px;
+  height: 500px;
+  min-height: 500px;
 }
 #benefits-actual.benefits::before {
-  opacity: .92;
-  background:
-    /* Left blue stream ribbons */
-    radial-gradient(ellipse 480px 175px at -7% 20%, transparent 0 57%, rgba(45,151,231,.32) 57.2% 57.45%, transparent 57.7%),
-    radial-gradient(ellipse 560px 205px at -8% 21%, transparent 0 61%, rgba(45,151,231,.2) 61.2% 61.45%, transparent 61.7%),
-    radial-gradient(ellipse 660px 245px at -9% 22%, transparent 0 64%, rgba(45,151,231,.22) 64.2% 64.45%, transparent 64.7%),
-    radial-gradient(ellipse 760px 285px at -10% 23%, transparent 0 67%, rgba(45,151,231,.16) 67.2% 67.45%, transparent 67.7%),
-    /* Right blue stream ribbons */
-    radial-gradient(ellipse 480px 175px at 107% 20%, transparent 0 57%, rgba(45,151,231,.32) 57.2% 57.45%, transparent 57.7%),
-    radial-gradient(ellipse 560px 205px at 108% 21%, transparent 0 61%, rgba(45,151,231,.2) 61.2% 61.45%, transparent 61.7%),
-    radial-gradient(ellipse 660px 245px at 109% 22%, transparent 0 64%, rgba(45,151,231,.22) 64.2% 64.45%, transparent 64.7%),
-    radial-gradient(ellipse 760px 285px at 110% 23%, transparent 0 67%, rgba(45,151,231,.16) 67.2% 67.45%, transparent 67.7%),
-    /* Fine diagonal current lines */
-    linear-gradient(24deg, transparent 0 8%, rgba(63,160,232,.26) 8.1% 8.22%, transparent 8.35% 12%, rgba(63,160,232,.17) 12.1% 12.22%, transparent 12.35% 100%),
-    linear-gradient(156deg, transparent 0 88%, rgba(63,160,232,.26) 88.1% 88.22%, transparent 88.35% 92%, rgba(63,160,232,.17) 92.1% 92.22%, transparent 92.35% 100%);
+  opacity: .88;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%233b9be3' stroke-linecap='round'%3E%3Cpath opacity='.42' stroke-width='1.2' d='M-30 32 C115 42 150 78 260 145 S330 260 410 315'/%3E%3Cpath opacity='.28' stroke-width='1' d='M-35 58 C105 60 170 100 275 165 S335 278 430 330'/%3E%3Cpath opacity='.34' stroke-width='1.15' d='M-28 86 C98 78 178 118 282 185 S350 295 442 344'/%3E%3Cpath opacity='.22' stroke-width='.9' d='M-25 112 C92 94 190 134 290 205 S365 310 450 357'/%3E%3Cpath opacity='.3' stroke-width='1' d='M-20 142 C90 112 195 153 298 224 S378 322 460 370'/%3E%3Cpath opacity='.2' stroke-width='.8' d='M-18 174 C90 132 205 173 308 243 S390 333 468 383'/%3E%3Cpath opacity='.38' stroke-width='1.1' d='M1030 32 C885 42 850 78 740 145 S670 260 590 315'/%3E%3Cpath opacity='.25' stroke-width='1' d='M1035 58 C895 60 830 100 725 165 S665 278 570 330'/%3E%3Cpath opacity='.34' stroke-width='1.15' d='M1028 86 C902 78 822 118 718 185 S650 295 558 344'/%3E%3Cpath opacity='.22' stroke-width='.9' d='M1025 112 C908 94 810 134 710 205 S635 310 550 357'/%3E%3Cpath opacity='.3' stroke-width='1' d='M1020 142 C910 112 805 153 702 224 S622 322 540 370'/%3E%3Cpath opacity='.2' stroke-width='.8' d='M1018 174 C910 132 795 173 692 243 S610 333 532 383'/%3E%3C/g%3E%3Cg fill='%233b9be3'%3E%3Ccircle opacity='.85' cx='36' cy='57' r='2'/%3E%3Ccircle opacity='.65' cx='78' cy='111' r='1.7'/%3E%3Ccircle opacity='.8' cx='141' cy='168' r='1.6'/%3E%3Ccircle opacity='.85' cx='964' cy='47' r='2'/%3E%3Ccircle opacity='.65' cx='922' cy='106' r='1.7'/%3E%3Ccircle opacity='.8' cx='859' cy='166' r='1.6'/%3E%3C/g%3E%3Cg fill='%23efd48f'%3E%3Ccircle opacity='.9' cx='65' cy='91' r='1.7'/%3E%3Ccircle opacity='.82' cx='935' cy='95' r='1.7'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   mask-image: linear-gradient(90deg, #000 0, transparent 34%, transparent 66%, #000 100%);
 }
 #benefits-actual.benefits::after {
@@ -1622,6 +1725,6 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 @media (max-width: 600px) {
   #benefits-actual.benefits {
     height: auto;
-    min-height: 540px;
+    min-height: 500px;
   }
 }
