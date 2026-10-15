@@ -1385,16 +1385,16 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 /* Pixel-faithful artwork layer: this PNG is the finished 2560×599 composition. */
 #benefits-actual.benefits {
   width: 100%;
-  min-height: 0;
-  height: auto;
-  aspect-ratio: 2560 / 599;
+  min-height: 599px;
+  height: 599px;
+  aspect-ratio: auto;
   padding: 0;
   overflow: hidden;
   background-color: #071f35 !important;
   background-image: url("../../ace material/why%20dpia.png") !important;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: contain;
 }
 #benefits-actual.benefits::before,
 #benefits-actual.benefits::after { display: none !important; }
@@ -1412,7 +1412,9 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 }
 @media (max-width: 600px) {
   #benefits-actual.benefits {
-    aspect-ratio: 2560 / 599;
-    background-size: 100% 100%;
+    min-height: 599px;
+    height: 599px;
+    background-position: center center;
+    background-size: contain;
   }
 }
