@@ -958,3 +958,36 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     left: 41.25%;
   }
 }
+
+/* Keep the artwork itself pristine during loading and playback. */
+#audio-skeleton.skel-audio-wrapper {
+  height: clamp(360px, 26.523vw, 679px);
+  min-height: 0;
+  padding: 0;
+  aspect-ratio: 2560 / 679;
+  background: #071f35 url("../../ace material/audio section.png") center center / cover no-repeat;
+}
+
+#audio-skeleton.skel-audio-wrapper > * {
+  display: none !important;
+}
+
+#audio-actual.audio-teaser .audio-player,
+#audio-actual.audio-teaser .audio-player.is-unavailable {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+}
+
+#audio-actual.audio-teaser .audio-player::before,
+#audio-actual.audio-teaser .audio-player::after {
+  display: none !important;
+  content: none !important;
+}
+
+#audio-actual.audio-teaser .audio-play-btn {
+  z-index: 2;
+}
