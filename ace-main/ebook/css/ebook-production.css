@@ -1582,3 +1582,46 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   #benefits-actual .benefits-intro-break { display: none; }
   #benefits-actual .elite-grid { grid-template-columns: 1fr; }
 }
+
+/* Compact composition with the reference's flowing top-edge stream lines. */
+#benefits-actual.benefits {
+  height: 540px;
+  min-height: 540px;
+}
+#benefits-actual.benefits::before {
+  opacity: .92;
+  background:
+    /* Left blue stream ribbons */
+    radial-gradient(ellipse 480px 175px at -7% 20%, transparent 0 57%, rgba(45,151,231,.32) 57.2% 57.45%, transparent 57.7%),
+    radial-gradient(ellipse 560px 205px at -8% 21%, transparent 0 61%, rgba(45,151,231,.2) 61.2% 61.45%, transparent 61.7%),
+    radial-gradient(ellipse 660px 245px at -9% 22%, transparent 0 64%, rgba(45,151,231,.22) 64.2% 64.45%, transparent 64.7%),
+    radial-gradient(ellipse 760px 285px at -10% 23%, transparent 0 67%, rgba(45,151,231,.16) 67.2% 67.45%, transparent 67.7%),
+    /* Right blue stream ribbons */
+    radial-gradient(ellipse 480px 175px at 107% 20%, transparent 0 57%, rgba(45,151,231,.32) 57.2% 57.45%, transparent 57.7%),
+    radial-gradient(ellipse 560px 205px at 108% 21%, transparent 0 61%, rgba(45,151,231,.2) 61.2% 61.45%, transparent 61.7%),
+    radial-gradient(ellipse 660px 245px at 109% 22%, transparent 0 64%, rgba(45,151,231,.22) 64.2% 64.45%, transparent 64.7%),
+    radial-gradient(ellipse 760px 285px at 110% 23%, transparent 0 67%, rgba(45,151,231,.16) 67.2% 67.45%, transparent 67.7%),
+    /* Fine diagonal current lines */
+    linear-gradient(24deg, transparent 0 8%, rgba(63,160,232,.26) 8.1% 8.22%, transparent 8.35% 12%, rgba(63,160,232,.17) 12.1% 12.22%, transparent 12.35% 100%),
+    linear-gradient(156deg, transparent 0 88%, rgba(63,160,232,.26) 88.1% 88.22%, transparent 88.35% 92%, rgba(63,160,232,.17) 92.1% 92.22%, transparent 92.35% 100%);
+  mask-image: linear-gradient(90deg, #000 0, transparent 34%, transparent 66%, #000 100%);
+}
+#benefits-actual.benefits::after {
+  background:
+    radial-gradient(circle at 3.7% 13.9%, rgba(53,149,226,.95) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 6.1% 27.7%, rgba(53,149,226,.9) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 12.4% 45.9%, rgba(239,212,143,.98) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 87.8% 45.9%, rgba(239,212,143,.98) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 92.3% 27.5%, rgba(239,212,143,.95) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 96.1% 11.6%, rgba(53,149,226,.95) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 3.7% 13.9%, rgba(53,149,226,.28) 0 2px, transparent 13px),
+    radial-gradient(circle at 96.1% 11.6%, rgba(53,149,226,.25) 0 2px, transparent 13px),
+    radial-gradient(circle at 12.4% 45.9%, rgba(239,212,143,.22) 0 2px, transparent 13px),
+    radial-gradient(circle at 87.8% 45.9%, rgba(239,212,143,.22) 0 2px, transparent 13px);
+}
+@media (max-width: 600px) {
+  #benefits-actual.benefits {
+    height: auto;
+    min-height: 540px;
+  }
+}
