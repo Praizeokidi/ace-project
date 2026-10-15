@@ -1028,3 +1028,164 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser .audio-control-layer > .audio-body {
   display: none !important;
 }
+
+#audio-actual.audio-teaser .audio-control-layer .icon-pause {
+  display: none !important;
+}
+
+#audio-actual.audio-teaser .audio-control-layer .icon-play {
+  display: block !important;
+}
+
+/* Why DPIA reference composition: ace-main/ace material/why dpia.png */
+#benefits-actual.benefits {
+  min-height: 599px;
+  padding: 40px 0 38px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 6% 38%, rgba(50, 132, 211, .22) 0 2px, transparent 3px),
+    radial-gradient(circle at 94% 23%, rgba(239, 212, 143, .9) 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 67%, rgba(239, 212, 143, .75) 0 2px, transparent 3px),
+    linear-gradient(135deg, #071f35 0%, #0d2947 52%, #0a2440 100%) !important;
+}
+#benefits-actual.benefits::before {
+  inset: 0;
+  z-index: 0;
+  opacity: 1;
+  background:
+    radial-gradient(circle at 3.5% 25%, #2d9bea 0 2px, transparent 3px),
+    radial-gradient(circle at 6% 37%, #efd48f 0 2px, transparent 3px),
+    radial-gradient(circle at 12% 54%, #efd48f 0 2px, transparent 3px),
+    radial-gradient(circle at 96% 20%, #2d9bea 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 41%, #efd48f 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 49%, #efd48f 0 2px, transparent 3px),
+    linear-gradient(24deg, transparent 0 12%, rgba(48, 139, 218, .22) 12.1% 12.2%, transparent 12.3% 18%, rgba(48, 139, 218, .16) 18.1% 18.2%, transparent 18.3% 100%),
+    linear-gradient(156deg, transparent 0 79%, rgba(48, 139, 218, .22) 79.1% 79.2%, transparent 79.3% 86%, rgba(48, 139, 218, .16) 86.1% 86.2%, transparent 86.3% 100%);
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, #000 0, transparent 31%, transparent 69%, #000 100%);
+  animation: none;
+}
+#benefits-actual.benefits::after {
+  inset: 0;
+  top: auto;
+  right: auto;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.025) 50%, transparent);
+  box-shadow: none;
+  opacity: 1;
+  pointer-events: none;
+  animation: none;
+}
+#benefits-actual.benefits > .shell { z-index: 1; }
+#benefits-actual .benefits-heading {
+  display: block;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+#benefits-actual .section-label {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 16px;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+#benefits-actual .section-label .label-line {
+  width: 38px;
+  height: 1px;
+  margin: 0;
+  background: #d2a95d;
+  box-shadow: none;
+}
+#benefits-actual .benefits-heading h2 {
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(2rem, 3.3vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+#benefits-actual .benefits-heading h2 em {
+  color: #efd48f;
+  font-style: normal;
+}
+#benefits-actual .benefits-intro {
+  margin: 12px auto 0;
+  color: rgba(255,255,255,.78) !important;
+  font-size: 15px;
+  line-height: 1.45;
+}
+#benefits-actual .elite-grid {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+#benefits-actual .icon-card-elite {
+  display: grid;
+  min-height: 145px;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 25px;
+  border: 1px solid rgba(143, 184, 223, .28);
+  border-radius: 8px;
+  background: rgba(16, 54, 88, .32);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#benefits-actual .icon-card-elite:hover {
+  border-color: rgba(239,212,143,.55);
+  background: rgba(16, 54, 88, .5);
+  box-shadow: none;
+  transform: none;
+}
+#benefits-actual .icon-badge-elite {
+  display: grid;
+  width: 68px;
+  height: 100%;
+  min-height: 70px;
+  margin: 0;
+  place-items: start center;
+  border: 0;
+  border-right: 1px solid rgba(239,212,143,.62);
+  border-radius: 0;
+  background: transparent;
+  color: #efd48f;
+  box-shadow: none;
+}
+#benefits-actual .icon-badge-elite svg { width: 39px; height: 39px; margin-top: 1px; }
+#benefits-actual .icon-card-elite h3 {
+  margin: 0 0 13px;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+#benefits-actual .icon-card-elite p {
+  margin: 0;
+  color: rgba(255,255,255,.84) !important;
+  font-size: 13px;
+  line-height: 1.55;
+}
+@media (max-width: 1024px) {
+  #benefits-actual .elite-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #benefits-actual.benefits { min-height: 0; }
+}
+@media (max-width: 600px) {
+  #benefits-actual.benefits { padding: 38px 0; }
+  #benefits-actual .benefits-heading { margin-bottom: 24px; }
+  #benefits-actual .benefits-heading h2 { font-size: 2.2rem; }
+  #benefits-actual .benefits-intro { font-size: 13px; }
+  #benefits-actual .benefits-intro-break { display: none; }
+  #benefits-actual .elite-grid { grid-template-columns: 1fr; }
+}
