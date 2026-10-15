@@ -1382,7 +1382,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   #benefits-actual .elite-grid { grid-template-columns: 1fr; }
 }
 
-/* Pixel-faithful artwork layer: this PNG is the finished 2560×599 composition. */
+/* Superseded artwork-layer rules retained only as layout history; live recreation follows below. */
 #benefits-actual.benefits {
   width: 100%;
   min-height: 599px;
@@ -1391,7 +1391,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   padding: 0;
   overflow: hidden;
   background-color: #071f35 !important;
-  background-image: url("../../ace material/why%20dpia.png") !important;
+  background-image: none !important;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1417,4 +1417,168 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     background-position: center center;
     background-size: contain;
   }
+}
+
+/* Live HTML/CSS recreation of why dpia.png. The reference image is not loaded. */
+#benefits-actual.benefits {
+  position: relative;
+  display: block !important;
+  width: 100%;
+  min-height: 599px;
+  height: 599px;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #0a2948 !important;
+  background-image:
+    radial-gradient(circle at 3.6% 13.8%, rgba(56,157,235,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 6.1% 27.7%, rgba(53,149,226,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 12.4% 45.9%, rgba(239,212,143,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 87.8% 45.9%, rgba(239,212,143,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 92.3% 27.5%, rgba(239,212,143,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 96.1% 11.6%, rgba(48,148,226,.95) 0 2px, transparent 3px),
+    linear-gradient(180deg, #0b2c4c 0%, #0a2948 48%, #092744 100%) !important;
+}
+#benefits-actual.benefits::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .82;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 4% 25%, transparent 0 15%, rgba(50,145,226,.36) 15.1%, transparent 15.35%),
+    radial-gradient(ellipse at 5% 30%, transparent 0 19%, rgba(50,145,226,.24) 19.1%, transparent 19.35%),
+    radial-gradient(ellipse at 5% 36%, transparent 0 24%, rgba(50,145,226,.26) 24.1%, transparent 24.35%),
+    radial-gradient(ellipse at 96% 25%, transparent 0 15%, rgba(50,145,226,.36) 15.1%, transparent 15.35%),
+    radial-gradient(ellipse at 95% 31%, transparent 0 20%, rgba(50,145,226,.24) 20.1%, transparent 20.35%),
+    radial-gradient(ellipse at 95% 37%, transparent 0 25%, rgba(50,145,226,.25) 25.1%, transparent 25.35%),
+    linear-gradient(19deg, transparent 0 10%, rgba(53,149,226,.18) 10.1% 10.25%, transparent 10.35% 15%, rgba(53,149,226,.14) 15.1% 15.25%, transparent 15.35%),
+    linear-gradient(161deg, transparent 0 84%, rgba(53,149,226,.18) 84.1% 84.25%, transparent 84.35% 90%, rgba(53,149,226,.14) 90.1% 90.25%, transparent 90.35%);
+  mask-image: linear-gradient(90deg, #000 0, transparent 32%, transparent 68%, #000 100%);
+}
+#benefits-actual.benefits::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 3.7% 13.9%, rgba(53,149,226,.75) 0 1px, transparent 5px),
+    radial-gradient(circle at 6.1% 27.7%, rgba(53,149,226,.6) 0 1px, transparent 5px),
+    radial-gradient(circle at 12.4% 45.9%, rgba(239,212,143,.6) 0 1px, transparent 7px),
+    radial-gradient(circle at 87.8% 45.9%, rgba(239,212,143,.6) 0 1px, transparent 7px),
+    radial-gradient(circle at 92.3% 27.5%, rgba(239,212,143,.55) 0 1px, transparent 7px),
+    radial-gradient(circle at 96.1% 11.6%, rgba(53,149,226,.7) 0 1px, transparent 6px);
+  opacity: .8;
+}
+#benefits-actual.benefits > .benefits-reference-content {
+  position: relative;
+  width: min(1180px, calc(100% - 48px));
+  height: 100%;
+  margin: 0 auto;
+  padding: 39px 0 37px;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  border: 0;
+}
+#benefits-actual .benefits-heading {
+  display: block;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+#benefits-actual .section-label {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 16px;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+#benefits-actual .section-label .label-line {
+  width: 38px;
+  height: 1px;
+  background: #d2a95d;
+  box-shadow: 0 0 8px rgba(210,169,93,.35);
+}
+#benefits-actual .benefits-heading h2 {
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(2rem, 3.3vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+#benefits-actual .benefits-heading h2 em { color: #efd48f; font-style: normal; }
+#benefits-actual .benefits-intro {
+  margin: 12px auto 0;
+  color: rgba(255,255,255,.78) !important;
+  font-size: 15px;
+  line-height: 1.45;
+}
+#benefits-actual .elite-grid {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+#benefits-actual .icon-card-elite {
+  display: grid;
+  min-height: 145px;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 25px;
+  border: 1px solid rgba(143,184,223,.32);
+  border-radius: 8px;
+  background: rgba(16,54,88,.32);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#benefits-actual .icon-card-elite:hover { transform: none; background: rgba(16,54,88,.42); }
+#benefits-actual .icon-badge-elite {
+  display: grid;
+  width: 68px;
+  height: 100%;
+  min-height: 70px;
+  margin: 0;
+  place-items: start center;
+  border: 0;
+  border-right: 1px solid rgba(239,212,143,.62);
+  border-radius: 0;
+  background: transparent;
+  color: #efd48f;
+  box-shadow: none;
+}
+#benefits-actual .icon-badge-elite svg { width: 39px; height: 39px; margin-top: 1px; }
+#benefits-actual .icon-card-elite h3 {
+  margin: 0 0 13px;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+#benefits-actual .icon-card-elite p {
+  margin: 0;
+  color: rgba(255,255,255,.84) !important;
+  font-size: 13px;
+  line-height: 1.55;
+}
+@media (max-width: 1024px) {
+  #benefits-actual .elite-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  #benefits-actual.benefits > .benefits-reference-content { width: calc(100% - 28px); padding: 38px 0; }
+  #benefits-actual .benefits-heading h2 { font-size: 2.2rem; }
+  #benefits-actual .benefits-intro { font-size: 13px; }
+  #benefits-actual .benefits-intro-break { display: none; }
+  #benefits-actual .elite-grid { grid-template-columns: 1fr; }
 }
