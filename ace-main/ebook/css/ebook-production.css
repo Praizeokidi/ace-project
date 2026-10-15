@@ -995,7 +995,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser .audio-control-layer {
   position: absolute;
   inset: 0;
-  display: block;
+  display: contents !important;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -1009,4 +1009,9 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser .audio-control-layer::after {
   display: none !important;
   content: none !important;
+}
+
+#audio-actual.audio-teaser .audio-control-layer > audio,
+#audio-actual.audio-teaser .audio-control-layer > .audio-body {
+  display: none !important;
 }
