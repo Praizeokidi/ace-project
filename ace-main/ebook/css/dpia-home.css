@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --navy: #102d4d;
   --navy-deep: #081d34;
   --ink: #182738;
@@ -5044,4 +5044,204 @@ html {
     padding-top: 8px;
     background: transparent !important;
   }
+}
+
+/* Reference-matched audio banner. Measurements use the 2560px design grid. */
+#audio-actual.audio-reference-banner { --audio-u:calc(100cqw / 2560); container-type:inline-size; position:relative; width:100%; aspect-ratio:2560 / 679; overflow:hidden; color:#dfe6f0; background:#0a1d38 url("../../images/banner_clean_hq.png") center / 100% 100% no-repeat; font-family:"Plus Jakarta Sans",Arial,sans-serif; }
+#audio-actual .audio-reference-stage { position:relative; width:100%; height:100%; }
+#audio-actual .audio-reference-eyebrow,#audio-actual .audio-reference-copy,#audio-actual .audio-reference-player,#audio-actual .audio-reference-features,#audio-actual .audio-reference-tagline { position:absolute; }
+#audio-actual .audio-reference-eyebrow { left:calc(95 * var(--audio-u)); top:calc(67 * var(--audio-u)); height:calc(22 * var(--audio-u)); display:flex; align-items:center; gap:calc(36 * var(--audio-u)); color:#dfe6f0; font-size:calc(18.5 * var(--audio-u)); font-weight:500; letter-spacing:.2em; line-height:1; white-space:nowrap; }
+#audio-actual .audio-reference-eyebrow-line { width:calc(58 * var(--audio-u)); height:calc(2 * var(--audio-u)); background:#d9ae5f; }
+#audio-actual .audio-reference-copy { left:calc(95 * var(--audio-u)); top:calc(114 * var(--audio-u)); width:calc(835 * var(--audio-u)); }
+#audio-actual .audio-reference-copy h2 { margin:0; color:#f4f1ea; font-family:"Source Serif 4",Georgia,serif; font-size:calc(84 * var(--audio-u)); font-weight:600; letter-spacing:-.015em; line-height:calc(88 * var(--audio-u)); }
+#audio-actual .audio-reference-copy h2 span { color:#d9ae5f; }
+#audio-actual .audio-reference-copy p { width:calc(820 * var(--audio-u)); margin:calc(27 * var(--audio-u)) 0 0; color:#e4e9f1; font-family:"Source Serif 4",Georgia,serif; font-size:calc(25.3 * var(--audio-u)); line-height:calc(37.5 * var(--audio-u)); }
+#audio-actual .audio-reference-headphones { position:absolute; left:0; top:calc(430 * var(--audio-u)); display:flex; align-items:center; gap:calc(18 * var(--audio-u)); color:#e4e9f1; white-space:nowrap; }
+#audio-actual .audio-reference-headphones svg { width:calc(56 * var(--audio-u)); height:calc(48 * var(--audio-u)); color:#d9ae5f; }
+#audio-actual .audio-reference-headphones span { font-family:"Source Serif 4",Georgia,serif; font-size:calc(24 * var(--audio-u)); }
+#audio-actual .audio-reference-player { left:calc(995 * var(--audio-u)); top:calc(140 * var(--audio-u)); width:calc(868 * var(--audio-u)); height:calc(284 * var(--audio-u)); }
+#audio-actual .audio-reference-play { position:absolute; left:0; top:calc(19 * var(--audio-u)); width:calc(116 * var(--audio-u)); height:calc(116 * var(--audio-u)); padding:0; border:0; border-radius:50%; background:#fff; color:#0a1d38; box-shadow:0 0 calc(25 * var(--audio-u)) rgba(111,176,234,.42); display:grid; place-items:center; }
+#audio-actual .audio-reference-play svg { width:calc(39 * var(--audio-u)); height:calc(39 * var(--audio-u)); margin-left:calc(7 * var(--audio-u)); }
+#audio-actual .audio-reference-waveform { position:absolute; left:calc(153 * var(--audio-u)); top:0; width:calc(720 * var(--audio-u)); height:calc(154 * var(--audio-u)); overflow:visible; }
+#audio-actual .audio-reference-times { position:absolute; left:0; top:calc(188 * var(--audio-u)); width:calc(741 * var(--audio-u)); display:flex; justify-content:space-between; color:#dfe6f0; font-family:"Source Serif 4",Georgia,serif; font-size:calc(23 * var(--audio-u)); line-height:1; }
+#audio-actual .audio-reference-progress { position:absolute; left:calc(86 * var(--audio-u)); top:calc(197 * var(--audio-u)); width:calc(625 * var(--audio-u)); height:calc(6 * var(--audio-u)); border-radius:99px; background:rgba(120,150,190,.35); }
+#audio-actual .audio-reference-times span:last-child { transform:translateX(calc(22 * var(--audio-u))); }`r`n#audio-actual .audio-reference-progress span { position:absolute; left:calc(-15 * var(--audio-u)); top:calc(-12 * var(--audio-u)); width:calc(30 * var(--audio-u)); height:calc(30 * var(--audio-u)); border-radius:50%; background:#d9ae5f; box-shadow:0 0 calc(10 * var(--audio-u)) rgba(217,174,95,.55); }
+#audio-actual .audio-reference-volume { position:absolute; left:calc(823 * var(--audio-u)); top:calc(182 * var(--audio-u)); width:calc(44 * var(--audio-u)); height:calc(36 * var(--audio-u)); color:#e4e9f1; }
+#audio-actual .audio-reference-divider { position:absolute; left:0; top:calc(282 * var(--audio-u)); width:calc(868 * var(--audio-u)); height:calc(1.5 * var(--audio-u)); background:rgba(150,170,200,.45); }
+#audio-actual .audio-reference-features { left:calc(984 * var(--audio-u)); top:calc(460 * var(--audio-u)); height:calc(38 * var(--audio-u)); display:flex; align-items:center; color:#dfe6f0; }
+#audio-actual .audio-reference-feature { display:flex; align-items:center; gap:calc(18 * var(--audio-u)); white-space:nowrap; font-size:calc(18 * var(--audio-u)); font-weight:500; letter-spacing:.2em; line-height:1; }
+#audio-actual .audio-reference-feature svg { width:calc(40 * var(--audio-u)); height:calc(40 * var(--audio-u)); fill:none; stroke:#d9ae5f; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+#audio-actual .audio-reference-feature:nth-of-type(3) svg { width:calc(44 * var(--audio-u)); } #audio-actual .audio-reference-feature:nth-of-type(5) svg { width:calc(56 * var(--audio-u)); }
+#audio-actual .audio-reference-feature-divider { width:calc(2 * var(--audio-u)); height:calc(38 * var(--audio-u)); margin:0 calc(38 * var(--audio-u)); background:#d9ae5f; opacity:.75; }
+#audio-actual .audio-reference-tagline { left:calc(2155 * var(--audio-u)); top:calc(530 * var(--audio-u)); display:flex; align-items:flex-start; gap:calc(38 * var(--audio-u)); color:#dfe6f0; }
+#audio-actual .audio-reference-tagline > span { width:calc(2.5 * var(--audio-u)); height:calc(69 * var(--audio-u)); background:#d9ae5f; } #audio-actual .audio-reference-tagline p { margin:calc(9 * var(--audio-u)) 0 0; font-size:calc(18.5 * var(--audio-u)); letter-spacing:.27em; line-height:calc(30 * var(--audio-u)); white-space:nowrap; }
+@media (max-width:700px) { #audio-actual.audio-reference-banner { aspect-ratio:auto; min-height:1100px; background-size:auto 100%; background-position:72% center; } #audio-actual .audio-reference-stage { height:auto; min-height:1100px; padding:48px 24px 56px; background:linear-gradient(90deg,rgba(8,29,52,.98),rgba(8,29,52,.22)); } #audio-actual .audio-reference-eyebrow,#audio-actual .audio-reference-copy,#audio-actual .audio-reference-player,#audio-actual .audio-reference-features,#audio-actual .audio-reference-tagline { position:relative; left:auto; top:auto; width:auto; height:auto; } #audio-actual .audio-reference-eyebrow { gap:14px; font-size:11px; white-space:normal; } #audio-actual .audio-reference-eyebrow-line { width:30px; height:2px; flex:none; } #audio-actual .audio-reference-copy { margin-top:30px; } #audio-actual .audio-reference-copy h2 { font-size:clamp(44px,13vw,72px); line-height:1.02; } #audio-actual .audio-reference-copy p { width:auto; margin-top:26px; font-size:21px; line-height:1.45; } #audio-actual .audio-reference-headphones { position:relative; top:auto; margin-top:30px; gap:12px; } #audio-actual .audio-reference-headphones svg { width:44px; height:38px; } #audio-actual .audio-reference-headphones span { font-size:20px; } #audio-actual .audio-reference-player { margin-top:70px; width:100%; height:250px; } #audio-actual .audio-reference-play { width:86px; height:86px; top:0; } #audio-actual .audio-reference-waveform { left:110px; top:0; width:calc(100% - 110px); height:115px; } #audio-actual .audio-reference-times { top:150px; width:100%; font-size:19px; } #audio-actual .audio-reference-progress { left:55px; top:160px; width:calc(100% - 105px); } #audio-actual .audio-reference-volume { left:auto; right:0; top:195px; } #audio-actual .audio-reference-divider { top:230px; width:100%; } #audio-actual .audio-reference-features { margin-top:25px; display:grid; grid-template-columns:1fr; gap:18px; } #audio-actual .audio-reference-feature-divider { display:none; } #audio-actual .audio-reference-feature { gap:14px; font-size:13px; } #audio-actual .audio-reference-feature svg,#audio-actual .audio-reference-feature:nth-of-type(3) svg,#audio-actual .audio-reference-feature:nth-of-type(5) svg { width:34px; height:34px; } #audio-actual .audio-reference-tagline { margin-top:46px; gap:20px; } #audio-actual .audio-reference-tagline > span { width:2px; height:62px; } #audio-actual .audio-reference-tagline p { margin-top:3px; font-size:13px; line-height:2; } }
+
+
+
+
+
+
+#audio-actual .audio-reference-player audio { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+#audio-actual .audio-reference-play:disabled { cursor:not-allowed; opacity:.5; }
+#audio-actual .audio-reference-volume-button { position:absolute; left:calc(823 * var(--audio-u)); top:calc(182 * var(--audio-u)); width:calc(44 * var(--audio-u)); height:calc(36 * var(--audio-u)); padding:0; border:0; background:transparent; color:#e4e9f1; }
+#audio-actual .audio-reference-volume-button .audio-reference-volume { position:static; width:100%; height:100%; }
+#audio-actual .audio-reference-progress { cursor:pointer; }
+@media (max-width:700px) { #audio-actual .audio-reference-volume-button { left:auto; right:0; top:195px; } }
+
+/* Premium play/pause control for the audio banner. */
+#audio-actual .audio-reference-play {
+  z-index:3;
+  appearance:none;
+  border:1px solid rgba(255,255,255,.86);
+  background:radial-gradient(circle at 35% 28%, #ffffff 0%, #f8fafc 58%, #e7edf5 100%);
+  color:#0a1d38;
+  box-shadow:0 0 calc(12 * var(--audio-u)) rgba(111,176,234,.42), 0 calc(8 * var(--audio-u)) calc(20 * var(--audio-u)) rgba(3,17,35,.26), inset 0 1px 0 rgba(255,255,255,.95);
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+#audio-actual .audio-reference-play:not(:disabled):hover { transform:scale(1.055); background:#ffffff; box-shadow:0 0 calc(18 * var(--audio-u)) rgba(111,176,234,.62), 0 calc(10 * var(--audio-u)) calc(24 * var(--audio-u)) rgba(3,17,35,.3), inset 0 1px 0 rgba(255,255,255,.98); }
+#audio-actual .audio-reference-play:not(:disabled):active { transform:scale(.98); }
+#audio-actual .audio-reference-play:focus-visible { outline:calc(3 * var(--audio-u)) solid rgba(111,176,234,.72); outline-offset:calc(5 * var(--audio-u)); }
+#audio-actual .audio-reference-play:disabled { opacity:1; cursor:not-allowed; filter:saturate(.82); }
+#audio-actual .audio-reference-play .icon-play,
+#audio-actual .audio-reference-play .icon-pause { width:calc(38 * var(--audio-u)); height:calc(38 * var(--audio-u)); }
+#audio-actual .audio-reference-play .icon-play { margin-left:calc(6 * var(--audio-u)); }
+#audio-actual .audio-reference-play .icon-pause { margin-left:0; }
+
+/* =========================================================
+   Toolkit reference rebuild — scoped to #toolkit-actual
+   ========================================================= */
+#toolkit-actual.toolkit-reference-section {
+  --toolkit-u: 1px;
+  container-type: inline-size;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 28.867188cqw;
+  padding: 2.34375cqw 0 2.265625cqw;
+  background: radial-gradient(circle at 14% 18%, rgba(47,155,255,.16), transparent 28%), linear-gradient(135deg, #0b2447 0%, #09193a 72%, #07152f 100%);
+  color: #fff;
+}
+#toolkit-actual .toolkit-reference-network { position:absolute; inset:0; z-index:0; width:100%; height:100%; pointer-events:none; }
+#toolkit-actual .toolkit-reference-network circle { filter:drop-shadow(0 0 8px rgba(47,155,255,.85)); }
+#toolkit-actual .toolkit-reference-stage { position:relative; z-index:1; width:calc(100% - 10.3125cqw); max-width:2296px; margin:0 auto; }
+#toolkit-actual .toolkit-reference-grid { display:grid; grid-template-columns:minmax(0, .95fr) minmax(0, .82fr) minmax(0, 1.05fr); align-items:stretch; gap:1.875cqw; }
+#toolkit-actual .toolkit-reference-copy { display:flex; flex-direction:column; justify-content:center; min-width:0; padding:0.3125cqw 0; }
+#toolkit-actual .toolkit-reference-eyebrow { display:flex; align-items:center; gap:0.78125cqw; margin:0 0 1.40625cqw; color:#d9ae5f; font-family:var(--serif); font-size:1.40625cqw; line-height:1; }
+#toolkit-actual .toolkit-reference-eyebrow i { display:block; width:3.203125cqw; height:1px; background:#d9ae5f; }
+#toolkit-actual .toolkit-reference-eyebrow strong { font-size:1.015625cqw; font-weight:500; letter-spacing:.2em; }
+#toolkit-actual .toolkit-reference-copy h2 { margin:0; color:#fff; font-family:var(--serif); font-size:3.515625cqw; font-weight:400; letter-spacing:-.035em; line-height:.98; }
+#toolkit-actual .toolkit-reference-copy h2 em { color:#d9ae5f; font-style:normal; }
+#toolkit-actual .toolkit-reference-copy h3 { margin:1.367188cqw 0 0.9375cqw; color:#e8edf5; font-family:var(--serif); font-size:1.640625cqw; font-weight:400; line-height:1.24; }
+#toolkit-actual .toolkit-reference-description { max-width:29.6875cqw; margin:0; color:#b8c5d9 !important; font-family:var(--sans); font-size:0.976563cqw; line-height:1.42; }
+#toolkit-actual .toolkit-reference-features { display:flex; align-items:stretch; margin-top:1.953125cqw; }
+#toolkit-actual .toolkit-reference-feature { display:flex; align-items:center; gap:0.585938cqw; min-width:0; padding:0 0.976563cqw; border-right:1px solid rgba(255,255,255,.35); color:#fff; font-family:var(--sans); font-size:0.9375cqw; line-height:1.2; }
+#toolkit-actual .toolkit-reference-feature:first-child { padding-left:0; }
+#toolkit-actual .toolkit-reference-feature:last-child { border-right:0; }
+#toolkit-actual .toolkit-reference-feature svg { flex:none; width:2.03125cqw; height:2.03125cqw; fill:none; stroke:#d9ae5f; stroke-linecap:round; stroke-linejoin:round; stroke-width:2; }
+#toolkit-actual .toolkit-reference-card { display:grid; grid-template-rows:auto minmax(0,1fr) auto; min-width:0; min-height:23.828125cqw; padding:1.484375cqw 1.5625cqw 1.171875cqw; border:1px solid rgba(255,255,255,.42); border-radius:0.273438cqw; background:#fff; color:#0d2a57; box-shadow:0 0.78125cqw 1.5625cqw rgba(0,0,0,.2); }
+#toolkit-actual .toolkit-reference-card-package { position:relative; border:0.15625cqw solid #c8a45a; padding-top:1.5625cqw; }
+#toolkit-actual .toolkit-reference-card-heading { text-align:center; }
+#toolkit-actual .toolkit-reference-card-heading h3 { margin:0; color:#0d2a57; font-family:var(--sans); font-size:1.054688cqw; font-weight:800; letter-spacing:.2em; line-height:1.15; }
+#toolkit-actual .toolkit-reference-card-heading p { margin:0.507813cqw 0 0; color:#1f3a68 !important; font-family:var(--serif); font-size:0.9375cqw; line-height:1.2; }
+#toolkit-actual .toolkit-reference-card-body { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.02fr); align-items:center; gap:0.703125cqw; min-height:0; padding:0.625cqw 0 0.703125cqw; }
+#toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { grid-template-columns:minmax(0, 1.12fr) minmax(0, .9fr); gap:0.703125cqw; }
+#toolkit-actual .toolkit-reference-card-body img { display:block; width:100%; max-height:12.890625cqw; object-fit:contain; }
+#toolkit-actual .toolkit-reference-card-body ul { display:grid; gap:0.9375cqw; margin:0; padding:0; list-style:none; }
+#toolkit-actual .toolkit-reference-card-body li { position:relative; padding-left:1.171875cqw; color:#1d3b6f; font-family:var(--sans); font-size:0.859375cqw; line-height:1.28; }
+#toolkit-actual .toolkit-reference-card-body li::before { position:absolute; top:.06em; left:0; color:#c9a55c; content:'✓'; font-family:Arial,sans-serif; font-size:1.054688cqw; font-weight:700; }
+#toolkit-actual .toolkit-reference-card-button, #toolkit-actual .toolkit-package-controls .button { display:flex; align-items:center; justify-content:center; width:100%; min-height:3.203125cqw; padding:0 0.976563cqw; border:0; border-radius:999px; font-family:var(--sans); font-size:0.820313cqw; font-weight:800; letter-spacing:.13em; line-height:1; text-align:center; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+#toolkit-actual .toolkit-reference-card-button { background:#fff; color:#0d2a57; box-shadow:0 0.273438cqw 0.703125cqw rgba(13,42,87,.12), inset 0 0 0 1px rgba(13,42,87,.06); }
+#toolkit-actual .toolkit-reference-card-button:hover, #toolkit-actual .toolkit-reference-card-button:focus-visible { transform:translateY(-2px); box-shadow:0 0.390625cqw 0.898438cqw rgba(13,42,87,.2), inset 0 0 0 1px rgba(13,42,87,.12); }
+#toolkit-actual .toolkit-reference-card-button span, #toolkit-actual .toolkit-package-controls .button span { margin-left:auto; font-size:1.4em; letter-spacing:0; }
+#toolkit-actual .toolkit-package-controls { display:flex; flex-direction:column; align-items:stretch; gap:0.390625cqw; max-width:none; margin-top:auto; }
+#toolkit-actual .toolkit-package-controls label { margin:0; color:#0d2a57; font-family:var(--sans); font-size:0.625cqw; font-weight:800; letter-spacing:.15em; line-height:1; text-transform:uppercase; }
+#toolkit-actual .toolkit-package-controls select { width:100%; min-width:0; min-height:2.5cqw; padding:0 2.03125cqw 0 0.859375cqw; border:0.058594cqw solid #c9d3e3; border-radius:999px; background:#fff; color:#0d2a57; font-family:var(--sans); font-size:0.742188cqw; appearance:none; background-image:linear-gradient(45deg, transparent 50%, #0d2a57 50%),linear-gradient(135deg, #0d2a57 50%, transparent 50%); background-position:calc(100% - 1.09375cqw) 50%,calc(100% - .820313cqw) 50%; background-repeat:no-repeat; background-size:7px 7px,7px 7px; }
+#toolkit-actual .toolkit-package-controls select:focus-visible { border-color:#2f9bff; outline:0.117188cqw solid rgba(47,155,255,.28); outline-offset:0.117188cqw; }
+#toolkit-actual .toolkit-package-controls .button { min-height:3.203125cqw; background:linear-gradient(115deg,#0d2a57,#123a73); color:#fff; box-shadow:0 0.351563cqw 0.78125cqw rgba(13,42,87,.22); }
+#toolkit-actual .toolkit-package-controls .button:hover, #toolkit-actual .toolkit-package-controls .button:focus-visible { background:linear-gradient(115deg,#123a73,#174b8e); transform:translateY(-2px); }
+#toolkit-actual .toolkit-reference-popular { position:absolute; top:-0.703125cqw; right:0.703125cqw; padding:0.546875cqw 0.976563cqw; border-radius:0.3125cqw; background:linear-gradient(135deg,#b98d3f,#d9b568); color:#fff; font-family:var(--sans); font-size:0.703125cqw; font-weight:800; letter-spacing:.12em; line-height:1; text-transform:uppercase; box-shadow:0 0.234375cqw 0.390625cqw rgba(0,0,0,.18); }
+#toolkit-actual .toolkit-package-status { margin:0.390625cqw 0 0; color:#a33a3a !important; font-size:0.585938cqw; }
+@media (max-width:1099px) {
+  #toolkit-actual.toolkit-reference-section { --toolkit-u:calc(100vw / 1024); padding:48px 0; }
+  #toolkit-actual .toolkit-reference-stage { width:calc(100% - 68px); }
+  #toolkit-actual .toolkit-reference-grid { grid-template-columns:1fr 1fr; gap:28px; }
+  #toolkit-actual .toolkit-reference-copy { grid-column:1 / -1; padding:0 0 14px; }
+  #toolkit-actual .toolkit-reference-copy h2 { font-size:clamp(3.2rem,8vw,5.2rem); }
+  #toolkit-actual .toolkit-reference-copy h3 { font-size:clamp(1.7rem,3.5vw,2.6rem); }
+  #toolkit-actual .toolkit-reference-description { max-width:760px; font-size:clamp(1rem,2vw,1.35rem); }
+  #toolkit-actual .toolkit-reference-eyebrow { font-size:1.5rem; }
+  #toolkit-actual .toolkit-reference-eyebrow strong { font-size:1.05rem; }
+  #toolkit-actual .toolkit-reference-feature { font-size:1rem; }
+  #toolkit-actual .toolkit-reference-feature svg { width:38px; height:38px; }
+  #toolkit-actual .toolkit-reference-card { min-height:540px; padding:28px 25px 24px; }
+  #toolkit-actual .toolkit-reference-card-heading h3 { font-size:1.15rem; }
+  #toolkit-actual .toolkit-reference-card-heading p { font-size:1.1rem; }
+  #toolkit-actual .toolkit-reference-card-body li { font-size:1rem; }
+  #toolkit-actual .toolkit-reference-card-button, #toolkit-actual .toolkit-package-controls .button { min-height:58px; font-size:.9rem; }
+  #toolkit-actual .toolkit-package-controls label { font-size:.75rem; }
+  #toolkit-actual .toolkit-package-controls select { min-height:52px; font-size:.9rem; }
+}
+@media (max-width:699px) {
+  #toolkit-actual.toolkit-reference-section { --toolkit-u:calc(100vw / 390); padding:44px 0 48px; }
+  #toolkit-actual .toolkit-reference-stage { width:calc(100% - 28px); }
+  #toolkit-actual .toolkit-reference-grid { grid-template-columns:1fr; gap:22px; }
+  #toolkit-actual .toolkit-reference-copy { grid-column:auto; padding:0 8px 10px; }
+  #toolkit-actual .toolkit-reference-eyebrow { margin-bottom:24px; font-size:1.55rem; }
+  #toolkit-actual .toolkit-reference-eyebrow i { width:52px; }
+  #toolkit-actual .toolkit-reference-eyebrow strong { font-size:.9rem; }
+  #toolkit-actual .toolkit-reference-copy h2 { font-size:clamp(3rem,14vw,4.8rem); }
+  #toolkit-actual .toolkit-reference-copy h3 { margin:24px 0 16px; font-size:1.55rem; }
+  #toolkit-actual .toolkit-reference-description { font-size:1rem; }
+  #toolkit-actual .toolkit-reference-features { flex-direction:column; gap:16px; margin-top:30px; }
+  #toolkit-actual .toolkit-reference-feature, #toolkit-actual .toolkit-reference-feature:first-child { padding:0 0 16px; border-right:0; border-bottom:1px solid rgba(255,255,255,.3); font-size:1rem; }
+  #toolkit-actual .toolkit-reference-feature:last-child { border-bottom:0; }
+  #toolkit-actual .toolkit-reference-feature svg { width:40px; height:40px; }
+  #toolkit-actual .toolkit-reference-card, #toolkit-actual .toolkit-reference-card-package { min-height:0; padding:24px 18px 18px; border-width:1px; }
+  #toolkit-actual .toolkit-reference-card-package { border-width:3px; padding-top:28px; }
+  #toolkit-actual .toolkit-reference-card-heading h3 { font-size:1rem; letter-spacing:.14em; }
+  #toolkit-actual .toolkit-reference-card-heading p { font-size:1rem; }
+  #toolkit-actual .toolkit-reference-card-body, #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { grid-template-columns:1fr; gap:6px; padding:14px 0 20px; }
+  #toolkit-actual .toolkit-reference-card-body img { width:82%; max-height:260px; margin:0 auto; }
+  #toolkit-actual .toolkit-reference-card-body ul { gap:14px; }
+  #toolkit-actual .toolkit-reference-card-body li { padding-left:25px; font-size:.96rem; }
+  #toolkit-actual .toolkit-reference-card-button, #toolkit-actual .toolkit-package-controls .button { min-height:58px; font-size:.78rem; }
+  #toolkit-actual .toolkit-package-controls label { font-size:.7rem; }
+  #toolkit-actual .toolkit-package-controls select { min-height:54px; font-size:.85rem; }
+  #toolkit-actual .toolkit-reference-popular { top:-14px; right:14px; padding:10px 14px; font-size:.65rem; }
+}
+
+
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-copy h2 { font-size:clamp(2.45rem,11.5vw,4.5rem); overflow-wrap:anywhere; }
+  #toolkit-actual .toolkit-reference-copy h3 { font-size:1.28rem; line-height:1.28; }
+  #toolkit-actual .toolkit-reference-description { font-size:.96rem; line-height:1.5; }
+  #toolkit-actual .toolkit-reference-card-heading h3 { font-size:.84rem; letter-spacing:.1em; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-stage { width:calc(100% - 28px); max-width:100%; box-sizing:border-box; }
+  #toolkit-actual .toolkit-reference-copy { width:100%; max-width:100%; overflow:hidden; }
+  #toolkit-actual .toolkit-reference-copy h2 { max-width:100%; font-size:10vw; line-height:1.02; word-break:break-word; }
+  #toolkit-actual .toolkit-reference-copy h3,
+  #toolkit-actual .toolkit-reference-description { max-width:100%; word-break:break-word; }
+  #toolkit-actual .toolkit-reference-copy h3 { font-size:1.14rem; }
+  #toolkit-actual .toolkit-reference-description { font-size:.88rem; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-grid,
+  #toolkit-actual .toolkit-reference-card,
+  #toolkit-actual .toolkit-reference-card-body,
+  #toolkit-actual .toolkit-reference-card-body ul,
+  #toolkit-actual .toolkit-reference-card-body li { min-width:0; max-width:100%; box-sizing:border-box; }
+  #toolkit-actual .toolkit-reference-card-body li { overflow-wrap:anywhere; }
+  #toolkit-actual .toolkit-reference-description { max-width:340px; font-size:.82rem; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-stage { width:calc(100vw - 28px) !important; margin-left:14px; margin-right:14px; }
+  #toolkit-actual .toolkit-reference-card { width:100%; overflow:hidden; }
+  #toolkit-actual .toolkit-reference-card-body ul { overflow:hidden; }
 }

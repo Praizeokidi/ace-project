@@ -38,47 +38,6 @@
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toolkitModal = document.querySelector("[data-toolkit-modal]");
-  const toolkitOpenTriggers = document.querySelectorAll(
-    "[data-toolkit-modal-open]",
-  );
-  const toolkitCloseTriggers = document.querySelectorAll(
-    "[data-toolkit-modal-close]",
-  );
-
-  if (toolkitModal) {
-    const openModal = () => {
-      toolkitModal.classList.add("is-open");
-      toolkitModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("toolkit-modal-open");
-    };
-
-    const closeModal = () => {
-      toolkitModal.classList.remove("is-open");
-      toolkitModal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("toolkit-modal-open");
-    };
-
-    toolkitOpenTriggers.forEach((trigger) => {
-      trigger.addEventListener("click", openModal);
-    });
-
-    toolkitCloseTriggers.forEach((trigger) => {
-      trigger.addEventListener("click", closeModal);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.key === "Escape" &&
-        toolkitModal.classList.contains("is-open")
-      ) {
-        closeModal();
-      }
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const player = document.querySelector("[data-audio-player]");
   if (!player) return;
 
@@ -88,21 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const pauseIcon = player.querySelector(".icon-pause");
   const currentTime = player.querySelector("[data-audio-current]");
   const duration = player.querySelector("[data-audio-duration]");
-  const progress = player.querySelector("[data-audio-progress]");
-  let speechPreview = null;
+  const track = player.querySelector("[data-audio-track]");
+  const knob = player.querySelector("[data-audio-progress]");
+  const volume = player.querySelector("[data-audio-volume]");
+  const bars = Array.from(player.querySelectorAll("[data-audio-waveform] rect"));
 
   if (!audio || !toggle) return;
 
   const formatTime = (seconds) => {
     if (!Number.isFinite(seconds)) return "0:00";
     const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
-    return `${minutes}:${remainingSeconds}`;
+    return `${minutes}:${Math.floor(seconds % 60).toString().padStart(2, "0")}`;
   };
 
   const setPlayingState = (isPlaying) => {
     player.classList.toggle("is-playing", isPlaying);
-    toggle.setAttribute("aria-label", isPlaying ? "Pause author introduction" : "Play author introduction");
+    toggle.setAttribute("aria-label", isPlaying ? "Pause briefing" : "Play briefing");
     if (playIcon) playIcon.hidden = isPlaying;
     if (pauseIcon) pauseIcon.hidden = !isPlaying;
   };
@@ -110,76 +70,65 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateProgress = () => {
     const percentage = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
     if (currentTime) currentTime.textContent = formatTime(audio.currentTime);
-    if (progress) progress.style.width = `${percentage}%`;
+    if (duration && Number.isFinite(audio.duration)) duration.textContent = formatTime(audio.duration);
+    if (track) track.setAttribute("aria-valuenow", formatTime(audio.currentTime));
+    if (knob) knob.style.left = `calc(${percentage}% - 15 * var(--audio-u))`;
+    bars.forEach((bar, index) => {
+      bar.setAttribute("fill", index < Math.ceil((percentage / 100) * bars.length) ? "#d9ae5f" : "#6fb0ea");
+    });
+  };
+
+  const seek = (clientX) => {
+    if (!audio.duration || !track) return;
+    const rect = track.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    audio.currentTime = ratio * audio.duration;
+    updateProgress();
   };
 
   toggle.addEventListener("click", async () => {
-    if (audio.error && "speechSynthesis" in window) {
-      if (speechPreview && window.speechSynthesis.speaking) {
-        window.speechSynthesis.cancel();
-        speechPreview = null;
-        setPlayingState(false);
-        return;
-      }
-
-      speechPreview = new SpeechSynthesisUtterance(
-        "DPIA Made Easy Professional Edition is a practical handbook, workbook and training guide for conducting, documenting and governing Data Privacy Impact Assessments. It helps privacy and compliance professionals move from regulatory knowledge to confident implementation."
-      );
-      speechPreview.rate = 0.96;
-      speechPreview.onend = () => {
-        speechPreview = null;
-        setPlayingState(false);
-      };
-      speechPreview.onerror = () => {
-        speechPreview = null;
-        setPlayingState(false);
-      };
-      window.speechSynthesis.speak(speechPreview);
-      setPlayingState(true);
-      return;
-    }
-
     if (audio.paused) {
-      try {
-        await audio.play();
-      } catch {
-        setPlayingState(false);
-      }
+      try { await audio.play(); } catch { setPlayingState(false); }
     } else {
       audio.pause();
     }
   });
 
-  audio.addEventListener("loadedmetadata", () => {
-    if (duration) duration.textContent = formatTime(audio.duration);
+  track?.addEventListener("click", (event) => seek(event.clientX));
+  track?.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    if (!audio.duration) return;
+    if (event.key === "Home") audio.currentTime = 0;
+    else if (event.key === "End") audio.currentTime = audio.duration;
+    else audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + (event.key === "ArrowRight" ? 5 : -5)));
     updateProgress();
-    toggle.disabled = false;
   });
 
+  volume?.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    volume.setAttribute("aria-label", audio.muted ? "Unmute briefing" : "Mute briefing");
+    player.classList.toggle("is-muted", audio.muted);
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    if (duration) duration.textContent = formatTime(audio.duration);
+    toggle.disabled = false;
+    updateProgress();
+  });
   audio.addEventListener("timeupdate", updateProgress);
   audio.addEventListener("play", () => setPlayingState(true));
   audio.addEventListener("pause", () => setPlayingState(false));
-  audio.addEventListener("ended", () => {
-    setPlayingState(false);
-    audio.currentTime = 0;
-    updateProgress();
-  });
-
+  audio.addEventListener("ended", () => { setPlayingState(false); audio.currentTime = 0; updateProgress(); });
   audio.addEventListener("error", () => {
-    toggle.disabled = false;
-    toggle.setAttribute("aria-label", "Play spoken preview");
+    toggle.disabled = true;
     player.classList.add("is-unavailable");
+    toggle.setAttribute("aria-label", "Audio file unavailable");
   });
 
-  toggle.disabled = true;
   setPlayingState(false);
-  if (audio.readyState >= 1) {
-    if (duration) duration.textContent = formatTime(audio.duration);
-    updateProgress();
-    toggle.disabled = false;
-  }
+  updateProgress();
 });
-
 
 /* Floating navbar scroll-spy and anchor offset support. */
 (() => {
@@ -239,4 +188,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 })();
-
