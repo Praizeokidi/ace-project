@@ -5245,3 +5245,64 @@ html {
   #toolkit-actual .toolkit-reference-card { width:100%; overflow:hidden; }
   #toolkit-actual .toolkit-reference-card-body ul { overflow:hidden; }
 }
+
+/* Follow-up precision adjustments for the reference artwork. */
+#toolkit-actual .toolkit-reference-card-heading p { font-family:var(--sans); font-weight:400; }
+#toolkit-actual .toolkit-reference-feature span { white-space:nowrap; }
+#toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img { width:20.5cqw; max-width:none; }
+#toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:25.5cqw; max-width:none; margin-left:-2cqw; }
+#toolkit-actual .toolkit-reference-card-body { justify-items:center; }
+#toolkit-actual .toolkit-reference-card-body ul { width:100%; }
+@media (max-width:1099px) {
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img,
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:100%; max-width:100%; margin-left:0; }
+}
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-card-heading p { font-family:var(--sans); font-size:.9rem; }
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img,
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:82%; max-width:82%; }
+}
+
+/* Exact product-image sizing for the 2560px reference grid. */
+#toolkit-actual .toolkit-reference-card-body { align-items:center; align-content:center; padding-inline:1.5625cqw; }
+#toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body { grid-template-columns:11.328125cqw minmax(0,1fr); column-gap:1.328125cqw; }
+#toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { grid-template-columns:17.578125cqw minmax(0,1fr); column-gap:1.015625cqw; }
+#toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img,
+#toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:100%; height:auto; max-width:none; max-height:none; margin:0; object-fit:initial; flex-shrink:0; }
+#toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img { aspect-ratio:290 / 390; }
+#toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { aspect-ratio:450 / 380; }
+@media (min-width:1100px) {
+  #toolkit-actual .toolkit-reference-card-body { min-height:0; }
+}
+@media (min-width:700px) and (max-width:1099px) {
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body { grid-template-columns:42% minmax(0,1fr); column-gap:18px; padding-inline:20px; }
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { grid-template-columns:54% minmax(0,1fr); column-gap:14px; padding-inline:20px; }
+  #toolkit-actual .toolkit-reference-card-body img { width:100%; max-width:none; max-height:none; }
+}
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-card-body,
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { grid-template-columns:1fr; column-gap:0; padding-inline:0; }
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img { width:min(100%,320px); max-width:320px; }
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:min(100%,440px); max-width:440px; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-card-body,
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; }
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img { display:block; width:min(320px,100%) !important; max-width:320px !important; height:auto; }
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { display:block; width:min(440px,100%) !important; max-width:440px !important; height:auto; }
+  #toolkit-actual .toolkit-reference-card-body ul { width:100%; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-grid { grid-template-columns:minmax(0,1fr); width:100%; }
+  #toolkit-actual .toolkit-reference-card { width:calc(100vw - 28px) !important; max-width:calc(100vw - 28px) !important; }
+  #toolkit-actual .toolkit-reference-card-body { width:100%; max-width:100%; overflow:hidden; }
+  #toolkit-actual .toolkit-reference-card-handbook .toolkit-reference-card-body img { width:280px !important; max-width:280px !important; }
+  #toolkit-actual .toolkit-reference-card-package .toolkit-reference-card-body img { width:350px !important; max-width:350px !important; }
+}
+
+@media (max-width:699px) {
+  #toolkit-actual .toolkit-reference-card-body ul { width:100% !important; min-width:0 !important; max-width:100% !important; flex:0 0 auto; }
+  #toolkit-actual .toolkit-reference-card-body li { width:100%; max-width:100%; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word; }
+}
