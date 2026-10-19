@@ -5520,7 +5520,7 @@ html {
   #final-actual .final-reference-subtitle,
   #final-actual .final-reference-rule,
   #final-actual .final-reference-tagline {
-    transform:translateY(-64px);
+    transform:translateY(-48px);
   }
 }
 
