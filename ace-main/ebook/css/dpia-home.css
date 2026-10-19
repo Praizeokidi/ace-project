@@ -5513,3 +5513,13 @@ html {
     padding:0;
   }
 }
+
+/* Offset the desktop copy for the added section height; keep actions fixed. */
+@media (min-width:700px) {
+  #final-actual .final-reference-heading,
+  #final-actual .final-reference-subtitle,
+  #final-actual .final-reference-rule,
+  #final-actual .final-reference-tagline {
+    transform:translateY(-64px);
+  }
+}
