@@ -1912,7 +1912,7 @@ body.dpia-site {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: rgba(8, 29, 52, .18);
+    background: rgba(8, 29, 52, .08);
     content: "";
     pointer-events: none;
   }
