@@ -567,8 +567,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser,
 #benefits-actual.benefits,
   #consultation-actual.consultation,
-  #priority-actual.priority,
-  #final-actual.final-banner {
+  #priority-actual.priority {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -580,8 +579,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser::before,
 #benefits-actual.benefits::before,
 #consultation-actual.consultation::before,
-#priority-actual.priority::before,
-#final-actual.final-banner::before {
+#priority-actual.priority::before {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -606,8 +604,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser::after,
 #benefits-actual.benefits::after,
 #consultation-actual.consultation::after,
-#priority-actual.priority::after,
-#final-actual.final-banner::after {
+#priority-actual.priority::after {
   position: absolute;
   inset: 0 50% 0 0;
   z-index: 1;
@@ -626,8 +623,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #audio-actual.audio-teaser > .shell,
 #benefits-actual.benefits > .shell,
 #consultation-actual.consultation > .shell,
-#priority-actual.priority > .shell,
-#final-actual.final-banner > .shell {
+#priority-actual.priority > .shell {
   position: relative;
   z-index: 2;
 }
