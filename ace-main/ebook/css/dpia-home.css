@@ -5528,7 +5528,7 @@ html {
 @media (min-width:700px) {
   #final-actual .final-reference-actions,
   #final-actual .final-reference-linkedin {
-    transform:translateX(4cqw);
+    transform:translateX(1cqw);
   }
   #final-actual .final-reference-values {
     transform:translateX(2cqw);
