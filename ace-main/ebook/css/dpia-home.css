@@ -5417,7 +5417,7 @@ html {
   background-color:#0b2447 !important;
   background-image:url("../../images/book_bg_clean.png") !important;
   background-position:center !important;
-  background-size:100% 100% !important;
+  background-size:cover !important;
   background-repeat:no-repeat !important;
 }
 
@@ -5476,7 +5476,7 @@ html {
   margin:32px 0 !important;
   background-image:url("../../images/book_bg_clean.png") !important;
   background-position:center !important;
-  background-size:100% 100% !important;
+  background-size:cover !important;
   background-repeat:no-repeat !important;
 }
 @media (max-width:699px) {
@@ -5488,31 +5488,10 @@ html {
   }
 }
 
-/* Extend the unchanged book background through the deliberate section spacing. */
-#final-actual.final-reference-section {
-  overflow:visible;
-}
-#final-actual.final-reference-section::after {
-  content:"" !important;
-  display:block !important;
-  position:absolute;
-  z-index:-1;
-  inset:-32px 0;
-  pointer-events:none;
-  background:#0b2447 url("../../images/book_bg_clean.png") center / 100% 100% no-repeat;
-}
-@media (max-width:699px) {
-  #final-actual.final-reference-section::after {
-    inset:-24px 0;
-    background-size:cover;
-    background-position:100% center;
-  }
-}
-
-/* Paint the added spacing from the existing final-section wrapper, not a legacy pseudo-element. */
+/* Keep the wrapper spacing, but let the section own the single continuous image. */
 #final-master-wrapper {
   padding:32px 0;
-  background:#0b2447 url("../../images/book_bg_clean.png") center / 100% 100% no-repeat;
+  background:transparent !important;
 }
 #final-actual.final-reference-section { margin:0 !important; }
 #final-actual.final-reference-section::after {
@@ -5528,7 +5507,5 @@ html {
 @media (max-width:699px) {
   #final-master-wrapper {
     padding:24px 0;
-    background-size:cover;
-    background-position:100% center;
   }
 }
