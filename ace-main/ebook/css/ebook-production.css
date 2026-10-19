@@ -1731,3 +1731,61 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     background-position:84% center;
   }
 }
+
+/* Extend the hero artwork behind the announcement bar and floating navbar. */
+body.dpia-site {
+  --ace-hero-top-overlap: 140px;
+}
+
+.topbar {
+  position: relative;
+  z-index: 1001;
+  background: rgba(8, 29, 52, 0.72) !important;
+  background-image: none !important;
+  background-repeat: no-repeat !important;
+}
+
+.site-header {
+  position: sticky;
+  z-index: 1000;
+  background: transparent !important;
+}
+
+#hero-actual .hero-photo {
+  top: calc(-1 * var(--ace-hero-top-overlap));
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1020px) {
+  body.dpia-site {
+    --ace-hero-top-overlap: 130px;
+  }
+}
+
+@media (max-width: 900px) {
+  body.dpia-site {
+    --ace-hero-top-overlap: 118px;
+  }
+}
+
+@media (max-width: 800px) {
+  #hero-actual .hero-photo {
+    height: calc(320px + var(--ace-hero-top-overlap));
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-actual .hero-photo {
+    height: calc(290px + var(--ace-hero-top-overlap));
+    background-size: cover;
+    background-position: center top;
+  }
+}
