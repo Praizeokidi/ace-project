@@ -1908,6 +1908,20 @@ body.dpia-site {
     background-position: 80% top;
   }
 
+  #hero-master-wrapper::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(8, 29, 52, .18);
+    content: "";
+    pointer-events: none;
+  }
+
+  #hero-actual {
+    position: relative;
+    z-index: 2;
+  }
+
   #hero-actual .hero-photo::after {
     display: none;
   }
