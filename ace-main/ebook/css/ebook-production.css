@@ -1724,3 +1724,10 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     min-height: 500px;
   }
 }
+
+/* Keep the audio banner artwork visible in the mobile crop. */
+@media (max-width:700px) {
+  #audio-actual.audio-reference-banner {
+    background-position:84% center;
+  }
+}
