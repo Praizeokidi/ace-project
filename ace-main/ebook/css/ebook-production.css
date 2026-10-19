@@ -282,12 +282,53 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   align-items: start;
   gap: clamp(42px, 7vw, 100px);
 }
+#consultation-actual .consultation-left {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  align-self: stretch;
+}
 #consultation-actual .consultation-intro {
   max-width: 440px;
   margin: 18px 0 28px;
   color: rgba(255,255,255,.78);
   font-size: clamp(1rem, 1.4vw, 1.12rem);
   line-height: 1.75;
+}
+#consultation-actual .consultation-capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: auto 0 0;
+  padding: 22px 0 18px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  list-style: none;
+}
+#consultation-actual .consultation-capabilities li {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+#consultation-actual .consultation-capabilities li + li {
+  border-left: 1px solid rgba(255,255,255,.2);
+}
+#consultation-actual .consultation-capabilities svg {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  overflow: visible;
+  fill: none;
+  stroke: #e8b84f;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 #consultation-actual .consultation-format {
   display: flex;
@@ -365,6 +406,18 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   #consultation-actual .consultation-list.consultation-topics {
     grid-template-columns: 1fr;
     gap: 11px;
+  }
+}
+@media (max-width: 767px) {
+  #consultation-actual .consultation-capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 22px;
+  }
+  #consultation-actual .consultation-capabilities li {
+    padding: 0;
+  }
+  #consultation-actual .consultation-capabilities li + li {
+    border-left: 0;
   }
 }
 
