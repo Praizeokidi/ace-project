@@ -864,9 +864,21 @@
         linear-gradient(145deg, var(--blue), var(--navy-deep));
     }
 
+    .author-editorial__portrait-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
     .author-editorial__portrait-inner::before,
     .author-editorial__portrait-inner::after {
       position: absolute;
+      z-index: 1;
       border: 1px solid rgba(210, 169, 93, 0.3);
       border-radius: 50%;
       content: "";
@@ -3376,11 +3388,10 @@
 
           <div class="author-editorial__grid">
             <div class="author-editorial__portrait-column">
-              <!-- Replace this placeholder with the author’s portrait when available. -->
-              <div class="author-editorial__portrait" role="img" aria-label="Portrait placeholder for S. A. Kitchener">
+              <div class="author-editorial__portrait" role="img" aria-label="Portrait of S. A. Kitchener">
                 <div class="author-editorial__portrait-inner">
-                  <span class="author-editorial__initials" aria-hidden="true">SAK</span>
-                  <span class="author-editorial__portrait-label">Author portrait</span>
+                  <img class="author-editorial__portrait-image" src="../ace material/Mama Kitchner.jpg"
+                    alt="Portrait of S. A. Kitchener">
                 </div>
               </div>
 
