@@ -5523,3 +5523,14 @@ html {
     transform:translateY(-64px);
   }
 }
+
+/* Move the right-side controls and values further right on desktop. */
+@media (min-width:700px) {
+  #final-actual .final-reference-actions,
+  #final-actual .final-reference-linkedin {
+    transform:translateX(4cqw);
+  }
+  #final-actual .final-reference-values {
+    transform:translateX(2cqw);
+  }
+}
