@@ -319,6 +319,9 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #consultation-actual .consultation-capabilities li + li {
   border-left: 1px solid rgba(255,255,255,.2);
 }
+#consultation-actual .consultation-capabilities li:nth-child(2) > span {
+  transform: translateX(-5px);
+}
 #consultation-actual .consultation-capabilities svg {
   width: 32px;
   height: 32px;
