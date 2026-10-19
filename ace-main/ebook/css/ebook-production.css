@@ -1789,3 +1789,43 @@ body.dpia-site {
     background-position: center top;
   }
 }
+
+/* Use the hero wrapper as the continuous image surface. The negative margin
+   places its artwork behind the topbar/navbar while equal padding preserves
+   the existing hero content position. */
+#hero-master-wrapper {
+  position: relative !important;
+  z-index: 0;
+  margin-top: calc(-1 * var(--ace-hero-top-overlap));
+  padding-top: var(--ace-hero-top-overlap);
+  overflow: visible !important;
+  background-image: url('../../images/hero-ace.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+#hero-actual {
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+#hero-actual .hero-photo {
+  inset: 0;
+  height: 100%;
+  background-image: none !important;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 800px) {
+  #hero-actual .hero-photo {
+    inset: 0;
+    height: 100%;
+    background-image: none !important;
+    background-size: cover;
+    background-position: center top;
+  }
+}
