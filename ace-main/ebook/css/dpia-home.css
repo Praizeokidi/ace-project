@@ -5471,9 +5471,11 @@ html {
   overflow:hidden;
 }
 
-/* Give the final reference banner deliberate separation from adjacent sections. */
+/* Keep the final reference banner flush with adjacent sections. */
 #final-actual.final-reference-section {
-  margin:32px 0 !important;
+  margin:0 !important;
+  padding:32px 0 !important;
+  min-height:calc(13.28125cqw + 64px);
   background-image:url("../../images/book_bg_clean.png") !important;
   background-position:center !important;
   background-size:cover !important;
@@ -5481,7 +5483,9 @@ html {
 }
 @media (max-width:699px) {
   #final-actual.final-reference-section {
-    margin:24px 0 !important;
+    margin:0 !important;
+    padding:24px 0 !important;
+    min-height:808px;
     background-image:url("../../images/book_bg_clean.png") !important;
     background-size:cover !important;
     background-position:100% center !important;
@@ -5490,7 +5494,7 @@ html {
 
 /* Keep the wrapper spacing, but let the section own the single continuous image. */
 #final-master-wrapper {
-  padding:32px 0;
+  padding:0;
   background:transparent !important;
 }
 #final-actual.final-reference-section { margin:0 !important; }
@@ -5506,6 +5510,6 @@ html {
 }
 @media (max-width:699px) {
   #final-master-wrapper {
-    padding:24px 0;
+    padding:0;
   }
 }
