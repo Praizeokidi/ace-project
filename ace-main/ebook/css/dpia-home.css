@@ -5306,3 +5306,141 @@ html {
   #toolkit-actual .toolkit-reference-card-body ul { width:100% !important; min-width:0 !important; max-width:100% !important; flex:0 0 auto; }
   #toolkit-actual .toolkit-reference-card-body li { width:100%; max-width:100%; white-space:normal !important; overflow-wrap:anywhere !important; word-break:break-word; }
 }
+
+/* =========================================================
+   Final reference banner — scoped to #final-actual
+   ========================================================= */
+#final-actual.final-reference-section {
+  --u:calc(100cqw / 2560);
+  container-type:inline-size;
+  position:relative;
+  width:100%;
+  aspect-ratio:2560 / 340;
+  min-height:0;
+  overflow:hidden;
+  isolation:isolate;
+  color:#e8edf5;
+  background:#0b2447 url("../../images/book_bg_clean.png") center / 100% 100% no-repeat;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+#final-actual .final-reference-content { position:relative; width:100%; height:100%; }
+#final-actual .final-reference-heading {
+  position:absolute; left:6.40625cqw; top:1.5625cqw; margin:0;
+  color:#f4f1ea; font-family:"Source Serif 4",Georgia,serif;
+  font-size:2.8125cqw; font-weight:500; letter-spacing:-.01em; line-height:.97;
+}
+#final-actual .final-reference-heading em { color:#d9ae5f; font-style:normal; }
+#final-actual .final-reference-dash { color:#c9d2e0; }
+#final-actual .final-reference-subtitle {
+  position:absolute; left:6.40625cqw; top:7.265625cqw; margin:0;
+  color:#e8edf5; font-family:"Source Serif 4",Georgia,serif;
+  font-size:1.171875cqw; font-weight:400; line-height:1.1; white-space:nowrap;
+}
+#final-actual .final-reference-rule {
+  position:absolute; left:6.40625cqw; top:10cqw; width:2.8125cqw; height:2px; background:#d9ae5f;
+}
+#final-actual .final-reference-tagline {
+  position:absolute; left:6.40625cqw; top:10.9375cqw; margin:0;
+  color:#c5d0e0; font-family:"Source Serif 4",Georgia,serif;
+  font-size:.839844cqw; font-weight:400; line-height:1.1; white-space:nowrap;
+}
+#final-actual .final-reference-actions {
+  position:absolute; left:59.726563cqw; top:3.554688cqw; display:flex; gap:.859375cqw; align-items:center;
+}
+#final-actual .final-reference-button {
+  display:inline-flex; align-items:center; justify-content:center; gap:.625cqw;
+  height:2.851563cqw; border-radius:999px; text-decoration:none;
+  font-family:"Inter",system-ui,sans-serif; font-size:.820313cqw; font-weight:700; letter-spacing:.06em; line-height:1; white-space:nowrap;
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease;
+}
+#final-actual .final-reference-button-outline { width:10.625cqw; border:2px solid rgba(255,255,255,.85); color:#fff; background:rgba(9,25,58,.55); backdrop-filter:blur(4px); }
+#final-actual .final-reference-button-gold { width:12.1875cqw; color:#14284b; background:linear-gradient(90deg,#c9a050,#e3bd6c); box-shadow:0 6px 14px rgba(3,17,35,.28); }
+#final-actual .final-reference-button svg { width:1.09375cqw; height:.625cqw; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+#final-actual .final-reference-button:hover { transform:translateY(-2px); filter:brightness(1.08); }
+#final-actual .final-reference-button:focus-visible,
+#final-actual .final-reference-linkedin:focus-visible { outline:3px solid #f3d48b; outline-offset:4px; }
+#final-actual .final-reference-linkedin {
+  position:absolute; left:64.570313cqw; top:7.851563cqw; display:flex; align-items:center; gap:1.09375cqw;
+  height:1.484375cqw; color:#fff; text-decoration:none;
+}
+#final-actual .final-reference-linkedin-icon { display:block; width:1.484375cqw; height:1.484375cqw; border-radius:.234375cqw; background:#d9ae5f; }
+#final-actual .final-reference-linkedin-icon svg { display:block; width:100%; height:100%; }
+#final-actual .final-reference-linkedin-icon text { fill:#0b2447; font-family:Arial,sans-serif; font-size:23px; font-weight:700; }
+#final-actual .final-reference-linkedin-label { padding-bottom:.234375cqw; border-bottom:2px solid #d9ae5f; font-size:.683594cqw; font-weight:500; letter-spacing:.15em; line-height:1; white-space:nowrap; }
+#final-actual .final-reference-linkedin-arrow { width:1.09375cqw; height:.625cqw; fill:none; stroke:#fff; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+#final-actual .final-reference-values { position:absolute; left:85.546875cqw; top:2.265625cqw; display:flex; flex-direction:column; gap:1.054688cqw; color:#dfe6f0; font-size:.605469cqw; font-weight:400; letter-spacing:.4em; line-height:1; white-space:nowrap; }
+#final-actual .final-reference-value-rule { display:block; width:2.109375cqw; height:2px; margin-bottom:1.171875cqw; background:#d9ae5f; }
+@media (min-width:700px) and (max-width:1099px) {
+  #final-actual .final-reference-values { display:none; }
+  #final-actual .final-reference-heading { font-size:2.9cqw; }
+  #final-actual .final-reference-button { font-size:1.05cqw; }
+}
+@media (max-width:699px) {
+  #final-actual.final-reference-section { aspect-ratio:auto; min-height:760px; background-size:cover; background-position:60% center; }
+  #final-actual.final-reference-section::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(135deg,rgba(7,22,48,.86),rgba(7,22,48,.55)); }
+  #final-actual .final-reference-content { display:flex; flex-direction:column; align-items:stretch; height:auto; min-height:760px; padding:42px 22px 48px; }
+  #final-actual .final-reference-heading,
+  #final-actual .final-reference-subtitle,
+  #final-actual .final-reference-rule,
+  #final-actual .final-reference-tagline,
+  #final-actual .final-reference-actions,
+  #final-actual .final-reference-linkedin,
+  #final-actual .final-reference-values { position:relative; left:auto; top:auto; width:auto; }
+  #final-actual .final-reference-heading { font-size:clamp(39px,12vw,58px); line-height:.98; }
+  #final-actual .final-reference-subtitle { margin-top:24px; font-size:21px; line-height:1.25; white-space:normal; }
+  #final-actual .final-reference-rule { width:54px; height:2px; margin-top:25px; }
+  #final-actual .final-reference-tagline { margin-top:17px; font-size:17px; line-height:1.35; white-space:normal; }
+  #final-actual .final-reference-actions { display:flex; flex-direction:column; gap:12px; margin-top:30px; }
+  #final-actual .final-reference-button { width:100%; height:54px; font-size:14px; gap:12px; }
+  #final-actual .final-reference-button svg { width:22px; height:13px; }
+  #final-actual .final-reference-linkedin { gap:12px; height:38px; margin-top:32px; align-self:flex-start; }
+  #final-actual .final-reference-linkedin-icon { width:38px; height:38px; border-radius:6px; }
+  #final-actual .final-reference-linkedin-label { font-size:13px; padding-bottom:5px; }
+  #final-actual .final-reference-linkedin-arrow { width:22px; height:13px; }
+  #final-actual .final-reference-values { display:flex; flex-direction:row; flex-wrap:wrap; gap:12px 18px; margin-top:42px; font-size:11px; letter-spacing:.22em; line-height:1.2; white-space:normal; }
+  #final-actual .final-reference-value-rule { display:none; }
+}
+
+/* Remove legacy final-banner decoration from the reference recreation. */
+#final-actual.final-reference-section { border-bottom:0; }
+#final-actual.final-reference-section::before,
+#final-actual.final-reference-section::after { content:none !important; display:none !important; }
+#final-actual .final-reference-content { z-index:1; }
+#final-actual .final-reference-heading { white-space:normal; overflow-wrap:normal; }
+@media (max-width:699px) {
+  #final-actual.final-reference-section::before { content:"" !important; display:block !important; position:absolute; inset:0; z-index:0; background:linear-gradient(90deg,rgba(7,22,48,.85),rgba(7,22,48,.55)); }
+  #final-actual .final-reference-heading { max-width:100%; overflow-wrap:break-word; }
+}
+
+/* The clean asset is the sole desktop background for this recreation. */
+#final-actual.final-reference-section {
+  background-color:#0b2447 !important;
+  background-image:url("../../images/book_bg_clean.png") !important;
+  background-position:center !important;
+  background-size:100% 100% !important;
+  background-repeat:no-repeat !important;
+}
+
+@media (max-width:699px) {
+  #final-actual.final-reference-section { background-position:80% center !important; }
+  #final-actual.final-reference-section::before { background:linear-gradient(90deg,rgba(7,22,48,.93) 0%,rgba(7,22,48,.78) 58%,rgba(7,22,48,.45) 100%); }
+  #final-actual .final-reference-heading { font-size:clamp(32px,9.5vw,46px); max-width:100%; }
+  #final-actual .final-reference-subtitle,
+  #final-actual .final-reference-tagline { max-width:100%; overflow-wrap:anywhere; word-break:normal; }
+  #final-actual .final-reference-subtitle { font-size:17px; }
+  #final-actual .final-reference-tagline { font-size:15px; }
+  #final-actual .final-reference-actions { width:100%; max-width:100%; }
+  #final-actual .final-reference-button { width:100%; max-width:100%; box-sizing:border-box; }
+}
+
+@media (max-width:699px) {
+  #final-actual.final-reference-section { background-position:100% center !important; }
+  #final-actual.final-reference-section::before { background:linear-gradient(90deg,rgba(7,22,48,.97) 0%,rgba(7,22,48,.9) 64%,rgba(7,22,48,.66) 100%); }
+  #final-actual .final-reference-content { box-sizing:border-box; width:100%; max-width:100%; overflow:hidden; }
+  #final-actual .final-reference-heading { display:block; width:100%; min-width:0; font-size:30px; line-height:1.04; }
+  #final-actual .final-reference-subtitle { width:100%; font-size:14px; line-height:1.35; }
+  #final-actual .final-reference-tagline { width:100%; font-size:14px; line-height:1.4; }
+  #final-actual .final-reference-actions { flex:0 0 auto; width:100%; }
+  #final-actual .final-reference-button { flex:0 0 auto; width:100%; font-size:13px; }
+  #final-actual .final-reference-linkedin-label { font-size:11px; letter-spacing:.1em; }
+}
