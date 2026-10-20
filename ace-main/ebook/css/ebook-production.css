@@ -543,9 +543,9 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   border: 1px solid rgba(255,255,255,.12);
   border-radius: 26px;
   background-image: linear-gradient(90deg, rgba(10,31,68,0) 0%, rgba(10,31,68,.08) 30%, rgba(10,31,68,.18) 52%, rgba(10,31,68,.28) 100%), url("../../images/hero-consultation.png");
-  background-position: center center, 0% center;
+  background-position: center center, calc(0% - 220px) center;
   background-repeat: no-repeat;
-  background-size: cover, cover;
+  background-size: cover, 130% auto;
   color: #fff;
 }
 #completion-actual .completion-content {
@@ -722,8 +722,8 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   #completion-actual.completion-offer {
     min-height: 0;
     background-image: linear-gradient(180deg, rgba(10,31,68,0) 0, rgba(10,31,68,.12) 18%, rgba(10,31,68,.25) 37%, rgba(10,31,68,.35) 100%), url("../../images/hero-consultation.png");
-    background-position: center top, 0% top;
-    background-size: auto 100%, cover;
+    background-position: center top, calc(0% - 100px) top;
+    background-size: auto 100%, 145% auto;
   }
   #completion-actual .completion-content {
     width: 100%;
