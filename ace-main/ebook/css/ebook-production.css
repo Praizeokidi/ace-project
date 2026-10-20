@@ -555,7 +555,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   width: 56%;
   margin-left: 4%;
   transform: none;
-  padding: 24px 32px 16px;
+  padding: 14px 32px 10px;
 }
 #completion-actual .completion-eyebrow {
   display: flex;
@@ -600,13 +600,13 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   line-height: 1.6;
 }
 #completion-actual .completion-support {
-  margin-top: 18px;
+  margin-top: 12px;
 }
 #completion-actual .completion-support-heading {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: #e8b84f;
   font-size: 10px;
   font-weight: 800;
@@ -627,7 +627,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #completion-actual .completion-card {
   position: relative;
   min-width: 0;
-  padding: 18px;
+  padding: 12px;
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 16px;
   background: rgba(255,255,255,.07);
@@ -635,16 +635,16 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 }
 #completion-actual .completion-card-icon {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   place-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   border: 1px solid rgba(232,184,79,.8);
   border-radius: 50%;
 }
 #completion-actual .completion-card-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: #e8b84f;
   stroke-width: 1.5;
@@ -652,15 +652,15 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   stroke-linejoin: round;
 }
 #completion-actual .completion-card h3 {
-  margin: 0 0 15px;
+  margin: 0 0 8px;
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.15;
 }
 #completion-actual .completion-card ul {
   display: grid;
-  gap: 10px;
+  gap: 6px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -669,8 +669,8 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   position: relative;
   padding-left: 17px;
   color: rgba(255,255,255,.9);
-  font-size: 14px;
-  line-height: 1.42;
+  font-size: 12.5px;
+  line-height: 1.25;
 }
 #completion-actual .completion-card li::before {
   position: absolute;
@@ -688,8 +688,8 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255,255,255,.18);
 }
 #completion-actual .completion-bottom blockquote {
@@ -751,7 +751,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
     width: 100%;
     margin-left: 0;
     transform: none;
-    padding: 245px 28px 16px;
+    padding: 225px 28px 10px;
   }
   #completion-actual .completion-heading h2 { font-size: clamp(2.25rem, 8vw, 3.2rem); }
   #completion-actual .completion-cards { grid-template-columns: 1fr; }
