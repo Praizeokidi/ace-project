@@ -552,7 +552,7 @@ blockquote { margin-top: 26px; padding: 20px 0 20px 22px; border-left: 4px solid
 #completion-actual .completion-content {
   position: relative;
   z-index: 1;
-  width: 92%;
+  width: 56%;
   margin-left: 4%;
   transform: none;
   padding: 24px 32px 16px;
