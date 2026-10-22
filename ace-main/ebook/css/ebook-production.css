@@ -3172,3 +3172,273 @@ body.dpia-site {
     margin-bottom: 28px;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   Ecosystem section — scoped redesign (ecosystem.png)
+   ------------------------------------------------------------------------- */
+#ecosystem-actual.ecosystem {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 48px;
+  background: #fbf9f5;
+}
+
+#ecosystem-actual > .eco-art {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 26%;
+  height: 250px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+#ecosystem-actual > .eco-art-left {
+  left: 0;
+}
+
+#ecosystem-actual > .eco-art-right {
+  right: 0;
+}
+
+#ecosystem-actual > .eco-art path {
+  fill: none;
+  stroke: rgba(120, 170, 225, 0.35);
+  stroke-width: 1;
+}
+
+#ecosystem-actual > .eco-art .eco-art-gold {
+  stroke: rgba(201, 162, 77, 0.3);
+}
+
+#ecosystem-actual > .eco-art .eco-dot-gold {
+  fill: #c9a24d;
+}
+
+#ecosystem-actual > .eco-art .eco-dot-blue {
+  fill: #4a7fd6;
+}
+
+#ecosystem-actual > .shell {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100% - 48px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#ecosystem-actual .section-heading.centered-heading {
+  max-width: none;
+  margin: 0 0 38px;
+  text-align: center;
+}
+
+#ecosystem-actual .section-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  color: #0c2147;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#ecosystem-actual .eco-rule {
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  background: #b8892f;
+}
+
+#ecosystem-actual .section-heading h2 {
+  margin: 14px 0 0;
+  color: #0c2147;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(1.9rem, 2.7vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+#ecosystem-actual .section-heading .eco-sub {
+  max-width: 760px;
+  margin: 10px auto 0;
+  color: #3f4f6d;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#ecosystem-actual .series-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1fr) 40px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+}
+
+#ecosystem-actual .series-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 196px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 22px;
+  border: 1px solid rgba(16, 45, 77, 0.12);
+  border-radius: 6px;
+  background: #fdfcfa;
+  box-shadow: 0 6px 20px rgba(16, 45, 77, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#ecosystem-actual .series-card::before {
+  position: absolute;
+  top: -1px;
+  right: 22px;
+  left: 94px;
+  height: 1px;
+  content: "";
+  background: rgba(173, 129, 64, 0.45);
+}
+
+#ecosystem-actual .series-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 24px rgba(16, 45, 77, 0.08);
+}
+
+#ecosystem-actual .series-icon {
+  display: grid;
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f4f0e8;
+  color: #0c2147;
+}
+
+#ecosystem-actual .series-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: #0c2147;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+#ecosystem-actual .series-body {
+  min-width: 0;
+}
+
+#ecosystem-actual .series-num {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 4px;
+  color: #b8892f;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#ecosystem-actual .series-num i {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: #b8892f;
+}
+
+#ecosystem-actual .series-card h3 {
+  margin: 0;
+  color: #0c2147;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+#ecosystem-actual .series-sub {
+  margin: 4px 0 0;
+  color: rgba(12, 33, 71, 0.85);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 14.5px;
+  line-height: 1.25;
+}
+
+#ecosystem-actual .series-desc {
+  margin: 12px 0 0;
+  color: #4a5a78;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#ecosystem-actual .series-arrow {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  color: #b8892f;
+}
+
+#ecosystem-actual .series-arrow svg {
+  width: 26px;
+  height: 16px;
+  fill: none;
+  stroke: #b8892f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+@media (max-width: 1100px) {
+  #ecosystem-actual .series-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  #ecosystem-actual .series-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  #ecosystem-actual.ecosystem {
+    padding: 32px 0 40px;
+  }
+
+  #ecosystem-actual .section-heading.centered-heading {
+    margin-bottom: 28px;
+  }
+
+  #ecosystem-actual .section-heading h2 {
+    font-size: clamp(1.7rem, 7vw, 2rem);
+  }
+
+  #ecosystem-actual .section-heading .eco-sub {
+    font-size: 15px;
+  }
+
+  #ecosystem-actual .series-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  #ecosystem-actual .series-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  #ecosystem-actual > .eco-art {
+    opacity: 0.4;
+  }
+}
