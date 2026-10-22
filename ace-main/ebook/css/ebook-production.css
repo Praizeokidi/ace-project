@@ -2898,3 +2898,277 @@ body.dpia-site {
     background-position: center top;
   }
 }
+
+
+/* -------------------------------------------------------------------------
+   Combined service section — scoped redesign
+   ------------------------------------------------------------------------- */
+#combined-actual.combined-offer {
+  min-height: 460px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(10, 31, 68, 0.08);
+  border-radius: 26px;
+  background: #faf8f3;
+}
+
+#combined-actual .combined-layout {
+  display: grid;
+  grid-template-columns: 57% 43%;
+  min-height: 460px;
+}
+
+#combined-actual .combined-left {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) 1px minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: stretch;
+  padding: 44px 24px 40px 44px;
+}
+
+#combined-actual .combined-copy {
+  min-width: 0;
+}
+
+#combined-actual .combined-copy .section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: #b8892f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+#combined-actual .combined-copy .section-label .label-line {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background: #c9a24d;
+}
+
+#combined-actual .combined-copy h2 {
+  max-width: none;
+  color: #0a1f44;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(2rem, 2.9vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+#combined-actual .combined-intro {
+  max-width: none;
+  margin: 18px 0 0;
+  color: #46546f;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#combined-actual .combined-divider {
+  width: 1px;
+  height: calc(100% - 16px);
+  margin: 8px 0;
+  background: #c9a24d;
+  opacity: 0.8;
+}
+
+#combined-actual .combined-checklist {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding-top: 2px;
+}
+
+#combined-actual .combined-includes-heading {
+  margin: 0 0 20px;
+  color: #0a1f44;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#combined-actual .combined-includes {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#combined-actual .combined-includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  color: #0a1f44;
+  font-size: 14.5px;
+  line-height: 1.42;
+}
+
+#combined-actual .combined-includes li::before {
+  display: none;
+  content: none;
+}
+
+#combined-actual .combined-includes li svg {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  margin-top: -1px;
+  fill: none;
+  stroke: #b8892f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+#combined-actual .combined-ideal {
+  margin: 22px 0 0;
+  padding: 12px 16px;
+  border: 0;
+  border-left: 3px solid #b8892f;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(10, 31, 68, 0.06);
+}
+
+#combined-actual .combined-ideal-label {
+  margin: 0 0 6px;
+  color: #9a7222;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#combined-actual .combined-ideal-text {
+  margin: 0;
+  color: #0a1f44;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+#combined-actual .combined-checklist > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+#combined-actual .combined-checklist > .button:hover,
+#combined-actual .combined-checklist > .button:focus-visible {
+  background: linear-gradient(135deg, #102d4d 0%, #162c68 60%, #4259a9 100%);
+}
+
+#combined-actual .combined-right {
+  position: relative;
+  min-width: 0;
+  min-height: 460px;
+}
+
+#combined-actual .combined-photo {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../ace%20material/consultation-training-bg.png");
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  background-size: 175% auto;
+}
+
+#combined-actual .combined-photo-labels {
+  position: absolute;
+  top: 108px;
+  right: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+#combined-actual .combined-photo-labels i {
+  display: block;
+  width: 34px;
+  height: 1px;
+  margin-top: 3px;
+  background: #d9a441;
+}
+
+@media (max-width: 999px) {
+  #combined-actual.combined-offer {
+    min-height: 0;
+    border-radius: 24px;
+  }
+
+  #combined-actual .combined-layout {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  #combined-actual .combined-left {
+    display: contents;
+  }
+
+  #combined-actual .combined-copy {
+    order: 1;
+    padding: 34px 24px 0;
+  }
+
+  #combined-actual .combined-divider {
+    order: 2;
+    width: auto;
+    height: 1px;
+    margin: 28px 24px 0;
+  }
+
+  #combined-actual .combined-checklist {
+    order: 3;
+    padding: 28px 24px 0;
+  }
+
+  #combined-actual .combined-right {
+    order: 4;
+    min-height: 0;
+  }
+
+  #combined-actual .combined-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 1114 / 527;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #combined-actual .combined-photo-labels {
+    display: none;
+  }
+
+  #combined-actual .combined-checklist > .button {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+}

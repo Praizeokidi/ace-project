@@ -5587,3 +5587,51 @@ html {
 #training-actual.training-reference-section .training-reference-button:focus-visible {
   background: linear-gradient(135deg, #102d4d 0%, #162c68 60%, #4259a9 100%);
 }
+
+
+/* Align only the Training Only Available as row. */
+#training-actual.training-reference-section .training-reference-available {
+  align-items: stretch;
+  column-gap: 0;
+}
+#training-actual.training-reference-section .training-reference-available-item {
+  min-width: 0;
+  box-sizing: border-box;
+  gap: 8px;
+  padding-inline: 12px;
+  font-size: 13px;
+  line-height: 1.2;
+  overflow: hidden;
+}
+#training-actual.training-reference-section .training-reference-available-item svg {
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+}
+#training-actual.training-reference-section .training-reference-available-item span {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+}
+#training-actual.training-reference-section .training-reference-available-item:nth-child(2) span {
+  letter-spacing: -0.012em;
+}
+@media (max-width: 999px) {
+  #training-actual.training-reference-section .training-reference-available-item {
+    padding-inline: 10px;
+  }
+}
+@media (max-width: 559px) {
+  #training-actual.training-reference-section .training-reference-available-item {
+    padding-inline: 0;
+    font-size: 15px;
+  }
+}
+
+
+/* Tiny alignment adjustment for only Organisational/team training. */
+#training-actual.training-reference-section .training-reference-available-item:nth-child(2) {
+  transform: translateX(-3px);
+}
