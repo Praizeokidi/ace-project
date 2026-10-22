@@ -8,6 +8,12 @@
     '/api/newsletter',
   ]);
 
+  // Start new document visits at the top, but preserve intentional hash links.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.addEventListener("pageshow", () => {
+    if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+
   window.aceDashboardEndpoint = (path, form) => {
     const normalizedPath = `/${String(path).replace(/^\//, '')}`;
     const base = form?.dataset.dashboardApiBase ||

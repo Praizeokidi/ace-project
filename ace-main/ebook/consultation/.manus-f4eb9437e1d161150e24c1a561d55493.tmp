@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Book a DPIA consultation with ACE Data Protection Consulting for practical, independent support on privacy risk and regulatory compliance.">
+    <meta name="author" content="ACE Data Protection Consulting">
+    <meta name="theme-color" content="#4259a9">
+    <title>Book a DPIA Consultation | ACE Data Protection Consulting</title>
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/dpia-home.css">
+    <link rel="stylesheet" href="./css/consultation.css">
+    <link rel="stylesheet" href="./css/consultation-enhancements.css">
+    <link rel="stylesheet" href="../css/ace-footer.css">
+
+    <script src="../js/ace-dashboard-api.js"></script>
+    <script src="../consultation/js/consultation.js"></script>
+</head>
+
+<body class="consultation-page" data-footer-context="consultation">
+    <a class="skip-link" href="#consultation-form">Skip to consultation form</a>
+
+    <div class="topbar">
+        <div class="shell topbar-inner">
+            <span>ACE Data Protection Consulting</span>
+            <span>Practical accountability for complex processing</span>
+        </div>
+    </div>
+
+    <header class="site-header" data-header>
+        <div class="shell nav-wrap">
+            <a class="brand" href="../../index.html" aria-label="ACE Data Protection Consulting home">
+                <img src="/images/logo.png" alt="ACE Data Protection Consulting" width="156" height="70">
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span></span><span></span><span></span>
+                <span class="sr-only">Open navigation menu</span>
+            </button>
+            <nav class="site-menu" id="site-menu" aria-label="Main navigation" data-menu>
+                <a href="../index.html#hero-actual">Learn</a>
+                <a href="../index.html#toolkit-actual">Implement</a>
+                <a href="../index.html#training-actual">Build Capability</a>
+                <a href="../index.html#consultation-actual">Get Support</a>
+                <a class="nav-cta" href="#consultation-form">Book a Consultation <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="consultation-skeleton" class="skel-consultation-page" aria-hidden="true">
+            <section class="skel-consultation-hero">
+                <div class="shell skel-consultation-hero-grid">
+                    <div>
+                        <div class="skel-shimmer skel-consultation-eyebrow"></div>
+                        <div class="skel-shimmer skel-consultation-title"></div>
+                        <div class="skel-shimmer skel-consultation-subtitle"></div>
+                        <div class="skel-shimmer skel-consultation-description"></div>
+                        <div class="skel-shimmer skel-consultation-description skel-consultation-description-short">
+                        </div>
+                        <div class="skel-shimmer skel-consultation-button"></div>
+                    </div>
+                    <div class="skel-shimmer skel-consultation-lifecycle">
+                        <div class="skel-consultation-lifecycle-heading">
+                            <div class="skel-shimmer"></div>
+                            <div class="skel-shimmer"></div>
+                        </div>
+                        <div class="skel-consultation-lifecycle-steps">
+                            <div class="skel-shimmer"></div>
+                            <div class="skel-shimmer"></div>
+                            <div class="skel-shimmer"></div>
+                            <div class="skel-shimmer"></div>
+                            <div class="skel-shimmer"></div>
+                        </div>
+                        <div class="skel-shimmer skel-consultation-lifecycle-caption"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="skel-consultation-services">
+                <div class="shell">
+                    <div class="skel-shimmer skel-consultation-label"></div>
+                    <div class="skel-shimmer skel-consultation-heading"></div>
+                    <div class="skel-shimmer skel-consultation-copy"></div>
+                    <div class="skel-consultation-service-grid">
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                        <div class="skel-shimmer"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="skel-consultation-form">
+                <div class="shell">
+                    <div class="skel-shimmer skel-consultation-label"></div>
+                    <div class="skel-shimmer skel-consultation-heading"></div>
+                    <div class="skel-shimmer skel-consultation-copy"></div>
+                    <div class="skel-consultation-form-layout">
+                        <div class="skel-consultation-form-main">
+                            <div class="skel-consultation-fieldset">
+                                <div class="skel-shimmer skel-consultation-legend"></div>
+                                <div class="skel-consultation-input-grid">
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                </div>
+                            </div>
+                            <div class="skel-consultation-fieldset">
+                                <div class="skel-shimmer skel-consultation-legend"></div>
+                                <div class="skel-consultation-choice-grid">
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                    <div class="skel-shimmer"></div>
+                                </div>
+                            </div>
+                            <div class="skel-consultation-fieldset skel-consultation-tall">
+                                <div class="skel-shimmer skel-consultation-legend"></div>
+                                <div class="skel-shimmer skel-consultation-textarea"></div>
+                            </div>
+                        </div>
+                        <div class="skel-consultation-aside">
+                            <div class="skel-shimmer skel-consultation-aside-card"></div>
+                            <div class="skel-shimmer skel-consultation-privacy"></div>
+                            <div class="skel-shimmer skel-consultation-submit"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="consultation-content">
+            <section id="consultation-hero" class="consultation-hero section-dark" aria-labelledby="consultation-title">
+                <div class="consultation-hero-photo" aria-hidden="true"></div>
+
+                <div class="consultation-hero-grid-lines" aria-hidden="true"></div>
+
+                <svg class="ace-aceternity-spotlight" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 3787 2842" fill="none" focusable="false">
+                    <g filter="url(#ace-consultation-spotlight-filter )">
+                        <ellipse cx="1924.71" cy="273.501" rx="1924.71" ry="273.501"
+                            transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)" fill="#2F4FA2"
+                            fill-opacity="0.26" />
+                    </g>
+
+                    <defs>
+                        <filter id="ace-consultation-spotlight-filter" x="0.860352" y="0.838989" width="3785.16"
+                            height="2840.26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feGaussianBlur stdDeviation="151" result="effect1_foregroundBlur" />
+                        </filter>
+                    </defs>
+                </svg>
+
+                <div class="shell consultation-hero-inner">
+                    <div class="consultation-hero-copy">
+                        <p class="eyebrow eyebrow-gold"><span class="eyebrow-rule" aria-hidden="true"></span>Expert DPIA
+                            support</p>
+                        <h1 id="consultation-title">Need Support<br>With a <span class="ace-highlight">DPIA?</span></h1>
+                        <p class="consultation-hero-subtitle">Independent guidance for decisions that carry privacy
+                            risk.
+                        </p>
+                        <p class="consultation-hero-description">Whether you are determining if a DPIA is required,
+                            preparing to assess a new project or technology, or reviewing an existing high-risk
+                            processing
+                            activity, ACE Data Protection Consulting can provide practical, independent support.</p>
+                        <div class="consultation-hero-actions">
+                            <a class="button button-white" href="#consultation-form">Book a Consultation <span
+                                    aria-hidden="true">↗</span></a>
+                        </div>
+                        <p class="consultation-hero-note"><span aria-hidden="true">◆</span> A structured route from
+                            uncertainty to accountable action.</p>
+                    </div>
+
+                    <div class="lifecycle-card"
+                        aria-label="DPIA lifecycle: Screening, Scoping, Assessment, Risk Management, Accountability">
+                        <div class="lifecycle-card-header"><span>ACE methodology</span><span>01—05</span></div>
+                        <div class="lifecycle-track" aria-label="ACE consultation lifecycle">
+                            <button class="lifecycle-step is-active" type="button" data-lifecycle-step="screening"
+                                aria-controls="lifecycle-detail" aria-pressed="true">
+                                <span class="lifecycle-dot" aria-hidden="true">01</span>
+                                <span class="lifecycle-copy">
+                                    <strong>Screening</strong>
+                                    <small>Is a DPIA required?</small>
+                                </span>
+                            </button>
+
+                            <button class="lifecycle-step" type="button" data-lifecycle-step="scoping"
+                                aria-controls="lifecycle-detail" aria-pressed="false">
+                                <span class="lifecycle-dot" aria-hidden="true">02</span>
+                                <span class="lifecycle-copy">
+                                    <strong>Scoping</strong>
+                                    <small>Define the boundaries.</small>
+                                </span>
+                            </button>
+
+                            <button class="lifecycle-step" type="button" data-lifecycle-step="assessment"
+                                aria-controls="lifecycle-detail" aria-pressed="false">
+                                <span class="lifecycle-dot" aria-hidden="true">03</span>
+                                <span class="lifecycle-copy">
+                                    <strong>Assessment</strong>
+                                    <small>Understand the risk.</small>
+                                </span>
+                            </button>
+
+                            <button class="lifecycle-step" type="button" data-lifecycle-step="risk"
+                                aria-controls="lifecycle-detail" aria-pressed="false">
+                                <span class="lifecycle-dot" aria-hidden="true">04</span>
+                                <span class="lifecycle-copy">
+                                    <strong>Risk Management</strong>
+                                    <small>Design mitigations.</small>
+                                </span>
+                            </button>
+
+                            <button class="lifecycle-step" type="button" data-lifecycle-step="accountability"
+                                aria-controls="lifecycle-detail" aria-pressed="false">
+                                <span class="lifecycle-dot" aria-hidden="true">05</span>
+                                <span class="lifecycle-copy">
+                                    <strong>Accountability</strong>
+                                    <small>Evidence the decision.</small>
+                                </span>
+                            </button>
+                        </div>
+
+                        <p id="lifecycle-detail" class="lifecycle-caption" aria-live="polite">
+                            A DPIA is more than a document. It is a disciplined decision-making process.
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="ace-trust-strip" aria-label="ACE service principles">
+                <div class="shell ace-trust-strip-inner">
+                    <span>
+                        <b>01</b>
+                        Practical methodology
+                    </span>
+
+                    <span>
+                        <b>02</b>
+                        Independent perspective
+                    </span>
+
+                    <span>
+                        <b>03</b>
+                        Clear next steps
+                    </span>
+                </div>
+            </section>
+
+
+            <section class="consultation-services section-light" aria-labelledby="support-title">
+
+                <!-- Decorative ambient orbs -->
+                <span class="service-orb service-orb-1" aria-hidden="true"></span>
+                <span class="service-orb service-orb-2" aria-hidden="true"></span>
+                <span class="service-orb service-orb-3" aria-hidden="true"></span>
+                <span class="service-orb service-orb-4" aria-hidden="true"></span>
+                <span class="service-orb service-orb-5" aria-hidden="true"></span>
+                <span class="service-orb service-orb-6" aria-hidden="true"></span>
+                <span class="service-orb service-orb-7" aria-hidden="true"></span>
+                <span class="service-orb service-orb-8" aria-hidden="true"></span>
+
+                <div class="shell">
+                    <div class="section-heading consultation-section-heading">
+                        <p class="eyebrow" style="color: var(--gold);">What we can support you with</p>
+                        <h2 id="support-title">Practical expertise at every stage of the DPIA journey.</h2>
+                        <p>From the first screening question to governance and review, ACE helps organisations turn
+                            complex
+                            requirements into clear, defensible action.</p>
+                    </div>
+
+                    <div class="service-families">
+
+                        <!-- FAMILY 1: DETERMINE -->
+                        <section class="service-family service-family-determine"
+                            aria-labelledby="service-family-determine-title">
+                            <div class="service-family-heading">
+                                <span class="service-family-number">01</span>
+                                <div>
+                                    <p class="service-family-label">Determine</p>
+                                    <h3 id="service-family-determine-title">
+            

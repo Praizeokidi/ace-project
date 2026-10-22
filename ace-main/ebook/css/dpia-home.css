@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --navy: #102d4d;
   --navy-deep: #081d34;
   --ink: #182738;
@@ -5536,4 +5536,54 @@ html {
   #final-actual .final-reference-values {
     transform:translateX(3cqw);
   }
+}
+
+
+/* Training-only reference rebuild, scoped exclusively to #training-actual. */
+#training-actual.training-reference-section{container-type:inline-size;position:relative;min-height:520px;overflow:hidden;border:1px solid rgba(10,31,68,.08);border-radius:26px;background:#f7f4ee url("../../images/training-bg.png") right center / auto 100% no-repeat;color:#0a1f44;padding:0!important;}
+#training-actual .training-reference-layout{position:relative;display:grid;grid-template-columns:28% 44% 28%;grid-template-rows:auto auto;min-height:520px;padding:42px 42px 34px;box-sizing:border-box;align-items:start;}
+#training-actual .training-reference-overview{grid-column:1;grid-row:1;align-self:start;padding-top:0;}
+#training-actual .training-reference-eyebrow{display:flex;align-items:center;gap:14px;color:#0a1f44;font-size:15px;font-weight:700;letter-spacing:.22em;line-height:1;text-transform:uppercase;}
+#training-actual .training-reference-eyebrow-line{width:44px;height:2px;background:#c9a24d;}
+#training-actual .training-reference-number{color:#b8892f;}
+#training-actual .training-reference-overview h2{max-width:560px;margin:38px 0 0;color:#0a1f44;font-family:var(--serif,"Source Serif 4",Georgia,serif);font-size:clamp(40px,3.25cqw,72px);font-weight:500;letter-spacing:-.035em;line-height:.98;}
+#training-actual .training-reference-overview>p{max-width:410px;margin:30px 0 0;color:#526175;font-family:var(--serif,"Source Serif 4",Georgia,serif);font-size:18px;line-height:1.45;}
+#training-actual .training-reference-middle{grid-column:2;grid-row:1 / span 2;min-width:0;padding:0 22px;}
+#training-actual .training-reference-block-heading{display:flex;align-items:center;gap:18px;color:#0a1f44;font-size:13px;font-weight:800;letter-spacing:.21em;line-height:1;text-transform:uppercase;}
+#training-actual .training-reference-block-heading i{flex:1;height:1px;background:rgba(10,31,68,.2);}
+#training-actual .training-reference-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:72px;align-items:stretch;gap:10px;margin-top:16px;}
+#training-actual .training-reference-topic{display:flex;align-items:center;height:72px;min-height:0;padding:9px 13px;gap:10px;border:1px solid rgba(10,31,68,.08);border-radius:5px;background:#fff;box-shadow:0 7px 18px rgba(10,31,68,.06);color:#0a1f44;font-family:var(--serif,"Source Serif 4",Georgia,serif);font-size:15px;line-height:1.12;}
+#training-actual .training-reference-topic svg,#training-actual .training-reference-available-item svg{width:28px;height:28px;flex:none;fill:none;stroke:#b8892f;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#training-actual .training-reference-topic span{min-width:0;overflow-wrap:break-word;}
+#training-actual .training-reference-available-heading{margin-top:18px;}
+#training-actual .training-reference-available{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:10px;}
+#training-actual .training-reference-available-item{display:flex;align-items:center;gap:10px;min-width:0;padding:0 14px;color:#0a1f44;font-family:var(--serif,"Source Serif 4",Georgia,serif);font-size:14px;line-height:1.18;}
+#training-actual .training-reference-available-item+.training-reference-available-item{border-left:1px solid #c9a24d;}
+#training-actual .training-reference-values{grid-column:3;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;gap:17px;justify-self:end;align-self:start;color:#0a1f44;font-size:12px;font-weight:700;letter-spacing:.31em;line-height:1;text-transform:uppercase;}
+#training-actual .training-reference-value-line{width:48px;height:2px;margin-bottom:2px;background:#c9a24d;}
+#training-actual .training-reference-button{grid-column:1;grid-row:2;display:inline-flex;align-items:center;justify-content:center;gap:18px;justify-self:start;min-height:52px;margin-top:28px;padding:0 36px;border-radius:999px;color:#fff;background:#4259a9;font-family:var(--sans,Inter,system-ui,sans-serif);font-size:15px;font-weight:800;letter-spacing:.1em;text-decoration:none;white-space:nowrap;box-shadow:0 10px 24px rgba(66,89,169,.2);}
+#training-actual .training-reference-button:hover,#training-actual .training-reference-button:focus-visible{background:var(--navy);}
+#training-actual .training-reference-button svg{width:28px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+#training-actual.training-reference-section .training-reference-topic:nth-child(1),#training-actual.training-reference-section .training-reference-topic:nth-child(5),#training-actual.training-reference-section .training-reference-topic:nth-child(6),#training-actual.training-reference-section .training-reference-topic:nth-child(8),#training-actual.training-reference-section .training-reference-topic:nth-child(9),#training-actual.training-reference-section .training-reference-topic:nth-child(11){font-size:13.5px;line-height:1.1;}
+@media (max-width:999px){#training-actual.training-reference-section{min-height:0;background-size:auto 210px;}#training-actual.training-reference-section .training-reference-layout{display:flex;flex-direction:column;min-height:0;padding-top:38px;padding-bottom:228px;}#training-actual .training-reference-middle{margin-top:44px;padding:0;}#training-actual .training-reference-values{display:none;}#training-actual .training-reference-button{order:3;width:100%;margin-top:28px;}#training-actual .training-reference-topics{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:559px){#training-actual.training-reference-section{background-size:auto 200px;}#training-actual.training-reference-section .training-reference-layout{padding-top:32px;padding-bottom:218px;}#training-actual.training-reference-section .training-reference-topics{grid-template-columns:1fr!important;grid-auto-rows:68px;}#training-actual.training-reference-section .training-reference-topic{height:68px;padding:8px 11px;font-size:14px;line-height:1.1;}#training-actual.training-reference-section .training-reference-available{grid-template-columns:1fr;}#training-actual.training-reference-section .training-reference-available-item{min-height:54px;padding:0;font-size:15px;}#training-actual.training-reference-section .training-reference-available-item+.training-reference-available-item{border-left:0;border-top:1px solid #c9a24d;}#training-actual.training-reference-section .training-reference-topic:nth-child(1),#training-actual.training-reference-section .training-reference-topic:nth-child(5),#training-actual.training-reference-section .training-reference-topic:nth-child(6),#training-actual.training-reference-section .training-reference-topic:nth-child(8),#training-actual.training-reference-section .training-reference-topic:nth-child(9),#training-actual.training-reference-section .training-reference-topic:nth-child(11){font-size:13px;line-height:1.08;}}
+
+
+/* Match the Request a DPIA Review CTA only inside Training only. */
+#training-actual.training-reference-section .training-reference-button {
+  gap: 14px;
+  min-height: 48px;
+  padding: 13px 19px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  box-shadow: 0 14px 32px rgba(16, 45, 77, 0.24);
+}
+#training-actual.training-reference-section .training-reference-button:hover,
+#training-actual.training-reference-section .training-reference-button:focus-visible {
+  background: linear-gradient(135deg, #102d4d 0%, #162c68 60%, #4259a9 100%);
 }
