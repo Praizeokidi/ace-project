@@ -5689,3 +5689,7 @@ html {
     flex-basis: 15px;
   }
 }
+
+#training-actual.training-reference-section .training-reference-topic svg {
+  display: none;
+}
