@@ -1,0 +1,64 @@
+<!--
+  ACE DPiA footer reference
+  Source: ace-main/ebook/index.html
+
+  Integration requirements:
+  1. Load css/ace-footer.css after the page stylesheet.
+  2. Load js/ace-dashboard-api.js before js/ace-footer.js.
+  3. Load js/ace-footer.js after this footer markup.
+  4. Keep the body data-footer-context attribute. Supported contexts are:
+     ebook, training, consultation, review, and toolkit.
+  5. The newsletter form uses data-ace-footer and data-footer-newsletter hooks,
+     and submits to /api/newsletter through window.aceDashboardEndpoint().
+  6. Update relative links and the newsletter input id when embedding on another
+     page to avoid duplicate IDs and incorrect path resolution.
+-->
+<footer class="ace-footer" data-ace-footer data-newsletter-endpoint="/api/public-submissions/newsletter"
+  aria-labelledby="ace-footer-title">
+  <h2 class="sr-only" id="ace-footer-title">ACE Data Protection Consulting footer</h2>
+  <div class="shell ace-footer__inner">
+    <div class="ace-footer__body" data-footer-reveal>
+      <div class="ace-footer__brand">
+        <a class="brand" href="./" aria-label="ACE Data Protection Consulting home">
+          <img src="../images/logo.png" alt="ACE Data Protection Consulting" width="140" height="63">
+        </a>
+        <p class="ace-footer__mission">DPIA Made Easy: learn the method, apply it in practice, and institutionalise
+          responsible data protection.</p>
+      </div>
+
+      <nav class="ace-footer__column" aria-labelledby="ace-footer-company">
+        <p class="ace-footer__heading" id="ace-footer-company">Company</p>
+        <a href="../about.html">About ACE</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy-policy.html">Privacy policy</a>
+        <a href="../terms.html">Terms of use</a>
+      </nav>
+
+      <div class="ace-footer__newsletter">
+        <p class="ace-footer__label">ACE updates and resources</p>
+
+        <form class="ace-footer__newsletter-form" data-footer-newsletter novalidate>
+          <label class="sr-only" for="ace-footer-email-ebook">Email address</label>
+          <input id="ace-footer-email-ebook" name="email" type="email" autocomplete="email"
+            placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="ace-footer__newsletter-note">Privacy-friendly updates. Unsubscribe at any time. See our <a
+            href="../privacy-policy.html">Privacy Notice</a>.</p>
+        <p class="ace-footer__newsletter-status" data-footer-newsletter-status role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="ace-footer__connect">
+        <p class="ace-footer__heading" id="ace-footer-connect">Connect</p>
+        <p class="ace-footer__connect-copy">Follow ACE for practical guidance on accountable data protection.</p>
+        <div class="ace-footer__socials" aria-label="Professional social links">
+          <a href="https://www.linkedin.com/company/ace-data-protection-consulting/" target="_blank"
+            rel="noopener noreferrer" aria-label="ACE on LinkedIn">in</a>
+          <a href="./#priority-actual" aria-label="ACE newsletter">@</a>
+          <a href="./#audio-actual" aria-label="ACE audio briefings">▶</a>
+        </div>
+      </div>
+      <span class="ace-footer__copyright">© 2026 ACE Data Protection Consulting. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
