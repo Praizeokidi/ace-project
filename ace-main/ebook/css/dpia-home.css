@@ -5635,3 +5635,57 @@ html {
 #training-actual.training-reference-section .training-reference-available-item:nth-child(2) {
   transform: translateX(-3px);
 }
+
+/* Training topics: preserve the section footprint, but replace tiles with a refined checklist. */
+#training-actual.training-reference-section .training-reference-topics {
+  gap: 0;
+  border-top: 1px solid rgba(10, 31, 68, 0.16);
+}
+#training-actual.training-reference-section .training-reference-topic {
+  position: relative;
+  height: 72px;
+  padding: 9px 13px 9px 30px;
+  gap: 7px;
+  border: 0;
+  border-bottom: 1px solid rgba(10, 31, 68, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #0a1f44;
+}
+#training-actual.training-reference-section .training-reference-topic::before {
+  position: absolute;
+  left: 2px;
+  display: grid;
+  width: 17px;
+  height: 17px;
+  place-items: center;
+  border: 1px solid #c9a24d;
+  border-radius: 50%;
+  color: #b8892f;
+  content: "✓";
+  font-family: var(--sans, Inter, system-ui, sans-serif);
+  font-size: 10px;
+  font-weight: 800;
+}
+#training-actual.training-reference-section .training-reference-topic svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  stroke-width: 1.25;
+}
+#training-actual.training-reference-section .training-reference-topic span {
+  font-size: 13px;
+  line-height: 1.2;
+}
+@media (max-width: 559px) {
+  #training-actual.training-reference-section .training-reference-topic {
+    height: 68px;
+    padding-left: 28px;
+  }
+  #training-actual.training-reference-section .training-reference-topic svg {
+    width: 15px;
+    height: 15px;
+    flex-basis: 15px;
+  }
+}

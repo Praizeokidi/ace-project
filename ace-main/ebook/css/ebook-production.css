@@ -3442,3 +3442,72 @@ body.dpia-site {
     opacity: 0.4;
   }
 }
+
+#audience-actual .audience-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ace-line);
+}
+
+#audience-actual .audience-checklist li {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  padding: 22px 28px 22px 40px;
+  border-bottom: 1px solid var(--ace-line);
+  color: var(--ace-muted);
+}
+
+#audience-actual .audience-checklist li::before {
+  position: absolute;
+  top: 24px;
+  left: 7px;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid var(--ace-gold);
+  border-radius: 50%;
+  color: var(--ace-blue);
+  content: "✓";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#audience-actual .audience-checklist li:nth-child(odd) {
+  border-right: 1px solid var(--ace-line);
+}
+
+#audience-actual .audience-checklist li:last-child {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+
+#audience-actual .audience-checklist strong {
+  color: var(--ace-navy);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+#audience-actual .audience-checklist span {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  #audience-actual .audience-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  #audience-actual .audience-checklist li,
+  #audience-actual .audience-checklist li:nth-child(odd),
+  #audience-actual .audience-checklist li:last-child {
+    grid-column: auto;
+    border-right: 0;
+  }
+}
