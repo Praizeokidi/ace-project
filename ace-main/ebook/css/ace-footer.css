@@ -697,3 +697,43 @@
     transform: none;
   }
 }
+
+/* Match the ebook footer composition on the training page. */
+.training-page[data-footer-context="training"] .ace-footer__body {
+  grid-template-columns: minmax(230px, 1.25fr) minmax(130px, 0.7fr) minmax(270px, 1.25fr) auto;
+}
+
+.training-page[data-footer-context="training"] .ace-footer__connect {
+  min-width: 0;
+}
+
+.training-page[data-footer-context="training"] .ace-footer__connect-copy {
+  max-width: 190px;
+  margin: 10px 0 0;
+  color: var(--ace-footer-faint);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.training-page[data-footer-context="training"] .ace-footer__connect .ace-footer__socials {
+  justify-content: flex-start;
+  margin-top: 18px;
+}
+
+.training-page[data-footer-context="training"] .ace-footer__copyright {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(220, 228, 255, 0.12);
+  color: var(--ace-footer-faint);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .training-page[data-footer-context="training"] .ace-footer__body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
