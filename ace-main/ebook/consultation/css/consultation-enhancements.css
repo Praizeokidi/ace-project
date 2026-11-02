@@ -73,13 +73,56 @@
 }
 
 .consultation-page .lifecycle-card {
-  border: 1px solid rgba(159, 178, 255, 0.42);
-  border-radius: var(--ace-radius-lg);
-  background:
-    linear-gradient(145deg, rgba(47, 79, 162, 0.42), rgba(8, 29, 52, 0.9)),
-    rgba(8, 29, 52, 0.82);
-  box-shadow: var(--ace-shadow-blue);
-  backdrop-filter: blur(16px);
+	position: relative;
+	overflow: hidden;
+	width: min(100%, 460px);
+	margin-inline: auto;
+	padding: 20px 26px 18px;
+	border: 1px solid rgba(144, 164, 235, 0.34);
+	border-radius: var(--ace-radius-lg);
+	background:
+	  linear-gradient(145deg, rgba(47, 79, 162, 0.36), rgba(8, 29, 52, 0.88)),
+	  rgba(8, 29, 52, 0.78);
+	box-shadow: var(--ace-shadow-blue);
+	backdrop-filter: blur(16px);
+}
+
+.consultation-page .lifecycle-card::after {
+	position: absolute;
+	inset: auto -20% -45% 30%;
+	height: 260px;
+	background: radial-gradient(circle, rgba(66, 89, 169, 0.34), transparent 68%);
+	content: "";
+	pointer-events: none;
+}
+
+.consultation-page .lifecycle-card-header {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.consultation-page .lifecycle-step {
+	align-items: center;
+	padding-bottom: 15px;
+}
+
+.consultation-page .lifecycle-copy {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.consultation-page .lifecycle-step small {
+	grid-column: auto;
+}
+
+.consultation-page .lifecycle-step:last-child {
+	padding-bottom: 0;
+}
+
+.consultation-page .lifecycle-step::before {
+	height: calc(100% - 15px);
 }
 
 .consultation-page .lifecycle-step::before {
@@ -87,26 +130,26 @@
 }
 
 .consultation-page .lifecycle-step.is-active .lifecycle-dot {
-  border-color: #fff;
-  background: var(--ace-blue);
+	border-color: #fff;
+	background: var(--ace-blue);
   box-shadow:
     0 0 0 6px rgba(66, 89, 169, 0.2),
-    0 0 26px rgba(66, 89, 169, 0.54);
+	  0 0 26px rgba(66, 89, 169, 0.54);
+}
+
+.consultation-page .lifecycle-dot {
+	border-color: rgba(219, 227, 255, 0.38);
+	background: rgba(47, 79, 162, 0.2);
 }
 
 .consultation-page .lifecycle-caption {
-  border-top-color: rgba(159, 178, 255, 0.22);
-  color: #dbe3ff;
+	margin-top: 18px;
+	border-top-color: rgba(255, 255, 255, 0.14);
+	color: rgba(255, 255, 255, 0.63);
 }
 
 .consultation-page .lifecycle-step small {
   color: #c9d4ff;
-}
-
-.consultation-page .lifecycle-step small::before {
-  content: "Output · ";
-  color: #8fa5ff;
-  font-weight: 800;
 }
 
 .consultation-page .consultation-hero {

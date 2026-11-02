@@ -5,6 +5,7 @@
     '/api/priority-list',
     '/api/dpia-training',
     '/api/dpia-consultation',
+    '/api/dpia-review',
     '/api/newsletter',
   ]);
 

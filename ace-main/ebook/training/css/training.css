@@ -1745,7 +1745,6 @@
   }
 }
 
-
 /* Compact Learning journey card and auto-step support. */
 .training-page .learning-journey {
   padding: 21px 22px 20px;
@@ -1765,7 +1764,6 @@
   padding-top: 15px;
 }
 
-
 /* =========================================================
    Training hero photo blend — match the ebook hero treatment
    ========================================================= */
@@ -1782,7 +1780,8 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url('../../../images/hero-training.png') right center / cover no-repeat;
+  background: url("../../../images/hero-training.png") right center / cover
+    no-repeat;
 }
 
 #training-hero .training-hero-photo::before {
@@ -1806,7 +1805,8 @@
   position: absolute;
   inset: -18px auto -18px -18px;
   width: 58%;
-  background: url('../../../images/hero-training.png') right center / cover no-repeat;
+  background: url("../../../images/hero-training.png") right center / cover
+    no-repeat;
   content: "";
   filter: blur(13px) saturate(0.78);
   mask-image: linear-gradient(90deg, #000 0%, #000 55%, transparent 100%);
@@ -1850,13 +1850,23 @@
 }
 
 @media (max-width: 1020px) {
-  #training-hero { min-height: 540px; }
-  #training-hero .training-hero-inner { min-height: 540px; grid-template-columns: minmax(0, 48%) minmax(0, 52%); }
-  #training-hero .training-hero-copy { padding-block: 38px 32px; }
+  #training-hero {
+    min-height: 540px;
+  }
+  #training-hero .training-hero-inner {
+    min-height: 540px;
+    grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  }
+  #training-hero .training-hero-copy {
+    padding-block: 38px 32px;
+  }
 }
 
 @media (max-width: 800px) {
-  #training-hero { min-height: 0; padding-bottom: 58px; }
+  #training-hero {
+    min-height: 0;
+    padding-bottom: 58px;
+  }
   #training-hero .training-hero-photo {
     inset: 0 0 auto;
     height: 320px;
@@ -1864,7 +1874,13 @@
     background-size: auto 320px;
   }
   #training-hero .training-hero-photo::before {
-    background: linear-gradient(180deg, rgba(66, 89, 169, 0) 0%, rgba(66, 89, 169, 0.08) 32%, rgba(66, 89, 169, 0.74) 68%, #4259a9 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(66, 89, 169, 0) 0%,
+      rgba(66, 89, 169, 0.08) 32%,
+      rgba(66, 89, 169, 0.74) 68%,
+      #4259a9 100%
+    );
   }
   #training-hero .training-hero-photo::after {
     inset: -14px -14px auto;
@@ -1880,9 +1896,16 @@
     min-height: 0;
     padding-top: 260px;
   }
-  #training-hero .training-hero-copy { max-width: none; padding: 16px 0 0; }
-  #training-hero .learning-journey { margin-top: 34px; }
-  #training-hero h1 { font-size: clamp(2.35rem, 10vw, 3.15rem); }
+  #training-hero .training-hero-copy {
+    max-width: none;
+    padding: 16px 0 0;
+  }
+  #training-hero .learning-journey {
+    margin-top: 34px;
+  }
+  #training-hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.15rem);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1891,15 +1914,17 @@
     background-position: 88% 38%;
     background-size: auto 290px;
   }
-  #training-hero .training-hero-inner { padding-top: 228px; }
+  #training-hero .training-hero-inner {
+    padding-top: 228px;
+  }
 }
 
 /* Standalone learning journey aside, separated from the hero copy. */
 .learning-journey-aside {
   position: relative;
   z-index: 3;
-  margin-top: -18px;
-  padding: 0 0 78px;
+  margin-top: 20px;
+  padding: 0 0 20px;
 }
 
 .learning-journey-aside__shell {
@@ -1912,8 +1937,17 @@
   border: 1px solid rgba(220, 228, 255, 0.22);
   border-radius: 24px;
   background:
-    radial-gradient(circle at 12% 0%, rgba(108, 132, 255, 0.2), transparent 22rem),
-    linear-gradient(135deg, rgba(8, 29, 52, 0.94), rgba(16, 45, 77, 0.9) 58%, rgba(47, 79, 162, 0.72));
+    radial-gradient(
+      circle at 12% 0%,
+      rgba(108, 132, 255, 0.2),
+      transparent 22rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(8, 29, 52, 0.94),
+      rgba(16, 45, 77, 0.9) 58%,
+      rgba(47, 79, 162, 0.72)
+    );
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 26px 64px rgba(8, 29, 52, 0.24);
@@ -1989,4 +2023,3 @@
     gap: 16px;
   }
 }
-
