@@ -789,3 +789,91 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* The ebook footer uses a clear, touch-friendly single-column flow on phones. */
+@media (max-width: 760px) {
+  .dpia-site[data-footer-context="ebook"] .ace-footer__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+    padding: 24px 20px 20px;
+    border-radius: 16px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__brand,
+  .dpia-site[data-footer-context="ebook"] .ace-footer__column,
+  .dpia-site[data-footer-context="ebook"] .ace-footer__newsletter,
+  .dpia-site[data-footer-context="ebook"] .ace-footer__connect,
+  .dpia-site[data-footer-context="ebook"] .ace-footer__copyright {
+    grid-column: 1;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__brand .brand {
+    margin-bottom: 14px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__mission,
+  .dpia-site[data-footer-context="ebook"] .ace-footer__connect-copy {
+    max-width: none;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 14px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__column .ace-footer__heading {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__column a {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(220, 228, 255, 0.1);
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__newsletter {
+    padding: 18px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__newsletter-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__newsletter-form input {
+    width: 100%;
+    max-width: none;
+    min-height: 48px;
+    flex-basis: 48px;
+    font-size: 14px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__newsletter-form button {
+    min-height: 48px;
+    font-size: 12px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__connect .ace-footer__socials {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__connect .ace-footer__socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dpia-site[data-footer-context="ebook"] .ace-footer__copyright {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(220, 228, 255, 0.12);
+    line-height: 1.6;
+  }
+}
