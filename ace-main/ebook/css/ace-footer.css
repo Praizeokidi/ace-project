@@ -877,3 +877,263 @@
     line-height: 1.6;
   }
 }
+
+
+/* Shared-page footer refinements: balanced columns on tablets, clear stacking on phones. */
+:is(
+  .dpia-site[data-footer-context="ebook"],
+  .training-page[data-footer-context="training"],
+  .consultation-page[data-footer-context="consultation"],
+  .toolkit-purchase-page[data-footer-context="toolkit"],
+  .review-page[data-footer-context="review"]
+) .ace-footer__body {
+  min-width: 0;
+}
+
+@media (min-width: 761px) and (max-width: 1040px) {
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    padding: 30px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__brand,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__copyright {
+    grid-column: 1 / -1;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form input {
+    width: 100%;
+    max-width: none;
+    min-height: 48px;
+    flex-basis: 48px;
+    font-size: 14px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form button {
+    min-height: 48px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+    padding: 24px 20px 20px;
+    border-radius: 16px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__brand,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__column,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__connect,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__copyright {
+    grid-column: 1;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__mission,
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__connect-copy {
+    max-width: none;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 14px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__column .ace-footer__heading {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__column a {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(220, 228, 255, 0.1);
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form input {
+    width: 100%;
+    max-width: none;
+    min-height: 48px;
+    flex-basis: 48px;
+    font-size: 14px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__newsletter-form button {
+    min-height: 48px;
+    font-size: 12px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__connect .ace-footer__socials {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__connect .ace-footer__socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+  :is(
+    .dpia-site[data-footer-context="ebook"],
+    .training-page[data-footer-context="training"],
+    .consultation-page[data-footer-context="consultation"],
+    .toolkit-purchase-page[data-footer-context="toolkit"],
+    .review-page[data-footer-context="review"]
+  ) .ace-footer__copyright {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(220, 228, 255, 0.12);
+    line-height: 1.6;
+  }
+}

@@ -73,122 +73,117 @@
       </div>
     </section>
 
-    <section class="review-scope section-light" aria-labelledby="scope-title">
+    <section class="review-dossier section-cream" aria-labelledby="scope-title">
       <div class="shell">
-        <div class="review-section-heading">
-          <p class="eyebrow">What the review includes</p>
-          <h2 id="scope-title">A focused, independent assessment.</h2>
-          <p>ACE examines your existing DPIA as a documented assessment and decision record, with attention to the areas
-            that support defensible, accountable privacy risk management.</p>
-        </div>
-        <div class="review-scope-grid">
-          <article class="review-scope-card"><span>01</span>
-            <h3>Risk assessment</h3>
-            <p>Review how privacy risks have been identified and assessed, including their relevance and treatment.</p>
-          </article>
-          <article class="review-scope-card"><span>02</span>
-            <h3>Mitigation measures</h3>
-            <p>Consider the proposed safeguards and whether the documented measures address the risks identified.</p>
-          </article>
-          <article class="review-scope-card"><span>03</span>
-            <h3>Necessity &amp; proportionality</h3>
-            <p>Review the rationale recorded for the processing and its relationship to the stated purpose.</p>
-          </article>
-          <article class="review-scope-card"><span>04</span>
-            <h3>Accountability &amp; records</h3>
-            <p>Check the clarity and completeness of the decision trail and supporting documentation.</p>
-          </article>
-          <article class="review-scope-card"><span>05</span>
-            <h3>Gaps &amp; recommendations</h3>
-            <p>Identify areas requiring further consideration and provide practical recommendations.</p>
-          </article>
-          <article class="review-scope-card review-scope-card-featured"><span>06</span>
-            <h3>Review summary</h3>
-            <p>Receive a concise summary of observations to help your organisation plan appropriate next steps.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="review-contact section-light" aria-labelledby="review-contact-title">
-      <div class="shell">
-        <div class="review-section-heading">
-          <h2 id="review-contact-title">Contact information</h2>
-        </div>
-        <form class="review-contact-form" id="dpia-review-form" action="/api/dpia-review" method="post" novalidate>
-          <div class="review-contact-grid">
-            <div class="review-contact-field">
-              <label for="review-full-name">Full name <span aria-hidden="true">*</span></label>
-              <input id="review-full-name" name="full_name" type="text" autocomplete="name" required
-                aria-describedby="review-full-name-error">
-              <span class="review-contact-error" id="review-full-name-error"></span>
-            </div>
-            <div class="review-contact-field">
-              <label for="review-organisation">Organisation <span aria-hidden="true">*</span></label>
-              <input id="review-organisation" name="organisation" type="text" autocomplete="organization" required
-                aria-describedby="review-organisation-error">
-              <span class="review-contact-error" id="review-organisation-error"></span>
-            </div>
-            <div class="review-contact-field">
-              <label for="review-job-title">Job title / role <span aria-hidden="true">*</span></label>
-              <input id="review-job-title" name="job_title" type="text" autocomplete="organization-title" required
-                aria-describedby="review-job-title-error">
-              <span class="review-contact-error" id="review-job-title-error"></span>
-            </div>
-            <div class="review-contact-field">
-              <label for="review-business-email">Business email <span aria-hidden="true">*</span></label>
-              <input id="review-business-email" name="business_email" type="email" autocomplete="email" required
-                aria-describedby="review-business-email-error">
-              <span class="review-contact-error" id="review-business-email-error"></span>
-            </div>
-            <div class="review-contact-field">
-              <label for="review-telephone">Telephone number</label>
-              <input id="review-telephone" name="telephone" type="tel" autocomplete="tel" pattern="[+0-9 ()-]+"
-                aria-describedby="review-telephone-error">
-              <span class="review-contact-error" id="review-telephone-error"></span>
-            </div>
-            <div class="review-contact-field">
-              <label for="review-processing-description">Processing activity and DPIA status <span
-                  aria-hidden="true">*</span></label>
-              <textarea id="review-processing-description" name="processing_description" rows="4" required
-                placeholder="Share a short description of the processing activity and the status of your DPIA through the request form. ACE will review your enquiry and contact you to discuss scope and next steps."
-                aria-describedby="review-processing-description-error"></textarea>
-              <span class="review-contact-error" id="review-processing-description-error"></span>
-            </div>
+        <div class="review-dossier-panel">
+          <div class="review-dossier-scope">
+            <p class="eyebrow">What the review includes</p>
+            <h2 id="scope-title">A focused, independent assessment.</h2>
+            <p class="review-dossier-intro">ACE examines your existing DPIA as a documented assessment and decision
+              record, with attention to the areas
+              that support defensible, accountable privacy risk management.</p>
+            <ol class="review-dossier-list">
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">01</span>
+                <h3>Risk assessment</h3>
+                <p>Review how privacy risks have been identified and assessed, including their relevance and treatment.
+                </p>
+              </li>
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">02</span>
+                <h3>Mitigation measures</h3>
+                <p>Consider the proposed safeguards and whether the documented measures address the risks identified.
+                </p>
+              </li>
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">03</span>
+                <h3>Necessity &amp; proportionality</h3>
+                <p>Review the rationale recorded for the processing and its relationship to the stated purpose.</p>
+              </li>
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">04</span>
+                <h3>Accountability &amp; records</h3>
+                <p>Check the clarity and completeness of the decision trail and supporting documentation.</p>
+              </li>
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">05</span>
+                <h3>Gaps &amp; recommendations</h3>
+                <p>Identify areas requiring further consideration and provide practical recommendations.</p>
+              </li>
+              <li>
+                <span class="review-dossier-num" aria-hidden="true">06</span>
+                <h3>Review summary</h3>
+                <p>Receive a concise summary of observations to help your organisation plan appropriate next steps.</p>
+              </li>
+            </ol>
           </div>
-          <aside class="review-privacy-note">
-            <span class="review-privacy-icon" aria-hidden="true">i</span>
-            <div>
-              <h3>Protect the information in your DPIA</h3>
-              <p>Please do not include personal data or attach a DPIA document with your initial enquiry. ACE can
-                discuss
-                an appropriate way to share documents after reviewing your request.</p>
-            </div>
-          </aside>
 
-          <button class="button dpia-button review-cta review-contact-submit" type="submit">
-            <span data-review-submit-label>Send review request</span> <span aria-hidden="true">↗</span>
-          </button>
-        </form>
-        <p class="review-contact-status" data-review-form-status role="status" aria-live="polite" tabindex="-1"></p>
+          <div class="review-dossier-contact">
+            <h2 id="review-contact-title">Contact information</h2>
+            <p class="review-dossier-intro">Share a few details and ACE will contact you to discuss scope and next
+              steps.</p>
+            <form class="review-contact-form" id="dpia-review-form" novalidate>
+              <div class="review-contact-grid">
+                <div class="review-contact-field">
+                  <label for="review-full-name">Full name <span aria-hidden="true">*</span></label>
+                  <input id="review-full-name" name="full_name" type="text" autocomplete="name" required
+                    aria-describedby="review-full-name-error">
+                  <span class="review-contact-error" id="review-full-name-error"></span>
+                </div>
+                <div class="review-contact-field">
+                  <label for="review-organisation">Organisation <span aria-hidden="true">*</span></label>
+                  <input id="review-organisation" name="organisation" type="text" autocomplete="organization" required
+                    aria-describedby="review-organisation-error">
+                  <span class="review-contact-error" id="review-organisation-error"></span>
+                </div>
+                <div class="review-contact-field">
+                  <label for="review-job-title">Job title / role <span aria-hidden="true">*</span></label>
+                  <input id="review-job-title" name="job_title" type="text" autocomplete="organization-title" required
+                    aria-describedby="review-job-title-error">
+                  <span class="review-contact-error" id="review-job-title-error"></span>
+                </div>
+                <div class="review-contact-field">
+                  <label for="review-business-email">Business email <span aria-hidden="true">*</span></label>
+                  <input id="review-business-email" name="business_email" type="email" autocomplete="email" required
+                    aria-describedby="review-business-email-error">
+                  <span class="review-contact-error" id="review-business-email-error"></span>
+                </div>
+                <div class="review-contact-field">
+                  <label for="review-telephone">Telephone number</label>
+                  <input id="review-telephone" name="telephone" type="tel" autocomplete="tel" pattern="[+0-9 ()-]+"
+                    aria-describedby="review-telephone-error">
+                  <span class="review-contact-error" id="review-telephone-error"></span>
+                </div>
+                <div class="review-contact-field">
+                  <label for="review-processing-description">Processing activity and DPIA status <span
+                      aria-hidden="true">*</span></label>
+                  <textarea id="review-processing-description" name="processing_description" rows="4" required
+                    placeholder="Share a short description of the processing activity and the status of your DPIA through the request form. ACE will review your enquiry and contact you to discuss scope and next steps."
+                    aria-describedby="review-processing-description-error"></textarea>
+                  <span class="review-contact-error" id="review-processing-description-error"></span>
+                </div>
+              </div>
+              <aside class="review-privacy-note">
+                <span class="review-privacy-icon" aria-hidden="true">i</span>
+                <div>
+                  <h3>Protect the information in your DPIA</h3>
+                  <p>Please do not include personal data or attach a DPIA document with your initial enquiry. ACE can
+                    discuss
+                    an appropriate way to share documents after reviewing your request.</p>
+                </div>
+              </aside>
 
-      </div>
-    </section>
-
-    <section class="review-process" aria-labelledby="process-title">
-      <div class="shell review-process-inner">
-        <div>
-          <p class="eyebrow eyebrow-gold">How to get started</p>
-          <h2 id="process-title">Tell us about the assessment.</h2>
-          <p>Share a short description of the processing activity and the status of your DPIA through the request form.
-            ACE will review your enquiry and contact you to discuss scope and next steps.</p>
-          <a class="button dpia-button review-cta"
-            href="../consultation/consultation.html?service=existing-dpia#consultation-form">Request a DPIA Review <span
-              aria-hidden="true">↗</span></a>
+              <button class="button dpia-button review-cta review-contact-submit" type="submit">
+                <span data-review-submit-label>Send review request</span> <span aria-hidden="true">↗</span>
+              </button>
+            </form>
+            <p class="review-contact-status" data-review-form-status role="status" aria-live="polite" tabindex="-1"></p>
+          </div>
         </div>
-
       </div>
     </section>
+
+
 
   </main>
 
