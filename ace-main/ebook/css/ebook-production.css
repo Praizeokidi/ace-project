@@ -3530,3 +3530,192 @@ body.dpia-site {
     border-right: 0;
   }
 }
+
+/* =========================================================
+   #hero-actual: toolkit-purchase-hero colour composition
+   (indigo field -> photo, periwinkle accents, grid + orbs)
+   ========================================================= */
+#hero-actual {
+  --hero-periwinkle: #dce4ff;
+  --hero-periwinkle-2: #9fb2ff;
+}
+
+/* 1. Remove the navy veil (the wrapper already supplies the indigo fade) */
+#hero-actual.hero::before {
+  background: none;
+}
+
+/* 2. Remove the blurred photo duplicate that muddies the indigo */
+#hero-actual .hero-photo::after {
+  display: none;
+}
+
+/* 3. Bring back the grid lines and glowing orbs */
+#hero-actual .hero-grid-lines,
+#hero-actual .ebook-hero-orbs {
+  display: block;
+}
+#hero-actual .hero-grid-lines {
+  opacity: 0.19;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8), transparent 88%);
+}
+
+/* 4. Gold accents -> periwinkle accents */
+#hero-actual .hero-eyebrow {
+  color: var(--hero-periwinkle) !important;
+}
+#hero-actual .hero-eyebrow .eyebrow-rule {
+  background: var(--hero-periwinkle-2) !important;
+  box-shadow: 0 0 0 4px rgba(159, 178, 255, 0.2);
+}
+#hero-actual .hero-eyebrow .journey-step {
+  color: var(--hero-periwinkle-2);
+}
+#hero-actual .hero-title-highlight {
+  color: var(--hero-periwinkle);
+}
+#hero-actual .hero-title-highlight::after {
+  background: var(--hero-periwinkle-2);
+  opacity: 0.45;
+}
+#hero-actual .hero-offer-list li::before {
+  background: var(--hero-periwinkle-2);
+}
+
+/* 5. "Includes:" label was rendering dim (a global p rule outranks it) */
+#hero-actual .hero-offer-title {
+  color: #fff;
+}
+
+/* 6. OPTIONAL mobile pass: the mobile hero has its own navy styling.
+      Leave this block out to keep the current navy mobile look. */
+@media (max-width: 800px) {
+  #hero-master-wrapper::before {
+    background: rgba(66, 89, 169, 0.08);
+  }
+  #hero-actual .hero-photo::before {
+    background: linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.96) 22%,
+      rgba(66, 89, 169, 0.74) 50%,
+      rgba(66, 89, 169, 0.2) 82%,
+      rgba(66, 89, 169, 0) 100%
+    );
+  }
+  #hero-actual .hero-copy {
+    background: linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 0.7) 0%,
+      rgba(66, 89, 169, 0.45) 62%,
+      rgba(66, 89, 169, 0) 100%
+    );
+  }
+  #hero-actual .hero-format-control select {
+    background: rgba(47, 79, 162, 0.9);
+  }
+  #hero-actual .hero-eyebrow::after {
+    background: var(--hero-periwinkle-2);
+    box-shadow: none;
+  }
+}
+
+/* =========================================================
+   #benefits-actual: toolkit-purchase-hero colour composition
+   (indigo field fading to deep navy, grid lines, soft glows,
+   periwinkle accents instead of gold / sky-blue)
+   ========================================================= */
+#benefits-actual {
+  --ben-periwinkle: #dce4ff;
+  --ben-periwinkle-2: #9fb2ff;
+}
+
+/* 1. Field: indigo on the left fading into deep navy on the right */
+#benefits-actual.benefits {
+  background-color: #4259a9 !important;
+  background-image: linear-gradient(
+    100deg,
+    #4259a9 0%,
+    #3a519f 24%,
+    #25407f 58%,
+    #102d4d 100%
+  ) !important;
+}
+
+/* 2. Texture: toolkit grid lines (replaces the sky-blue network) */
+#benefits-actual.benefits::before {
+  display: block !important;
+  opacity: 0.19 !important;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 50.2%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 50.2%
+    ) !important;
+  background-size: 168px 168px !important;
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8),
+    transparent 88%
+  ) !important;
+}
+
+/* 3. Soft periwinkle glows (stand-in for the toolkit orbs) */
+#benefits-actual.benefits::after {
+  display: block !important;
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(220, 228, 255, 0.26) 0,
+      rgba(159, 178, 255, 0.12) 7rem,
+      transparent 15rem
+    ),
+    radial-gradient(
+      circle at 10% 84%,
+      rgba(159, 178, 255, 0.22) 0,
+      rgba(66, 89, 169, 0.1) 6rem,
+      transparent 13rem
+    ),
+    radial-gradient(
+      circle at 93% 88%,
+      rgba(159, 178, 255, 0.14) 0,
+      transparent 11rem
+    ) !important;
+  mix-blend-mode: screen;
+}
+
+/* 4. Gold accents -> periwinkle */
+#benefits-actual .section-label .label-line {
+  background: var(--ben-periwinkle-2);
+  box-shadow: 0 0 8px rgba(159, 178, 255, 0.4);
+}
+#benefits-actual .benefits-heading h2 em {
+  color: var(--ben-periwinkle);
+}
+#benefits-actual .icon-card-elite {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+#benefits-actual .icon-card-elite:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(159, 178, 255, 0.6);
+}
+#benefits-actual .icon-badge-elite {
+  color: var(--ben-periwinkle-2);
+  border-right-color: rgba(159, 178, 255, 0.5);
+  backdrop-filter: none; /* removes a stray lighter tile behind each icon */
+}
+
+/* 5. Hide the old tinted tile behind each icon */
+#benefits-actual .icon-card-elite::before {
+  display: none;
+}
+
+

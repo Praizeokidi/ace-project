@@ -73,56 +73,56 @@
 }
 
 .consultation-page .lifecycle-card {
-	position: relative;
-	overflow: hidden;
-	width: min(100%, 460px);
-	margin-inline: auto;
-	padding: 20px 26px 18px;
-	border: 1px solid rgba(144, 164, 235, 0.34);
-	border-radius: var(--ace-radius-lg);
-	background:
-	  linear-gradient(145deg, rgba(47, 79, 162, 0.36), rgba(8, 29, 52, 0.88)),
-	  rgba(8, 29, 52, 0.78);
-	box-shadow: var(--ace-shadow-blue);
-	backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 460px);
+  margin-inline: auto;
+  padding: 20px 26px 18px;
+  border: 1px solid rgba(144, 164, 235, 0.34);
+  border-radius: var(--ace-radius-lg);
+  background:
+    linear-gradient(145deg, rgba(47, 79, 162, 0.36), rgba(8, 29, 52, 0.88)),
+    rgba(8, 29, 52, 0.78);
+  box-shadow: var(--ace-shadow-blue);
+  backdrop-filter: blur(16px);
 }
 
 .consultation-page .lifecycle-card::after {
-	position: absolute;
-	inset: auto -20% -45% 30%;
-	height: 260px;
-	background: radial-gradient(circle, rgba(66, 89, 169, 0.34), transparent 68%);
-	content: "";
-	pointer-events: none;
+  position: absolute;
+  inset: auto -20% -45% 30%;
+  height: 260px;
+  background: radial-gradient(circle, rgba(66, 89, 169, 0.34), transparent 68%);
+  content: "";
+  pointer-events: none;
 }
 
 .consultation-page .lifecycle-card-header {
-	margin-bottom: 20px;
-	font-size: 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .consultation-page .lifecycle-step {
-	align-items: center;
-	padding-bottom: 15px;
+  align-items: center;
+  padding-bottom: 15px;
 }
 
 .consultation-page .lifecycle-copy {
-	display: flex;
-	min-width: 0;
-	flex-direction: column;
-	align-items: flex-start;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .consultation-page .lifecycle-step small {
-	grid-column: auto;
+  grid-column: auto;
 }
 
 .consultation-page .lifecycle-step:last-child {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .consultation-page .lifecycle-step::before {
-	height: calc(100% - 15px);
+  height: calc(100% - 15px);
 }
 
 .consultation-page .lifecycle-step::before {
@@ -130,22 +130,22 @@
 }
 
 .consultation-page .lifecycle-step.is-active .lifecycle-dot {
-	border-color: #fff;
-	background: var(--ace-blue);
+  border-color: #fff;
+  background: var(--ace-blue);
   box-shadow:
     0 0 0 6px rgba(66, 89, 169, 0.2),
-	  0 0 26px rgba(66, 89, 169, 0.54);
+    0 0 26px rgba(66, 89, 169, 0.54);
 }
 
 .consultation-page .lifecycle-dot {
-	border-color: rgba(219, 227, 255, 0.38);
-	background: rgba(47, 79, 162, 0.2);
+  border-color: rgba(219, 227, 255, 0.38);
+  background: rgba(47, 79, 162, 0.2);
 }
 
 .consultation-page .lifecycle-caption {
-	margin-top: 18px;
-	border-top-color: rgba(255, 255, 255, 0.14);
-	color: rgba(255, 255, 255, 0.63);
+  margin-top: 18px;
+  border-top-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.63);
 }
 
 .consultation-page .lifecycle-step small {
@@ -391,5 +391,84 @@
 
   .completion-reference-action .button {
     width: 100%;
+  }
+}
+
+/* =========================================================
+   ACE methodology — landscape typography matched to the
+   training.html "Learning journey" card.
+   Scoped to .lifecycle-aside so nothing else is affected.
+   ========================================================= */
+.consultation-page .lifecycle-aside .lifecycle-card {
+  width: auto; /* enhancements.css was capping it at 460px */
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 21px 22px 20px;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-card-header {
+  margin-bottom: 22px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-track {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-step {
+  padding: 0; /* removes the extra 15px bottom padding */
+}
+
+.consultation-page .lifecycle-aside .lifecycle-copy {
+  display: grid; /* same stack as training: title + 4px gap + subtitle */
+  gap: 4px;
+  min-width: 0;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-step strong {
+  align-self: auto; /* stops titles being centred in their column */
+  font-size: 14px;
+  line-height: inherit;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-step small {
+  margin-top: 4px;
+  color: rgba(234, 240, 255, 0.68);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.consultation-page .lifecycle-aside .lifecycle-step:hover small,
+.consultation-page .lifecycle-aside .lifecycle-step:focus-visible small,
+.consultation-page .lifecycle-aside .lifecycle-step.is-active small {
+  color: #dbe3ff; /* keep the active/hover brightening */
+}
+
+.consultation-page .lifecycle-aside .lifecycle-caption {
+  min-height: 46px;
+  margin-top: 24px;
+  padding-top: 18px;
+  color: rgba(234, 240, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 820px) {
+  .consultation-page .lifecycle-aside .lifecycle-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-page .lifecycle-aside .lifecycle-card {
+    padding: 22px 20px 20px;
+    border-radius: 18px;
+  }
+
+  .consultation-page .lifecycle-aside .lifecycle-track {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

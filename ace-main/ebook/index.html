@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/ace-theme.css">
   <link rel="stylesheet" href="css/ace-footer.css">
   <link rel="stylesheet" href="css/glassmorph-blue.css">
-  <link rel="stylesheet" href="css/ebook-production.css">
+  <link rel="stylesheet" href="css/ebook-production.css" <link rel="stylesheet" href="css/blue-dp.css">
 
 
 
@@ -1649,7 +1649,7 @@
 <body class="dpia-site" data-footer-context="ebook">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="topbar">
+  <div class="topbar blue-dp">
     <div class="shell topbar-inner">
       <span class="topbar-note">
         <bold></bold>
@@ -1669,7 +1669,7 @@
       <a class="mobile-priority-cta" href="#priority-actual">Join priority list <span aria-hidden="true">→</span></a>
       <nav class="site-menu" id="site-menu" aria-label="Main navigation" data-menu>
         <a href="#hero-actual">Learn</a>
-        <a href="#toolkit-actual">Implement</a>
+        <a href="#toolkit-only-actual">Implement</a>
         <a href="#training-actual">Build Capability</a>
         <a href="#consultation-actual">Get Support</a>
         <a class="nav-cta" href="#priority-actual">Join priority list <span aria-hidden="true">↗</span></a>
@@ -2264,6 +2264,8 @@
         </div>
       </div>
 
+
+
       <section id="audio-actual" class="audio-reference-banner reveal-section reveal-from-left"
         style="display:none; opacity:0;" aria-labelledby="audio-title">
         <div class="audio-reference-stage">
@@ -2513,6 +2515,91 @@
 
     </div>
 
+    <!-- MASTER TOOLKIT-ONLY WRAPPER -->
+    <div id="toolkit-only-master-wrapper" style="position: relative;">
+
+      <!-- 1. SKELETON STATE -->
+      <div id="toolkit-only-skeleton" class="skel-toolkit-wrapper">
+        <div class="shell" style="display: flex; gap: 60px; align-items: center;">
+          <div style="flex: 1;">
+            <div class="skel-shimmer skel-intro-eyebrow"></div>
+            <div class="skel-shimmer skel-intro-h2"></div>
+            <div class="skel-shimmer skel-subtitle" style="width: 60%; height: 20px;"></div>
+            <div style="margin-top: 20px;">
+              <div class="skel-shimmer skel-text-line"></div>
+              <div class="skel-shimmer skel-text-line" style="width: 90%;"></div>
+            </div>
+            <div class="skel-shimmer skel-navy-btn"></div>
+          </div>
+          <div style="flex: 1;">
+            <div class="skel-shimmer skel-folder-art"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ACTUAL SECTION -->
+      <section id="toolkit-only-actual" class="toolkit-only-section reveal-section" style="display: none; opacity: 0;"
+        aria-labelledby="toolkit-only-title">
+
+        <svg class="tko-network" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#2f9bff" stroke-width="1.2" opacity=".35">
+            <path d="M0 700 C120 560 210 690 310 560 S470 470 590 600" />
+            <path d="M1600 120 C1500 230 1520 330 1380 300 S1250 200 1180 330" />
+          </g>
+          <g fill="#2f9bff">
+            <circle cx="77" cy="640" r="6" />
+            <circle cx="1540" cy="235" r="5" />
+            <circle cx="274" cy="688" r="3" />
+          </g>
+        </svg>
+
+        <div class="tko-photo">
+          <img src="../images/ace-dpia-toolkit.jpg"
+            alt="ACE DPIA Toolkit, Practical Implementation Toolkit, Version 1.0" loading="lazy">
+        </div>
+
+        <div class="tko-stage">
+          <div class="tko-copy">
+            <p class="tko-eyebrow"><span>2</span><i aria-hidden="true"></i>IMPLEMENT </p>
+            <h2 id="toolkit-only-title">ACE DPIA<br><em>Toolkit</em></h2>
+            <h3>The practical implementation toolkit for DPIAs under the NDP Act, 2023.</h3>
+            <p class="tko-desc">Templates, checklists and guidance notes that walk your team from assessment to
+              monitoring — consistent, documented and audit-ready.</p>
+
+            <div class="tko-features">
+              <div><svg viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M12 6h22l8 8v32H12z" />
+                  <path d="M34 6v8h8M19 24h16M19 31h16M19 38h10" />
+                </svg><span>Ready-to-use<br>templates</span></div>
+              <div><svg viewBox="0 0 52 52" aria-hidden="true">
+                  <rect x="10" y="8" width="32" height="36" rx="3" />
+                  <path d="m17 20 4 4 8-8M17 34h18" />
+                </svg><span>Step-by-step<br>checklists</span></div>
+              <div><svg viewBox="0 0 52 52" aria-hidden="true">
+                  <path d="M26 5 44 12v12c0 12-7 19-18 24C15 43 8 36 8 24V12Z" />
+                  <path d="m17 26 6 6 12-13" />
+                </svg><span>Built for<br>implementation</span></div>
+            </div>
+
+            <div class="tko-controls">
+              <label for="toolkit-only-format">Select Format</label>
+              <select id="toolkit-only-format" name="toolkit_only_format" required>
+                <option value="" selected disabled>Select Format</option>
+                <option value="digital-toolkit">Digital Toolkit</option>
+                <option value="print-toolkit">Print Toolkit</option>
+              </select>
+              <a class="tko-btn" href="./toolkit/" data-toolkit-only-cta>Get the DPIA Toolkit <span
+                  aria-hidden="true">→</span></a>
+              <p class="tko-status" data-toolkit-only-status role="status" hidden>Please select a format to continue.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tko-chip"><b>VERSION 1.0</b><span>·</span>OCTOBER 2026</div>
+      </section>
+    </div>
+
     <!-- MASTER TOOLKIT WRAPPER -->
     <div id="toolkit-master-wrapper" style="position: relative;">
 
@@ -2572,7 +2659,7 @@
         <div class="toolkit-reference-stage">
           <div class="toolkit-reference-grid">
             <div class="toolkit-reference-copy">
-              <p class="toolkit-reference-eyebrow"><span>02</span><i aria-hidden="true"></i><strong>IMPLEMENT</strong>
+
               </p>
               <h2 id="toolkit-title">Handbook +<br>Implementation <em>Toolkit</em></h2>
               <h3>Practical resources to turn DPIAs<br>into confident, consistent practice.</h3>
@@ -2684,7 +2771,7 @@
         <div class="shell consultation-grid">
           <div class="consultation-left">
             <p class="eyebrow eyebrow-gold"><span class="journey-step" aria-hidden="true">03</span><span
-                class="eyebrow-rule" aria-hidden="true"></span> Consultation Only</p>
+                class="eyebrow-rule" aria-hidden="true"></span> GET SUPPORT</p>
             <h2 id="consultation-title">DPIA Consultation</h2>
             <p class="consultation-intro">Get tailored, expert advice on your DPIAs. We help you work through specific
               challenges, apply the right methodology and build confidence in your assessment approach.</p>
@@ -3591,8 +3678,6 @@
           <div class="ace-footer__socials" aria-label="Professional social links">
             <a href="https://www.linkedin.com/company/ace-data-protection-consulting/" target="_blank"
               rel="noopener noreferrer" aria-label="ACE on LinkedIn">in</a>
-            <a href="./#priority-actual" aria-label="ACE newsletter">@</a>
-            <a href="./#audio-actual" aria-label="ACE audio briefings">▶</a>
           </div>
         </div>
         <span class="ace-footer__copyright">© 2026 ACE Data Protection Consulting. All rights reserved.</span>
@@ -3678,6 +3763,10 @@
         {
           skeleton: 'author-skeleton',
           actual: 'about-author-actual'
+        },
+        {
+          skeleton: 'toolkit-only-skeleton',
+          actual: 'toolkit-only-actual'
         }
       ];
 
@@ -3923,5 +4012,27 @@
     });
   })();
 </script>
+<script>
+  (() => {
+    const formatSelect = document.querySelector('#toolkit-only-format');
+    const cta = document.querySelector('[data-toolkit-only-cta]');
+    const status = document.querySelector('[data-toolkit-only-status]');
+
+    if (!formatSelect || !cta || !status) return;
+
+    formatSelect.addEventListener('change', () => {
+      status.hidden = true;
+      cta.href = `./toolkit/?format=${encodeURIComponent(formatSelect.value)}#purchase`;
+    });
+
+    cta.addEventListener('click', (event) => {
+      if (formatSelect.value) return;
+      event.preventDefault();
+      status.hidden = false;
+      formatSelect.focus();
+    });
+  })();
+</script>
+
 
 </html>

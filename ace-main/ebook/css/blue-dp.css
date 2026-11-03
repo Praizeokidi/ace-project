@@ -1,0 +1,123 @@
+/* =========================================================
+   blue-dp  —  one stylesheet, any section, any page
+   Link it LAST on the page (after the page's own CSS):
+     ebook/index.html        ->  css/blue-dp.css
+     ebook/<page>/*.html     ->  ../css/blue-dp.css
+   ========================================================= */
+
+/* ---------- 1. Tokens (use anywhere: var(--blue-dp-indigo) ) ---------- */
+:root {
+  --blue-dp-indigo:       #4259a9;
+  --blue-dp-indigo-deep:  #2f4fa2;
+  --blue-dp-periwinkle:   #dce4ff;
+  --blue-dp-periwinkle-2: #9fb2ff;
+  --blue-dp-white:        #ffffff;
+  --blue-dp-cream:        #f7f4ee;
+
+  --blue-dp-navy-1: #0c1d35;
+  --blue-dp-navy-2: #102d4d;
+  --blue-dp-navy-3: #162c68;
+
+  --blue-dp-lead:  rgba(255, 255, 255, .76);
+  --blue-dp-proof: rgba(220, 228, 255, .72);
+
+  --blue-dp-underlay:
+    radial-gradient(circle at 78% 24%, rgba(66, 89, 169, .38), transparent 30rem),
+    linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%);
+
+  --blue-dp-photo-fade: linear-gradient(90deg,
+    rgba(66, 89, 169, 1) 0%, rgba(66, 89, 169, .96) 18%, rgba(66, 89, 169, .74) 35%,
+    rgba(66, 89, 169, .24) 55%, rgba(66, 89, 169, 0) 74%);
+  --blue-dp-photo-fade-mobile: linear-gradient(180deg,
+    rgba(66, 89, 169, .32) 0%, rgba(66, 89, 169, .76) 40%,
+    rgba(66, 89, 169, .98) 70%, rgba(66, 89, 169, 1) 100%);
+}
+
+/* ---------- 2. The section: add class="blue-dp" ---------- */
+.blue-dp {
+  position: relative;
+  isolation: isolate;          /* keeps the layers inside this section */
+  overflow: hidden;
+  color: var(--blue-dp-white);
+  background: var(--blue-dp-underlay);
+}
+.blue-dp > * { position: relative; z-index: 1; }   /* content sits above the layers */
+
+/* text defaults (low specificity so your own classes can still override) */
+.blue-dp :where(h1, h2, h3, h4) { color: var(--blue-dp-white); }
+.blue-dp :where(h1, h2, h3) em  { color: var(--blue-dp-periwinkle); font-style: italic; }
+.blue-dp :where(p, li)          { color: var(--blue-dp-lead); }
+.blue-dp :where(a:not([class])) { color: var(--blue-dp-periwinkle); }
+
+
+/* Indigo-only version (no photo needed): <section class="blue-dp blue-dp--indigo"> */
+.blue-dp.blue-dp--indigo {
+  background:
+    radial-gradient(circle at 78% 24%, rgba(159, 178, 255, .22), transparent 30rem),
+    linear-gradient(135deg, #4259a9 0%, #3a519f 55%, #2f4fa2 100%);
+}
+
+/* ---------- 3. Optional layers (child elements, add only what you want) ---------- */
+
+/* Photo + indigo fade:
+   <div class="blue-dp__photo" style="--blue-dp-photo:url('../images/x.jpg')"></div>
+   Tune the crop with  --blue-dp-photo-pos:70% 40%   */
+.blue-dp > .blue-dp__photo {
+  position: absolute; inset: 0; z-index: 0;
+  background: var(--blue-dp-photo) var(--blue-dp-photo-pos, 78% 42%) / cover no-repeat;
+  filter: saturate(.88) contrast(.96);
+}
+.blue-dp > .blue-dp__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--blue-dp-photo-fade);
+}
+
+/* Grid lines: <div class="blue-dp__grid"></div> */
+.blue-dp > .blue-dp__grid {
+  position: absolute; inset: 0; z-index: 0; opacity: .19; pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px) 0 0 / 168px 168px,
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 168px 168px;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, transparent 85%);
+          mask-image: linear-gradient(90deg, #000 0, transparent 85%);
+}
+
+/* Cream wave into the next section: <div class="blue-dp__wave"></div> */
+.blue-dp > .blue-dp__wave {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 56px; z-index: 2;
+  background: var(--blue-dp-cream);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+/* ---------- 4. Small pieces (optional classes) ---------- */
+.bdp-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  color: var(--blue-dp-periwinkle);
+  font-size: 13px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+}
+.bdp-eyebrow::before {                 /* rule is now visible (source hero had it invisible) */
+  content: ""; width: 40px; height: 1px; background: var(--blue-dp-periwinkle-2);
+}
+
+.bdp-btn {                             /* primary: white on indigo, so it actually stands out */
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 28px; border: 1.5px solid #fff; border-radius: 999px;
+  background: #fff; color: var(--blue-dp-indigo);
+  font-weight: 800; text-decoration: none;
+  box-shadow: 0 14px 30px rgba(8, 29, 52, .28);
+  transition: transform .2s, background .2s, color .2s;
+}
+.bdp-btn:hover { transform: translateY(-2px); background: var(--blue-dp-periwinkle); }
+.bdp-btn--ghost {                      /* secondary: outline */
+  background: transparent; color: #fff; border-color: rgba(255,255,255,.5); box-shadow: none;
+}
+.bdp-btn--ghost:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+.bdp-proof { color: var(--blue-dp-proof); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.bdp-proof b { color: var(--blue-dp-periwinkle-2); }
+
+/* ---------- 5. Mobile: vertical fade, blue pools behind the copy ---------- */
+@media (max-width: 768px) {
+  .blue-dp > .blue-dp__photo { background-position: center top; background-size: cover; }
+  .blue-dp > .blue-dp__photo::after { background: var(--blue-dp-photo-fade-mobile); }
+}

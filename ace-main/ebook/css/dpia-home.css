@@ -7540,3 +7540,245 @@ html {
     flex-basis: 15px;
   }
 }
+
+/* ===== Toolkit only (new section above toolkit-actual) ===== */
+#toolkit-only-actual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(
+    ellipse at 72% 45%,
+    #1b4a7a 0%,
+    var(--navy) 45%,
+    var(--navy-deep) 100%
+  );
+}
+#toolkit-only-actual .tko-network {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#toolkit-only-actual .tko-network circle {
+  filter: drop-shadow(0 0 8px rgba(47, 155, 255, 0.85));
+}
+
+#toolkit-only-actual .tko-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 38%);
+}
+#toolkit-only-actual .tko-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+}
+#toolkit-only-actual .tko-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 45, 77, 0) 0,
+      rgba(16, 45, 77, 0.5) 30%,
+      rgba(8, 29, 52, 0.12) 100%
+    ),
+    linear-gradient(0deg, rgba(8, 29, 52, 0.7), transparent 35%);
+}
+
+#toolkit-only-actual .tko-stage {
+  position: relative;
+  z-index: 1;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: clamp(640px, 56vw, 900px);
+  display: flex;
+  align-items: center;
+  padding: clamp(48px, 7vw, 112px) clamp(20px, 6.25vw, 100px);
+}
+#toolkit-only-actual .tko-copy {
+  width: min(640px, 100%);
+}
+
+#toolkit-only-actual .tko-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  color: var(--gold);
+  font: 700 15px/1 var(--sans);
+  letter-spacing: 0.22em;
+}
+#toolkit-only-actual .tko-eyebrow span {
+  font: 400 22px/1 var(--serif);
+  letter-spacing: 0;
+}
+#toolkit-only-actual .tko-eyebrow i {
+  width: 46px;
+  height: 1px;
+  background: var(--gold);
+}
+
+#toolkit-only-actual h2 {
+  margin: 30px 0 26px;
+  color: #fff;
+  font: 400 clamp(48px, 4.9vw, 78px)/1.04 var(--serif);
+}
+#toolkit-only-actual h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+#toolkit-only-actual h3 {
+  margin: 0 0 22px;
+  color: #dce8f2;
+  font: 400 clamp(20px, 1.75vw, 28px)/1.3 var(--serif);
+}
+#toolkit-only-actual .tko-desc {
+  margin: 0;
+  max-width: 560px;
+  color: #b9c8da;
+  font: 400 clamp(16px, 1.12vw, 18px)/1.65 var(--sans);
+}
+
+#toolkit-only-actual .tko-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 34px;
+  margin: 38px 0 44px;
+}
+#toolkit-only-actual .tko-features div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font: 600 14px/1.35 var(--sans);
+  color: #fff;
+}
+#toolkit-only-actual .tko-features svg {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#toolkit-only-actual .tko-controls {
+  width: min(520px, 100%);
+}
+#toolkit-only-actual .tko-controls label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+#toolkit-only-actual .tko-controls select {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 17px 52px 17px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font: 600 16px var(--sans);
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='m1 1 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+}
+#toolkit-only-actual .tko-controls select option {
+  color: var(--navy);
+  background: #fff;
+}
+#toolkit-only-actual .tko-controls select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+#toolkit-only-actual .tko-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 34px;
+  border-radius: 6px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font: 800 17px var(--sans);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+#toolkit-only-actual .tko-btn:hover {
+  background: #e0bb72;
+  transform: translateY(-2px);
+}
+#toolkit-only-actual .tko-status {
+  margin: 12px 0 0;
+  color: #ffd9a0;
+  font: 600 14px var(--sans);
+}
+
+#toolkit-only-actual .tko-chip {
+  position: absolute;
+  right: clamp(20px, 6.9vw, 110px);
+  bottom: clamp(24px, 4.4vw, 70px);
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+  padding: 18px 26px;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(8, 29, 52, 0.82);
+  border: 1px solid rgba(210, 169, 93, 0.5);
+  backdrop-filter: blur(6px);
+  font: 700 14px/1 var(--sans);
+  letter-spacing: 0.14em;
+}
+#toolkit-only-actual .tko-chip b {
+  color: var(--gold);
+}
+
+/* Tablet + mobile: photo on top, copy below */
+@media (max-width: 900px) {
+  #toolkit-only-actual .tko-photo {
+    position: relative;
+    width: 100%;
+    height: min(75vw, 420px);
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  }
+  #toolkit-only-actual .tko-photo img {
+    object-position: 70% center;
+  }
+  #toolkit-only-actual .tko-photo::after {
+    background: linear-gradient(0deg, rgba(16, 45, 77, 0.6), transparent 50%);
+  }
+  #toolkit-only-actual .tko-stage {
+    min-height: 0;
+    padding-top: 0;
+    margin-top: -24px;
+  }
+  #toolkit-only-actual .tko-chip {
+    display: none;
+  }
+  #toolkit-only-actual .tko-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
