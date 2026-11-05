@@ -1137,3 +1137,10 @@
     line-height: 1.6;
   }
 }
+
+
+/* Keep the Company and Connect footer headings readable. */
+.ace-footer__heading#ace-footer-company,
+.ace-footer__heading#ace-footer-connect {
+  color: #ffffff !important;
+}
