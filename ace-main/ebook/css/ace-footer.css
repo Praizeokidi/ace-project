@@ -1137,3 +1137,13 @@
     line-height: 1.6;
   }
 }
+
+
+/* Improve contrast for the primary footer messages and section labels. */
+.ace-footer__mission,
+.ace-footer__heading,
+.ace-footer__label {
+  color: #ffffff !important;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(8, 29, 52, 0.34);
+}
