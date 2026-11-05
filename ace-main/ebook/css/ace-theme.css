@@ -169,19 +169,31 @@
       transparent 58%
     ),
     var(--ace-gradient-hero);
-  background-position: 0 100%, 64px 100%, 0 0;
-  background-size: 184px 32px, 184px 32px, 100% 100%;
+  background-position:
+    0 100%,
+    64px 100%,
+    0 0;
+  background-size:
+    184px 32px,
+    184px 32px,
+    100% 100%;
   background-repeat: repeat-x, repeat-x, no-repeat;
   animation: ace-topbar-ocean-waves 16s linear infinite;
 }
 
 @keyframes ace-topbar-ocean-waves {
   from {
-    background-position: 0 100%, 64px 100%, 0 0;
+    background-position:
+      0 100%,
+      64px 100%,
+      0 0;
   }
 
   to {
-    background-position: 184px 100%, 248px 100%, 0 0;
+    background-position:
+      184px 100%,
+      248px 100%,
+      0 0;
   }
 }
 
@@ -285,8 +297,7 @@
 
 body.dpia-site #completion-actual.completion-offer {
   background-image:
-    var(--ace-gradient-hero),
-    url("../../images/hero-consultation.png");
+    var(--ace-gradient-hero), url("../../images/hero-consultation.png");
 }
 
 body.dpia-site #priority-actual.priority {
@@ -415,7 +426,14 @@ body.dpia-site #priority-actual.priority {
   color: var(--ace-white);
 }
 
-:where(.topbar, .site-header, .ace-hero, .hero, .consultation-hero, .training-hero)
+:where(
+    .topbar,
+    .site-header,
+    .ace-hero,
+    .hero,
+    .consultation-hero,
+    .training-hero
+  )
   :where(a, button, select, input, textarea):focus-visible {
   outline: 3px solid var(--ace-gold-light);
   outline-offset: 3px;
@@ -532,14 +550,24 @@ body.dpia-site #priority-actual.priority {
    ACE dark surface, text, border, and gold accent tokens.
    ========================================================= */
 
-#audio-actual {
+#audio-actual .audio-reference-banner {
   color: var(--ace-text-on-dark);
-  background: var(--ace-gradient-dark);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.96) 18%,
+      rgba(66, 89, 169, 0.74) 35%,
+      rgba(66, 89, 169, 0.24) 55%,
+      rgba(66, 89, 169, 0) 74%
+    ),
+    url("../../images/banner_clean_hq.png") center / 100% 100% no-repeat,
+    #4259a9;
 }
 
 #audio-actual .audio-reference-eyebrow,
 #audio-actual .audio-reference-headphones {
-  color: var(--ace-gold-light);
+  color: var(--ace-text-on-dark-soft);
 }
 
 #audio-actual .audio-reference-eyebrow-line {
@@ -558,7 +586,7 @@ body.dpia-site #priority-actual.priority {
 #audio-actual .audio-reference-copy p,
 #audio-actual .audio-reference-times,
 #audio-actual .audio-reference-tagline {
-  color: var(--ace-text-on-dark-muted);
+  color: var(--ace-text-on-dark-soft);
 }
 
 #audio-actual .audio-reference-player,
@@ -569,16 +597,15 @@ body.dpia-site #priority-actual.priority {
 }
 
 #audio-actual .audio-reference-play {
-  border-color: var(--ace-gold);
-  background: var(--ace-gold);
+  background: var(--ace-gold-light);
+  border-color: var(--ace-gold-light);
   color: var(--ace-navy-deep);
 }
 
 #audio-actual .audio-reference-play:hover,
 #audio-actual .audio-reference-play:focus-visible {
-  background: var(--ace-gold-light);
-  border-color: var(--ace-gold-light);
-  color: var(--ace-navy-deep);
+  background: #fff;
+  border-color: #fff;
 }
 
 #audio-actual .audio-reference-waveform rect,
@@ -669,4 +696,201 @@ body.dpia-site #priority-actual.priority {
 
 #ecosystem-actual .series-arrow svg {
   stroke: var(--ace-blue-deep);
+}
+
+#toolkit-only-actual {
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(159, 178, 255, 0.22),
+      transparent 30rem
+    ),
+    #4259a9;
+}
+#toolkit-only-actual .tko-network path {
+  stroke: #9fb2ff;
+}
+#toolkit-only-actual .tko-network circle {
+  fill: #dce4ff;
+  filter: drop-shadow(0 0 8px rgba(159, 178, 255, 0.7));
+}
+
+#toolkit-only-actual .tko-photo img {
+  filter: saturate(0.88) contrast(0.96);
+}
+#toolkit-only-actual .tko-photo::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 0.85) 0,
+      rgba(66, 89, 169, 0.45) 30%,
+      rgba(8, 29, 52, 0.12) 100%
+    ),
+    linear-gradient(0deg, rgba(8, 29, 52, 0.7), transparent 35%);
+}
+
+#toolkit-only-actual .tko-eyebrow {
+  color: #dce4ff;
+}
+#toolkit-only-actual .tko-eyebrow span {
+  color: var(--ace-gold-light);
+}
+#toolkit-only-actual .tko-eyebrow i {
+  background: var(--ace-gold-light);
+}
+#toolkit-only-actual h2 em {
+  color: var(--ace-gold-light);
+}
+#toolkit-only-actual .tko-desc {
+  color: #dbe3ff;
+}
+#toolkit-only-actual .tko-features svg {
+  stroke: var(--ace-gold-light);
+}
+#toolkit-only-actual .tko-controls select:focus-visible {
+  outline-color: var(--ace-gold-light);
+}
+#toolkit-only-actual .tko-btn {
+  background: var(--ace-gold-light);
+  color: var(--ace-navy-deep);
+}
+#toolkit-only-actual .tko-btn:hover {
+  background: #fff;
+}
+#toolkit-only-actual .tko-chip b {
+  color: var(--ace-gold-light);
+}
+
+@media (max-width: 900px) {
+  #toolkit-only-actual .tko-photo::after {
+    background: linear-gradient(
+      180deg,
+      rgba(66, 89, 169, 0.32) 0%,
+      rgba(66, 89, 169, 0.76) 40%,
+      rgba(66, 89, 169, 0.98) 70%,
+      #4259a9 100%
+    );
+  }
+}
+
+/* ===== Toolkit (handbook + package) ===== */
+#toolkit-actual.toolkit-reference-section {
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(159, 178, 255, 0.22),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #4259a9 0%, #2f4fa2 55%, #162c68 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+#toolkit-actual .toolkit-reference-network path {
+  stroke: #9fb2ff;
+}
+#toolkit-actual .toolkit-reference-network circle {
+  fill: #dce4ff;
+  filter: drop-shadow(0 0 8px rgba(159, 178, 255, 0.7));
+}
+
+/* copy column */
+#toolkit-actual .toolkit-reference-eyebrow {
+  color: #dce4ff;
+}
+#toolkit-actual .toolkit-reference-eyebrow i {
+  background: var(--ace-gold-light);
+}
+#toolkit-actual .toolkit-reference-copy h2 em {
+  color: var(--ace-gold-light);
+}
+#toolkit-actual .toolkit-reference-description {
+  color: #dbe3ff !important;
+}
+#toolkit-actual .toolkit-reference-feature svg {
+  stroke: var(--ace-gold-light);
+}
+
+/* cards */
+#toolkit-actual .toolkit-reference-card {
+  box-shadow: 0 0.78125cqw 1.5625cqw rgba(8, 29, 52, 0.28);
+}
+#toolkit-actual .toolkit-reference-card-package {
+  border-color: var(--ace-gold-light);
+}
+#toolkit-actual .toolkit-reference-card-heading h3 {
+  color: #2f4fa2;
+}
+#toolkit-actual .toolkit-reference-popular {
+  background: linear-gradient(135deg, #d2a95d, #efd48f);
+  color: var(--ace-navy-deep);
+}
+
+/* buttons and select */
+#toolkit-actual .toolkit-reference-card-button {
+  color: #2f4fa2;
+}
+#toolkit-actual .toolkit-package-controls .button {
+  background: linear-gradient(115deg, #4259a9, #2f4fa2);
+  box-shadow: 0 0.351563cqw 0.78125cqw rgba(47, 79, 162, 0.3);
+}
+#toolkit-actual .toolkit-package-controls .button:hover,
+#toolkit-actual .toolkit-package-controls .button:focus-visible {
+  background: linear-gradient(115deg, #2f4fa2, #162c68);
+}
+#toolkit-actual .toolkit-package-controls select:focus-visible {
+  border-color: #4259a9;
+  outline-color: rgba(66, 89, 169, 0.28);
+}
+
+/* ===== Consultation ===== */
+body.dpia-site #consultation-actual.consultation {
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(159, 178, 255, 0.22),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #4259a9 0%, #3a519f 55%, #2f4fa2 100%) !important;
+}
+body.dpia-site #consultation-actual.consultation::after {
+  background: none;
+}
+
+#consultation-actual .consultation-grid::after {
+  /* the small gold orb */
+  border-color: rgba(159, 178, 255, 0.18);
+  background: radial-gradient(
+    circle,
+    rgba(159, 178, 255, 0.15),
+    rgba(66, 89, 169, 0.05) 48%,
+    transparent 70%
+  );
+  box-shadow: 0 0 42px rgba(159, 178, 255, 0.15);
+}
+
+#consultation-actual .journey-step {
+  color: var(--ace-gold-light);
+}
+#consultation-actual .consultation-capabilities svg {
+  stroke: var(--ace-gold-light);
+}
+#consultation-actual .consultation-format span,
+#consultation-actual .consultation-ideal > span {
+  color: #dce4ff;
+}
+#consultation-actual .consultation-topics-heading {
+  color: rgba(255, 255, 255, 0.82);
+}
+#consultation-actual .consultation-topics li::before {
+  background: var(--ace-gold-light);
+}
+#consultation-actual .consultation-ideal {
+  border-left-color: var(--ace-gold-light);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#consultation-actual .button-white:hover,
+#consultation-actual .button-white:focus-visible {
+  background: #dce4ff;
+  border-color: #dce4ff;
+  color: #2f4fa2;
 }

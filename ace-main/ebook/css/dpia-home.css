@@ -5258,8 +5258,16 @@ html {
   aspect-ratio: 2560 / 679;
   overflow: hidden;
   color: #dfe6f0;
-  background: #0a1d38 url("../../images/banner_clean_hq.png") center / 100% 100%
-    no-repeat;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(66, 89, 169, 0.32) 0%,
+      rgba(66, 89, 169, 0.76) 40%,
+      rgba(66, 89, 169, 0.98) 70%,
+      rgba(66, 89, 169, 1) 100%
+    ),
+    url("../../images/banner_clean_hq.png") 72% center / auto 100% no-repeat,
+    #4259a9;
   font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 #audio-actual .audio-reference-stage {
@@ -5493,12 +5501,9 @@ html {
     height: auto;
     min-height: 1100px;
     padding: 48px 24px 56px;
-    background: linear-gradient(
-      90deg,
-      rgba(8, 29, 52, 0.98),
-      rgba(8, 29, 52, 0.22)
-    );
+    background: none;
   }
+
   #audio-actual .audio-reference-eyebrow,
   #audio-actual .audio-reference-copy,
   #audio-actual .audio-reference-player,
