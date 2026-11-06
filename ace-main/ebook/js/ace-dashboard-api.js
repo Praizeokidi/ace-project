@@ -2,6 +2,7 @@
   const meta = document.querySelector('meta[name="ace-dashboard-api-base"]');
   const configuredBase = window.ACE_DASHBOARD_API_BASE || meta?.content || 'https://ace-dashboard-praizeokidis-projects.vercel.app';
   const sameOriginPaths = new Set([
+    '/api/contact',
     '/api/priority-list',
     '/api/dpia-training',
     '/api/dpia-consultation',

@@ -894,3 +894,124 @@ body.dpia-site #consultation-actual.consultation::after {
   border-color: #dce4ff;
   color: #2f4fa2;
 }
+
+/* ===== Priority ===== */
+body.dpia-site #priority-actual.priority {
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(159, 178, 255, 0.22),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #4259a9 0%, #3a519f 55%, #2f4fa2 100%) !important;
+}
+body.dpia-site #priority-actual.priority::after {
+  background: none;
+}
+
+#priority-actual .priority-grid::before {
+  /* gold orb */
+  border-color: rgba(159, 178, 255, 0.18);
+  background: radial-gradient(
+    circle,
+    rgba(159, 178, 255, 0.2),
+    rgba(66, 89, 169, 0.08) 43%,
+    transparent 70%
+  );
+  box-shadow:
+    0 0 48px rgba(159, 178, 255, 0.2),
+    0 0 95px rgba(108, 132, 255, 0.14);
+}
+
+#priority-actual .priority-form label,
+#priority-actual .priority-form small,
+#priority-actual .foot-note {
+  color: #556277;
+}
+
+#priority-actual .priority-form input:focus {
+  border-color: #4259a9;
+  box-shadow: 0 0 0 3px rgba(66, 89, 169, 0.22);
+}
+#priority-actual .priority-form input[type="checkbox"] {
+  accent-color: #4259a9;
+}
+
+#priority-actual .priority-form .button {
+  background: linear-gradient(135deg, #4259a9 0%, #2f4fa2 100%);
+  box-shadow: 0 10px 22px rgba(47, 79, 162, 0.28);
+}
+#priority-actual .priority-form .button:hover,
+#priority-actual .priority-form .button:focus-visible {
+  background: linear-gradient(135deg, #2f4fa2 0%, #162c68 100%);
+}
+
+/* ===== Completion ===== */
+body.dpia-site #completion-actual.completion-offer {
+  background-color: #4259a9;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.96) 18%,
+      rgba(66, 89, 169, 0.74) 35%,
+      rgba(66, 89, 169, 0.24) 55%,
+      rgba(66, 89, 169, 0) 74%
+    ),
+    url("../../images/hero-consultation.png");
+}
+
+#completion-actual .completion-eyebrow {
+  color: #dce4ff;
+}
+#completion-actual .completion-eyebrow > span:first-child {
+  color: var(--ace-gold-light);
+}
+#completion-actual .completion-eyebrow-line {
+  background: var(--ace-gold-light);
+}
+#completion-actual .completion-heading h2 em {
+  color: var(--ace-gold-light);
+}
+#completion-actual .completion-collaboration {
+  color: rgba(255, 255, 255, 0.82);
+}
+#completion-actual .completion-support-heading {
+  color: #dce4ff;
+}
+#completion-actual .completion-card-icon {
+  border-color: rgba(239, 212, 143, 0.8);
+}
+#completion-actual .completion-card-icon svg {
+  stroke: var(--ace-gold-light);
+}
+#completion-actual .completion-card li::before {
+  color: var(--ace-gold-light);
+}
+#completion-actual .completion-bottom blockquote {
+  border-left-color: var(--ace-gold-light);
+  background: rgba(8, 29, 52, 0.32);
+}
+#completion-actual .completion-support-button {
+  background: linear-gradient(135deg, #d2a95d, #efd48f);
+  color: var(--ace-navy-deep);
+}
+#completion-actual .completion-support-button:hover,
+#completion-actual .completion-support-button:focus-visible {
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  body.dpia-site #completion-actual.completion-offer {
+    background-image: none;
+  }
+  #completion-actual.completion-offer::after {
+    background: linear-gradient(
+      180deg,
+      rgba(66, 89, 169, 0.32) 0%,
+      rgba(66, 89, 169, 0.76) 40%,
+      rgba(66, 89, 169, 0.98) 70%,
+      #4259a9 100%
+    );
+  }
+}

@@ -3718,4 +3718,253 @@ body.dpia-site {
   display: none;
 }
 
+/* =========================================================
+   #faq-actual: "Concierge split" design
+   ========================================================= */
+#faq-actual.faq-concierge {
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+#faq-actual .faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 44px;
+  align-items: start;
+}
 
+/* ---- Left: sticky indigo card ---- */
+#faq-actual .faq-intro {
+  position: sticky;
+  top: 110px; /* clears the floating navbar */
+  overflow: hidden;
+  padding: clamp(26px, 3.4vw, 44px);
+  border-radius: 20px;
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 12% 0,
+      rgba(159, 178, 255, 0.3),
+      transparent 20rem
+    ),
+    linear-gradient(160deg, #4259a9 0%, #25407f 55%, #102d4d 100%);
+  box-shadow: 0 30px 60px rgba(12, 29, 53, 0.28);
+}
+#faq-actual .faq-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 50.2%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.14) 50%,
+      transparent 50.2%
+    );
+  background-size: 84px 84px;
+  mask-image: linear-gradient(180deg, #000, transparent 80%);
+}
+#faq-actual .faq-intro > * {
+  position: relative;
+  z-index: 1;
+}
+#faq-actual .faq-intro .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dce4ff;
+}
+#faq-actual .faq-intro .eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+#faq-actual .faq-intro #faq-title {
+  margin: 0 0 14px;
+  color: #fff !important; /* beats the global "#faq-title { color:#000 !important }" */
+  line-height: 1.05;
+}
+#faq-actual .faq-intro .faq-intro-lead {
+  max-width: none;
+  margin: 0 0 26px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+#faq-actual .faq-ask {
+  padding: 18px;
+  border: 1px solid rgba(220, 228, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+#faq-actual .faq-ask strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+#faq-actual .faq-ask > span {
+  display: block;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+#faq-actual .faq-ask-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #fff;
+  color: #102d4d;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+#faq-actual .faq-ask-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ---- Right: accordion cards ---- */
+#faq-actual .faq-list {
+  border-top: 0;
+}
+#faq-actual .faq-list details {
+  margin-bottom: 12px;
+  border: 1px solid rgba(16, 45, 77, 0.1);
+  border-radius: 16px;
+  background: #fff;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  interpolate-size: allow-keywords;
+}
+#faq-actual .faq-list details[open] {
+  border-color: rgba(66, 89, 169, 0.45);
+  box-shadow: 0 18px 40px rgba(66, 89, 169, 0.16);
+}
+#faq-actual .faq-list summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  list-style: none;
+  cursor: pointer;
+  color: #102d4d;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  border-radius: 16px;
+}
+#faq-actual .faq-list summary:focus-visible {
+  outline: 3px solid #9fb2ff;
+  outline-offset: 2px;
+}
+#faq-actual .faq-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #eef1fb;
+  color: #4259a9;
+  font-size: 0.72rem;
+  font-weight: 800;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+#faq-actual details[open] .faq-num {
+  background: #4259a9;
+  color: #fff;
+}
+#faq-actual .faq-q {
+  flex: 1;
+}
+/* Replace the old "+" glyph with a circular plus that morphs to a minus */
+#faq-actual .faq-list summary::after {
+  content: "";
+  position: static;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #4259a9;
+  background:
+    linear-gradient(currentColor, currentColor) center / 12px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 12px no-repeat,
+    #eef1fb;
+  transform: none;
+  transition:
+    background-size 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+#faq-actual details[open] summary::after {
+  color: #fff;
+  background:
+    linear-gradient(currentColor, currentColor) center / 12px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 0 no-repeat,
+    #4259a9;
+  transform: none;
+}
+#faq-actual .faq-a p {
+  max-width: none;
+  margin: 0;
+  padding: 0 22px 22px 76px;
+  color: #647284;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Smooth open/close where supported (Chromium); other browsers simply snap */
+#faq-actual details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 0.35s ease,
+    content-visibility 0.35s allow-discrete;
+}
+#faq-actual details[open]::details-content {
+  block-size: auto;
+}
+
+@media (max-width: 860px) {
+  #faq-actual .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  #faq-actual .faq-intro {
+    position: static;
+  }
+}
+@media (max-width: 560px) {
+  #faq-actual .faq-list summary {
+    padding: 16px;
+  }
+  #faq-actual .faq-num {
+    display: none;
+  }
+  #faq-actual .faq-a p {
+    padding: 0 16px 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #faq-actual details::details-content,
+  #faq-actual .faq-list summary::after,
+  #faq-actual .faq-ask-btn {
+    transition: none;
+  }
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <!--
  // WEBSITE: https://themefisher.com
@@ -22,6 +22,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet">
+
 
 	<!-- # CSS Plugins -->
 	<link rel="stylesheet" href="plugins/slick/slick.css">
@@ -31,48 +35,35 @@
 
 	<!-- # Main Style Sheet -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="ebook/css/ace-footer.css">
+	<link rel="stylesheet" href="css/ace-footer-shim.css">
+	<link rel="stylesheet" href="css/ace-header-base.css">
+	<link rel="stylesheet" href="css/ace-header.css">
+
 </head>
 
 <body>
-
-
 	<!-- navigation -->
-	<header class="navigation bg-tertiary">
-		<nav class="navbar navbar-expand-xl navbar-light text-center py-3">
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img loading="prelaod" decoding="async" class="img-fluid" width="160" src="/images/logo.png"
-						alt="Wallet">
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-						<li class="nav-item"> <a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item "> <a class="nav-link" href="about.html">About</a>
-						</li>
-						<li class="nav-item "> <a class="nav-link" href="services.html">Services</a>
-						</li>
-						<li class="nav-item "> <a class="nav-link" href="contact.html">Contact</a>
-						</li>
+	<header class="site-header" data-header>
+		<div class="shell nav-wrap">
+			<a class="brand" href="index.html" aria-label="ACE Data Protection Consulting home">
+				<img src="images/logo.png" alt="ACE Data Protection Consulting" width="156" height="70"
+					fetchpriority="high">
+			</a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+				<span></span><span></span><span></span>
+				<span class="sr-only">Open navigation menu</span>
+			</button>
+
+			<nav class="site-menu" id="site-menu" aria-label="Main navigation" data-menu>
+				<a href="index.html">Home</a>
+				<a class="is-current" href="about.html" aria-current="page">About</a>
+				<a href="services.html">Services</a>
+				<a href="contact.html">Contact</a>
 
 
-					</ul>
-
-					<!-- Right-aligned Action Buttons Grouped Together -->
-					<div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
-						<a href="ebook/" class="btn btn-primary">
-							Get E-Book/Hard-copy
-							<span style="font-size: 14px;" class="ms-2 fas fa-arrow-right"></span>
-						</a>
-						<a href="contact.html" class="btn btn-primary ms-2 ms-lg-3">Contact Us</a>
-					</div>
-				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
 	</header>
 	<!-- /navigation -->
 
@@ -149,7 +140,7 @@
 				<div class="col-lg-12">
 					<div class="content">
 						<h2 id="how-a-payday-loan-online-works" style="color: #4159a8;">Cybersecurity</h2>
-						<p>In today’s digital world, businesses rely heavily on technology, but with this dependence
+						<p>In todayâ€™s digital world, businesses rely heavily on technology, but with this dependence
 							comes increasing cybersecurity threats that impact productivity and profitability.
 							Cyberattacks and data breaches are on the rise, making cybersecurity a critical priority for
 							organisations.
@@ -172,7 +163,7 @@
 							</li>
 							<li>Delivering cost-effective security solutions that strengthen risk management, enhance
 								control, and maintain trust in business operations.</li>
-							<li>Ensuring optimal implementation and customer satisfaction with our team’s extensive
+							<li>Ensuring optimal implementation and customer satisfaction with our teamâ€™s extensive
 								experience in IT Governance and Information Security.</li>
 							<li>Offering secure working solutions, both in and outside the cloud, by acting as an
 								extension of your IT infrastructure.</li>
@@ -184,37 +175,50 @@
 		</div>
 	</section>
 
-	<footer class="section-sm bg-tertiary">
-		<div class="container">
-
-			<div class="row align-items-center mt-5 text-center text-md-start">
-				<div class="col-lg-4">
-					<a href="index.html">
-						<img loading="prelaod" decoding="async" class="img-fluid" width="160" src="images/logo.png"
-							alt="Wallet">
+	<footer class="ace-footer dpia-site" data-footer-context="ebook" data-ace-footer aria-labelledby="ace-footer-title">
+		<h2 class="sr-only" id="ace-footer-title">ACE Data Protection Consulting footer</h2>
+		<div class="shell ace-footer__inner">
+			<div class="ace-footer__body" data-footer-reveal>
+				<div class="ace-footer__brand">
+					<a class="brand" href="index.html" aria-label="ACE Data Protection Consulting home">
+						<img src="images/logo.png" alt="ACE Data Protection Consulting" width="140" height="63">
 					</a>
+					<p class="ace-footer__mission">DPIA Made Easy: learn the method, apply it in practice, and
+						institutionalise responsible data protection.</p>
 				</div>
-				<div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-					<ul class="list-unstyled list-inline mb-0 text-lg-center">
-						<li class="list-inline-item me-4"><a class="text-black" href="privacy-policy.html">Privacy
-								Policy</a>
-						</li>
 
-					</ul>
+				<nav class="ace-footer__column" aria-labelledby="ace-footer-company">
+					<p class="ace-footer__heading" id="ace-footer-company">Company</p>
+					<a href="about.html">About ACE</a>
+					<a href="contact.html">Contact</a>
+					<a href="privacy-policy.html">Privacy policy</a>
+					<a href="terms.html">Terms of use</a>
+				</nav>
+
+				<div class="ace-footer__newsletter">
+					<p class="ace-footer__label">ACE updates and resources</p>
+					<form class="ace-footer__newsletter-form" data-footer-newsletter novalidate>
+						<label class="sr-only" for="ace-footer-email">Email address</label>
+						<input id="ace-footer-email" name="email" type="email" autocomplete="email"
+							placeholder="Your email address" required>
+						<button type="submit">Subscribe</button>
+					</form>
+					<p class="ace-footer__newsletter-note">Privacy-friendly updates. Unsubscribe at any time. See our <a
+							href="privacy-policy.html">Privacy Notice</a>.</p>
+					<p class="ace-footer__newsletter-status" data-footer-newsletter-status role="status"
+						aria-live="polite"></p>
 				</div>
-				<div class="col-lg-4 col-md-6 text-md-end mt-4 mt-md-0">
-					<ul class="list-unstyled list-inline mb-0 social-icons">
-						<li class="list-inline-item me-3"><a title="Explorer Facebook Profile" class="text-black"
-								href=""><i class="fab fa-facebook-f"></i></a>
-						</li>
-						<li class="list-inline-item me-3"><a title="Explorer Twitter Profile" class="text-black"
-								href=""><i class="fab fa-linkedin"></i></a>
-						</li>
-						<li class="list-inline-item me-3"><a title="Explorer Instagram Profile" class="text-black"
-								href=""><i class="fab fa-instagram"></i></a>
-						</li>
-					</ul>
+
+				<div class="ace-footer__connect">
+					<p class="ace-footer__heading" id="ace-footer-connect">Connect</p>
+					<p class="ace-footer__connect-copy">Follow ACE for practical guidance on accountable data
+						protection.</p>
+					<div class="ace-footer__socials" aria-label="Professional social links">
+						<a href="https://www.linkedin.com/company/ace-data-protection-consulting/" target="_blank"
+							rel="noopener noreferrer" aria-label="ACE on LinkedIn">in</a>
+					</div>
 				</div>
+				<span class="ace-footer__copyright">Â© 2026 ACE Data Protection Consulting. All rights reserved.</span>
 			</div>
 		</div>
 	</footer>
@@ -227,6 +231,9 @@
 
 	<!-- Main Script -->
 	<script src="js/script.js"></script>
+	<script src="js/ace-header.js"></script>
+	<script src="ebook/js/ace-dashboard-api.js"></script>
+		<script src="ebook/js/ace-footer.js"></script>
 
 </body>
 
