@@ -33,7 +33,7 @@
 
   <header class="site-header" data-header>
     <div class="shell nav-wrap">
-      <a class="brand" href="../index.html" aria-label="ACE Data Protection Consulting home">
+      <a class="brand" href="../../index.html" aria-label="ACE Data Protection Consulting home">
         <img src="../../images/logo.png" alt="ACE Data Protection Consulting" width="156" height="70">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="toolkit-site-menu"
@@ -74,8 +74,8 @@
           <p class="toolkit-hero-lead">Everything you need to implement DPIA processes immediately, with structured
             templates, registers, checklists, and governance resources built for real organisational work.</p>
           <div class="toolkit-hero-actions">
-            <a class="button dpia-button button-large" href="#purchase">Get ACE DPIA Implementation Toolkit <span
-                aria-hidden="true">&#8599;</span></a>
+            <a class="button dpia-button button-large" href="#toolkit-positioning">Get ACE DPIA Implementation Toolkit
+              <span aria-hidden="true">&#8599;</span></a>
             <a class="button button-outline-light" href="#compare">View Bundle Option <span
                 aria-hidden="true">&#8595;</span></a>
           </div>
@@ -90,7 +90,7 @@
       <div class="toolkit-wave" aria-hidden="true"></div>
     </section>
 
-    <section class="toolkit-positioning section-light" aria-labelledby="positioning-title">
+    <section id="toolkit-positioning" class="toolkit-positioning section-light" aria-labelledby="positioning-title">
       <div class="shell">
         <div class="section-heading centered-heading">
           <p class="eyebrow"><span class="eyebrow-rule" aria-hidden="true"></span> Choose the right layer</p>
@@ -105,7 +105,7 @@
             <h3>Handbook and Workbook Only</h3>
             <p>Learn how to conduct and manage DPIAs with confidence through guidance, methodology, education, and
               practical understanding.</p>
-            <a class="text-link" href="../index.html#priority-actual">Explore the DPIA Made Easy - Professional Edition
+            <a class="text-link" href="#">Explore the DPIA Made Easy - Professional Edition
               <span aria-hidden="true">&#8594;</span></a>
           </article>
           <article class="positioning-card positioning-card-featured">
@@ -114,7 +114,7 @@
             <h3>ACE DPIA Implementation Toolkit Only</h3>
             <p>Everything you need to implement DPIA processes immediately through ready-to-use organisational
               resources.</p>
-            <a class="text-link" href="#purchase">Choose ACE DPIA Implementation Toolkit <span
+            <a class="text-link" href="#">Choose ACE DPIA Implementation Toolkit <span
                 aria-hidden="true">&#8594;</span></a>
           </article>
           <article class="positioning-card positioning-card-bundle">
@@ -124,7 +124,7 @@
             <h3>Workbook + Toolkit Bundle</h3>
             <p>Learn the method, apply it with practical assets, and institutionalise a consistent DPIA process across
               your organisation.</p>
-            <a class="text-link" href="#purchase">Choose this Bundle <span aria-hidden="true">&#8594;</span></a>
+            <a class="text-link" href="#">Choose this Bundle <span aria-hidden="true">&#8594;</span></a>
           </article>
         </div>
       </div>
@@ -292,44 +292,123 @@
       </div>
     </section>
 
-    <section id="faq" class="toolkit-faq section-light" aria-labelledby="faq-title">
-      <div class="shell faq-grid">
-        <div class="faq-intro">
-          <p class="eyebrow"><span class="eyebrow-rule" aria-hidden="true"></span> Questions answered</p>
-          <h2 id="faq-title">Before you choose your package.</h2>
-          <p>If you need help deciding, use the comparison above or contact ACE for a conversation about your
-            implementation context.</p>
-          <a class="text-link" href="../consultation/consultation.html">Request a consultation <span
-              aria-hidden="true">&#8594;</span></a>
-        </div>
-        <div class="faq-list">
-          <details class="toolkit-faq-item">
-            <summary>Do I need the Workbook before purchasing the Toolkit?</summary>
-            <p>No. The Toolkit is designed to be useful on its own. The bundle is recommended when your team wants both
-              the method and the implementation assets.</p>
-          </details>
-          <details class="toolkit-faq-item">
-            <summary>Can I use the Toolkit in my organisation?</summary>
-            <p>Yes. The resources are intended to support organisational DPIA screening, assessment, risk treatment,
-              governance, approval, and review processes. Confirm internal adaptation and licensing terms before broad
-              redistribution.</p>
-          </details>
-          <details class="toolkit-faq-item">
-            <summary>Is the bundle recommended for teams?</summary>
-            <p>Yes. The bundle gives teams a shared method and a common set of working resources, making it the
-              strongest option for capability-building and consistent implementation.</p>
-          </details>
-          <details class="toolkit-faq-item">
-            <summary>Are updates included?</summary>
-            <p>Update availability will depend on the final product and payment arrangement. ACE will publish the
-              confirmed update policy before purchase links go live.</p>
-          </details>
-          <details class="toolkit-faq-item">
-            <summary>Who is this Toolkit designed for?</summary>
-            <p>It is designed for Data Protection Officers, DPCOs, privacy consultants, compliance and risk teams, legal
-              teams, project teams, and leaders responsible for accountable data processing.</p>
-          </details>
-        </div>
+    <section id="faq" class="toolkit-faq faq-concierge section-light" aria-labelledby="faq-title">
+      <div class="shell faq-concierge__grid">
+        <aside class="faq-concierge__card">
+          <div class="faq-concierge__card-top">
+            <h2 id="faq-title">Before you choose your package.</h2>
+            <p>Answers to the questions teams ask most often. If you need help deciding, use the comparison above.</p>
+          </div>
+          <div class="faq-concierge__card-bottom">
+            <p class="faq-concierge__prompt">Still have a question?</p>
+            <p class="faq-concierge__prompt-text">Speak with ACE about your implementation context.</p>
+            <div class="faq-concierge__actions">
+              <a class="faq-concierge__contact" href="../../contact.html">Contact ACE <span
+                  aria-hidden="true">&#8594;</span></a>
+              <a class="faq-concierge__link" href="../consultation/consultation.html">Request a consultation</a>
+            </div>
+          </div>
+        </aside>
+
+        <ol class="faq-concierge__list" data-faq>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q1" aria-expanded="false"
+                aria-controls="faq-a1" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">01</span>
+                <span class="faq-concierge__label">Do I need the Workbook before purchasing the Toolkit?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a1" role="region" aria-labelledby="faq-q1" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>No. The Toolkit is designed to be useful on its own. The bundle is recommended when your team wants
+                  both the method and the implementation assets.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q2" aria-expanded="false"
+                aria-controls="faq-a2" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">02</span>
+                <span class="faq-concierge__label">Can I use the Toolkit in my organisation?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a2" role="region" aria-labelledby="faq-q2" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>Yes. The resources are intended to support organisational DPIA screening, assessment, risk treatment,
+                  governance, approval, and review processes. Confirm internal adaptation and licensing terms before
+                  broad redistribution.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q3" aria-expanded="false"
+                aria-controls="faq-a3" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">03</span>
+                <span class="faq-concierge__label">Is the bundle recommended for teams?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a3" role="region" aria-labelledby="faq-q3" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>Yes. The bundle gives teams a shared method and a common set of working resources, making it the
+                  strongest option for capability-building and consistent implementation.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q4" aria-expanded="false"
+                aria-controls="faq-a4" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">04</span>
+                <span class="faq-concierge__label">Are updates included?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a4" role="region" aria-labelledby="faq-q4" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>Update availability will depend on the final product and payment arrangement. ACE will publish the
+                  confirmed update policy before purchase links go live.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q5" aria-expanded="false"
+                aria-controls="faq-a5" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">05</span>
+                <span class="faq-concierge__label">Who is this Toolkit designed for?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a5" role="region" aria-labelledby="faq-q5" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>It is designed for Data Protection Officers, DPCOs, privacy consultants, compliance and risk teams,
+                  legal teams, project teams, and leaders responsible for accountable data processing.</p>
+              </div>
+            </div>
+          </li>
+          <li class="faq-concierge__item" data-faq-item>
+            <h3 class="faq-concierge__question">
+              <button class="faq-concierge__trigger" type="button" id="faq-q6" aria-expanded="false"
+                aria-controls="faq-a6" data-faq-trigger>
+                <span class="faq-concierge__num" aria-hidden="true">06</span>
+                <span class="faq-concierge__label">Which formats are available?</span>
+                <span class="faq-concierge__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-concierge__panel" id="faq-a6" role="region" aria-labelledby="faq-q6" data-faq-panel>
+              <div class="faq-concierge__panel-inner">
+                <p>The Complete DPIA Package comes as a digital PDF Handbook with the Digital Toolkit, or a print
+                  Handbook with the Digital Toolkit. You select the format before purchase.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
   </main>
@@ -384,8 +463,8 @@
 
   <script src="../js/dpia-home.js"></script>
   <script src="js/toolkit-purchase.js"></script>
-	<script src="../js/ace-dashboard-api.js"></script>
-	<script src="../js/ace-footer.js"></script>
+  <script src="../js/ace-dashboard-api.js"></script>
+  <script src="../js/ace-footer.js"></script>
 
 </body>
 

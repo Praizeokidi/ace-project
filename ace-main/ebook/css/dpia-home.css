@@ -248,7 +248,7 @@ button {
   bottom: -9px;
   width: 0;
   height: 2px;
-  background: #4259a9 !important; /* Changed to brand blue */
+  background: #efd48f;
   transition: width 0.18s var(--ease-out);
 }
 

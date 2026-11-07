@@ -343,7 +343,7 @@
                 </div>
             </section>
 
-            <section class="programmes section-light" aria-labelledby="programmes-title">
+            <section class="programmes programmes-pathway section-light" aria-labelledby="programmes-title">
                 <div class="shell">
                     <div class="section-heading training-heading">
                         <p class="eyebrow">Training programmes</p>
@@ -351,111 +351,149 @@
                         <p>Choose a focused programme or let ACE shape a bespoke organisational pathway around your
                             requirements.</p>
                     </div>
-                    <div class="programme-grid">
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v18H6.5a2.5 2.5 0 0 0-2.5 2.5Z" />
-                                    <path d="M6 6h10M6 10h10" />
-                                </svg>
-                            </div>
-                            <div class="programme-meta">
-                                <span>Practitioner</span>
-                                <span>Live or bespoke</span>
-                            </div>
-                            <h3>DPIA Made Easy – Professional Training</h3>
-                            <p>Comprehensive training aligned with the DPIA Made Easy methodology and practical DPIA
-                                implementation.</p>
-                        </article>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="9" />
-                                    <path d="M12 8v4l3 3" />
-                                </svg>
-                            </div>
-                            <h3>DPIA Fundamentals / Awareness Training</h3>
-                            <p>An introduction to DPIAs, privacy risk assessment and regulatory obligations.</p>
-                        </article>
+                    <div class="pathway" data-pathway>
+                        <div class="pathway-rail" role="tablist" aria-label="Programme pathways"
+                            aria-orientation="vertical">
+                            <button class="pathway-tab is-active" type="button" role="tab" id="pathway-tab-foundations"
+                                aria-selected="true" aria-controls="pathway-panel-foundations"
+                                data-pathway-tab="foundations"><span>Foundations</span><small>2</small></button>
+                            <button class="pathway-tab" type="button" role="tab" id="pathway-tab-practitioner"
+                                aria-selected="false" aria-controls="pathway-panel-practitioner"
+                                data-pathway-tab="practitioner"><span>Practitioner</span><small>2</small></button>
+                            <button class="pathway-tab" type="button" role="tab" id="pathway-tab-specialist"
+                                aria-selected="false" aria-controls="pathway-panel-specialist"
+                                data-pathway-tab="specialist"><span>Specialist</span><small>2</small></button>
+                            <button class="pathway-tab" type="button" role="tab" id="pathway-tab-leadership"
+                                aria-selected="false" aria-controls="pathway-panel-leadership"
+                                data-pathway-tab="leadership"><span>Leadership &amp;
+                                    bespoke</span><small>2</small></button>
+                        </div>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="16" rx="2" />
-                                    <path d="m9 10 2 2-2 2M13 14h4" />
-                                </svg>
+                        <div class="pathway-stage">
+                            <div class="pathway-panel" role="tabpanel" id="pathway-panel-foundations"
+                                aria-labelledby="pathway-tab-foundations" data-pathway-name="Foundations" tabindex="0">
+                                <h3 class="pathway-panel-title">Foundations</h3>
+                                <div class="pathway-cards">
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="9" />
+                                                <path d="M12 8v4l3 3" />
+                                            </svg></span>
+                                        <h4>DPIA Fundamentals / Awareness Training</h4>
+                                        <p>An introduction to DPIAs, privacy risk assessment and regulatory obligations.
+                                        </p>
+                                    </article>
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="3" y="4" width="18" height="16" rx="2" />
+                                                <path d="m9 10 2 2-2 2M13 14h4" />
+                                            </svg></span>
+                                        <h4>Practical DPIA Workshop</h4>
+                                        <p>Hands-on DPIA exercises using realistic organisational scenarios.</p>
+                                    </article>
+                                </div>
                             </div>
-                            <h3>Practical DPIA Workshop</h3>
-                            <p>Hands-on DPIA exercises using realistic organisational scenarios.</p>
-                        </article>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 20V10M12 20V4M6 20v-6" />
-                                </svg>
+                            <div class="pathway-panel" role="tabpanel" id="pathway-panel-practitioner"
+                                aria-labelledby="pathway-tab-practitioner" data-pathway-name="Practitioner"
+                                tabindex="0">
+                                <h3 class="pathway-panel-title">Practitioner</h3>
+                                <div class="pathway-cards">
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v18H6.5a2.5 2.5 0 0 0-2.5 2.5Z" />
+                                                <path d="M6 6h10M6 10h10" />
+                                            </svg></span>
+                                        <div class="pathway-meta"><span>Practitioner</span><span>Live or bespoke</span>
+                                        </div>
+                                        <h4>DPIA Made Easy – Professional Training</h4>
+                                        <p>Comprehensive training aligned with the DPIA Made Easy methodology and
+                                            practical DPIA implementation.</p>
+                                    </article>
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                                <polyline points="9 12 11 14 15 10" />
+                                            </svg></span>
+                                        <h4>DPO / Privacy Team DPIA Training</h4>
+                                        <p>Specialist training for privacy professionals responsible for DPIA oversight
+                                            and implementation.</p>
+                                    </article>
+                                </div>
                             </div>
-                            <h3>Advanced DPIA Training</h3>
-                            <p>In-depth exploration of complex DPIA processes, governance and decision-making.</p>
-                        </article>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                    <line x1="11" y1="8" x2="11" y2="14" />
-                                    <line x1="8" y1="11" x2="14" y2="11" />
-                                </svg>
+                            <div class="pathway-panel" role="tabpanel" id="pathway-panel-specialist"
+                                aria-labelledby="pathway-tab-specialist" data-pathway-name="Specialist" tabindex="0">
+                                <h3 class="pathway-panel-title">Specialist</h3>
+                                <div class="pathway-cards">
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 20V10M12 20V4M6 20v-6" />
+                                            </svg></span>
+                                        <h4>Advanced DPIA Training</h4>
+                                        <p>In-depth exploration of complex DPIA processes, governance and
+                                            decision-making.</p>
+                                    </article>
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="11" cy="11" r="8" />
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                                <line x1="11" y1="8" x2="11" y2="14" />
+                                                <line x1="8" y1="11" x2="14" y2="11" />
+                                            </svg></span>
+                                        <h4>AI &amp; Emerging Technology DPIA Training</h4>
+                                        <p>Focused training on AI systems, automated decision-making, profiling,
+                                            biometrics and emerging technologies.</p>
+                                    </article>
+                                </div>
                             </div>
-                            <h3>AI &amp; Emerging Technology DPIA Training</h3>
-                            <p>Focused training on AI systems, automated decision-making, profiling, biometrics and
-                                emerging technologies.</p>
-                        </article>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
-                                </svg>
+                            <div class="pathway-panel" role="tabpanel" id="pathway-panel-leadership"
+                                aria-labelledby="pathway-tab-leadership" data-pathway-name="Leadership &amp; bespoke"
+                                tabindex="0">
+                                <h3 class="pathway-panel-title">Leadership &amp; bespoke</h3>
+                                <div class="pathway-cards">
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+                                            </svg></span>
+                                        <h4>Executive / Senior Management DPIA Briefing</h4>
+                                        <p>Strategic training for leadership teams responsible for governance and
+                                            accountability.</p>
+                                    </article>
+                                    <article class="pathway-card">
+                                        <span class="pathway-icon"><svg aria-hidden="true" focusable="false"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 5h16v14H4z" />
+                                                <path d="M8 9h8M8 12h5M8 15h8" />
+                                            </svg></span>
+                                        <h4>Bespoke Organisational Training</h4>
+                                        <p>Tailored training programmes designed around specific organisational
+                                            requirements, sector context and capability goals.</p>
+                                    </article>
+                                </div>
                             </div>
-                            <h3>Executive / Senior Management DPIA Briefing</h3>
-                            <p>Strategic training for leadership teams responsible for governance and accountability.
-                            </p>
-                        </article>
 
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                    <polyline points="9 12 11 14 15 10" />
-                                </svg>
-                            </div>
-                            <h3>DPO / Privacy Team DPIA Training</h3>
-                            <p>Specialist training for privacy professionals responsible for DPIA oversight and
-                                implementation.</p>
-                        </article>
-
-                        <article class="programme-card">
-                            <div class="icon-badge-elite">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 5h16v14H4z" />
-                                    <path d="M8 9h8M8 12h5M8 15h8" />
-                                </svg>
-                            </div>
-                            <h3>Bespoke Organisational Training</h3>
-                            <p>Tailored training programmes designed around specific organisational requirements, sector
-                                context and capability goals.</p>
-                        </article>
+                            <p class="pathway-caption" data-pathway-caption aria-live="polite"></p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -770,7 +808,8 @@
 
                 <div class="ace-footer__connect">
                     <p class="ace-footer__heading" id="ace-footer-connect">Connect</p>
-                    <p class="ace-footer__connect-copy">Follow ACE for practical guidance on accountable data protection.</p>
+                    <p class="ace-footer__connect-copy">Follow ACE for practical guidance on accountable data
+                        protection.</p>
                     <div class="ace-footer__socials" aria-label="Professional social links">
                         <a href="https://www.linkedin.com/company/ace-data-protection-consulting/" target="_blank"
                             rel="noopener noreferrer" aria-label="ACE on LinkedIn">in</a>
@@ -782,7 +821,7 @@
     </footer>
 
     <script src="../training/js/training.js"></script>
-
+    <script src="./js/training-pathways.js"></script>
     <script src="../js/ace-footer.js"></script>
 
 

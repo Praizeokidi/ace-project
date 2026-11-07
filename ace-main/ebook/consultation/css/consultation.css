@@ -2981,3 +2981,58 @@
   position: relative;
   z-index: 1;
 }
+
+/* Consultation top-bar: toolkit-hero colour composition */
+.consultation-page .topbar {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.96) 18%,
+      rgba(66, 89, 169, 0.74) 35%,
+      rgba(66, 89, 169, 0.24) 55%,
+      rgba(66, 89, 169, 0) 74%
+    ),
+    linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%) !important;
+  border-bottom: 1px solid rgba(220, 228, 255, 0.18);
+  color: #ffffff;
+  animation: none;
+}
+.consultation-page .topbar-inner span:first-child {
+  color: #ffffff;
+}
+.consultation-page .topbar-inner span:last-child {
+  color: #dce4ff;
+}
+
+/* left ring must not be indigo-on-indigo */
+.consultation-page .topbar::before {
+  border-color: rgba(220, 228, 255, 0.28);
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 43%,
+      rgba(220, 228, 255, 0.22) 45% 49%,
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 61%,
+      rgba(220, 228, 255, 0.14) 63% 67%,
+      transparent 69%
+    );
+  box-shadow: 0 0 20px rgba(220, 228, 255, 0.1);
+}
+
+/* mobile: text is centred, so pool the indigo in the middle */
+@media (max-width: 800px) {
+  .consultation-page .topbar {
+    background: linear-gradient(
+      90deg,
+      #162c68 0%,
+      #4259a9 30%,
+      #4259a9 70%,
+      #162c68 100%
+    ) !important;
+  }
+}

@@ -1640,6 +1640,42 @@
     .consent-check span {
       flex: 1;
     }
+
+    /* Audio player blends into the section background */
+    #audio-actual .audio-reference-player,
+    #audio-actual .audio-reference-features {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* Audio play button: smaller circle, one icon at a time */
+    #audio-actual .audio-reference-play {
+      width: calc(92 * var(--audio-u));
+      height: calc(92 * var(--audio-u));
+      top: calc(31 * var(--audio-u));
+    }
+
+    #audio-actual .audio-reference-play .icon-play,
+    #audio-actual .audio-reference-play .icon-pause {
+      grid-area: 1 / 1;
+      width: calc(34 * var(--audio-u));
+      height: calc(34 * var(--audio-u));
+    }
+
+    #audio-actual .audio-reference-play .icon-play {
+      margin-left: calc(5 * var(--audio-u));
+    }
+
+    #audio-actual .audio-reference-play svg[hidden] {
+      display: none;
+    }
+
+    /* Tagline matches the feature labels */
+    #audio-actual .audio-reference-tagline,
+    #audio-actual .audio-reference-tagline p {
+      color: #dfe6f0;
+      font-weight: 500;
+    }
   </style>
 
 
@@ -3634,7 +3670,7 @@
           <p class="final-reference-tagline">Move from regulatory requirements to practical DPIA implementation.</p>
 
           <div class="final-reference-actions" aria-label="Final section actions">
-            <a class="final-reference-button final-reference-button-outline" href="/about.html">LEARN MORE <svg
+            <a class="final-reference-button final-reference-button-outline" href="/ace-main/about.html">LEARN MORE <svg
                 viewBox="0 0 28 16" aria-hidden="true" focusable="false">
                 <path d="M1 8h24M18 1l7 7-7 7" />
               </svg></a>

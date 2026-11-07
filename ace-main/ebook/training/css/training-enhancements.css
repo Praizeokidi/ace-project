@@ -217,3 +217,490 @@
   border-color: var(--ace-blue);
   box-shadow: var(--ace-shadow-blue);
 }
+
+/* Training hero — ebook palette: indigo / periwinkle / gold-light */
+#training-hero {
+  --hero-indigo: #4259a9;
+  --hero-peri: #dce4ff;
+  --hero-gold: #efd48f;
+}
+
+/* copy */
+#training-hero .eyebrow-gold {
+  color: var(--hero-gold);
+}
+#training-hero .eyebrow-rule {
+  background: var(--hero-gold); /* was indigo on indigo: invisible */
+  box-shadow: 0 0 0 4px rgba(239, 212, 143, 0.18);
+}
+#training-hero h1 {
+  color: #fff;
+}
+#training-hero .training-hero-subtitle,
+#training-hero .training-hero-description {
+  color: var(--hero-peri);
+}
+
+/* CTA */
+#training-hero .button-white {
+  background: #fff;
+  color: var(--hero-indigo);
+  box-shadow: 0 12px 30px rgba(12, 29, 53, 0.22);
+}
+#training-hero .button-white:hover,
+#training-hero .button-white:focus-visible {
+  background: var(--hero-gold);
+  border-color: var(--hero-gold);
+  color: #0c1d35;
+}
+
+/* learning-journey card */
+#training-hero .learning-journey {
+  border: 1px solid rgba(220, 228, 255, 0.28);
+  background: linear-gradient(
+    145deg,
+    rgba(66, 89, 169, 0.64),
+    rgba(66, 89, 169, 0.34)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(220, 228, 255, 0.18),
+    0 22px 52px rgba(12, 29, 53, 0.28);
+}
+#training-hero .learning-journey::after {
+  background: radial-gradient(
+    circle,
+    rgba(239, 212, 143, 0.14),
+    transparent 68%
+  );
+}
+#training-hero .journey-header span {
+  color: var(--hero-gold);
+}
+#training-hero .journey-step i {
+  border-color: rgba(220, 228, 255, 0.45);
+  background: rgba(220, 228, 255, 0.08);
+  color: var(--hero-peri);
+}
+#training-hero .journey-step.is-active i {
+  border-color: var(--hero-gold);
+  background: var(--hero-peri);
+  color: var(--hero-indigo);
+  box-shadow:
+    0 0 0 4px rgba(239, 212, 143, 0.28),
+    0 0 22px rgba(239, 212, 143, 0.22);
+}
+#training-hero .journey-step::before {
+  background: linear-gradient(var(--hero-gold), rgba(220, 228, 255, 0.2));
+}
+#training-hero .journey-step small {
+  color: rgba(220, 228, 255, 0.82);
+}
+#training-hero .learning-journey > p {
+  color: var(--hero-peri);
+  border-top-color: rgba(239, 212, 143, 0.3);
+}
+
+/* Programmes: pathway master-detail (indigo / periwinkle / gold-light) */
+.training-page .programmes-pathway {
+  padding: clamp(56px, 7vw, 84px) 0;
+}
+.training-page .programmes-pathway .training-heading {
+  margin-bottom: 34px;
+}
+
+.pathway {
+  --pw-indigo: #4259a9;
+  --pw-peri: #dce4ff;
+  --pw-gold: #efd48f;
+  --pw-ink: #0c1d35;
+  --pw-muted: #4a5568;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* rail */
+.pathway-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pathway:not(.is-enhanced) .pathway-rail {
+  display: none;
+}
+.pathway-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid rgba(66, 89, 169, 0.22);
+  border-left: 4px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--pw-ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.pathway-tab small {
+  min-width: 24px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--pw-peri);
+  color: var(--pw-indigo);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+.pathway-tab:hover {
+  border-color: var(--pw-indigo);
+  transform: translateX(3px);
+}
+.pathway-tab.is-active {
+  border-color: var(--pw-indigo);
+  border-left-color: var(--pw-gold);
+  background: var(--pw-indigo);
+  color: #fff;
+  box-shadow: 0 14px 30px -14px rgba(66, 89, 169, 0.55);
+}
+.pathway-tab.is-active small {
+  background: rgba(220, 228, 255, 0.18);
+  color: var(--pw-peri);
+}
+.pathway-tab:focus-visible,
+.pathway-panel:focus-visible {
+  outline: 3px solid rgba(66, 89, 169, 0.45);
+  outline-offset: 3px;
+}
+
+/* stage and panels */
+.pathway-panel + .pathway-panel {
+  margin-top: 28px;
+}
+.pathway.is-enhanced .pathway-panel + .pathway-panel {
+  margin-top: 0;
+}
+.pathway-panel-title {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  color: var(--pw-ink);
+}
+.pathway.is-enhanced .pathway-panel-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.pathway-panel[hidden] {
+  display: none;
+}
+.pathway.is-enhanced .pathway-panel:not([hidden]) {
+  animation: pathway-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes pathway-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.pathway-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* compact card */
+.pathway-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 190px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(66, 89, 169, 0.16);
+  border-radius: 14px;
+  background: #fff;
+  text-align: left;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+.pathway-card::after {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pw-indigo), var(--pw-gold));
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pathway-card:hover,
+.pathway-card:focus-within {
+  border-color: var(--pw-indigo);
+  box-shadow: 0 18px 36px -16px rgba(66, 89, 169, 0.3);
+  transform: translateY(-3px);
+}
+.pathway-card:hover::after,
+.pathway-card:focus-within::after {
+  opacity: 1;
+}
+.pathway-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--pw-peri);
+  color: var(--pw-indigo);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.pathway-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.pathway-card:hover .pathway-icon {
+  background: var(--pw-indigo);
+  color: #fff;
+}
+.pathway-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.pathway-meta span {
+  padding: 4px 9px;
+  border: 1px solid rgba(66, 89, 169, 0.28);
+  border-radius: 99px;
+  background: var(--pw-peri);
+  color: var(--pw-indigo);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.pathway-card h4 {
+  margin: 0;
+  color: var(--pw-ink);
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.pathway-card p {
+  margin: 0;
+  color: var(--pw-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.pathway-caption {
+  margin: 14px 2px 0;
+  color: var(--pw-muted);
+  font-size: 12px;
+}
+.pathway:not(.is-enhanced) .pathway-caption {
+  display: none;
+}
+
+/* tablet: rail becomes a scrolling chip row */
+@media (max-width: 900px) {
+  .pathway {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .pathway-rail {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .pathway-rail::-webkit-scrollbar {
+    display: none;
+  }
+  .pathway-tab {
+    flex: 0 0 auto;
+    min-height: 46px;
+    border-left-width: 1px;
+    border-bottom: 4px solid transparent;
+    scroll-snap-align: start;
+  }
+  .pathway-tab:hover {
+    transform: none;
+  }
+  .pathway-tab.is-active {
+    border-left-color: var(--pw-indigo);
+    border-bottom-color: var(--pw-gold);
+  }
+}
+@media (max-width: 650px) {
+  .pathway-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pathway-card {
+    min-height: 0;
+    padding: 20px;
+  }
+  .pathway-card h4 {
+    font-size: 1.15rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pathway.is-enhanced .pathway-panel:not([hidden]) {
+    animation: none;
+  }
+  .pathway-tab,
+  .pathway-card,
+  .pathway-icon {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Top bar: ebook palette (indigo #4259a9 + periwinkle #dce4ff)
+   ========================================================= */
+.training-page .topbar {
+  /* "!important" is needed because dpia-home.css forces the navy gradient with !important */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(220, 228, 255, 0.16) 0%,
+      rgba(220, 228, 255, 0) 24%,
+      rgba(220, 228, 255, 0) 76%,
+      rgba(220, 228, 255, 0.16) 100%
+    ),
+    #4259a9 !important;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(220, 228, 255, 0.3);
+}
+
+/* Decorative arcs at both ends: navy-blue rings -> periwinkle rings */
+.training-page .topbar::before,
+.training-page .topbar::after {
+  border-color: rgba(220, 228, 255, 0.38);
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 43%,
+      rgba(220, 228, 255, 0.34) 45% 49%,
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 61%,
+      rgba(220, 228, 255, 0.2) 63% 67%,
+      transparent 69%
+    );
+  box-shadow: 0 0 20px rgba(220, 228, 255, 0.18);
+  opacity: 0.85;
+}
+
+.training-page .topbar-inner {
+  color: #ffffff;
+}
+
+/* Small periwinkle dot before the left label */
+.training-page .topbar-inner span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.training-page .topbar-inner span:first-child::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dce4ff;
+  box-shadow: 0 0 0 4px rgba(220, 228, 255, 0.22);
+}
+
+/* Tagline on the right */
+.training-page .topbar-inner span:last-child {
+  color: #dce4ff;
+}
+
+/* =========================================================
+   Training hero: ebook palette
+   indigo #4259a9 / periwinkle #dce4ff / gold-light #efd48f
+   ========================================================= */
+#training-hero {
+  --th-indigo: #4259a9;
+  --th-periwinkle: #dce4ff;
+  --th-gold: #efd48f;
+}
+
+/* 1. Desktop: remove the blurred copy of the photo that turns the indigo field navy.
+      (Mobile keeps its own soft treatment.) */
+@media (min-width: 801px) {
+  #training-hero .training-hero-photo::after {
+    display: none;
+  }
+}
+
+/* 2. Bring back the faint grid lines and glowing orbs (hidden today) */
+#training-hero .training-hero-grid,
+#training-hero .ebook-hero-orbs {
+  display: block;
+}
+#training-hero .training-hero-grid {
+  opacity: 0.19;
+}
+
+/* 3. Gold-light accents: eyebrow label and rule */
+#training-hero .eyebrow.eyebrow-gold {
+  color: var(--th-gold);
+}
+#training-hero .eyebrow-rule {
+  background: var(--th-gold);
+  box-shadow: none;
+}
+
+/* 4. Periwinkle supporting text */
+#training-hero .training-hero-copy .training-hero-subtitle {
+  color: var(--th-periwinkle);
+}
+#training-hero .training-hero-copy .training-hero-description {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* 5. Call to action: gold-light button on the indigo field */
+#training-hero .button-white {
+  background: var(--th-gold);
+  border-color: transparent;
+  color: #102d4d;
+  box-shadow: 0 12px 30px rgba(239, 212, 143, 0.28);
+}
+#training-hero .button-white:hover,
+#training-hero .button-white:focus-visible {
+  background: #f6e4b0;
+  color: #102d4d;
+  box-shadow: 0 16px 36px rgba(239, 212, 143, 0.4);
+}
+#training-hero .button-white:focus-visible {
+  outline: 3px solid var(--th-periwinkle);
+  outline-offset: 3px;
+}

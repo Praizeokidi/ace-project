@@ -507,3 +507,130 @@
     grid-template-columns: 40px minmax(0, 1fr);
   }
 }
+
+/* Review top bar: indigo and periwinkle */
+.review-page .topbar {
+  background: #4259a9 !important;
+  border-bottom: 1px solid rgba(220, 228, 255, 0.18);
+  color: #dce4ff;
+  animation: none;
+}
+.review-page .topbar::before,
+.review-page .topbar::after {
+  border-color: rgba(220, 228, 255, 0.28);
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 43%,
+      rgba(220, 228, 255, 0.22) 45% 49%,
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      transparent 0 61%,
+      rgba(220, 228, 255, 0.12) 63% 67%,
+      transparent 69%
+    );
+  box-shadow: 0 0 20px rgba(220, 228, 255, 0.12);
+}
+.review-page .topbar-inner > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 800;
+}
+.review-page .topbar-inner > span:first-child::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dce4ff;
+  box-shadow: 0 0 0 4px rgba(220, 228, 255, 0.16);
+  content: "";
+}
+.review-page .topbar-inner > span:last-child {
+  color: #dce4ff;
+  font-weight: 600;
+}
+
+/* Review dossier: ebook palette — indigo / periwinkle / gold-light */
+.review-dossier {
+  --dossier-indigo: #4259a9;
+  --dossier-peri: #dce4ff;
+  --dossier-gold: #efd48f;
+}
+
+.review-dossier-scope {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(66, 89, 169, 0.9) 0%,
+      rgba(66, 89, 169, 0.6) 22%,
+      rgba(66, 89, 169, 0.22) 45%,
+      rgba(66, 89, 169, 0) 68%
+    ),
+    linear-gradient(135deg, #0c1d35 0%, #102d4d 55%, #162c68 100%);
+}
+
+.review-dossier .eyebrow,
+.review-dossier-num,
+.review-dossier-list li:last-child h3 {
+  color: var(--dossier-gold);
+}
+
+.review-dossier-list li,
+.review-dossier-list li:last-child {
+  border-color: rgba(239, 212, 143, 0.28);
+}
+.review-dossier-list li:last-child {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.review-dossier-scope .review-dossier-intro {
+  color: rgba(220, 228, 255, 0.86);
+}
+.review-dossier-list p {
+  color: rgba(220, 228, 255, 0.78);
+}
+
+/* contact half */
+.review-dossier-contact {
+  border-left: 3px solid var(--dossier-gold); /* decorative divider only */
+}
+.review-dossier-contact h2::after {
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 2px;
+  background: var(--dossier-indigo);
+  content: "";
+}
+.review-dossier-contact .review-contact-field input,
+.review-dossier-contact .review-contact-field textarea {
+  border-color: rgba(66, 89, 169, 0.28);
+}
+.review-dossier-contact .review-contact-field input:focus-visible,
+.review-dossier-contact .review-contact-field textarea:focus-visible {
+  border-color: var(--dossier-indigo);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 89, 169, 0.22);
+}
+.review-dossier-contact .review-privacy-note {
+  border-color: rgba(239, 212, 143, 0.8);
+  background: #f7f4ee;
+}
+.review-dossier-contact .review-privacy-icon {
+  border-color: var(--dossier-indigo);
+  background: var(--dossier-peri);
+  color: var(--dossier-indigo);
+}
+
+/* stacked layout: the divider moves from the left to the top */
+@media (max-width: 900px) {
+  .review-dossier-contact {
+    border-left: 0;
+    border-top: 3px solid var(--dossier-gold);
+  }
+}
