@@ -1,0 +1,345 @@
+/* =========================================================
+   ACE terms page: section cards, clause chips, scroll-spy TOC
+   Loads after ace-site.css (uses its tokens and .ace-legal layout)
+   ========================================================= */
+
+.ace-terms {
+  display: grid;
+  gap: 22px;
+}
+
+/* ---------- Section card ---------- */
+
+.ace-term {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(28px, 4vw, 44px) clamp(30px, 4.4vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(16, 45, 77, 0.04);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.ace-term::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 5px;
+  background: linear-gradient(180deg, var(--blue), var(--gold-light));
+}
+
+.ace-term:hover,
+.ace-term:focus-within {
+  border-color: rgba(66, 89, 169, 0.32);
+  box-shadow: var(--shadow);
+}
+
+.ace-term--mist {
+  background: linear-gradient(180deg, #fff 0%, var(--blue-mist) 100%);
+}
+
+/* Outlined watermark numeral */
+.ace-term__ghost {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  z-index: -1;
+  color: transparent;
+  font-family: var(--serif);
+  font-size: clamp(7rem, 14vw, 11rem);
+  line-height: 1;
+  -webkit-text-stroke: 1.5px rgba(66, 89, 169, 0.16);
+  pointer-events: none;
+  user-select: none;
+}
+
+.ace-term__head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ace-term__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--gradient-blue);
+  color: #fff;
+  box-shadow: 0 14px 28px -12px rgba(47, 79, 162, 0.55);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.ace-term:hover .ace-term__icon {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.ace-term__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ace-term__eyebrow {
+  margin: 0 0 4px;
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ace-term h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+  line-height: 1.12;
+}
+
+/* ---------- Body text: clause chips and pull paragraph ---------- */
+
+.ace-term__text ul {
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ace-term__text ul li {
+  padding: 16px 18px 16px 54px;
+  border: 1px solid rgba(66, 89, 169, 0.14);
+  border-radius: 14px;
+  background: var(--blue-mist);
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.ace-term--mist .ace-term__text ul li {
+  background: #fff;
+}
+
+.ace-term__text ul li::before {
+  top: 17px;
+  left: 18px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(66, 89, 169, 0.45);
+  border-radius: 50%;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234259a9' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 12.5l3 3 7-7'/%3E%3C/svg%3E")
+    center / 13px no-repeat;
+}
+
+.ace-term__text ul li:hover {
+  border-color: rgba(66, 89, 169, 0.4);
+  background: #fff;
+  transform: translateX(4px);
+}
+
+.ace-term__text > p {
+  margin-top: 24px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+  background: var(--blue-mist);
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.ace-term__text > p + ul {
+  margin-top: 16px;
+}
+
+/* ---------- Deep-blue variant (closing section) ---------- */
+
+.ace-term--deep {
+  border-color: transparent;
+  background: var(--gradient-deep);
+  color: #fff;
+  box-shadow: var(--shadow-blue);
+}
+
+.ace-term--deep::before {
+  background: linear-gradient(180deg, var(--gold-light), rgba(239, 212, 143, 0.2));
+}
+
+.ace-term--deep h2 {
+  color: #fff;
+}
+
+.ace-term--deep .ace-term__eyebrow {
+  color: var(--gold-light);
+}
+
+.ace-term--deep .ace-term__icon {
+  border: 1px solid rgba(239, 212, 143, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  color: var(--gold-light);
+}
+
+.ace-term--deep .ace-term__ghost {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.14);
+}
+
+.ace-term--deep .ace-term__text p,
+.ace-term--deep .ace-term__text li {
+  color: rgba(240, 244, 255, 0.92);
+}
+
+.ace-term--deep .ace-term__text strong {
+  color: #fff;
+}
+
+.ace-term--deep .ace-term__text a {
+  color: var(--gold-light);
+}
+
+.ace-term--deep .ace-term__text ul li {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ace-term--deep .ace-term__text ul li::before {
+  border-color: rgba(239, 212, 143, 0.6);
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23efd48f' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 12.5l3 3 7-7'/%3E%3C/svg%3E")
+    center / 13px no-repeat;
+}
+
+.ace-term--deep .ace-term__text ul li:hover {
+  border-color: rgba(239, 212, 143, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ace-term--deep .ace-term__text > p {
+  border-left-color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* ---------- Table of contents: progress and scroll-spy ---------- */
+
+.ace-legal__progress {
+  height: 4px;
+  margin: 0 8px 18px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--blue-pale);
+}
+
+.ace-legal__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--gold-light));
+  transform: scaleX(var(--read, 0));
+  transform-origin: left;
+  transition: transform 0.15s linear;
+}
+
+.ace-legal__toc a.is-active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.ace-legal__toc a.is-active::before {
+  color: var(--gold-light);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .ace-term {
+    padding: 26px 20px 26px 26px;
+    border-radius: 22px;
+  }
+
+  .ace-term__head {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .ace-term__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .ace-term__ghost {
+    top: -6px;
+    right: 12px;
+  }
+
+  .ace-term__text ul li {
+    padding: 14px 14px 14px 48px;
+  }
+
+  .ace-term__text ul li::before {
+    left: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ace-term__icon,
+  .ace-term__text ul li,
+  .ace-legal__progress span {
+    transition: none;
+  }
+
+  .ace-term:hover .ace-term__icon,
+  .ace-term__text ul li:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Print: plain, ink-friendly terms ---------- */
+
+@media print {
+  .site-header,
+  .ace-footer,
+  .ace-hero__media,
+  .ace-grid-texture,
+  .ace-legal__aside,
+  .ace-legal__contact {
+    display: none !important;
+  }
+
+  .ace-legal {
+    display: block;
+  }
+
+  .ace-term,
+  .ace-term--deep {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: none;
+    color: #000;
+  }
+
+  .ace-term::before,
+  .ace-term__ghost {
+    display: none;
+  }
+
+  .ace-term h2,
+  .ace-term--deep h2,
+  .ace-term--deep .ace-term__text p,
+  .ace-term--deep .ace-term__text li,
+  .ace-term--deep .ace-term__text strong,
+  .ace-term--deep .ace-term__eyebrow {
+    color: #000;
+  }
+
+  .ace-term__icon {
+    display: none;
+  }
+}

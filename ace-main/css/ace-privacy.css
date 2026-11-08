@@ -1,0 +1,301 @@
+/* =========================================================
+   ACE privacy policy: expressive body text
+   Loads after ace-site.css (uses its tokens and .ace-legal layout)
+   ========================================================= */
+
+/* ---------- Section rhythm ---------- */
+
+.ace-privacy .ace-legal__num {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.ace-privacy .ace-legal__section:hover .ace-legal__num {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+/* ---------- Paragraphs ---------- */
+
+.ace-privacy .ace-legal__text > p {
+  max-width: 68ch;
+}
+
+.ace-privacy .ace-legal__text h2 + p {
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* Drop cap on the opening paragraph */
+.ace-privacy #s1 .ace-legal__text h2 + p::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--blue);
+  font-family: var(--serif);
+  font-size: 3.7em;
+  line-height: 0.8;
+}
+
+/* Key statements as pull-quotes */
+.ace-privacy #s6 .ace-legal__text > p:last-of-type,
+.ace-privacy #s7 .ace-legal__text > p:last-of-type,
+.ace-privacy #s11 .ace-legal__text > p {
+  max-width: none;
+  padding: 20px 24px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 16px 16px 0;
+  background: var(--blue-mist);
+  color: var(--navy);
+}
+
+/* Sub-headings with a gold lead-in rule */
+.ace-privacy .ace-legal__text h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ace-privacy .ace-legal__text h3::before {
+  content: "";
+  flex: none;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ---------- Lists: pill grid (default) ---------- */
+
+.ace-privacy .ace-legal__text ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ace-privacy .ace-legal__text ul li {
+  padding: 12px 16px 12px 42px;
+  border: 1px solid rgba(66, 89, 169, 0.14);
+  border-radius: 12px;
+  background: var(--blue-mist);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.ace-privacy .ace-legal__text ul li:only-child {
+  grid-column: 1 / -1;
+}
+
+.ace-privacy .ace-legal__text ul li::before {
+  top: 1.15em;
+  left: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.ace-privacy .ace-legal__text ul li:hover {
+  border-color: rgba(66, 89, 169, 0.4);
+  background: #fff;
+  transform: translateX(3px);
+}
+
+/* ---------- Lists: definition cards (cookies, lawful bases) ---------- */
+
+.ace-privacy #cookies .ace-legal__text ul,
+.ace-privacy #s13 .ace-legal__text ul {
+  gap: 14px;
+}
+
+.ace-privacy #cookies .ace-legal__text ul li,
+.ace-privacy #s13 .ace-legal__text ul li {
+  position: relative;
+  overflow: hidden;
+  padding: 24px 22px 20px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(16, 45, 77, 0.04);
+}
+
+.ace-privacy #cookies .ace-legal__text ul li:last-child:nth-child(odd),
+.ace-privacy #s13 .ace-legal__text ul li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.ace-privacy #cookies .ace-legal__text ul li::before,
+.ace-privacy #s13 .ace-legal__text ul li::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 0;
+  background: linear-gradient(90deg, var(--blue), var(--gold-light));
+  transform: none;
+}
+
+.ace-privacy #cookies .ace-legal__text ul li:hover,
+.ace-privacy #s13 .ace-legal__text ul li:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.ace-privacy #cookies .ace-legal__text li strong,
+.ace-privacy #s13 .ace-legal__text li strong,
+.ace-privacy #s15 .ace-legal__text ol li strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* ---------- Rights: numbered cards ---------- */
+
+.ace-privacy #s15 .ace-legal__text ol {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ace-privacy #s15 .ace-legal__text ol li {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 64px 20px 22px;
+  border: 1px solid rgba(66, 89, 169, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ace-privacy #s15 .ace-legal__text ol li::before {
+  top: 6px;
+  right: 14px;
+  left: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  border: 0;
+  color: rgba(66, 89, 169, 0.2);
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ace-privacy #s15 .ace-legal__text ol li:hover {
+  border-color: rgba(66, 89, 169, 0.4);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.ace-privacy #s15 .ace-legal__text ol li:hover::before {
+  color: var(--blue);
+}
+
+/* ---------- Complaint links ---------- */
+
+.ace-privacy #s16 .ace-legal__text ul li a::after {
+  content: " \2197";
+}
+
+/* ---------- Links ---------- */
+
+.ace-privacy .ace-legal__text a {
+  background: linear-gradient(var(--gold), var(--gold)) 0 100% / 0 2px no-repeat;
+  text-decoration: none;
+  transition: background-size 0.3s var(--ease-out);
+}
+
+.ace-privacy .ace-legal__text a:hover,
+.ace-privacy .ace-legal__text a:focus-visible {
+  background-size: 100% 2px;
+}
+
+/* ---------- Table of contents: progress and scroll-spy ---------- */
+
+.ace-legal__progress {
+  height: 4px;
+  margin: 0 8px 18px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--blue-pale);
+}
+
+.ace-legal__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--gold-light));
+  transform: scaleX(var(--read, 0));
+  transform-origin: left;
+  transition: transform 0.15s linear;
+}
+
+.ace-legal__toc a.is-active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.ace-legal__toc a.is-active::before {
+  color: var(--gold-light);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .ace-privacy .ace-legal__text ul,
+  .ace-privacy #s15 .ace-legal__text ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ace-privacy #s1 .ace-legal__text h2 + p::first-letter {
+    font-size: 3.2em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ace-privacy .ace-legal__text ul li,
+  .ace-privacy #s15 .ace-legal__text ol li,
+  .ace-privacy .ace-legal__text a,
+  .ace-legal__progress span {
+    transition: none;
+  }
+
+  .ace-privacy .ace-legal__text ul li:hover,
+  .ace-privacy #s15 .ace-legal__text ol li:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .site-header,
+  .ace-footer,
+  .ace-grid-texture,
+  .ace-legal__aside,
+  .ace-legal__contact {
+    display: none !important;
+  }
+
+  .ace-legal {
+    display: block;
+  }
+
+  .ace-privacy .ace-legal__text li {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}
