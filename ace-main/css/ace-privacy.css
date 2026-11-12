@@ -30,20 +30,10 @@
   line-height: 1.75;
 }
 
-/* Drop cap on the opening paragraph */
-.ace-privacy #s1 .ace-legal__text h2 + p::first-letter {
-  float: left;
-  margin: 0.08em 0.12em 0 0;
-  color: var(--blue);
-  font-family: var(--serif);
-  font-size: 3.7em;
-  line-height: 0.8;
-}
-
 /* Key statements as pull-quotes */
 .ace-privacy #s6 .ace-legal__text > p:last-of-type,
 .ace-privacy #s7 .ace-legal__text > p:last-of-type,
-.ace-privacy #s11 .ace-legal__text > p {
+.ace-privacy #s11 .ace-legal__text > h2 + p {
   max-width: none;
   padding: 20px 24px;
   border-left: 3px solid var(--gold);
@@ -259,10 +249,6 @@
   .ace-privacy #s15 .ace-legal__text ol {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .ace-privacy #s1 .ace-legal__text h2 + p::first-letter {
-    font-size: 3.2em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -298,4 +284,70 @@
     break-inside: avoid;
     box-shadow: none;
   }
+}
+
+/* ---------- Intro, lawful-basis table, closing copyright ---------- */
+
+.ace-legal__intro {
+  padding-bottom: 38px;
+}
+
+.ace-legal__intro > p:first-child {
+  margin-top: 0;
+  color: var(--navy);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.ace-legal__intro + .ace-legal__section {
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.ace-legal__table-wrap {
+  margin-top: 22px;
+  overflow-x: auto;
+  border: 1px solid rgba(66, 89, 169, 0.14);
+  border-radius: 16px;
+}
+
+.ace-legal__table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.ace-legal__table th,
+.ace-legal__table td {
+  padding: 14px 18px;
+  border-top: 1px solid rgba(66, 89, 169, 0.14);
+  color: rgba(24, 39, 56, 0.82);
+  font-weight: 400;
+  vertical-align: top;
+}
+
+.ace-legal__table thead th {
+  border-top: 0;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.ace-legal__table tbody th {
+  width: 42%;
+  background: var(--blue-mist);
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.ace-legal__copyright {
+  margin: 38px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: rgba(24, 39, 56, 0.7);
+  font-size: 0.88rem;
+  line-height: 1.7;
 }
