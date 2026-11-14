@@ -4411,10 +4411,15 @@ html {
 }
 
 .site-header .site-menu a:not(.nav-cta)::after {
-  bottom: -8px;
+  bottom: -9px;
   width: 0;
-  height: 1px;
-  background: var(--gold) !important;
+  height: 2px;
+  background: #efd48f !important;
+}
+
+.site-header .site-menu a:not(.nav-cta):hover::after,
+.site-header .site-menu a:not(.nav-cta):focus-visible::after {
+  width: 100%;
 }
 
 .site-header .site-menu a.is-current {

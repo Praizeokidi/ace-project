@@ -134,7 +134,7 @@ body.dpia-site .reveal-item {
   text-transform: uppercase;
 }
 .site-header .site-menu a:not(.nav-cta)::after {
-  background: var(--ace-gold) !important;
+  background: #efd48f !important;
 }
 .site-header .site-menu a.is-current {
   color: var(--ace-blue);
