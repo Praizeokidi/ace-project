@@ -3735,7 +3735,7 @@ body.dpia-site {
   overflow: hidden;
   padding: clamp(26px, 3.4vw, 44px);
   border-radius: 20px;
-  color: #fff;
+  color: #efd48f;
   background:
     radial-gradient(
       circle at 12% 0,
@@ -3875,8 +3875,8 @@ body.dpia-site {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #eef1fb;
-  color: #4259a9;
+  background: #4259a9;
+  color: #efd48f;
   font-size: 0.72rem;
   font-weight: 800;
   transition:
