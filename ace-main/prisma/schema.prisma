@@ -1,0 +1,241 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [citext]
+}
+
+enum SubmissionType {
+  CONSULTATION
+  TRAINING
+  PRIORITY_LIST
+  CONTACT
+}
+
+enum SubmissionStatus {
+  NEW
+  CONTACTED
+  SPAM
+  DUPLICATE
+  QUALIFIED
+  CLOSED_LOST
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum ConsentKind {
+  PRIVACY
+  MARKETING
+  UPDATES
+}
+
+enum ScanStatus {
+  PENDING
+  CLEAN
+  BLOCKED
+  SKIPPED
+}
+
+enum NotificationChannel {
+  EMAIL
+}
+
+enum NotificationPurpose {
+  OPS_ALERT
+  STATUS_DIGEST
+}
+
+enum NotificationStatus {
+  SENT
+  FAILED
+}
+
+model Organisation {
+  id         String   @id @default(uuid()) @db.Uuid
+  name       String
+  country    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  contacts     Contact[]
+  submissions  Submission[]
+}
+
+model Contact {
+  id              String   @id @default(uuid()) @db.Uuid
+  organisation_id String   @db.Uuid
+  full_name       String
+  job_title       String
+  email           String   @unique @db.Citext
+  telephone       String
+  country         String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  organisation Organisation    @relation(fields: [organisation_id], references: [id])
+  submissions  Submission[]
+  consents     ConsentEvent[]
+}
+
+model Submission {
+  id              String           @id @default(uuid()) @db.Uuid
+  reference       String           @unique
+  type            SubmissionType
+  status          SubmissionStatus
+  contact_id      String           @db.Uuid
+  organisation_id String           @db.Uuid
+  assigned_to_id  String?          @db.Uuid
+  payload         Json
+  source_path     String
+  source_ip_hash  String
+  received_at     DateTime
+  updated_at      DateTime         @updatedAt
+
+  contact        Contact                  @relation(fields: [contact_id], references: [id])
+  organisation   Organisation             @relation(fields: [organisation_id], references: [id])
+  assigned_to    StaffUser?               @relation("SubmissionAssignee", fields: [assigned_to_id], references: [id])
+  consents       ConsentEvent[]
+  documents      Document[]
+  status_events  SubmissionStatusEvent[]
+  notes          SubmissionNote[]
+  notifications  NotificationEvent[]
+  audit_events   AuditEvent[]             @relation("AuditSubmission")
+
+  @@index([type, status])
+  @@index([assigned_to_id])
+}
+
+model ConsentEvent {
+  id              String      @id @default(uuid()) @db.Uuid
+  contact_id      String      @db.Uuid
+  submission_id   String?     @db.Uuid
+  kind            ConsentKind
+  granted         Boolean
+  policy_version  String
+  captured_at     DateTime
+
+  contact     Contact     @relation(fields: [contact_id], references: [id])
+  submission  Submission? @relation(fields: [submission_id], references: [id])
+}
+
+model Document {
+  id                 String     @id @default(uuid()) @db.Uuid
+  submission_id      String     @db.Uuid
+  storage_key        String
+  original_filename  String
+  mime_type          String
+  size_bytes         Int
+  sha256             String
+  scan_status        ScanStatus
+  uploaded_at        DateTime
+
+  submission Submission @relation(fields: [submission_id], references: [id])
+}
+
+model SubmissionStatusEvent {
+  id             String            @id @default(uuid()) @db.Uuid
+  submission_id  String            @db.Uuid
+  from_status    SubmissionStatus?
+  to_status      SubmissionStatus
+  actor_id       String?           @db.Uuid
+  reason         String?
+  occurred_at    DateTime
+
+  submission Submission @relation(fields: [submission_id], references: [id])
+  actor      StaffUser? @relation("StatusEventActor", fields: [actor_id], references: [id])
+}
+
+model SubmissionNote {
+  id              String   @id @default(uuid()) @db.Uuid
+  submission_id   String   @db.Uuid
+  author_id       String   @db.Uuid
+  body            String   @db.Text
+  internal_only   Boolean  @default(true)
+  created_at      DateTime @default(now())
+
+  submission Submission @relation(fields: [submission_id], references: [id])
+  author     StaffUser  @relation("NoteAuthor", fields: [author_id], references: [id])
+}
+
+model StaffUser {
+  id            String    @id @default(uuid()) @db.Uuid
+  email         String    @unique
+  display_name  String
+  is_active     Boolean
+  last_login_at DateTime?
+
+  assigned_submissions Submission[]            @relation("SubmissionAssignee")
+  status_events        SubmissionStatusEvent[] @relation("StatusEventActor")
+  notes                SubmissionNote[]        @relation("NoteAuthor")
+  roles                StaffUserRole[]
+  audit_events         AuditEvent[]            @relation("AuditActor")
+}
+
+model Role {
+  id   String @id @default(uuid()) @db.Uuid
+  key  String @unique
+  name String
+
+  staff_users RolePermission[] @relation("RoleToStaff")
+  permissions RolePermission[]
+  user_roles  StaffUserRole[]
+}
+
+model Permission {
+  id  String @id @default(uuid()) @db.Uuid
+  key String @unique
+
+  roles RolePermission[]
+}
+
+model StaffUserRole {
+  staff_user_id String @db.Uuid
+  role_id       String @db.Uuid
+
+  staff_user StaffUser @relation(fields: [staff_user_id], references: [id])
+  role       Role      @relation(fields: [role_id], references: [id])
+
+  @@id([staff_user_id, role_id])
+}
+
+model RolePermission {
+  role_id       String @db.Uuid
+  permission_id String @db.Uuid
+
+  role       Role       @relation(fields: [role_id], references: [id])
+  permission Permission @relation(fields: [permission_id], references: [id])
+
+  @@id([role_id, permission_id])
+}
+
+model AuditEvent {
+  id          String   @id @default(uuid()) @db.Uuid
+  actor_id    String?  @db.Uuid
+  action      String
+  entity_type String
+  entity_id   String?  @db.Uuid
+  metadata    Json
+  occurred_at DateTime
+
+  actor      StaffUser?  @relation("AuditActor", fields: [actor_id], references: [id])
+  submission Submission? @relation("AuditSubmission", fields: [entity_id], references: [id], map: "AuditEvent_submission_fkey")
+}
+
+model NotificationEvent {
+  id            String                @id @default(uuid()) @db.Uuid
+  submission_id String                @db.Uuid
+  channel       NotificationChannel
+  purpose       NotificationPurpose
+  provider_id   String?
+  status        NotificationStatus
+  sent_at       DateTime
+
+  submission Submission @relation(fields: [submission_id], references: [id])
+
+  @@unique([submission_id, purpose])
+}

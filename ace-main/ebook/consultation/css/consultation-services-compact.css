@@ -1,0 +1,326 @@
+/* =========================================================
+   Consultation Services: compact service-families
+   Load AFTER consultation.css and consultation-enhancements.css.
+
+   Usage: change the wrapper in consultation.html
+     <div class="service-families sf sf-lanes">    Design A: lane board
+     <div class="service-families sf sf-tabs">     Design B: tabbed families (needs the JS file)
+     <div class="service-families sf sf-ledger">   Design C: service ledger
+   ========================================================= */
+
+/* ---------- Shared: tighter section + compact cards ---------- */
+.consultation-page .consultation-services { padding: 72px 0; }
+.consultation-page .consultation-section-heading { margin-bottom: 32px; }
+
+.consultation-page .service-families.sf { gap: 16px; }
+
+/* the "Determine / Assess / Govern" chip repeats the family label, so drop it */
+.consultation-page .service-families.sf .service-category { display: none; }
+
+.consultation-page .service-families.sf .consultation-service-card {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 4px;
+  align-content: start;
+  min-height: 0;
+  padding: 16px 18px 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(16, 45, 77, 0.05);
+}
+.consultation-page .service-families.sf .consultation-service-card::before { height: 3px; }
+.consultation-page .service-families.sf .consultation-service-card .icon-badge-elite {
+  grid-column: 1;
+  grid-row: 1;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.consultation-page .service-families.sf .consultation-service-card h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.consultation-page .service-families.sf .consultation-service-card > p:not(.service-category):not(.service-output) {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.consultation-page .service-families.sf .consultation-service-card .service-output {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  padding-top: 8px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+.consultation-page .service-families.sf .service-output::before {
+  content: "Outcome";
+  margin-right: 6px;
+  color: #4259a9;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.consultation-page .service-families.sf .consultation-service-card:hover,
+.consultation-page .service-families.sf .consultation-service-card:focus-within {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Design A: lane board  (all content visible, no JS)
+   Three lanes 1 : 2 : 1, so Assess's four cards sit as 2x2
+   ========================================================= */
+.consultation-page .service-families.sf-lanes {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+.consultation-page .service-families.sf-lanes .service-family {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(66, 89, 169, 0.14);
+  border-radius: 18px;
+  background: #f7f8fd;
+}
+.consultation-page .service-families.sf-lanes .service-family-heading {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  max-width: none;
+}
+.consultation-page .service-families.sf-lanes .service-family-number { width: 30px; height: 30px; }
+.consultation-page .service-families.sf-lanes .service-family-label { margin: 0 0 2px; font-size: 10px; }
+.consultation-page .service-families.sf-lanes .service-family-heading h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.consultation-page .service-families.sf-lanes .service-family-cards {
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 12px;
+  max-width: none;
+}
+.consultation-page .service-families.sf-lanes .service-family-assess .service-family-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 1024px) {
+  .consultation-page .service-families.sf-lanes { grid-template-columns: minmax(0, 1fr); }
+  .consultation-page .service-families.sf-lanes .service-family-cards,
+  .consultation-page .service-families.sf-lanes .service-family-assess .service-family-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+}
+@media (max-width: 640px) {
+  .consultation-page .service-families.sf-lanes .service-family-cards,
+  .consultation-page .service-families.sf-lanes .service-family-assess .service-family-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =========================================================
+   Design B: tabbed families  (smallest footprint, needs JS)
+   Panels share one grid cell, so the section never jumps.
+   Without JS it falls back to the compact stacked cards.
+   ========================================================= */
+.consultation-page .sf-tablist {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 6px;
+  border: 1px solid rgba(66, 89, 169, 0.16);
+  border-radius: 14px;
+  background: #f7f8fd;
+}
+.consultation-page .sf-tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #2f4fa2;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.consultation-page .sf-tab:hover { background: #eef1fb; }
+.consultation-page .sf-tab-num {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef1fb;
+  font-size: 10px;
+  font-weight: 800;
+}
+.consultation-page .sf-tab-count { font-size: 0.72rem; font-weight: 600; opacity: 0.72; }
+.consultation-page .sf-tab[aria-selected="true"] {
+  background: #4259a9;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(66, 89, 169, 0.22);
+}
+.consultation-page .sf-tab[aria-selected="true"] .sf-tab-num { background: rgba(255, 255, 255, 0.2); }
+.consultation-page .sf-tab:focus-visible { outline: 3px solid #4259a9; outline-offset: 2px; }
+
+.consultation-page .service-families.sf-tabs.is-tabbed { display: grid; }
+.consultation-page .service-families.sf-tabs.is-tabbed > .service-family {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.consultation-page .service-families.sf-tabs.is-tabbed > .service-family.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+.consultation-page .service-families.sf-tabs .service-family-heading {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  max-width: none;
+}
+.consultation-page .service-families.sf-tabs .service-family-number { width: 30px; height: 30px; }
+.consultation-page .service-families.sf-tabs .service-family-heading > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+}
+.consultation-page .service-families.sf-tabs .service-family-label { margin: 0; }
+.consultation-page .service-families.sf-tabs .service-family-heading h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.consultation-page .service-families.sf-tabs .service-family-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: none;
+}
+.consultation-page .service-families.sf-tabs .service-family-determine .consultation-service-card,
+.consultation-page .service-families.sf-tabs .service-family-govern .consultation-service-card {
+  grid-column: span 2;
+}
+@media (max-width: 1024px) {
+  .consultation-page .service-families.sf-tabs .service-family-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .consultation-page .service-families.sf-tabs .service-family-determine .consultation-service-card,
+  .consultation-page .service-families.sf-tabs .service-family-govern .consultation-service-card { grid-column: auto; }
+}
+@media (max-width: 760px) {
+  /* stacked panels would hold the tallest height; on phones show one at a time */
+  .consultation-page .service-families.sf-tabs.is-tabbed { display: block; }
+  .consultation-page .service-families.sf-tabs.is-tabbed > .service-family:not(.is-active) { display: none; }
+  .consultation-page .service-families.sf-tabs .service-family-cards { grid-template-columns: minmax(0, 1fr); }
+  .consultation-page .sf-tab { gap: 6px; padding: 8px 6px; font-size: 0.82rem; }
+  .consultation-page .sf-tab-num,
+  .consultation-page .sf-tab-count { display: none; }
+}
+
+/* =========================================================
+   Design C: service ledger  (editorial rows, no JS)
+   Family heading on the left, one slim row per service
+   ========================================================= */
+.consultation-page .service-families.sf-ledger { gap: 0; }
+.consultation-page .service-families.sf-ledger .service-family {
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 8px 32px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(66, 89, 169, 0.2);
+}
+.consultation-page .service-families.sf-ledger .service-family:first-child { padding-top: 0; border-top: 0; }
+.consultation-page .service-families.sf-ledger .service-family-heading {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 12px;
+  max-width: none;
+}
+.consultation-page .service-families.sf-ledger .service-family-number { width: 30px; height: 30px; }
+.consultation-page .service-families.sf-ledger .service-family-label { margin: 0 0 2px; }
+.consultation-page .service-families.sf-ledger .service-family-heading h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.consultation-page .service-families.sf-ledger .service-family-cards {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  max-width: none;
+}
+.consultation-page .service-families.sf-ledger .consultation-service-card {
+  grid-template-columns: 36px minmax(0, 1.2fr) minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 2px;
+  align-items: start;
+  padding: 12px 16px 12px 20px;
+}
+/* top accent bar becomes a left bar on rows */
+.consultation-page .service-families.sf-ledger .consultation-service-card::before {
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  height: auto;
+}
+.consultation-page .service-families.sf-ledger .consultation-service-card .icon-badge-elite { grid-row: 1 / span 2; }
+.consultation-page .service-families.sf-ledger .consultation-service-card h3 { grid-column: 2; grid-row: 1; }
+.consultation-page .service-families.sf-ledger .consultation-service-card > p:not(.service-category):not(.service-output) {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+.consultation-page .service-families.sf-ledger .consultation-service-card .service-output {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+  margin: 0;
+  padding: 0 0 0 14px;
+  border-top: 0;
+  border-left: 1px solid rgba(66, 89, 169, 0.16);
+}
+@media (max-width: 900px) {
+  .consultation-page .service-families.sf-ledger .service-family { grid-template-columns: minmax(0, 1fr); }
+  .consultation-page .service-families.sf-ledger .service-family-heading { position: static; }
+  .consultation-page .service-families.sf-ledger .consultation-service-card { grid-template-columns: 36px minmax(0, 1fr); }
+  .consultation-page .service-families.sf-ledger .consultation-service-card > p:not(.service-category):not(.service-output),
+  .consultation-page .service-families.sf-ledger .consultation-service-card .service-output {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .consultation-page .service-families.sf-ledger .consultation-service-card .service-output {
+    margin-top: 8px;
+    padding: 8px 0 0;
+    border-top: 1px solid rgba(66, 89, 169, 0.12);
+    border-left: 0;
+  }
+}
+
+/* ---------- Shared: phones ---------- */
+@media (max-width: 650px) {
+  .consultation-page .consultation-services { padding: 52px 0; }
+  .consultation-page .consultation-section-heading { margin-bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consultation-page .service-families.sf .consultation-service-card,
+  .consultation-page .sf-tab,
+  .consultation-page .service-families.sf-tabs.is-tabbed > .service-family { transition: none; }
+}

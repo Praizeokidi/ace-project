@@ -1,0 +1,31 @@
+/* =========================================================
+   ACE main site: service pages
+   Small additions shared by the service pages (cybersecurity,
+   ai, audit, dpoaas, legalservices). Load AFTER css/ace-site.css.
+   ========================================================= */
+
+/* Numbered cards that have a bold lead phrase instead of a heading */
+.ace-value p strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.ace-value__num + p {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+/* Numbered cards holding one short statement each (e.g. DPO aas services list) */
+.ace-values--statements .ace-value {
+  display: grid;
+  align-content: start;
+}
+
+.ace-values--statements .ace-value__num + p {
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.55;
+}

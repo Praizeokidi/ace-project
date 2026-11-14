@@ -1,0 +1,100 @@
+:root {
+  --ace-blue: #4259a9;
+  --ace-blue-deep: #2f4fa2;
+  --ace-navy: #102d4d;
+  --ace-gold: #d2a95d;
+  --ace-gold-light: #efd48f;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  isolation: isolate;
+  background: #fff !important;
+  background-image: none !important;
+}
+.site-header .nav-wrap {
+  border: 1px solid rgba(16, 45, 77, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 16px 36px rgba(16, 45, 77, 0.12),
+    inset 0 1px 0 #fff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.site-header .brand img {
+  width: 150px;
+  height: auto;
+}
+.site-header .site-menu {
+  gap: 26px;
+  color: var(--ace-navy);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-header .site-menu a:not(.nav-cta) {
+  color: var(--ace-navy);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.site-header .site-menu a:not(.nav-cta):hover,
+.site-header .site-menu a:not(.nav-cta):focus-visible,
+.site-header .site-menu a.is-current {
+  color: var(--ace-blue);
+}
+
+/* Gold underline that grows on hover, matching the DPIA Made Easy navbar */
+.site-header .site-menu a:not(.nav-cta)::after {
+  left: 0;
+  bottom: -9px;
+  width: 0;
+  height: 2px;
+  background: #efd48f !important;
+  transition: width 0.18s var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+}
+.site-header .site-menu a:not(.nav-cta):hover::after,
+.site-header .site-menu a:not(.nav-cta):focus-visible::after {
+  width: 100%;
+}
+
+.site-header .nav-cta {
+  border-radius: 999px;
+  background: var(--ace-blue) !important;
+  border-color: var(--ace-blue);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(66, 89, 169, 0.22);
+}
+.site-header .nav-cta:hover,
+.site-header .nav-cta:focus-visible {
+  background: var(--ace-blue-deep) !important;
+  border-color: var(--ace-blue-deep);
+  color: #fff;
+}
+.site-header :where(a, button):focus-visible {
+  outline: 3px solid var(--ace-blue);
+  outline-offset: 3px;
+}
+@media (max-width: 800px) {
+  .site-header .nav-wrap {
+    width: calc(100% - 24px);
+    min-height: 74px;
+  }
+  .site-header .site-menu {
+    gap: 0;
+  }
+}
+@media (max-width: 520px) {
+  .site-header .nav-wrap {
+    min-height: 60px;
+    border-radius: 15px;
+  }
+  .site-header .brand img {
+    width: 126px;
+  }
+}

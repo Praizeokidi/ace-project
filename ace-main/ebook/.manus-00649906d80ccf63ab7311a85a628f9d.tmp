@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="DPIA Made Easy – Professional Edition: a practical handbook, workbook and training guide for implementing Data Privacy Impact Assessments under the Nigeria Data Protection Act.">
+  <meta name="author" content="ACE Data Protection Consulting">
+  <meta name="theme-color" content="#4259A9">
+  <title>DPIA Made Easy – Professional Edition | ACE Data Protection Consulting</title>
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/dpia-home.css">
+  <link rel="stylesheet" href="css/ace-footer.css">
+  <link rel="stylesheet" href="css/glassmorph-blue.css">
+  <link rel="stylesheet" href="css/ebook-production.css">
+
+
+
+  <!-- LUXURY BRANDED WORKBOOK SECTION START -->
+  <style>
+    /* Ensure actual sections are hidden immediately on page start */
+    #hero-actual,
+    #intro-actual,
+    #workbook-actual,
+    #audience-actual,
+    #benefits-actual,
+    #toolkit-actual,
+    #review-actual,
+    #completion-actual,
+    #training-actual,
+    #combined-actual,
+    #consultation-actual,
+    #ecosystem-actual,
+    #priority-actual,
+    #faq-actual,
+    #final-actual,
+    #about-author-actual,
+    #audio-actual {
+      display: none;
+      opacity: 0;
+    }
+
+    /* --- HERO SKELETON STYLES --- */
+    .hero-skeleton-wrapper {
+      position: relative;
+      background: #0f172a;
+      /* Match your hero background color */
+      padding: 100px 0;
+      overflow: hidden;
+    }
+
+    .skel-shimmer {
+      background: linear-gradient(90deg,
+          rgba(66, 89, 169, 0.05) 0%,
+          rgba(66, 89, 169, 0.15) 50%,
+          rgba(66, 89, 169, 0.05) 100%);
+      background-size: 200% 100%;
+      animation: skel-load 1.8s infinite ease-in-out;
+      border-radius: 4px;
+    }
+
+    @keyframes skel-load {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    /* Shapes to match your Hero */
+    .skel-eyebrow {
+      width: 200px;
+      height: 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .skel-title {
+      width: 85%;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .skel-subtitle {
+      width: 60%;
+      height: 24px;
+      margin-bottom: 20px;
+    }
+
+    .skel-desc {
+      width: 95%;
+      height: 16px;
+      margin-bottom: 10px;
+    }
+
+    .skel-btn {
+      width: 160px;
+      height: 48px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .skel-book {
+      width: 320px;
+      height: 480px;
+      border-radius: 12px;
+      margin: 0 auto;
+    }
+
+
+    /* --- INTRO SECTION SKELETON SHAPES --- */
+    .skel-intro-wrapper {
+      background: #fffdf9;
+      /* Match your section-cream color */
+      padding: 80px 0;
+    }
+
+    .skel-label-box {
+      width: 120px;
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    .skel-intro-eyebrow {
+      width: 250px;
+      height: 12px;
+      margin-bottom: 20px;
+    }
+
+    .skel-intro-h2 {
+      width: 90%;
+      height: 40px;
+      margin-bottom: 30px;
+    }
+
+    .skel-text-line {
+      width: 100%;
+      height: 14px;
+      margin-bottom: 12px;
+    }
+
+    .skel-blockquote {
+      width: 100%;
+      height: 80px;
+      margin: 20px 0;
+      border-left: 4px solid rgba(66, 89, 169, 0.1);
+      background: rgba(66, 89, 169, 0.02);
+    }
+
+
+    /* --- WORKBOOK SECTION SKELETON --- */
+    .skel-workbook-wrapper {
+      background: #f8faff;
+      /* Match your section-light color */
+      padding: 100px 0;
+    }
+
+    .skel-card-elite {
+      background: #ffffff;
+      border: 1px solid rgba(66, 89, 169, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      height: 80px;
+      /* Match your actual card height */
+    }
+
+    .skel-spotlight-elite {
+      grid-column: 1 / -1;
+      height: 100px;
+      background: rgba(66, 89, 169, 0.05);
+      border-radius: 20px;
+      margin-top: 1rem;
+    }
+
+    .skel-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .skel-card-title {
+      width: 70%;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    /* --- AUDIENCE SECTION SKELETON --- */
+    .skel-audience-wrapper {
+      background: #fffdf9;
+      /* Match your section-cream color */
+      padding: 80px 0;
+    }
+
+    .skel-audience-card {
+      background: #ffffff;
+      border: 1px solid rgba(66, 89, 169, 0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      height: 220px;
+      /* Match your actual card height */
+    }
+
+    .skel-audience-wide {
+      grid-column: 1 / -1;
+      height: 180px;
+    }
+
+    .skel-card-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .skel-card-h3 {
+      width: 70%;
+      height: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .skel-card-p {
+      width: 100%;
+      height: 14px;
+      margin-bottom: 8px;
+    }
+
+
+
+    /* --- BENEFITS SECTION SKELETON (DARK THEME) --- */
+    .skel-benefits-wrapper {
+      background: #0f172a;
+      /* Match your section-dark color */
+      padding: 100px 0;
+    }
+
+    .skel-benefit-block {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(66, 89, 169, 0.15);
+      border-radius: 16px;
+      padding: 2rem;
+      height: 200px;
+      /* Match your actual block height */
+    }
+
+    .skel-benefit-index {
+      width: 30px;
+      height: 18px;
+      margin-bottom: 1.5rem;
+      opacity: 0.5;
+    }
+
+    .skel-benefit-h3 {
+      width: 80%;
+      height: 22px;
+      margin-bottom: 1rem;
+    }
+
+    .skel-benefit-p {
+      width: 100%;
+      height: 14px;
+      margin-bottom: 8px;
+      opacity: 0.7;
+    }
+
+    /* Darker Shimmer for Dark Backgrounds */
+    .skel-benefits-wrapper .skel-shimmer {
+      background: linear-gradient(90deg,
+          rgba(66, 89, 169, 0.1) 0%,
+          rgba(66, 89, 169, 0.25) 50%,
+          rgba(66, 89, 169, 0.1) 100%);
+      background-size: 200% 100%;
+    }
+
+
+    .skel-audio-wrapper {
+      background: #0f172a;
+      padding: 100px 0;
+    }
+
+    .skel-audio-player {
+      flex: 0 0 340px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+    }
+
+    .skel-audio-bars {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      height: 40px;
+    }
+
+    .skel-audio-bars span {
+      flex: 1;
+      height: 60%;
+      border-radius: 2px;
+      background: rgba(210, 169, 93, 0.15);
+    }
+
+    .skel-audio-bars span:nth-child(2n) {
+      height: 90%;
+    }
+
+    .skel-audio-bars span:nth-child(3n) {
+      height: 40%;
+    }
+
+
+    /* --- TRAINING SECTION SKELETON --- */
+    .skel-training-wrapper {
+      background: #fffdf9;
+      /* Match your section-cream color */
+      padding: 100px 0;
+    }
+
+    .skel-training-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .skel-training-tag {
+      width: 180px;
+      height: 36px;
+      border-radius: 6px;
+      background: rgba(66, 89, 169, 0.05);
+    }
+
+    .skel-lead-text {
+      width: 100%;
+      height: 24px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+
+
+
+    /* --- CONSULTATION SECTION SKELETON (NAVY THEME) --- */
+    .skel-consultation-wrapper {
+      background: #0f172a;
+      /* Match your section-navy color */
+      padding: 100px 0;
+    }
+
+    .skel-consultation-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .skel-consultation-tag {
+      width: 200px;
+      height: 32px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .skel-white-btn {
+      width: 220px;
+      height: 52px;
+      border-radius: 50px;
+      background: #ffffff;
+      opacity: 0.2;
+    }
+
+
+    /* --- ECOSYSTEM SECTION SKELETON --- */
+    .skel-ecosystem-wrapper {
+      background: #f8faff;
+      /* Match your section-light color */
+      padding: 100px 0;
+    }
+
+    .skel-flow-line {
+      width: 300px;
+      height: 12px;
+      margin: 0 auto;
+      border-radius: 20px;
+      opacity: 0.4;
+    }
+
+    .skel-series-card {
+      background: #ffffff;
+      border: 1px solid rgba(66, 89, 169, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      height: 100px;
+    }
+
+    .skel-series-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(66, 89, 169, 0.1);
+      flex-shrink: 0;
+    }
+
+    .skel-series-h3 {
+      width: 80%;
+      height: 16px;
+      margin-bottom: 8px;
+    }
+
+    .skel-series-p {
+      width: 50%;
+      height: 12px;
+      opacity: 0.6;
+    }
+
+
+    /* --- PRIORITY SECTION SKELETON (GOLD THEME) --- */
+    .skel-priority-wrapper {
+      background: #d4af37;
+      /* Match your section-gold color */
+      padding: 80px 0;
+    }
+
+    .skel-priority-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skel-benefit-tag {
+      width: 120px;
+      height: 28px;
+      border-radius: 4px;
+      background: rgba(15, 23, 42, 0.1);
+      /* Navy at low opacity */
+    }
+
+    .skel-form-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .skel-input-line {
+      width: 100%;
+      height: 45px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      background: #f1f5f9;
+    }
+
+    .skel-label-line {
+      width: 40%;
+      height: 12px;
+      margin-bottom: 8px;
+    }
+
+
+    /* --- FAQ SECTION SKELETON --- */
+    .skel-faq-wrapper {
+      background: #fffdf9;
+      /* Match your section-cream color */
+      padding: 80px 0;
+    }
+
+    .skel-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .skel-faq-item {
+      width: 100%;
+      height: 56px;
+      /* Match your summary height */
+      background: #ffffff;
+      border: 1px solid rgba(66, 89, 169, 0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .skel-faq-line {
+      width: 70%;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+
+    /* --- FINAL BANNER SECTION SKELETON (DARK THEME) --- */
+    .skel-final-wrapper {
+      background: #0f172a;
+      /* Match your section-dark color */
+      padding: 80px 0;
+    }
+
+    .skel-final-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .skel-final-btn {
+      width: 180px;
+      height: 50px;
+      border-radius: 50px;
+      margin-left: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .skel-final-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .skel-final-btn {
+        margin: 10px 0;
+      }
+    }
+
+    /* The ebook page already defines .skel-shimmer and @keyframes skel-load. */
+    .skel-author-wrapper {
+      overflow: hidden;
+      padding: 0 0;
+      background: #eef1fb;
+    }
+
+    .skel-author-intro {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+
+    .skel-author-eyebrow {
+      width: 210px;
+      height: 12px;
+      border-radius: 20px;
+    }
+
+    .skel-author-rule {
+      width: 86px;
+      height: 1px;
+    }
+
+    .skel-author-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.76fr) minmax(0, 1.24fr);
+      align-items: start;
+      gap: 80px;
+    }
+
+    .skel-author-visual {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .skel-author-portrait {
+      position: relative;
+      display: flex;
+      min-height: 500px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 2px;
+      background-color: rgba(66, 89, 169, 0.12);
+    }
+
+    .skel-author-ring {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(66, 89, 169, 0.16);
+      border-radius: 50%;
+    }
+
+    .skel-author-initials {
+      position: relative;
+      z-index: 1;
+      width: 150px;
+      height: 78px;
+    }
+
+    .skel-author-portrait-label {
+      position: absolute;
+      right: 22px;
+      bottom: 20px;
+      width: 92px;
+      height: 9px;
+    }
+
+    .skel-author-caption {
+      display: flex;
+      gap: 14px;
+      margin-top: 19px;
+    }
+
+    .skel-author-caption-number {
+      width: 18px;
+      height: 10px;
+      flex: 0 0 18px;
+      margin-top: 3px;
+    }
+
+    .skel-author-caption-line {
+      width: 265px;
+      height: 10px;
+      margin-bottom: 8px;
+    }
+
+    .skel-author-caption-line-short {
+      width: 180px;
+    }
+
+    .skel-author-copy {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .skel-author-title {
+      width: min(420px, 80%);
+      height: 68px;
+      margin-bottom: 22px;
+    }
+
+    .skel-author-lead {
+      width: min(520px, 92%);
+      height: 18px;
+      margin-bottom: 9px;
+    }
+
+    .skel-author-lead-short {
+      width: 64%;
+      margin-bottom: 32px;
+    }
+
+    .skel-author-identity {
+      padding: 22px 0 20px;
+      border-top: 1px solid rgba(66, 89, 169, 0.16);
+      border-bottom: 1px solid rgba(66, 89, 169, 0.16);
+    }
+
+    .skel-author-name {
+      width: 270px;
+      height: 21px;
+      margin-bottom: 10px;
+    }
+
+    .skel-author-role {
+      width: 390px;
+      max-width: 90%;
+      height: 12px;
+    }
+
+    .skel-author-credentials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: 28px 0 32px;
+      background: rgba(66, 89, 169, 0.16);
+    }
+
+    .skel-author-credential {
+      min-height: 86px;
+      background-color: rgba(66, 89, 169, 0.08);
+    }
+
+    .skel-author-bio-line {
+      width: 100%;
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    .skel-author-bio-line-short {
+      width: 72%;
+      margin-bottom: 22px;
+    }
+
+    .skel-author-bio-line-medium {
+      width: 84%;
+    }
+
+    .skel-author-quote {
+      width: 100%;
+      height: 86px;
+      margin-top: 34px;
+      border-left: 4px solid rgba(66, 89, 169, 0.22);
+      background-color: rgba(66, 89, 169, 0.1);
+    }
+
+    @media (max-width: 800px) {
+      .skel-author-wrapper {
+        padding: 80px 0;
+      }
+
+      .skel-author-grid {
+        grid-template-columns: 1fr;
+        gap: 52px;
+      }
+
+      .skel-author-visual {
+        width: min(100%, 430px);
+        margin: 0 auto;
+      }
+
+      .skel-author-copy {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .skel-author-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 38px;
+      }
+
+      .skel-author-rule {
+        width: 72px;
+      }
+
+      .skel-author-portrait {
+        min-height: 390px;
+      }
+
+      .skel-author-ring {
+        width: 285px;
+        height: 285px;
+      }
+
+      .skel-author-credentials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skel-author-wrapper .skel-shimmer {
+        animation: none;
+      }
+    }
+
+
+    /* Premium editorial author section — uses the ebook page’s existing ACE tokens. */
+    .author-editorial {
+      --author-blue: #4259a9;
+      --author-blue-light: #eef1fb;
+      --author-blue-soft: #dfe5f7;
+      --author-blue-mid: #7182c1;
+      --author-blue-dark: #263875;
+      --author-blue-deep: #102d4d;
+      position: relative;
+      overflow: hid

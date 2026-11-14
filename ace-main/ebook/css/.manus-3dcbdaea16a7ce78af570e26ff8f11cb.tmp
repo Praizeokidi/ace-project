@@ -1,0 +1,672 @@
+:root {
+  /* =========================================================
+     ACE shared visual theme
+     Used by the ebook, consultation, and training experiences.
+     ========================================================= */
+
+  /* Brand colours */
+  --ace-blue: #4259a9;
+  --ace-blue-deep: #2f4fa2;
+
+  --ace-navy-deep: #081d34;
+  --ace-navy: #102d4d;
+  --ace-navy-blue: #162c68;
+
+  --ace-gold: #d2a95d;
+  --ace-gold-light: #efd48f;
+  --ace-gold-deep: #ad8140;
+
+  /* Neutrals */
+  --ace-white: #ffffff;
+  --ace-ink: #182738;
+  --ace-muted: #647284;
+  --ace-cream: #f7f4ee;
+
+  /* Pale surfaces */
+  --ace-blue-pale: #eef1fb;
+  --ace-blue-mist: #f7f8fd;
+
+  /* Text on dark surfaces */
+  --ace-text-on-dark: #ffffff;
+  --ace-text-on-dark-soft: #dbe3ff;
+  --ace-text-on-dark-muted: rgba(255, 255, 255, 0.72);
+  --ace-text-on-dark-faint: rgba(255, 255, 255, 0.56);
+
+  /* Borders, overlays, and effects */
+  --ace-border-light: rgba(255, 255, 255, 0.14);
+  --ace-border-light-strong: rgba(255, 255, 255, 0.24);
+  --ace-border-dark: rgba(16, 45, 77, 0.12);
+  --ace-blue-glow: rgba(66, 89, 169, 0.22);
+  --ace-blue-glow-soft: rgba(66, 89, 169, 0.12);
+  --ace-gold-glow: rgba(210, 169, 93, 0.2);
+
+  /* Semantic colours */
+  --ace-success: #2c7051;
+  --ace-error: #a33c3c;
+  --ace-error-strong: #b54b4b;
+
+  /* Shared gradients */
+  --ace-gradient-hero: linear-gradient(
+    135deg,
+    var(--ace-blue) 0%,
+    var(--ace-blue-deep) 55%,
+    var(--ace-blue-deep) 100%
+  );
+
+  --ace-gradient-dark: linear-gradient(
+    135deg,
+    var(--ace-blue) 0%,
+    var(--ace-blue-deep) 55%,
+    var(--ace-blue-deep) 100%
+  );
+
+  --ace-gradient-blue: linear-gradient(
+    135deg,
+    var(--ace-blue) 0%,
+    var(--ace-blue-deep) 100%
+  );
+
+  --ace-gradient-blue-dark: linear-gradient(
+    135deg,
+    var(--ace-blue) 0%,
+    var(--ace-blue-deep) 55%,
+    var(--ace-blue-deep) 100%
+  );
+
+  /* Shared component dimensions */
+  --ace-topbar-height: 36px;
+  --ace-header-height: 84px;
+  --ace-shell-width: 1180px;
+  --ace-shell-gutter: 24px;
+  --ace-radius-sm: 4px;
+  --ace-radius-md: 14px;
+  --ace-radius-lg: 24px;
+  --ace-pill-radius: 999px;
+
+  /* Shared motion */
+  --ace-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ace-duration-fast: 180ms;
+  --ace-duration-normal: 260ms;
+}
+
+/* =========================================================
+   Shared layout primitives
+   ========================================================= */
+
+.ace-theme-surface-dark {
+  color: var(--ace-text-on-dark);
+  background: var(--ace-gradient-hero);
+}
+
+.ace-theme-shell {
+  width: min(
+    var(--ace-shell-width),
+    calc(100% - (var(--ace-shell-gutter) * 2))
+  );
+  margin-inline: auto;
+}
+
+/* =========================================================
+   Shared top bar
+   ========================================================= */
+
+.topbar {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  min-height: var(--ace-topbar-height);
+  color: var(--ace-text-on-dark);
+  background: var(--ace-gradient-hero);
+  border-bottom: 1px solid var(--ace-border-light);
+}
+
+.topbar-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(
+    var(--ace-shell-width),
+    calc(100% - (var(--ace-shell-gutter) * 2))
+  );
+  min-height: var(--ace-topbar-height);
+  margin-inline: auto;
+}
+
+.topbar-note,
+.topbar-inner > span {
+  color: var(--ace-text-on-dark);
+}
+
+.topbar-inner > span:last-child {
+  color: var(--ace-text-on-dark-soft);
+}
+
+.topbar-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ace-gold);
+}
+
+/* Optional modifier for pages that intentionally use the animated wave treatment. */
+.topbar--animated {
+  background-color: var(--ace-navy-deep);
+  background-image:
+    radial-gradient(
+      ellipse 92px 16px at 0% 100%,
+      transparent 50%,
+      rgba(66, 89, 169, 0.35) 52%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 92px 16px at 100% 100%,
+      transparent 50%,
+      rgba(66, 89, 169, 0.3) 52%,
+      transparent 58%
+    ),
+    var(--ace-gradient-hero);
+  background-position: 0 100%, 64px 100%, 0 0;
+  background-size: 184px 32px, 184px 32px, 100% 100%;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+  animation: ace-topbar-ocean-waves 16s linear infinite;
+}
+
+@keyframes ace-topbar-ocean-waves {
+  from {
+    background-position: 0 100%, 64px 100%, 0 0;
+  }
+
+  to {
+    background-position: 184px 100%, 248px 100%, 0 0;
+  }
+}
+
+/* =========================================================
+   Shared site header and navigation
+   ========================================================= */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  min-height: var(--ace-header-height);
+  background: var(--ace-white);
+  border-bottom: 1px solid var(--ace-border-dark);
+  transition:
+    background var(--ace-duration-normal) var(--ace-ease),
+    box-shadow var(--ace-duration-normal) var(--ace-ease);
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 26px rgba(16, 45, 77, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.nav-wrap {
+  min-height: var(--ace-header-height);
+}
+
+.site-menu a:not(.nav-cta) {
+  color: var(--ace-navy);
+}
+
+.site-menu a:not(.nav-cta)::after {
+  background: var(--ace-blue);
+}
+
+.site-menu a:not(.nav-cta):hover,
+.site-menu a:not(.nav-cta):focus-visible {
+  color: var(--ace-blue);
+}
+
+.site-menu .nav-cta {
+  background: var(--ace-blue);
+  border-color: var(--ace-blue);
+  color: var(--ace-white);
+  transition:
+    background var(--ace-duration-fast) var(--ace-ease),
+    border-color var(--ace-duration-fast) var(--ace-ease),
+    transform var(--ace-duration-fast) var(--ace-ease);
+}
+
+.site-menu .nav-cta:hover,
+.site-menu .nav-cta:focus-visible {
+  background: var(--ace-blue-deep);
+  border-color: var(--ace-blue-deep);
+  color: var(--ace-white);
+  transform: translateY(-1px);
+}
+
+/* Scroll-spy marks the priority CTA as current near the priority section.
+   Keep its text legible against the CTA background. */
+.site-header .site-menu .nav-cta.is-current,
+.site-header .site-menu .nav-cta.is-current:hover,
+.site-header .site-menu .nav-cta.is-current:focus-visible {
+  color: var(--ace-white) !important;
+}
+
+/* Explicit modifier for pages that use a floating header treatment. */
+.site-header--floating {
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header--floating .nav-wrap {
+  background: var(--ace-gradient-hero);
+  border: 1px solid var(--ace-border-light);
+  border-radius: var(--ace-pill-radius);
+}
+
+/* =========================================================
+   Shared hero primitives
+   ========================================================= */
+
+.ace-hero,
+.hero,
+.consultation-hero,
+.training-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--ace-text-on-dark);
+  background: var(--ace-gradient-hero);
+}
+
+#consultation-actual.consultation {
+  background: var(--ace-gradient-hero);
+}
+
+body.dpia-site #completion-actual.completion-offer {
+  background-image:
+    var(--ace-gradient-hero),
+    url("../../images/hero-consultation.png");
+}
+
+body.dpia-site #priority-actual.priority {
+  background: var(--ace-gradient-hero);
+}
+
+.ace-hero__inner,
+.hero-inner,
+.consultation-hero-inner,
+.training-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ace-hero__grid,
+.hero-grid-lines,
+.consultation-hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.22;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 50.2%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 49.8%,
+      rgba(255, 255, 255, 0.04) 50%,
+      transparent 50.2%
+    );
+  background-size: 168px 168px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.75), transparent 86%);
+}
+
+.ace-hero__copy h1,
+.hero h1,
+.consultation-hero h1,
+.training-hero h1 {
+  color: var(--ace-text-on-dark);
+}
+
+.ace-hero__subtitle,
+.hero-subtitle,
+.consultation-hero-subtitle,
+.training-hero-subtitle {
+  color: var(--ace-text-on-dark-soft);
+}
+
+.ace-hero__description,
+.hero-description,
+.consultation-hero-description,
+.training-hero-description {
+  color: var(--ace-text-on-dark-muted);
+}
+
+.ace-hero__eyebrow,
+.hero-eyebrow,
+.consultation-hero .eyebrow,
+.training-hero .eyebrow {
+  color: var(--ace-gold-light);
+}
+
+.ace-hero__eyebrow-rule,
+.hero-eyebrow .eyebrow-rule,
+.consultation-hero .eyebrow-rule,
+.training-hero .eyebrow-rule {
+  background: var(--ace-gold);
+}
+
+.ace-hero__photo,
+.hero-photo,
+.consultation-hero-photo,
+.training-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.ace-hero--photo,
+.consultation-hero:has(.consultation-hero-photo),
+.training-hero:has(.training-hero-photo) {
+  background: var(--ace-blue);
+}
+
+/* =========================================================
+   Shared controls and focus treatment
+   ========================================================= */
+
+.button.button-gold,
+.button--primary,
+.dpia-button {
+  background: var(--ace-blue);
+  border-color: var(--ace-blue);
+  color: var(--ace-white);
+}
+
+.button.button-gold:hover,
+.button.button-gold:focus-visible,
+.button--primary:hover,
+.button--primary:focus-visible,
+.dpia-button:hover,
+.dpia-button:focus-visible {
+  background: var(--ace-blue-deep);
+  border-color: var(--ace-blue-deep);
+  color: var(--ace-white);
+}
+
+.button-outline-light,
+.button--outline-light {
+  border-color: var(--ace-border-light-strong);
+  color: var(--ace-white);
+}
+
+.button-outline-light:hover,
+.button-outline-light:focus-visible,
+.button--outline-light:hover,
+.button--outline-light:focus-visible {
+  border-color: var(--ace-blue);
+  background: var(--ace-blue-glow);
+  color: var(--ace-white);
+}
+
+:where(.topbar, .site-header, .ace-hero, .hero, .consultation-hero, .training-hero)
+  :where(a, button, select, input, textarea):focus-visible {
+  outline: 3px solid var(--ace-gold-light);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Responsive and accessibility behavior
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .topbar-inner {
+    min-height: 31px;
+    font-size: 10px;
+  }
+
+  .nav-wrap {
+    min-height: 74px;
+  }
+
+  .site-header--floating .nav-wrap {
+    border-radius: var(--ace-radius-md);
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --ace-shell-gutter: 16px;
+  }
+
+  .topbar-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 14px;
+    padding-block: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar--animated {
+    animation: none;
+  }
+
+  .site-header,
+  .site-menu .nav-cta {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Ebook benefits section
+   Keeps the section blue while routing its gold accents through
+   the centralized ACE gold variants.
+   ========================================================= */
+
+#benefits-actual {
+  color: var(--ace-text-on-dark);
+  background: var(--ace-gradient-blue-dark);
+}
+
+#benefits-actual h2,
+#benefits-actual h3 {
+  color: var(--ace-white);
+}
+
+#benefits-actual .section-label,
+#benefits-actual .benefits-intro,
+#benefits-actual .benefit-block p {
+  color: var(--ace-text-on-dark-muted);
+}
+
+#benefits-actual .section-label > span:first-child,
+#benefits-actual .benefit-block > span,
+#benefits-actual .benefit-block .benefit-number {
+  color: var(--ace-gold-light);
+}
+
+#benefits-actual .label-line,
+#benefits-actual .benefit-block::before {
+  background: var(--ace-gold);
+}
+
+#benefits-actual .benefit-block,
+#benefits-actual .icon-card-elite {
+  border-color: rgba(239, 212, 143, 0.28);
+}
+
+#benefits-actual .benefit-block:hover,
+#benefits-actual .icon-card-elite:hover {
+  border-color: var(--ace-gold);
+  box-shadow: 0 18px 36px var(--ace-gold-glow);
+}
+
+#benefits-actual .benefit-icon,
+#benefits-actual .benefit-number {
+  border-color: var(--ace-gold);
+  color: var(--ace-gold-light);
+}
+
+#benefits-actual .benefit-link,
+#benefits-actual a {
+  color: var(--ace-gold-light);
+}
+
+#benefits-actual .benefit-link:hover,
+#benefits-actual .benefit-link:focus-visible,
+#benefits-actual a:hover,
+#benefits-actual a:focus-visible {
+  color: var(--ace-gold);
+}
+
+/* =========================================================
+   Ebook audio section
+   Preserves the editorial audio layout while using the shared
+   ACE dark surface, text, border, and gold accent tokens.
+   ========================================================= */
+
+#audio-actual {
+  color: var(--ace-text-on-dark);
+  background: var(--ace-gradient-dark);
+}
+
+#audio-actual .audio-reference-eyebrow,
+#audio-actual .audio-reference-headphones {
+  color: var(--ace-gold-light);
+}
+
+#audio-actual .audio-reference-eyebrow-line {
+  background: var(--ace-gold);
+}
+
+#audio-actual .audio-reference-copy h2 {
+  color: var(--ace-white);
+}
+
+#audio-actual .audio-reference-copy h2 span,
+#audio-actual .audio-reference-headphones svg {
+  color: var(--ace-gold-light);
+}
+
+#audio-actual .audio-reference-copy p,
+#audio-actual .audio-reference-times,
+#audio-actual .audio-reference-tagline {
+  color: var(--ace-text-on-dark-muted);
+}
+
+#audio-actual .audio-reference-player,
+#audio-actual .audio-reference-features {
+  border-color: var(--ace-border-light);
+  background: rgba(8, 29, 52, 0.42);
+  box-shadow: 0 18px 42px rgba(8, 29, 52, 0.2);
+}
+
+#audio-actual .audio-reference-play {
+  border-color: var(--ace-gold);
+  background: var(--ace-gold);
+  color: var(--ace-navy-deep);
+}
+
+#audio-actual .audio-reference-play:hover,
+#audio-actual .audio-reference-play:focus-visible {
+  background: var(--ace-gold-light);
+  border-color: var(--ace-gold-light);
+  color: var(--ace-navy-deep);
+}
+
+#audio-actual .audio-reference-waveform rect,
+#audio-actual .audio-reference-waveform path {
+  stroke: var(--ace-gold-light);
+}
+
+#audio-actual .audio-reference-waveform rect {
+  fill: var(--ace-gold);
+}
+
+/* =========================================================
+   Ebook ecosystem section
+   Keeps the light editorial layout while routing its colors
+   through the shared ACE theme tokens.
+   ========================================================= */
+
+#ecosystem-actual {
+  color: var(--ace-ink);
+  background: var(--ace-blue-mist);
+  border-top-color: var(--ace-border-dark);
+}
+
+#ecosystem-actual .section-heading .eyebrow {
+  color: var(--ace-blue-deep);
+}
+
+#ecosystem-actual .eco-rule {
+  background: var(--ace-gold);
+}
+
+#ecosystem-actual .section-heading h2,
+#ecosystem-actual .series-card h3 {
+  color: var(--ace-navy-deep);
+}
+
+#ecosystem-actual .eco-sub,
+#ecosystem-actual .series-sub,
+#ecosystem-actual .series-desc {
+  color: var(--ace-muted);
+}
+
+#ecosystem-actual > .eco-art path {
+  stroke: var(--ace-blue-glow);
+}
+
+#ecosystem-actual > .eco-art .eco-art-gold {
+  stroke: var(--ace-gold-glow);
+}
+
+#ecosystem-actual > .eco-art .eco-dot-gold {
+  fill: var(--ace-gold);
+}
+
+#ecosystem-actual > .eco-art .eco-dot-blue {
+  fill: var(--ace-blue);
+}
+
+#ecosystem-actual .series-card {
+  border-color: var(--ace-border-dark);
+  background: var(--ace-white);
+  box-shadow: 0 10px 30px rgba(16, 45, 77, 0.08);
+}
+
+#ecosystem-actual .series-card::before {
+  background: var(--ace-gold);
+}
+
+#ecosystem-actual .series-card:hover {
+  border-color: var(--ace-blue);
+  box-shadow: 0 14px 32px var(--ace-blue-glow-soft);
+}
+
+#ecosystem-actual .series-icon {
+  border-color: var(--ace-blue-glow);
+  background: var(--ace-blue-pale);
+  color: var(--ace-blue-deep);
+}
+
+#ecosystem-actual .series-num i {
+  background: var(--ace-gold);
+}
+
+#ecosystem-actual .series-num,
+#ecosystem-actual .series-arrow {
+  color: var(--ace-gold-deep);
+}
+
+#ecosystem-actual .series-arrow svg {
+  stroke: var(--ace-blue-deep);
+}

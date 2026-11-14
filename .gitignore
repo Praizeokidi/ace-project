@@ -1,0 +1,9 @@
+
+*.backup
+*.before-*
+/.work/deploy-snapshots/
+
+ace-dashboard/.env
+
+/.manus/
+/.work/

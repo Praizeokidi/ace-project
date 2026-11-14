@@ -1,0 +1,157 @@
+/* =========================================================
+   Review hero: three designs on the ebook hero palette
+   Place in ebook/review/ and load AFTER review.css.
+
+   Usage: change the section class in ebook/review/index.html
+     <section class="review-hero rv rv-a" ...>   A: photo fade (the ebook hero composition)
+     <section class="review-hero rv rv-b" ...>   B: indigo with the book on orbit rings
+     <section class="review-hero rv rv-c" ...>   C: photo card with the book overlapping
+   ========================================================= */
+
+/* ---------- Shared palette, type and cream hand-off ---------- */
+.review-hero.rv {
+  background: #4259a9;
+  isolation: isolate;
+}
+.review-hero.rv .review-hero-grid { z-index: 1; opacity: 0.19; }
+.review-hero.rv .review-hero-inner { z-index: 2; }
+
+.review-hero.rv h1 span { color: #efd48f; }
+.review-hero.rv .review-hero-copy .eyebrow { color: #dce4ff; }
+.review-hero.rv .eyebrow-rule { background: #efd48f; }
+.review-hero.rv .review-lede { color: #dbe3ff; }
+.review-hero.rv .review-hero-note { color: rgba(220, 228, 255, 0.9); }
+
+/* cream wave hands over to the cream dossier section below */
+.review-hero.rv::after {
+  position: absolute;
+  right: -5%;
+  bottom: -1px;
+  left: -5%;
+  z-index: 3;
+  height: 56px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: #f7f4ee;
+  content: "";
+}
+
+/* =========================================================
+   Design A: photo fade  (exactly the ebook hero composition)
+   Flat indigo on the left, dissolving into the photo on the right.
+   Hides the book art, so the copy has the whole left side.
+   ========================================================= */
+.review-hero.rv-a::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(66, 89, 169, 1) 0%,
+      rgba(66, 89, 169, 0.96) 18%,
+      rgba(66, 89, 169, 0.74) 35%,
+      rgba(66, 89, 169, 0.24) 55%,
+      rgba(66, 89, 169, 0) 74%),
+    url("../../images/hero-toolkit.png") 78% 42% / cover no-repeat;
+  filter: saturate(0.88) contrast(0.96);
+  content: "";
+}
+.review-hero.rv-a .review-hero-inner { grid-template-columns: minmax(0, 1fr); }
+.review-hero.rv-a .review-hero-art { display: none; }
+
+@media (max-width: 800px) {
+  .review-hero.rv-a::before {
+    background:
+      linear-gradient(180deg,
+        rgba(66, 89, 169, 0.32) 0%,
+        rgba(66, 89, 169, 0.76) 40%,
+        rgba(66, 89, 169, 0.98) 70%,
+        rgba(66, 89, 169, 1) 100%),
+      url("../../images/hero-toolkit.png") 72% top / cover no-repeat;
+  }
+}
+
+/* =========================================================
+   Design B: indigo with the book on orbit rings
+   Keeps the existing book art, recoloured for the indigo field.
+   ========================================================= */
+.review-hero.rv-b {
+  background:
+    radial-gradient(circle at 78% 24%, rgba(159, 178, 255, 0.22), transparent 30rem),
+    linear-gradient(135deg, #4259a9 0%, #3a519f 55%, #2f4fa2 100%);
+}
+.review-hero.rv-b .review-hero-art::before,
+.review-hero.rv-b .review-hero-art::after {
+  position: absolute;
+  border: 1px solid rgba(220, 228, 255, 0.24);
+  border-radius: 50%;
+  content: "";
+}
+.review-hero.rv-b .review-hero-art::before { width: 460px; height: 460px; }
+.review-hero.rv-b .review-hero-art::after  { width: 600px; height: 600px; border-color: rgba(220, 228, 255, 0.12); }
+.review-hero.rv-b .book-glow {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(220, 228, 255, 0.4), rgba(159, 178, 255, 0.14) 45%, transparent 70%);
+}
+.review-hero.rv-b .book-card-back { background: linear-gradient(145deg, #dce4ff, #f7f8fd 40%, #9fb2ff); }
+.review-hero.rv-b .book-shadow { background: rgba(8, 29, 52, 0.45); }
+.review-hero.rv-b .art-caption { color: #dce4ff; }
+
+/* =========================================================
+   Design C: photo card with the book overlapping
+   The photo sits in a rounded card that fades into the indigo;
+   the cover overlaps its lower-left corner.
+   ========================================================= */
+.review-hero.rv-c {
+  background:
+    radial-gradient(circle at 78% 24%, rgba(159, 178, 255, 0.22), transparent 30rem),
+    linear-gradient(135deg, #4259a9 0%, #3a519f 55%, #2f4fa2 100%);
+}
+.review-hero.rv-c .review-hero-art { min-height: 520px; }
+.review-hero.rv-c .review-hero-art::before {
+  position: absolute;
+  inset: 0 0 0 8%;
+  z-index: 0;
+  border: 1px solid rgba(220, 228, 255, 0.22);
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg,
+      rgba(66, 89, 169, 0.95) 0%,
+      rgba(66, 89, 169, 0.55) 28%,
+      rgba(66, 89, 169, 0) 60%),
+    url("../../images/hero-toolkit.png") 100% 40% / cover no-repeat;
+  box-shadow: 0 30px 60px rgba(8, 29, 52, 0.35);
+  content: "";
+}
+.review-hero.rv-c .book-glow,
+.review-hero.rv-c .book-card-back,
+.review-hero.rv-c .book-card-spine { display: none; }
+.review-hero.rv-c .book-shadow { bottom: 6px; left: 10px; width: 190px; background: rgba(8, 29, 52, 0.5); }
+.review-hero.rv-c .book-cover {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 190px;
+  transform: rotate(-4deg);
+}
+.review-hero.rv-c .art-caption {
+  right: 16px;
+  bottom: 16px;
+  max-width: 250px;
+  padding: 10px 14px;
+  border: 1px solid rgba(220, 228, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(16, 45, 77, 0.72);
+  color: #dce4ff;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+@media (max-width: 800px) {
+  .review-hero.rv-c .review-hero-art { min-height: 420px; }
+  .review-hero.rv-c .review-hero-art::before { inset: 0; }
+  .review-hero.rv-c .book-cover { left: 12px; width: 150px; }
+}
+
+@media (max-width: 520px) {
+  .review-hero.rv::after { height: 40px; }
+}
