@@ -49,18 +49,18 @@
   color: var(--ace-blue);
 }
 
+/* Gold underline that grows on hover, matching the DPIA Made Easy navbar */
 .site-header .site-menu a:not(.nav-cta)::after {
   left: 0;
-  bottom: -8px;
-  width: 100%;
+  bottom: -9px;
+  width: 0;
   height: 2px;
-  background: #4259a9 !important;
-  transform: scaleX(0);
-  transition: transform 0.25s;
+  background: #efd48f !important;
+  transition: width 0.18s var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
 }
 .site-header .site-menu a:not(.nav-cta):hover::after,
 .site-header .site-menu a:not(.nav-cta):focus-visible::after {
-  transform: scaleX(1);
+  width: 100%;
 }
 
 .site-header .nav-cta {
