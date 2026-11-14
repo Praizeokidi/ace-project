@@ -4012,3 +4012,239 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
     color: #efd48f !important; /* beats the mobile rule that forces white */
   }
 }
+
+/* =========================================================
+   #intro-actual: "About the publication" with Foreword panel
+   ========================================================= */
+#intro-actual.intro-foreword {
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+#intro-actual .fw-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---- Left: editorial column ---- */
+#intro-actual .fw-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: #4259a9;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+#intro-actual .fw-label::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+#intro-actual .fw-eyebrow {
+  margin: 0 0 10px;
+  color: #4259a9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+#intro-actual .fw-intro h2 {
+  max-width: none;
+  margin: 0 0 18px;
+  line-height: 1.08;
+}
+#intro-actual .fw-intro > p:not(.fw-label):not(.fw-eyebrow) {
+  margin: 0 0 14px;
+  color: #647284;
+  line-height: 1.85;
+}
+#intro-actual .fw-intro strong {
+  color: #102d4d;
+}
+#intro-actual .fw-question {
+  margin: 6px 0 20px;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid #efd48f;
+  border-radius: 0;
+  background: none;
+  color: #102d4d;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+/* ---- Right: sticky indigo foreword card ---- */
+#intro-actual .fw-card {
+  position: sticky;
+  top: 110px; /* clears the floating navbar */
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 20px;
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 12% 0,
+      rgba(159, 178, 255, 0.16),
+      transparent 20rem
+    ),
+    linear-gradient(160deg, #3a519f 0%, #25407f 55%, #102d4d 100%);
+  box-shadow: 0 30px 60px rgba(12, 29, 53, 0.28);
+}
+#intro-actual .fw-card .fw-label {
+  color: #efd48f;
+}
+#intro-actual .fw-key {
+  display: block;
+  quotes: none;
+  margin: 0 0 6px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+#intro-actual .fw-sig {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+#intro-actual .fw-mono {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 212, 143, 0.4);
+  background: #102d4d;
+  color: #efd48f;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+#intro-actual .fw-sig strong {
+  display: block;
+  font-size: 0.98rem;
+}
+#intro-actual .fw-sig small {
+  display: block;
+  max-width: 240px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+#intro-actual .fw-card .fw-sig strong {
+  color: #fff;
+}
+#intro-actual .fw-card .fw-sig small {
+  color: rgba(255, 255, 255, 0.78);
+}
+#intro-actual .fw-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 22px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #efd48f;
+  color: #102d4d;
+  font: 800 0.82rem/1 inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+#intro-actual .fw-toggle i {
+  font-style: normal;
+  transition: transform 0.3s ease;
+}
+#intro-actual .fw-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+#intro-actual .fw-toggle:focus-visible {
+  outline: 3px solid #dce4ff;
+  outline-offset: 3px;
+}
+
+/* ---- Full foreword drawer ---- */
+#intro-actual .fw-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.4s ease,
+    visibility 0s linear 0.4s;
+}
+#intro-actual .fw-drawer.is-open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+#intro-actual .fw-drawer > div {
+  overflow: hidden;
+}
+#intro-actual .fw-letter {
+  margin-top: 34px;
+  border: 1px solid rgba(16, 45, 77, 0.1);
+  border-radius: 20px;
+  background: #fff;
+}
+#intro-actual .fw-drawer.is-open .fw-letter {
+  box-shadow: 0 18px 40px rgba(66, 89, 169, 0.12);
+}
+#intro-actual .fw-letter-in {
+  padding: clamp(24px, 4vw, 48px);
+}
+#intro-actual .fw-letter h3 {
+  margin: 0 0 22px;
+  color: #102d4d;
+  font-size: 1.9rem;
+}
+#intro-actual .fw-text {
+  columns: 2;
+  column-gap: 44px;
+}
+#intro-actual .fw-text p {
+  margin: 0 0 1em;
+  color: #647284;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+#intro-actual .fw-text p:first-child::first-letter {
+  float: left;
+  padding: 6px 10px 0 0;
+  color: #4259a9;
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  line-height: 0.85;
+}
+#intro-actual .fw-letter .fw-sig {
+  padding-top: 20px;
+  border-top: 1px solid rgba(16, 45, 77, 0.1);
+}
+#intro-actual .fw-letter .fw-sig strong {
+  color: #102d4d;
+}
+#intro-actual .fw-letter .fw-sig small {
+  color: #647284;
+}
+
+@media (max-width: 860px) {
+  #intro-actual .fw-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  #intro-actual .fw-card {
+    position: static;
+  }
+  #intro-actual .fw-text {
+    columns: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #intro-actual .fw-drawer,
+  #intro-actual .fw-toggle i {
+    transition: none;
+  }
+}

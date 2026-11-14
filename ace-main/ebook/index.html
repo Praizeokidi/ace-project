@@ -2134,33 +2134,104 @@
         </div>
       </div>
 
-      <section id="intro-actual" class="intro section-light reveal-section reveal-from-right"
+      <section id="intro-actual" class="intro intro-foreword section-cream reveal-section reveal-from-right"
         style="display: none; opacity: 0;" aria-labelledby="publication-title">
-        <div class="shell intro-grid">
-          <div class="section-label"><span class="label-line"></span><span>About the publication</span>
+        <div class="shell">
+          <div class="fw-top">
+            <div class="fw-intro">
+              <p class="fw-label">About the publication</p>
+              <p class="fw-eyebrow">From Regulation to Practical Implementation</p>
+              <h2 id="publication-title">Move from knowing a DPIA is required to conducting one properly.</h2>
+              <p>Data Privacy Impact Assessments are a critical part of responsible data governance, yet many
+                organisations still struggle with the practical question:</p>
+              <blockquote class="fw-question">How do we move from knowing that a DPIA is required to conducting one
+                properly, documenting it clearly and using it to support real decisions?</blockquote>
+              <p><strong>DPIA Made Easy – Professional Edition</strong> was developed to bridge that gap.</p>
+              <p>The publication provides a structured, practical and governance-focused approach to DPIA
+                implementation, helping organisations and professionals identify high-risk processing, assess privacy
+                risks, develop proportionate mitigation measures and demonstrate accountability.</p>
+            </div>
+
+            <aside class="fw-card" aria-label="Foreword">
+              <p class="fw-label">Foreword</p>
+              <q class="fw-key">Effective privacy governance is not merely about meeting regulatory requirements but
+                about embedding accountability, transparency, and privacy by design into organisational culture.</q>
+              <div class="fw-sig">
+                <span class="fw-mono" aria-hidden="true">VO</span>
+                <div>
+                  <strong>Dr Vincent O. Olatunji</strong>
+                  <small>National Commissioner and Chief Executive</small>
+                </div>
+              </div>
+              <button type="button" class="fw-toggle" id="foreword-toggle" aria-expanded="false"
+                aria-controls="foreword-drawer">
+                <span class="fw-toggle-text">Read the full foreword</span> <i aria-hidden="true">▾</i>
+              </button>
+            </aside>
           </div>
-          <div class="intro-content">
-            <p class="eyebrow">From Regulation to Practical Implementation</p>
-            <h2 id="publication-title">Move from knowing a DPIA is required to conducting one properly.</h2>
-            <div class="intro-body">
-              <div>
-                <p>Data Privacy Impact Assessments are a critical part of responsible data governance, yet many
-                  organisations still struggle with the practical question:</p>
-                <blockquote>How do we move from knowing that a DPIA is required to conducting one properly, documenting
-                  it
-                  clearly and using it to support real decisions?</blockquote>
-              </div>
-              <div>
-                <p><strong style="color:#000">DPIA Made Easy – Professional Edition</strong> was developed to bridge
-                  that gap.</p>
-                <p>The publication provides a structured, practical and governance-focused approach to DPIA
-                  implementation, helping organisations and professionals identify high-risk processing, assess privacy
-                  risks, develop proportionate mitigation measures and demonstrate accountability.</p>
-              </div>
+
+          <div class="fw-drawer" id="foreword-drawer">
+            <div>
+              <article class="fw-letter" aria-labelledby="foreword-title">
+                <div class="fw-letter-in">
+                  <h3 id="foreword-title">Foreword</h3>
+                  <div class="fw-text">
+                    <p>As Nigeria continues to advance its digital economy, the responsible processing of personal data
+                      has become a critical pillar of trust, innovation, and sustainable development. The Nigeria Data
+                      Protection Act, 2023 (NDP Act) reinforces this commitment by promoting accountability and
+                      requiring organisations to adopt measures that safeguard the rights and freedoms of data
+                      subjects. Section 28 of the NDP Act specifically establishes the requirement for a Data Privacy
+                      Impact Assessment (DPIA) where a proposed processing activity is likely to result in a high risk
+                      to the rights and freedoms of data subjects. This obligation is further strengthened by Article
+                      28 and Schedule 4 of the General Application and Implementation Directive, 2025 (GAID), which
+                      provide practical guidance on the circumstances requiring a DPIA and the framework for conducting
+                      and documenting the assessment. Together, these provisions position the DPIA as a proactive tool
+                      for identifying and mitigating privacy risks before they materialise.</p>
+                    <p>Despite its significance, the concept of a DPIA is often perceived as technical and difficult to
+                      implement. This is where DPIA Made Easy makes a valuable contribution. In clear, simple, and
+                      practical language, the author, S.A. Kitchener, simplifies the principles, purpose, and process
+                      of conducting a DPIA, making it accessible to both experienced practitioners and those beginning
+                      their data protection compliance journey.</p>
+                    <p>This publication demonstrates that effective privacy governance is not merely about meeting
+                      regulatory requirements but about embedding accountability, transparency, and privacy by design
+                      into organisational culture. It provides readers with practical insights that can support better
+                      decision-making and strengthen compliance with Nigeria’s data protection framework.</p>
+                    <p>I commend the author, S.A. Kitchener, for producing a resource that contributes meaningfully to
+                      data protection awareness and capacity development. I am confident that DPIA Made Easy will serve
+                      as a useful reference for Data Protection Officers (DPOs), compliance professionals, legal
+                      practitioners, technology experts, regulators, business leaders, and every organisation committed
+                      to responsible data processing.</p>
+                    <p>I am pleased to recommend this publication to industry stakeholders and trust that it will
+                      encourage the wider adoption of DPIAs as an essential component of good data governance and
+                      regulatory compliance.</p>
+                  </div>
+                  <div class="fw-sig">
+                    <span class="fw-mono" aria-hidden="true">VO</span>
+                    <div>
+                      <strong>Dr Vincent O. Olatunji</strong>
+                      <small>National Commissioner and Chief Executive</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
+      <script>
+        (function () {
+          var btn = document.getElementById("foreword-toggle");
+          var drawer = document.getElementById("foreword-drawer");
+          if (!btn || !drawer) return;
+          btn.addEventListener("click", function () {
+            var open = !drawer.classList.contains("is-open");
+            drawer.classList.toggle("is-open", open);
+            btn.setAttribute("aria-expanded", open);
+            btn.querySelector(".fw-toggle-text").textContent = open ? "Hide the foreword" : "Read the full foreword";
+            if (open) setTimeout(function () { drawer.scrollIntoView({ behavior: "smooth", block: "nearest" }); }, 150);
+          });
+        })();
+      </script>
 
     </div>
 
