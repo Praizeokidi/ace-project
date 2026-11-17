@@ -5172,14 +5172,6 @@ html {
     letter-spacing: 0.16em;
   }
 
-  .topbar-note::before,
-  .topbar-note::after {
-    width: 44px;
-    height: 1px;
-    background: rgb(255, 255, 255);
-    content: "";
-  }
-
   .site-header .nav-wrap {
     position: relative;
   }
@@ -5217,11 +5209,6 @@ html {
   .topbar-note {
     gap: 8px;
     font-size: 9px;
-  }
-
-  .topbar-note::before,
-  .topbar-note::after {
-    width: 28px;
   }
 
   .mobile-priority-cta {
