@@ -282,9 +282,13 @@ select:focus-visible {
   border-radius: 10px;
   background: rgba(8, 29, 52, 0.88);
 }
+#hero-actual .hero-actions {
+  align-items: flex-end;
+}
+
 #hero-actual .hero-actions > .button-white {
-  position: relative;
-  top: 10px;
+  position: static;
+  min-height: 50px;
 }
 .hero-art {
   min-height: 520px;
@@ -4032,7 +4036,7 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
   align-items: center;
   gap: 10px;
   margin: 0 0 14px;
-  color: #efd48f;
+  color: #e2c270;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -4358,7 +4362,7 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
   gap: 10px;
   margin: 0 0 6px;
   padding-top: 6px;
-  color: var(--wb-br);
+  color: #e2c270;
   font-family: inherit;
   font-size: 0.72rem;
   font-weight: 800;
@@ -4403,7 +4407,7 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
 #workbook-actual .wb-toc li b {
   flex: none;
   width: 30px;
-  color: var(--wb-br);
+  color: #e2c270;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 400;
@@ -4458,5 +4462,137 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
 @media (prefers-reduced-motion: reduce) {
   #workbook-actual .wb-toc li {
     transition: none;
+  }
+}
+
+/* Toolkit-only: premium feature icons */
+#toolkit-only-actual .tko-features {
+  gap: 20px 28px;
+}
+
+#toolkit-only-actual .tko-features div {
+  gap: 16px;
+}
+
+#toolkit-only-actual .tko-features svg {
+  width: 58px;
+  height: 58px;
+  padding: 14px;
+  box-sizing: border-box;
+  border-radius: 16px; /* use 50% for round badges */
+  stroke: var(--ace-gold-light, #e7c27d);
+  stroke-width: 1.6;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(8, 29, 52, 0.45);
+  border: 1px solid rgba(231, 194, 125, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 10px 24px rgba(5, 19, 36, 0.35),
+    0 0 0 4px rgba(231, 194, 125, 0.06);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#toolkit-only-actual .tko-features div:hover svg {
+  transform: translateY(-3px);
+  border-color: rgba(231, 194, 125, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 14px 30px rgba(5, 19, 36, 0.45),
+    0 0 22px rgba(231, 194, 125, 0.28);
+}
+
+/* Consultation: premium capability icons */
+#consultation-actual .consultation-capabilities {
+  row-gap: 26px;
+}
+
+#consultation-actual .consultation-capabilities li {
+  gap: 14px;
+}
+
+#consultation-actual .consultation-capabilities svg {
+  width: 54px;
+  height: 54px;
+  flex: none; /* overrides the old flex: 0 0 32px */
+  padding: 13px;
+  box-sizing: border-box;
+  border-radius: 16px; /* use 50% for round badges */
+  stroke: var(--ace-gold-light, #e7c27d);
+  stroke-width: 1.5;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.03)
+    ),
+    rgba(8, 29, 52, 0.45);
+  border: 1px solid rgba(231, 194, 125, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 10px 24px rgba(5, 19, 36, 0.35),
+    0 0 0 4px rgba(231, 194, 125, 0.06);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#consultation-actual .consultation-capabilities li:hover svg {
+  transform: translateY(-3px);
+  border-color: rgba(231, 194, 125, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 14px 30px rgba(5, 19, 36, 0.45),
+    0 0 22px rgba(231, 194, 125, 0.28);
+}
+
+/* Nudge Methodology (icon + label) left, away from the divider */
+#consultation-actual .consultation-capabilities li:nth-child(2) > svg,
+#consultation-actual .consultation-capabilities li:nth-child(2) > span {
+  translate: -6px 0;
+}
+
+/* Final section: Instagram follow link (sits under LinkedIn) */
+#final-actual .final-reference-instagram .final-reference-linkedin-icon svg {
+  fill: none;
+  stroke: #0b2447;
+  stroke-width: 2.2;
+}
+#final-actual
+  .final-reference-instagram
+  .final-reference-linkedin-icon
+  svg
+  .ig-dot {
+  fill: #0b2447;
+  stroke: none;
+}
+
+/* Desktop: the banner is absolutely positioned, so place it under LinkedIn */
+@media (min-width: 700px) {
+  #final-actual .final-reference-instagram {
+    top: 10.4cqw;
+  }
+}
+
+/* Mobile: tighter gap than LinkedIn's 32px */
+@media (max-width: 699px) {
+  #final-actual .final-reference-instagram {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 700px) {
+  #final-actual .final-reference-actions {
+    transform: translateX(
+      6.84cqw
+    ); /* was 2cqw; +4.84cqw lines it up over LinkedIn */
   }
 }

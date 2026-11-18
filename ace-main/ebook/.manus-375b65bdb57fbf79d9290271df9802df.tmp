@@ -2052,7 +2052,7 @@
                 </svg>
               </div>
               <div>
-                <h3>Aligned with the NDPA</h3>
+                <h3>Aligned with the NDP</h3>
                 <p>Based on the Nigeria Data Protection Act, with relevant international good practice.</p>
               </div>
             </article>
@@ -2224,7 +2224,7 @@
           <ul class="workbook-checklist" aria-label="DPIA Made Easy topics covered">
             <li>What a DPIA is</li>
             <li>When a DPIA is required</li>
-            <li>The NDP Act requirements</li>
+            <li>The Nigeria Data Protection Act, 2023 (NDP Act) requirements</li>
             <li>DPIA screening</li>
             <li>Risk assessment</li>
             <li>Necessity and proportionality</li>
@@ -2560,7 +2560,7 @@
           <div class="tko-copy">
             <p class="tko-eyebrow"><span>2</span><i aria-hidden="true"></i>IMPLEMENT </p>
             <h2 id="toolkit-only-title">ACE DPIA<br><em>Toolkit</em></h2>
-            <h3>The practical implementation toolkit for DPIAs under the NDP Act, 2023.</h3>
+            <h3>The practical implementation toolkit for DPIAs under the Nigeria Data Protection Act, 2023 (NDP Act).</h3>
             <p class="tko-desc">Templates, checklists and guidance notes that walk your team from assessment to
               monitoring — consistent, documented and audit-ready.</p>
 
@@ -3080,7 +3080,7 @@
             <ul class="training-reference-topics">
               <li class="training-reference-topic"><svg viewBox="0 0 32 32" aria-hidden="true">
                   <path d="M8 4.5h11l5 5V27.5H8zM19 4.5v5h5M12 15h8M12 19h8M12 23h5" />
-                </svg><span>DPIA requirements under the NDP Act</span></li>
+                </svg><span>DPIA requirements under the Nigeria Data Protection Act, 2023 (NDP Act)</span></li>
               <li class="training-reference-topic"><svg viewBox="0 0 32 32" aria-hidden="true">
                   <rect x="8" y="7" width="16" height="21" rx="2" />
                   <path d="M12 7V5h8v2M12 13l1.5 1.5L16 12M18 13h3M12 19l1.5 1.5L16 18M18 19h3" />
@@ -3547,7 +3547,7 @@
             </details>
             <details>
               <summary class="dark">Is the publication aligned with the Nigeria Data Protection Act?</summary>
-              <p>Yes. It is primarily aligned with the NDPA and supported by relevant regulatory guidance and recognised
+              <p>Yes. It is primarily aligned with the NDP and supported by relevant regulatory guidance and recognised
                 international good practice.</p>
             </details>
             <details>
