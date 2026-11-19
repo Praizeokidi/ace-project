@@ -125,7 +125,7 @@ body.ace-site {
 
 .ace-title em,
 .ace-display em {
-  color: var(--gold);
+  color: #efd48f;
   font-style: italic;
 }
 

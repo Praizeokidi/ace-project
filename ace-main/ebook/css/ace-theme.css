@@ -820,7 +820,7 @@ body.dpia-site #priority-actual.priority {
   color: #2f4fa2;
 }
 #toolkit-actual .toolkit-reference-popular {
-  background: linear-gradient(135deg, #d2a95d, #efd48f);
+  background: #efd48f;
   color: var(--ace-navy-deep);
 }
 
