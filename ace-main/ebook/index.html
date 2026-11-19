@@ -1679,6 +1679,28 @@
       color: #dfe6f0;
       font-weight: 500;
     }
+
+
+    /* Mobile audio player: full-size play button, left of the waveform */
+    @media (max-width: 700px) {
+      #audio-actual .audio-reference-play {
+        top: 14px;
+        /* centres the 86px button on the 115px-high waveform */
+        width: 86px;
+        height: 86px;
+      }
+
+      #audio-actual .audio-reference-play .icon-play,
+      #audio-actual .audio-reference-play .icon-pause {
+        width: 34px;
+        height: 34px;
+      }
+
+      #audio-actual .audio-reference-play .icon-play {
+        margin-left: 5px;
+        /* optically centres the triangle */
+      }
+    }
   </style>
 
 
