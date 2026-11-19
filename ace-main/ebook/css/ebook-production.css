@@ -4596,3 +4596,16 @@ body.dpia-site #faq-actual .faq-intro .eyebrow {
     ); /* was 2cqw; +4.84cqw lines it up over LinkedIn */
   }
 }
+
+/* Mobile: stop the package card from clipping the MOST POPULAR badge */
+@media (max-width: 699px) {
+  #toolkit-actual .toolkit-reference-card-package {
+    overflow: visible;
+  }
+
+  #toolkit-actual .toolkit-reference-popular {
+    top: -10px; /* was -14px: sits lower, mostly inside the gold border */
+    right: 14px;
+    z-index: 2;
+  }
+}
