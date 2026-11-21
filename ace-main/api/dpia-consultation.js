@@ -35,6 +35,8 @@ function parseForm(req) {
     allowEmptyFiles: true,
     maxFileSize: MAX_FILE_SIZE,
     keepExtensions: true,
+    allowEmptyFiles: true, // ← add: the optional upload arrives as an empty part when no file is chosen
+    minFileSize: 0,
   });
 
   return new Promise((resolve, reject) => {
@@ -54,8 +56,8 @@ function getUploadedFile(files) {
   if (!value) return null;
   const file = Array.isArray(value) ? value[0] : value;
 
-  // An unselected optional input is represented as a zero-byte file with no name.
-  if (!file?.originalFilename && file?.size === 0) return null;
+  // No file chosen: browsers still send an empty file part. Treat it as "no upload".
+  if (!file || !file.size || !file.originalFilename) return null;
 
   return file;
 }
