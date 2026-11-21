@@ -30,6 +30,9 @@ function arrayValue(value) {
 function parseForm(req) {
   const form = formidable({
     multiples: false,
+    // Browsers submit an empty file part when the optional file input is left blank.
+    // Allow Formidable to parse that part so the handler can ignore it safely.
+    allowEmptyFiles: true,
     maxFileSize: MAX_FILE_SIZE,
     keepExtensions: true,
   });
@@ -49,7 +52,12 @@ function parseForm(req) {
 function getUploadedFile(files) {
   const value = files?.existing_dpia_file;
   if (!value) return null;
-  return Array.isArray(value) ? value[0] : value;
+  const file = Array.isArray(value) ? value[0] : value;
+
+  // An unselected optional input is represented as a zero-byte file with no name.
+  if (!file?.originalFilename && file?.size === 0) return null;
+
+  return file;
 }
 
 function validateUploadedFile(file) {

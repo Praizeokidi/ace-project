@@ -489,9 +489,7 @@
   font-size: 0.85rem;
   line-height: 1.7;
 }
-.review-dossier-list li:last-child h3 {
-  color: #e5c47d;
-}
+
 .review-dossier-contact .review-contact-submit {
   width: auto;
 }
@@ -579,8 +577,7 @@
 }
 
 .review-dossier .eyebrow,
-.review-dossier-num,
-.review-dossier-list li:last-child h3 {
+.review-dossier-num {
   color: var(--dossier-gold);
 }
 
